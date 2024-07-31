@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'home',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -100,7 +101,6 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
