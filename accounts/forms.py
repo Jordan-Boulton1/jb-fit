@@ -15,6 +15,17 @@ class CustomSignupForm(SignupForm):
     last_name = forms.CharField(max_length=30, label='Last Name')
     gender = forms.ChoiceField(choices=GENDER_CHOICES, label='Gender')
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['email'].widget = forms.EmailInput(
+            attrs={'class': 'form-control', 'required': 'true'}
+        )
+        self.fields['first_name'].widget = forms.TextInput(attrs={'class': 'form-control', 'required': 'true'})
+        self.fields['last_name'].widget = forms.TextInput(attrs={'class': 'form-control'})
+        self.fields['password1'].widget = forms.PasswordInput(attrs={'class': 'form-control'})
+        self.fields['password2'].widget = forms.PasswordInput(attrs={'class': 'form-control'})
+        self.fields['gender'].widget.attrs.update({'class': 'form-control'})
+
     def save(self, request):
         user = super(CustomSignupForm, self).save(request)
         user.first_name = self.cleaned_data['first_name']
