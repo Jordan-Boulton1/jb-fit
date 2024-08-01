@@ -8,7 +8,6 @@ from accounts.models import UserProfile
 
 class CustomSignupForm(SignupForm):
     GENDER_CHOICES = [
-            ('--', '--'),
             ('M', 'Male'),
             ('F', 'Female'),
             ('O', 'Other'),
@@ -16,7 +15,7 @@ class CustomSignupForm(SignupForm):
 
     first_name = forms.CharField(max_length=30, label='First Name', required=True)
     last_name = forms.CharField(max_length=30, label='Last Name', required=True)
-    gender = forms.ChoiceField(choices=GENDER_CHOICES, label='Gender', required=True)
+    gender = forms.ChoiceField(choices=GENDER_CHOICES, label='Gender', required=True, widget=forms.RadioSelect)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -25,7 +24,7 @@ class CustomSignupForm(SignupForm):
         self.fields['last_name'].widget.attrs.update({'class': 'form-control'})
         self.fields['password1'].widget.attrs.update({'class': 'form-control'})
         self.fields['password2'].widget.attrs.update({'class': 'form-control'})
-        self.fields['gender'].widget.attrs.update({'class': 'form-control'})
+        self.fields['gender'].widget.attrs.update({'class': 'form-check-input'})
 
     def save(self, request):
         # This will call the built-in save method which handles user creation and validation
