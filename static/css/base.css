@@ -73,7 +73,7 @@ nav {
 
 /* Hero section */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('/img/crosby-hinze-rW5H8kZ5wSc-unsplash.jpg') no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('/media/jb-fit-hero.webp') no-repeat center center;
     background-size: cover;
     height: 750px;
 }
@@ -131,7 +131,7 @@ nav {
 }
 
 .client-reviews {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/img/crosby-hinze-pKze3waMYVw-unsplash.jpg') no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/media/jb-fit-client-review.webp') no-repeat center center;
     background-size: cover;
 }
 

@@ -38,7 +38,7 @@
             <nav class="navbar navbar-expand-lg fixed-top">
                 <div class="container">
                     <a class="navbar-brand" href="{% url 'home' %}">
-                        <img src="{{ MEDIA_URL }}jb-fit-logo.png" alt="Online Personal Coaching Logo" width="100" height="45">
+                        <img src="{{ MEDIA_URL }}jb-fit-logo.webp" alt="Online Personal Coaching Logo" width="100" height="45">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa-solid fa-bars"></i>
@@ -88,51 +88,51 @@
         {% endblock %}
 
         <!-- Footer -->
-<footer class="py-3 mt-4" id="footer">
-    <div class="container">
-        <div class="social-links fs-3 text-center border-bottom pb-3 mb-3">
-            <a class="social-icon" href="" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-            <a class="social-icon" href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            <a class="social-icon" href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-            <a class="social-icon" href="https://linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            <a class="social-icon" href="https://youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-lg-6 col-xl-6 my-3 text-center text-xl-start">
-                <h5 class="text-primary-highlight mb-3">Quick Links</h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-1 text-body-secondary">Home</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-1 text-body-secondary">About</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-1 text-body-secondary">Plans</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-1 text-body-secondary">FAQ</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-1 text-body-secondary">Community</a></li>
-                </ul>
+        <footer class="py-3 mt-4" id="footer">
+            <div class="container">
+                <div class="social-links fs-3 text-center border-bottom pb-3 mb-3">
+                    <a class="social-icon" href="" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a class="social-icon" href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a class="social-icon" href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <a class="social-icon" href="https://linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a class="social-icon" href="https://youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                </div>
             </div>
-
-            <div class="col-12 col-lg-5 col-xl-5 offset-xl-1 my-3">
-                <form>
-                    <h5 class="text-primary-highlight text-center text-xl-start">Subscribe to our newsletter</h5>
-                    <p class="text-white text-center text-xl-start">Monthly news of everything going on in the fitness world.</p>
-                    <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                        <label for="newsletter1" class="visually-hidden">Email address</label>
-                        <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                        <button class="btn btn-primary bg-gradient" type="button">Subscribe</button>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-6 col-xl-6 my-3 text-center text-xl-start">
+                        <h5 class="text-primary-highlight mb-3">Quick Links</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="{% url 'home' %}" class="nav-link p-1 text-body-secondary">Home</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-1 text-body-secondary">About</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-1 text-body-secondary">Plans</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-1 text-body-secondary">FAQ</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-1 text-body-secondary">Community</a></li>
+                        </ul>
                     </div>
-                </form>
+
+                    <div class="col-12 col-lg-5 col-xl-5 offset-xl-1 my-3">
+                        <form>
+                            <h5 class="text-primary-highlight text-center text-xl-start">Subscribe to our newsletter</h5>
+                            <p class="text-white text-center text-xl-start">Monthly news of everything going on in the fitness world.</p>
+                            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                                <label for="newsletter1" class="visually-hidden">Email address</label>
+                                <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                                <button class="btn btn-primary bg-gradient" type="submit">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row border-top">
+                    <div class="col text-center mt-3">
+                        <p class="mb-0 text-white">&copy; 2024 JB Fit. All rights reserved.</p>
+                        <ul class="nav justify-content-center">
+                            <li class="nav-item"><a href="#" class="nav-link pr-5 text-white">Privacy Policy</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link text-white">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row border-top">
-            <div class="col text-center mt-3">
-                <p class="mb-0 text-white">&copy; 2024 JB Fit. All rights reserved.</p>
-                <ul class="nav justify-content-center">
-                    <li class="nav-item"><a href="#" class="nav-link pr-5 text-white">Privacy Policy</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-white">Terms of Service</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
+        </footer>
     </body>
 </html>
