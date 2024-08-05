@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        .profile-header {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .profile-image {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+    </style>
+    
+</head>
+{% block content %}
+<body>
+    <div class="container mt-4">
+        <div class="profile-header text-center">
+            {% if profile.image %}
+                <img src="{{ profile.image.url }}" alt="Profile Image" class="profile-image rounded mb-3">
+            {% else %}
+                <img src="https://via.placeholder.com/150" alt="Profile Image" class="profile-image rounded mb-3">
+            {% endif %}
+            <h1 class="display-4">{{ profile.user.username }}</h1>
+            <p class="lead">{{ profile.phone_number }}</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title">Personal Information</h5>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Address:</strong> {{ profile.address }}</p>
+                        <p><strong>Gender:</strong> {{ profile.gender }}</p>
+                        <p><strong>Date of Birth:</strong> {{ profile.date_of_birth }}</p>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title">Physical Measurements</h5>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Starting Weight:</strong> {{ profile.current_weight }} kg</p>
+                        <p><strong>Height:</strong> {{ profile.height }} cm</p>
+                        <p><strong>Goal Weight:</strong> {{ profile.goal_weight }} kg</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <!-- Add any additional information or widgets here -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title">Weight Progress Tracker</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Add more details if needed -->
+                        <div class="chart-container" style="height: 300px; width:500px">
+                            <canvas id="weightChart"></canvas>
+                        </div>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                var ctx = document.getElementById('weightChart').getContext('2d');
+                                var myChart = new Chart(ctx, {
+                                    type: 'line',
+                                    data: {
+                                        labels: ["2024-01-01", "2024-01-02", "2024-01-03", "2024-01-04"],
+                                        datasets: [{
+                                            label: 'Weight (kg)',
+                                            data: [70, 69, 65, 80],
+                                            borderColor: 'rgba(75, 192, 192, 1)',
+                                            borderWidth: 1,
+                                            fill: false
+                                        }]
+                                    },
+                                    options: {
+                                        scales: {
+                                            x: {
+                                                beginAtZero: true,
+                                                title: {
+                                                    display: true,
+                                                    text: 'Date'
+                                                },
+                                                border: {
+                                                    color: "orange"
+                                                }
+                                            },
+                                            y: {
+                                                beginAtZero: true,
+                                                title: {
+                                                    display: true,
+                                                    text: 'Weight (kg)'
+                                                },
+                                                border: {
+                                                    color: "orange"
+                                                }
+                                            }
+                                        }
+                                    }
+                                });
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
+</html>
+
