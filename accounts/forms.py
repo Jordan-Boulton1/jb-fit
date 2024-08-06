@@ -1,9 +1,12 @@
 from django import forms
-from allauth.account.forms import SignupForm, LoginForm
 from django.utils.translation import gettext_lazy as _
+from django.core.exceptions import ValidationError
 
+from allauth.account.forms import SignupForm, LoginForm
+from datetime import date
 
 from accounts.models import UserProfile
+
 
 
 class CustomSignupForm(SignupForm):
@@ -16,6 +19,7 @@ class CustomSignupForm(SignupForm):
     first_name = forms.CharField(max_length=30, label='First Name', required=True)
     last_name = forms.CharField(max_length=30, label='Last Name', required=True)
     gender = forms.ChoiceField(choices=GENDER_CHOICES, label='Gender', required=True, widget=forms.RadioSelect)
+    date_of_birth = forms.DateField(label='Date of Birth', required=True, widget=forms.DateInput(attrs={'type': 'date'}))
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -25,12 +29,20 @@ class CustomSignupForm(SignupForm):
         self.fields['password1'].widget.attrs.update({'class': 'form-control'})
         self.fields['password2'].widget.attrs.update({'class': 'form-control'})
         self.fields['gender'].widget.attrs.update({'class': 'form-check-input'})
+        self.fields['date_of_birth'].widget.attrs.update({'class': 'form-control'})
+    
+    def clean_date_of_birth(self):
+        date_of_birth = self.cleaned_data.get('date_of_birth')
+        if date_of_birth and date_of_birth > date.today():
+            raise ValidationError('Date of birth cannot be in the future.')
+        return date_of_birth
 
     def save(self, request):
         # This will call the built-in save method which handles user creation and validation
         user = super().save(request)
         user.first_name = self.cleaned_data['first_name']
         user.last_name = self.cleaned_data['last_name']
+        user.date_of_birth = self.cleaned_data['date_of_birth']
         user.save()
 
         # Mapping and saving gender to user profile
@@ -65,3 +77,36 @@ class UserProfileForm(forms.ModelForm):
             'height': forms.NumberInput(attrs={'step': '0.1'}),
             'goal_weight': forms.NumberInput(attrs={'step': '0.1'}),
         }
+    
+    def clean_phone_number(self):
+        phone_number = self.cleaned_data.get('phone_number')
+        if phone_number:
+            if not phone_number.isdigit():
+                raise ValidationError('Phone number must contain only digits.')
+        return phone_number
+    
+    def clean_current_weight(self):
+        current_weight = self.cleaned_data.get('current_weight')
+        if current_weight <= 0:
+            raise ValidationError('Current weight must be greater than zero.')
+        return current_weight
+    
+    def clean_height(self):
+        height = self.cleaned_data.get('height')
+        if height <= 0:
+            raise ValidationError('Height must be greater than zero.')
+        return height
+    
+    def clean_goal_weight(self):
+        goal_weight = self.cleaned_data.get('goal_weight')
+        current_weight = self.cleaned_data.get('current_weight')
+        if goal_weight <= 0:
+            raise ValidationError('Goal weight must be greater than zero.')
+        return goal_weight
+    
+    def clean(self):
+        cleaned_data = super().clean()
+        current_weight = cleaned_data.get('current_weight')
+        goal_weight = cleaned_data.get('goal_weight')
+
+        return cleaned_data

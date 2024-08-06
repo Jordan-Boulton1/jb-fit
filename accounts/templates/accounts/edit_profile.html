@@ -18,40 +18,88 @@
                         <h5 class="card-title">Update Personal Information</h5>
                     </div>
                     <div class="card-body">
-                        <form method="post">
+                        <form method="POST">
                             {% csrf_token %}
+                            <!-- Phone Number -->
                             <div class="mb-3">
                                 <label for="id_phone_number" class="form-label">Phone Number</label>
                                 <input type="text" class="form-control" id="id_phone_number" name="phone_number" value="{{ form.phone_number.value }}">
                             </div>
+                            <!-- Phone number validation -->
+                            {% if form.phone_number.errors %}
+                                <div class="alert alert-danger py-1 my-1">
+                                    {% for error in form.phone_number.errors %}
+                                        <p class="mb-0">{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+
+                            <!-- Address -->
                             <div class="mb-3">
                                 <label for="id_address" class="form-label">Address</label>
                                 <textarea class="form-control" id="id_address" name="address" rows="3">{{ form.address.value }}</textarea>
                             </div>
-                            <div class="mb-3">
-                                <label for="id_gender" class="form-label">Gender</label>
-                                <select class="form-select" id="id_gender" name="gender">
-                                    {% for choice in form.gender.field.choices %}
-                                        <option value="{{ choice.0 }}" {% if choice.0 == form.gender.value %}selected{% endif %}>{{ choice.1 }}</option>
+                            <!-- Address validation -->
+                            {% if form.address.errors %}
+                                <div class="alert alert-danger py-1 my-1">
+                                    {% for error in form.address.errors %}
+                                        <p class="mb-0">{{ error }}</p>
                                     {% endfor %}
-                                </select>
-                            </div>
+                                </div>
+                            {% endif %}
+
+                            <!-- Date of birth -->
                             <div class="mb-3">
                                 <label for="id_date_of_birth" class="form-label">Date of Birth</label>
                                 <input type="date" class="form-control" id="id_date_of_birth" name="date_of_birth" value="{{ form.date_of_birth.value }}">
                             </div>
+                            {% if form.date_of_birth.errors %}
+                                <div class="alert alert-danger py-1 my-1">
+                                    {% for error in form.date_of_birth.errors %}
+                                        <p class="mb-0">{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+
+                            <!-- Current weight -->
                             <div class="mb-3">
-                                <label for="id_current_weight" class="form-label">Starting Weight (kg)</label>
+                                <label for="id_current_weight" class="form-label">Current Weight (kg)</label>
                                 <input type="number" step="0.01" class="form-control" id="id_current_weight" name="current_weight" value="{{ form.current_weight.value }}">
+                                {% if form.current_weight.errors %}
+                                    <div class="alert alert-danger py-1 my-1">
+                                        {% for error in form.current_weight.errors %}
+                                            <p class="mb-0">{{ error }}</p>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
                             </div>
+
+                            <!-- Height -->
                             <div class="mb-3">
                                 <label for="id_height" class="form-label">Height (cm)</label>
                                 <input type="number" step="0.01" class="form-control" id="id_height" name="height" value="{{ form.height.value }}">
+                                {% if form.height.errors %}
+                                    <div class="alert alert-danger py-1 my-1">
+                                        {% for error in form.height.errors %}
+                                            <p class="mb-0">{{ error }}</p>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
                             </div>
+
+                            <!-- Goal weight -->
                             <div class="mb-3">
                                 <label for="id_goal_weight" class="form-label">Goal Weight (kg)</label>
                                 <input type="number" step="0.01" class="form-control" id="id_goal_weight" name="goal_weight" value="{{ form.goal_weight.value }}">
+                                {% if form.goal_weight.errors %}
+                                    <div class="alert alert-danger py-1 my-1">
+                                        {% for error in form.goal_weight.errors %}
+                                            <p class="mb-0">{{ error }}</p>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
                             </div>
+
                             <button type="submit" class="btn btn-primary">Save</button>
                         </form>
                     </div>

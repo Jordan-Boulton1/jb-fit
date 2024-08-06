@@ -28,14 +28,14 @@
 
         <div class="row mb-5">
             <div class="col-12 d-flex justify-content-center align-items-center">
-                <a href="{% url 'edit_profile' %}" class="btn btn-primary bg-gradient">Edit Profile</a>
+                <a href="{% url 'edit_profile' %}" class="btn btn-lg btn-primary bg-gradient">Edit Profile</a>
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-6">
-                <div class="card mb-4">
-                    <div class="card-header">
+                <div class="card profile-card mb-4">
+                    <div class="card-header profile-card-header">
                         <h5 class="card-title">Personal Information</h5>
                     </div>
                     <div class="card-body">
@@ -45,12 +45,12 @@
                     </div>
                 </div>
 
-                <div class="card mb-4">
-                    <div class="card-header">
+                <div class="card profile-card mb-4">
+                    <div class="card-header profile-card-header">
                         <h5 class="card-title">Physical Measurements</h5>
                     </div>
                     <div class="card-body">
-                        <p><strong>Starting Weight:</strong> {{ profile.current_weight }} kg</p>
+                        <p><strong>Current Weight:</strong> {{ profile.current_weight }} kg</p>
                         <p><strong>Height:</strong> {{ profile.height }} cm</p>
                         <p><strong>Goal Weight:</strong> {{ profile.goal_weight }} kg</p>
                     </div>
@@ -58,8 +58,8 @@
             </div>
 
             <div class="col-md-6">
-                <div class="card mb-4">
-                    <div class="card-header">
+                <div class="card profile-card mb-4">
+                    <div class="card-header profile-card-header">
                         <h5 class="card-title">Weight Progress Tracker</h5>
                     </div>
                     <div class="card-body">
