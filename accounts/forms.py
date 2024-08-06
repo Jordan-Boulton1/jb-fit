@@ -54,3 +54,14 @@ class CustomLoginForm(LoginForm):
         self.fields['login'].widget.attrs.update({'class': 'form-control'})
         self.fields['password'].widget.attrs.update({'class': 'form-control'})
         self.fields['remember'].widget.attrs.update({'class': 'form-check-input'})
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['phone_number', 'address', 'date_of_birth', 'current_weight', 'height', 'goal_weight']
+        widgets = {
+            'date_of_birth': forms.DateInput(attrs={'type': 'date'}),
+            'current_weight': forms.NumberInput(attrs={'step': '0.1'}),
+            'height': forms.NumberInput(attrs={'step': '0.1'}),
+            'goal_weight': forms.NumberInput(attrs={'step': '0.1'}),
+        }

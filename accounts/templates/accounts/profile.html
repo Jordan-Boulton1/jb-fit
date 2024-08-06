@@ -1,11 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
     <style>
         .profile-header {
             background-color: #f8f9fa;
@@ -19,8 +13,6 @@
             object-fit: cover;
         }
     </style>
-    
-</head>
 {% block content %}
 <body>
     <div class="container mt-4">
@@ -30,8 +22,14 @@
             {% else %}
                 <img src="https://via.placeholder.com/150" alt="Profile Image" class="profile-image rounded mb-3">
             {% endif %}
-            <h1 class="display-4">{{ profile.user.username }}</h1>
+            <h1 class="display-4">{{ profile.user.first_name }} {{ profile.user.last_name }}</h1>
             <p class="lead">{{ profile.phone_number }}</p>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <a href="{% url 'edit_profile' %}" class="btn btn-primary bg-gradient">Edit Profile</a>
+            </div>
         </div>
 
         <div class="row">
@@ -60,13 +58,11 @@
             </div>
 
             <div class="col-md-6">
-                <!-- Add any additional information or widgets here -->
                 <div class="card mb-4">
                     <div class="card-header">
                         <h5 class="card-title">Weight Progress Tracker</h5>
                     </div>
                     <div class="card-body">
-                        <!-- Add more details if needed -->
                         <div class="chart-container" style="height: 300px; width:500px">
                             <canvas id="weightChart"></canvas>
                         </div>

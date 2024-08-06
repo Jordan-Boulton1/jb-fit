@@ -1,7 +1,8 @@
 from django.urls import path, include
-from .views import profile_view
+from . import views
 
 urlpatterns = [
     path("accounts/", include("django.contrib.auth.urls")),
-    path("accounts/profile/", profile_view, name='profile')
+    path("accounts/profile/", views.profile_view, name='profile'),
+    path("accounts/profile/edit/", views.edit_profile_view, name='edit_profile'),
 ]

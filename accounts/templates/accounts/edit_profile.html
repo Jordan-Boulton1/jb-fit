@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+{% block content %}
+<body>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title">Update Personal Information</h5>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="id_phone_number" class="form-label">Phone Number</label>
+                                <input type="text" class="form-control" id="id_phone_number" name="phone_number" value="{{ form.phone_number.value }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="id_address" class="form-label">Address</label>
+                                <textarea class="form-control" id="id_address" name="address" rows="3">{{ form.address.value }}</textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="id_gender" class="form-label">Gender</label>
+                                <select class="form-select" id="id_gender" name="gender">
+                                    {% for choice in form.gender.field.choices %}
+                                        <option value="{{ choice.0 }}" {% if choice.0 == form.gender.value %}selected{% endif %}>{{ choice.1 }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="id_date_of_birth" class="form-label">Date of Birth</label>
+                                <input type="date" class="form-control" id="id_date_of_birth" name="date_of_birth" value="{{ form.date_of_birth.value }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="id_current_weight" class="form-label">Starting Weight (kg)</label>
+                                <input type="number" step="0.01" class="form-control" id="id_current_weight" name="current_weight" value="{{ form.current_weight.value }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="id_height" class="form-label">Height (cm)</label>
+                                <input type="number" step="0.01" class="form-control" id="id_height" name="height" value="{{ form.height.value }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="id_goal_weight" class="form-label">Goal Weight (kg)</label>
+                                <input type="number" step="0.01" class="form-control" id="id_goal_weight" name="goal_weight" value="{{ form.goal_weight.value }}">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
+</html>
