@@ -69,47 +69,66 @@
                         <script>
                             document.addEventListener('DOMContentLoaded', function () {
                                 var ctx = document.getElementById('weightChart').getContext('2d');
-                                var myChart = new Chart(ctx, {
-                                    type: 'line',
-                                    data: {
-                                        labels: ["2024-01-01", "2024-01-02", "2024-01-03", "2024-01-04"],
-                                        datasets: [{
-                                            label: 'Weight (kg)',
-                                            data: [70, 69, 65, 80],
-                                            borderColor: 'rgba(75, 192, 192, 1)',
-                                            borderWidth: 1,
-                                            fill: false
-                                        }]
-                                    },
-                                    options: {
-                                        scales: {
-                                            x: {
-                                                beginAtZero: true,
-                                                title: {
-                                                    display: true,
-                                                    text: 'Date'
-                                                },
-                                                border: {
-                                                    color: "orange"
-                                                }
+                                fetch("{% url 'get_user_weight_logs' %}")
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        // Format the entry_date to 'YYYY-MM-DD' format
+                                        var labels = data.map(log => {
+                                            let date = new Date(log.entry_date);
+                                            return date.toISOString().split('T')[0];  // Extract 'YYYY-MM-DD' from ISO string
+                                        });
+                                        
+                                        var weights = data.map(log => log.weight);
+                        
+                                        var myChart = new Chart(ctx, {
+                                            type: 'line',
+                                            data: {
+                                                labels: labels,
+                                                datasets: [{
+                                                    label: 'Weight (kg)',
+                                                    data: weights,
+                                                    borderColor: 'rgba(75, 192, 192, 1)',
+                                                    borderWidth: 1,
+                                                    fill: false
+                                                }]
                                             },
-                                            y: {
-                                                beginAtZero: true,
-                                                title: {
-                                                    display: true,
-                                                    text: 'Weight (kg)'
-                                                },
-                                                border: {
-                                                    color: "orange"
+                                            options: {
+                                                scales: {
+                                                    x: {
+                                                        type: 'time',  // Use time scale for better date handling
+                                                        time: {
+                                                            unit: 'day',  // Display data by day
+                                                            tooltipFormat: 'YYYY-MM-DD'  // Format tooltip as 'YYYY-MM-DD'
+                                                        },
+                                                        title: {
+                                                            display: true,
+                                                            text: 'Date'
+                                                        },
+                                                        ticks: {
+                                                            callback: function(value, index, values) {
+                                                                // Display only the date part (e.g., '2024-08-07')
+                                                                return value.split('T')[0];
+                                                            }
+                                                        }
+                                                    },
+                                                    y: {
+                                                        title: {
+                                                            display: true,
+                                                            text: 'Weight (kg)'
+                                                        }
+                                                    }
                                                 }
                                             }
-                                        }
-                                    }
+                                        });
+                                    })
+                                    .catch(error => console.error('Error fetching weight logs:', error));
                                 });
-                            });
                         </script>
                     </div>
                 </div>
+            </div>
+            <div class="col-12 text-center">
+                <a href="{% url 'add_weight_log' %}" class="btn btn-lg btn-success bg-gradient d-block mx-auto text-center mt-2">Add Weight Log</a>
             </div>
         </div>
     </div>

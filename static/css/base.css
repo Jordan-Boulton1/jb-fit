@@ -179,6 +179,14 @@ footer {
     margin: 0;
 }
 
+.profile-card {
+    border-color: var(--primary-color) !important;
+}
+
+.profile-card-header {
+    border-bottom-color: var(--primary-color);
+}
+
 @media (min-width: 576px) {
     .about-text, .coach-desc {
         font-size: 1.25rem;

@@ -5,7 +5,7 @@ from django.core.exceptions import ValidationError
 from allauth.account.forms import SignupForm, LoginForm
 from datetime import date
 
-from accounts.models import UserProfile
+from accounts.models import UserProfile, WeightLog
 
 
 
@@ -110,3 +110,11 @@ class UserProfileForm(forms.ModelForm):
         goal_weight = cleaned_data.get('goal_weight')
 
         return cleaned_data
+    
+class WeightLogForm(forms.ModelForm):
+    class Meta:
+        model = WeightLog
+        fields = ['weight']
+        widgets = {
+            'weight': forms.NumberInput(attrs={'step': '0.1', 'class': 'form-control'}),
+        }
