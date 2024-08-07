@@ -62,3 +62,14 @@ I've used CSS `:root` variables to easily update the global colour scheme by cha
 /* Bootstrap overrides */
 --bs-body-bg: #f5f5f5;
 --bs-body-font-family: 'Cambay', sans-serif;
+```
+
+### Typography
+
+- [Montserrat](https://fonts.google.com/specimen/Montserrat) was used for the primary headers and titles.
+
+- [Mukta](https://fonts.google.com/specimen/Mukta) was used for the secondary headers and titles.
+
+- [Cambay](https://fonts.google.com/specimen/Cambay) was used for all other secondary text.
+
+- [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the social media icons in the footer.
