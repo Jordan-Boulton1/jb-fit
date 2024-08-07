@@ -73,3 +73,29 @@ I've used CSS `:root` variables to easily update the global colour scheme by cha
 - [Cambay](https://fonts.google.com/specimen/Cambay) was used for all other secondary text.
 
 - [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the social media icons in the footer.
+
+## User Stories
+
+### New Site Users
+
+- As a **new user**, I want to **register and create an account**, so that I can **access personalized fitness and nutrition plans.**
+- As a **new user**, I want to **read success stories and testimonials** so that **I can trust the effectiveness of the coaching services.**
+- As a **new user**, I want to **be able to message the coach with any queries I have before purchasing a plan**, so that I **can make an informed decision.**
+
+### Registered Site Users
+
+- As a **registered user**, I want to **manage and update my profile information**, so that my **fitness and nutrition plans remain accurate and relevant.**
+- As a **registered user**, I want to **securely pay for my selected training package using Stripe**, so that I can **access my plans and coaching services.**
+- As a **registered user**, I want to **have regular check-ins and track my progress**, so that **I stay motivated and on track with my fitness goals.**
+- As a **registered user**, I want to **access community forums** so that **I can engage with other users and share my experiences.**
+- As a **registered user**, I want to **book video consultations with my coach** so that I can **receive personalized guidance and feedback.**
+- As a **registered user** that has bought the elite plan, I want access to **exclusive fitness and nutrition workshops** so that I can **deepen my knowledge and skills.**
+- As a **registered user**, I want to **understand the cancellation and refund policy** so that I **know what to expect if I need to stop my subscription.**
+- As a **registered user**, I want to **contact my coach for support** so that I **can get help when I need it.**
+
+### Site Admin
+
+- As an **admin**, I want to **create, manage and update subscription plans** so that **users can see the up-to-date plans and services at the current time**
+- As an **admin**, I want to **view and manage payments** so that **I can keep track of subscription fees and payment statuses.**
+- As an **admin**, I want to **manage community content** so that **the forum remains a positive and supportive environment.**
+- As an **admin**, I want to **integrate Stripe for handling payments** so that **users can subscribe to plans and make payments securely.**

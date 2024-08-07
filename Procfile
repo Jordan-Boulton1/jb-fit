@@ -1,1 +1,1 @@
-web: gunicorn jb-fit.wsgi
+web: gunicorn jb_fit.wsgi
