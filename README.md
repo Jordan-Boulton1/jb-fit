@@ -99,3 +99,23 @@ I've used CSS `:root` variables to easily update the global colour scheme by cha
 - As an **admin**, I want to **view and manage payments** so that **I can keep track of subscription fees and payment statuses.**
 - As an **admin**, I want to **manage community content** so that **the forum remains a positive and supportive environment.**
 - As an **admin**, I want to **integrate Stripe for handling payments** so that **users can subscribe to plans and make payments securely.**
+
+### Mock-ups
+
+<details>
+<summary> Click here to see the Home Page Mock-ups</summary>
+
+Home
+  - ![screenshot](documentation/wireframes/home/home-mockup1.png)
+
+  - ![screenshot](documentation/wireframes/home/home-mockup2.png)
+
+  - ![screenshot](documentation/wireframes/home/home-mockup3.png)
+
+  - ![screenshot](documentation/wireframes/home/home-mockup4.png)
+
+  - ![screenshot](documentation/wireframes/home/home-mockup5.png)
+
+  - ![screenshot](documentation/wireframes/home/home-mockup6.png)
+
+</details>
