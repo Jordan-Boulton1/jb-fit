@@ -1,4 +1,4 @@
-# [JB Fit](https://jb-ci-boutique-ado-0fd50c244260.herokuapp.com)
+# [JB Fit](https://ci-jb-fit-73ac55dce174.herokuapp.com/)
 
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/t/Jordan-Boulton1/peak-performance)](https://github.com/Jordan-Boulton1/peak-performance/commits/main)
 [![GitHub last commit](https://img.shields.io/github/last-commit/Jordan-Boulton1/peak-performance)](https://github.com/Jordan-Boulton1/peak-performance/commits/main)
@@ -34,3 +34,31 @@ JB Fit is more than just a fitness application—it's your partner in achieving 
 ![screenshot](documentation/mockup.png)
 
 source: [amiresponsive](https://ui.dev/amiresponsive?url=https://jb-ci-boutique-ado-0fd50c244260.herokuapp.com)
+
+## UX
+
+
+When designing this webpage I wanted to achieve a simple, yet welcoming and professional feeling, creating a nice user experience.
+
+### Colour Scheme
+
+The colour scheme for the JB Fit website has been thoughtfully selected to create a visually appealing and effective user experience.
+
+- `#FFFFFF` & `#000000` used interchangeably for primary text and headings.
+- `#FF5100` used for primary highlights.
+- `#f5f5f5` used as the  primary background colour.
+- `#353431` used as the secondary background colour, primarily in the navbar and footer.
+
+I used [coolors.co](https://coolors.co/ffffff-f5f5f5-ff5100-353431-000000) to generate my colour palette.
+
+![screenshot](documentation/coolors.png)
+
+I've used CSS `:root` variables to easily update the global colour scheme by changing only one value, instead of everywhere in the CSS file.
+
+```css
+:root {
+--primary-color: #353431;
+--primary-color-highlight: #FF5100;
+/* Bootstrap overrides */
+--bs-body-bg: #f5f5f5;
+--bs-body-font-family: 'Cambay', sans-serif;
