@@ -100,12 +100,17 @@ I've used CSS `:root` variables to easily update the global colour scheme by cha
 - As an **admin**, I want to **manage community content** so that **the forum remains a positive and supportive environment.**
 - As an **admin**, I want to **integrate Stripe for handling payments** so that **users can subscribe to plans and make payments securely.**
 
-### Mock-ups
+## Mock-ups
+
+To follow best practice, mockups were developed for this project.
+I've used [Figma](https://www.figma.com) to design my site mockups.
+
+### Home Page Mock-ups
 
 <details>
 <summary> Click here to see the Home Page Mock-ups</summary>
 
-Home
+#### Home
   - ![screenshot](documentation/wireframes/home/home-mockup1.png)
 
   - ![screenshot](documentation/wireframes/home/home-mockup2.png)
@@ -117,5 +122,67 @@ Home
   - ![screenshot](documentation/wireframes/home/home-mockup5.png)
 
   - ![screenshot](documentation/wireframes/home/home-mockup6.png)
+
+</details>
+
+### About Page Mock-ups
+
+<details>
+<summary> Click here to see the About Page Mock-ups</summary>
+
+#### About
+  - ![screenshot](documentation/wireframes/about/about-mockup1.png)
+  
+  - ![screenshot](documentation/wireframes/about/about-mockup2.png)
+
+  - ![screenshot](documentation/wireframes/about/about-mockup3.png)
+
+  - ![screenshot](documentation/wireframes/about/about-mockup4.png)
+
+  - ![screenshot](documentation/wireframes/about/about-mockup5.png)
+
+</details>
+
+### Plans Page Mock-ups
+
+<details>
+<summary> Click here to see the Plans Page Mock-ups</summary>
+
+#### Plans
+  - ![screenshot](documentation/wireframes/plans/plan-mockup1.png)
+
+  - ![screenshot](documentation/wireframes/plans/plan-mockup2.png)
+
+  - ![screenshot](documentation/wireframes/plans/plan-mockup3.png)
+
+</details>
+
+### FAQ Page Mock-ups
+
+<details>
+<summary> Click here to see the FAQ Page Mock-ups</summary>
+
+#### FAQ
+  - ![screenshot](documentation/wireframes/faq/faq-mockup1.png)
+
+  - ![screenshot](documentation/wireframes/faq/faq-mockup2.png)
+
+</details>
+
+### Testimonials Page Mock-ups
+
+<details>
+<summary> Click here to see the Testimonials Page Mock-ups</summary>
+
+#### Testimonials
+  - ![screenshot](documentation/wireframes/testimonials/testimonial-mockup1.png)
+
+  - ![screenshot](documentation/wireframes/testimonials/testimonial-mockup2.png)
+
+  - ![screenshot](documentation/wireframes/testimonials/testimonial-mockup3.png)
+
+  - ![screenshot](documentation/wireframes/testimonials/testimonial-mockup4.png)
+
+  - ![screenshot](documentation/wireframes/testimonials/testimonial-mockup5.png)
 
 </details>
