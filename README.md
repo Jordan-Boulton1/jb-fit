@@ -217,3 +217,74 @@ I've used [Figma](https://www.figma.com) to design my site mockups.
 - [![StackEdit](https://img.shields.io/badge/StackEdit-grey?logo=stackedit&logoColor=white)](https://www.stackedit.io) used as an in-browser markdown editor.
 - [![Logo](https://img.shields.io/badge/Logo-grey?logo=google-chrome&logoColor=24aae3)](https://logo.com/) used to create the logo for the website.
 - [![ImageResizer](https://img.shields.io/badge/ImageResizer-grey?logo=google-chrome&logoColor=24e341)](https://imageresizer.com/) used compress and resize images.
+
+## Database Design
+
+Entity Relationship Diagrams (ERD) help to visualize database architecture before creating models.
+Understanding the relationships between different tables can save time later in the project.
+
+```mermaid
+erDiagram
+User ||--o{ TrainingPlan : fk_User_TrainingPlan
+User ||--|{ Checkout : fk_User_Checkout
+User ||--o{ WeightLog : fk_User_WeightLog
+User ||--o{ ProgressImage : fk_User_ProgressImage
+TrainingPlan ||--|{ Checkout : fk_TrainingPlan_Checkout
+
+
+User {
+  int id  PK
+  varchar(50) first_name
+  varchar(50) last_name
+  varchar(255) email
+  varchar(100) password
+  varchar(30) phone_number
+  varchar(100) address
+  varchar(255) image
+  int gender
+  datetime date_of_birth
+  decimal current_weight
+  decimal height
+  decimal goal_weight
+  int training_plan_id  FK  "NULL"
+}
+
+TrainingPlan {
+  int id  PK
+  varchar(150) title
+  text description
+  decimal price
+}
+
+WeightLog {
+  int id  PK
+  int user_id  FK
+  decimal weight
+  datetime entry_date
+}
+
+ProgressImage {
+  int id  PK
+  int user_id  FK
+  varchar(255) image
+  dateTime entry_date
+}
+
+Checkout {
+  int id  PK
+  int user_id  FK
+  int training_plan_id  FK
+  decimal total
+}
+
+Newsletter {
+  varchar(255) email
+}
+
+Contact {
+  varchar(50) first_name
+  varchar(50) last_name
+  varchar(255) email
+  text message
+}
+```
