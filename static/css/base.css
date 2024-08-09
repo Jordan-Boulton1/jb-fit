@@ -165,13 +165,14 @@ footer {
 
 #quote {
     background-color: var(--primary-color);
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/img/jakob-owens-A4579vLezz8-unsplash.jpg') no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/media/about-page-hero.webp') no-repeat center center;
     background-size: cover;
     height: 750px;
+    margin-top: -80px;
 }
 
 #philosophy {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/img/crosby-hinze-kvJYlUXk4hQ-unsplash.jpg') no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/media/about-page-philosophy.webp') no-repeat center center;
     background-size: cover;
 }
 
