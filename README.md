@@ -316,3 +316,19 @@ It also helped with milestone iterations on a weekly basis.
 - [Closed Issues](https://github.com/Jordan-Boulton1/peak-performance/issues?q=is%3Aissue+is%3Aclosed) [![GitHub closed issues](https://img.shields.io/github/issues-closed/Jordan-Boulton1/peak-performance)](https://github.com/Jordan-Boulton1/peak-performance/issues?q=is%3Aissue+is%3Aclosed)
 
     ![screenshot](documentation/gh-closed-issues.png)
+
+### MoSCoW Prioritization
+
+I've decomposed my Epics into stories prior to prioritizing and implementing them.
+Using this approach, I was able to apply the MoSCow prioritization and labels to my user stories within the Issues tab.
+
+- **Must Have**: guaranteed to be delivered (*max 60% of stories*)
+- **Should Have**: adds significant value, but not vital (*the rest ~20% of stories*)
+- **Could Have**: has small impact if left out (*20% of stories*)
+- **Won't Have**: not a priority for this iteration
+
+### Milestones
+
+To achieve success in the implementation of this project, I have setup milestones for the end of each week, which represented my "sprints". My approach to solving the business problem in the domain area was to do vertical slicing of the system, instead of horizontal - an approach that I have used so far in my projects. Vertical slicing focuses on ensuring that at the end of each sprint you are able to produce something in the system that is deployable, worthy of a "demo", and that is useable by the client.
+
+![screenshot](documentation/gh-milestones.png)
