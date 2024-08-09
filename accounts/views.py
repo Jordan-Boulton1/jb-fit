@@ -52,3 +52,41 @@ def get_user_weight_logs(request):
         
     except WeightLog.DoesNotExist:
         return JsonResponse({"message": 'Weight log not found'}, status=404)
+    
+
+
+@login_required
+def get_user_weight_logs_history(request):
+    try:
+        weight_logs = WeightLog.objects.filter(user=request.user).order_by('-entry_date').values('id', 'entry_date', 'weight')
+        weight_logs_list = list(weight_logs)
+        return JsonResponse(weight_logs_list, safe=False)
+        
+    except WeightLog.DoesNotExist:
+        return JsonResponse({"message": 'Weight logs not found'}, status=404)
+    
+
+@login_required
+def edit_weight_log(request, log_id):
+    weight_log = get_object_or_404(WeightLog, id=log_id, user=request.user)
+
+    if request.method == 'POST':
+        form = WeightLogForm(request.POST, instance=weight_log)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+    else:
+        form = WeightLogForm(instance=weight_log)
+
+    return render(request, 'accounts/edit_weight_log.html', {'form': form, 'weight_log': weight_log}) 
+
+
+@login_required
+def delete_weight_log(request, log_id):
+    weight_log = get_object_or_404(WeightLog, id=log_id, user=request.user)
+
+    if request.method == 'DELETE':
+        weight_log.delete()
+        return JsonResponse({'success': True})
+    
+    return JsonResponse({'success': False})
