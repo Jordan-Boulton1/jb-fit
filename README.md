@@ -288,3 +288,31 @@ Contact {
   text message
 }
 ```
+
+I have used [mermaidchart](https://www.mermaidchart.com/) to generate an ERD.
+
+## Agile Development Process
+
+### GitHub Projects
+
+[GitHub Projects](https://github.com/Jordan-Boulton1/jb-fit/projects?query=is%3Aopen) served as an Agile tool for this project.
+It isn't a specialized tool, but with the right tags and project creation/issue assignments, it can be made to work.
+
+Through it, user stories, issues, and milestone tasks were planned, then tracked on a weekly basis using the basic Kanban board.
+
+![screenshot](documentation/projects-board.png)
+
+### GitHub Issues
+
+[GitHub Issues](https://github.com/Jordan-Boulton1/peak-performance/issues) served as an another Agile tool.
+There, I used my own **User Story Template** to manage user stories.
+
+It also helped with milestone iterations on a weekly basis.
+
+- [Open Issues](https://github.com/Jordan-Boulton1/peak-performance/issues) [![GitHub issues](https://img.shields.io/github/issues/Jordan-Boulton1/peak-performance)](https://github.com/Jordan-Boulton1/peak-performance/issues)
+
+    ![screenshot](documentation/gh-open-issues.png)
+
+- [Closed Issues](https://github.com/Jordan-Boulton1/peak-performance/issues?q=is%3Aissue+is%3Aclosed) [![GitHub closed issues](https://img.shields.io/github/issues-closed/Jordan-Boulton1/peak-performance)](https://github.com/Jordan-Boulton1/peak-performance/issues?q=is%3Aissue+is%3Aclosed)
+
+    ![screenshot](documentation/gh-closed-issues.png)
