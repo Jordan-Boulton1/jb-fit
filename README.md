@@ -31,9 +31,9 @@ JB Fit is designed for:
 
 JB Fit is more than just a fitness application—it's your partner in achieving a healthier, stronger, and more empowered version of yourself. Take the step towards reaching your peak performance with JB Fit.
 
-![screenshot](documentation/mockup.png)
+![screenshot](documentation/responsive-mockup.png)
 
-source: [amiresponsive](https://ui.dev/amiresponsive?url=https://jb-ci-boutique-ado-0fd50c244260.herokuapp.com)
+source: [amiresponsive](https://ui.dev/amiresponsive?url=https://ci-jb-fit-73ac55dce174.herokuapp.com/)
 
 ## UX
 
