@@ -10,7 +10,7 @@ class UserProfile(models.Model):
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=15, blank=True)
-    address = models.TextField(blank=True)
+    address = models.TextField(max_length=40, blank=True)
     image = models.ImageField(upload_to='profile_images/', blank=True)
     gender = models.CharField(
         max_length=10, choices=[
@@ -23,8 +23,7 @@ class UserProfile(models.Model):
     goal_weight = models.DecimalField(
         max_digits=5, decimal_places=2, blank=True, null=True)
 
-    def __str__(self):
-        return self.user.username
+
     
 class WeightLog(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
