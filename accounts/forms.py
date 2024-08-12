@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
 
 from allauth.account.forms import SignupForm, LoginForm
-from datetime import date
+from datetime import date, datetime
 
 from accounts.models import UserProfile, WeightLog
 
@@ -72,12 +72,26 @@ class UserProfileForm(forms.ModelForm):
         model = UserProfile
         fields = ['phone_number', 'address', 'date_of_birth', 'current_weight', 'height', 'goal_weight']
         widgets = {
-            'date_of_birth': forms.DateInput(attrs={'type': 'date'}),
+            'date_of_birth': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
             'current_weight': forms.NumberInput(attrs={'step': '0.1'}),
             'height': forms.NumberInput(attrs={'step': '0.1'}),
             'goal_weight': forms.NumberInput(attrs={'step': '0.1'}),
         }
-    
+
+        labels = {
+            'date_of_birth': 'Date of Birth', 
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name in self.fields:
+            self.fields[field_name].required = True
+
+        # Set the initial value for date_of_birth if the instance exists and has a value
+        if self.instance and self.instance.pk:
+            if self.instance.date_of_birth:
+                self.fields['date_of_birth'].initial = self.instance.date_of_birth.strftime('%Y-%m-%d')
+
     def clean_phone_number(self):
         phone_number = self.cleaned_data.get('phone_number')
         if phone_number:
@@ -106,8 +120,11 @@ class UserProfileForm(forms.ModelForm):
     
     def clean(self):
         cleaned_data = super().clean()
-        current_weight = cleaned_data.get('current_weight')
-        goal_weight = cleaned_data.get('goal_weight')
+        date_of_birth = cleaned_data.get('date_of_birth')
+
+         # Validate that the date_of_birth is not in the future
+        if date_of_birth and date_of_birth > datetime.today().date():
+            self.add_error('date_of_birth', 'Date of birth cannot be in the future.')
 
         return cleaned_data
     

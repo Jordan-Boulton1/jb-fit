@@ -3,6 +3,8 @@ from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .forms import UserProfileForm, WeightLogForm
+from django.contrib.auth.models import User
+from django.contrib import messages
 from .models import UserProfile, WeightLog
 
 # Create your views here.
@@ -90,3 +92,21 @@ def delete_weight_log(request, log_id):
         return JsonResponse({'success': True})
     
     return JsonResponse({'success': False})
+
+@login_required
+def delete_user_profile(request):
+    try:
+        user = get_object_or_404(User, id=request.user.id)
+        if user == request.user:
+            # TODO: add a check before deletion for the user subscription. Issue #17
+            user.delete()
+            messages.success(request,
+                                "Your account has been successfully deleted")
+        else:
+            messages.error(request, "You do not have permission"
+                                    " to delete this user.")
+    except User.DoesNotExist:
+        messages.error(request, "The requested user does not exist.")
+        return redirect('not_found')
+    return redirect("home")
+

@@ -10,4 +10,5 @@ urlpatterns = [
     path("api/weight-logs-history/", views.get_user_weight_logs_history, name='get_user_weight_logs_history'),
     path('edit-weight-log/<int:log_id>/', views.edit_weight_log, name='edit_weight_log'),
     path('api/delete-weight-log/<int:log_id>/', views.delete_weight_log, name='delete-weight-log'),
+    path('api/delete-user/', views.delete_user_profile, name='delete-user'),
 ]
