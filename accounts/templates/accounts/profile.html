@@ -1,21 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
-    <style>
-        .profile-header {
-            background-color: #f8f9fa;
-            padding: 2rem;
-            border-bottom: 1px solid #e9ecef;
-        }
-        .profile-image {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-        }
-    </style>
+
 {% block content %}
 <body>
     <div class="container mt-4">
+        {% if not profile.address or not profile.phone_number or not profile.current_weight or not profile.goal_weight or not profile.height %}
+        <div class="warning">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>Warning:</strong> Please complete your profile by filling out the missing fields: 
+            {% if not profile.address %} <span class="fw-bold">Address</span> {% endif %}
+            {% if not profile.phone_number %} <span class="fw-bold">Phone Number</span> {% endif %}
+            {% if not profile.current_weight %} <span class="fw-bold">Current Weight</span> {% endif %}
+            {% if not profile.goal_weight %} <span class="fw-bold">Goal Weight</span> {% endif %}
+            {% if not profile.height %} <span class="fw-bold">Height</span> {% endif %}
+        </div>
+        {% endif %}
         <div class="profile-header text-center">
             {% if profile.image %}
                 <img src="{{ profile.image.url }}" alt="Profile Image" class="profile-image rounded mb-3">
