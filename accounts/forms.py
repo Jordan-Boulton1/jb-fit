@@ -42,7 +42,6 @@ class CustomSignupForm(SignupForm):
         user = super().save(request)
         user.first_name = self.cleaned_data['first_name']
         user.last_name = self.cleaned_data['last_name']
-        user.date_of_birth = self.cleaned_data['date_of_birth']
         user.save()
 
         # Mapping and saving gender to user profile
@@ -52,6 +51,7 @@ class CustomSignupForm(SignupForm):
         # Save the full gender description in UserProfile
         user_profile, created = UserProfile.objects.get_or_create(user=user)
         user_profile.gender = full_gender
+        user_profile.date_of_birth = self.cleaned_data['date_of_birth']
         user_profile.save()
 
         return user
