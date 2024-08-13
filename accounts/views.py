@@ -18,14 +18,21 @@ def profile_view(request):
 @login_required
 def edit_profile_view(request):
     profile = get_object_or_404(UserProfile, user=request.user)
+
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
-            form.save()
+            form.save()  # This will now update both User and UserProfile
+            messages.success(request, "Profile updated successfully.")
             return redirect('profile')  # Redirect to the profile page after saving
+        else:
+            messages.error(request, 'There was a problem updating your account.')
+            return render(request, 'accounts/edit_profile.html', {'form': form})
     else:
         form = UserProfileForm(instance=profile)
+
     return render(request, 'accounts/edit_profile.html', {'form': form})
+
 
 @login_required
 def add_weight_log(request):

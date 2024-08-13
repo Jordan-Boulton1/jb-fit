@@ -1,6 +1,7 @@
 from django import forms
 from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
+from django.contrib.auth.models import User
 
 from allauth.account.forms import SignupForm, LoginForm
 from datetime import date, datetime
@@ -68,9 +69,12 @@ class CustomLoginForm(LoginForm):
         self.fields['remember'].widget.attrs.update({'class': 'form-check-input'})
 
 class UserProfileForm(forms.ModelForm):
+    email = forms.EmailField(label='Email', required=True)
+
+
     class Meta:
         model = UserProfile
-        fields = ['phone_number', 'address', 'date_of_birth', 'current_weight', 'height', 'goal_weight']
+        fields = ['email', 'phone_number', 'address', 'date_of_birth', 'current_weight', 'height', 'goal_weight']
         widgets = {
             'date_of_birth': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
             'current_weight': forms.NumberInput(attrs={'step': '0.1'}),
@@ -84,6 +88,13 @@ class UserProfileForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
+        self.fields['email'].widget.attrs.update({'class': 'form-control'})
+
+        # Initialize the email field with the user's email
+        if self.instance and self.instance.pk:
+            self.fields['email'].initial = self.instance.user.email
+
         for field_name in self.fields:
             self.fields[field_name].required = True
 
@@ -91,6 +102,16 @@ class UserProfileForm(forms.ModelForm):
         if self.instance and self.instance.pk:
             if self.instance.date_of_birth:
                 self.fields['date_of_birth'].initial = self.instance.date_of_birth.strftime('%Y-%m-%d')
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if not email:
+            raise ValidationError('Email is required.')
+        
+        if User.objects.filter(email=email).exclude(pk=self.instance.user.pk).exists():
+            raise ValidationError('This email address is already in use.')
+        
+        return email
 
     def clean_phone_number(self):
         phone_number = self.cleaned_data.get('phone_number')
@@ -122,12 +143,24 @@ class UserProfileForm(forms.ModelForm):
         cleaned_data = super().clean()
         date_of_birth = cleaned_data.get('date_of_birth')
 
-         # Validate that the date_of_birth is not in the future
+        # Validate that the date_of_birth is not in the future
         if date_of_birth and date_of_birth > datetime.today().date():
             self.add_error('date_of_birth', 'Date of birth cannot be in the future.')
 
         return cleaned_data
     
+    def save(self, commit=True):
+        profile = super().save(commit=False)
+        # Update the user's email
+        user = profile.user
+        user.email = self.cleaned_data['email']
+        user.save()
+        # Save the profile
+        if commit:
+            profile.save()
+        return profile
+
+
 class WeightLogForm(forms.ModelForm):
     class Meta:
         model = WeightLog

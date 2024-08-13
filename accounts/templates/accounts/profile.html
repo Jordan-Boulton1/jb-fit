@@ -4,6 +4,20 @@
 {% block content %}
 <body>
     <div class="container mt-4">
+        <!-- Message section -->
+        {% if messages %}
+        <div class="alert alert-dismissable fade show" role="alert">
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} mt-2" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        
         {% if not profile.address or not profile.phone_number or not profile.current_weight or not profile.goal_weight or not profile.height %}
         <div class="warning">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
@@ -26,7 +40,7 @@
         </div>
 
         <div class="row mb-5">
-            <div class="col-12 d-flex justify-content-center align-items-center">
+            <div class="col-12 d-flex justify-content-center align-items-center mt-3">
                 <a href="{% url 'edit_profile' %}" class="btn btn-lg btn-primary bg-gradient">Edit Profile</a>
             </div>
         </div>
@@ -38,6 +52,7 @@
                         <h5 class="card-title">Personal Information</h5>
                     </div>
                     <div class="card-body">
+                        <p><strong>Email Address:</strong> {{ profile.user.email }}</p>
                         <p><strong>Address:</strong> {{ profile.address }}</p>
                         <p><strong>Gender:</strong> {{ profile.gender }}</p>
                         <p><strong>Date of Birth:</strong> {{ profile.date_of_birth }}</p>
