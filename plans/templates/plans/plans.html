@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="my-5 pb-5 py-xl-8" id="training-plans">
+    <div class="container">
+        <h1 class="fw-bold display-4 text-center text-body-emphasis plan-title">Training Plans</h1>
+        <p class="lead py-3">At JB Fit, I offer a range of personalized fitness services designed to help you achieve your health and fitness goals. Whether you're just starting your fitness journey or looking to take your training to the next level, there's a package that's right for you.</p>
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row gy-4 gy-xl-0 text-center">
+            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                <div class="card plan-card mb-4 rounded-3 shadow-sm h-100 border-primary">
+                    <div class="card-header py-3 border-primary">
+                        <h4 class="my-0 fw-normal">One-Time</h4>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h1 class="card-title pricing-card-title">£150</h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Workout Plan</li>
+                            <li>Nutrition Plan</li>
+                            <li>Consultation Session</li>
+                            <li>Email Support</li>
+                        </ul>
+                        <button type="button" class="mt-auto w-100 btn btn-lg btn-primary bg-gradient">Get started</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                <div class="card plan-card mb-4 rounded-3 shadow-sm h-100 border-primary">
+                    <div class="card-header py-3 border-primary">
+                        <h4 class="my-0 fw-normal">Essential Fitness</h4>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h1 class="card-title pricing-card-title">£99<small class="text-body-secondary fw-light">/mo</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Personalized Workout Plan</li>
+                            <li>Custom Nutrition Plan</li>
+                            <li>Bi-Weekly Check-Ins</li>
+                            <li>Access to Fitness Community</li>
+                            <li>Email & Chat Support</li>
+                        </ul>
+                        <button type="button" class="mt-auto w-100 btn btn-lg btn-primary bg-gradient">Get started</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                <div class="card plan-card mb-4 rounded-3 shadow-sm h-100 border-primary">
+                    <div class="card-header py-3 border-primary">
+                        <h4 class="my-0 fw-normal">Peak Performance</h4>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h1 class="card-title pricing-card-title">£199<small class="text-body-secondary fw-light">/mo</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Personalized Workout Plan</li>
+                            <li>Custom Nutrition Plan</li>
+                            <li>Weekly Check-Ins</li>
+                            <li>Video Consultations</li>
+                            <li>Access to Fitness Community</li>
+                            <li>Priority Email & Chat Support</li>
+                        </ul>
+                        <button type="button" class="mt-auto w-100 btn btn-lg btn-primary bg-gradient">Get started</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col col-md-6 col-lg-6 col-xl-3">
+                <div class="card plan-card mb-4 rounded-3 shadow-sm h-100 border-primary">
+                    <div class="card-header py-3 text-bg-primary border-primary">
+                        <h4 class="my-0 fw-normal">Elite Coaching</h4>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h1 class="card-title pricing-card-title">£299<small class="text-body-secondary fw-light">/mo</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Personalized Workout Plan</li>
+                            <li>Custom Nutrition Plan</li>
+                            <li>Weekly Video Consultations</li>
+                            <li>Unlimited Check-Ins</li>
+                            <li>Exclusive Access to Workshops</li>
+                            <li>Access to Fitness Community</li>
+                            <li>Priority 24/7 Support</li>
+                        </ul>
+                        <button type="button" class="mt-auto w-100 btn btn-lg btn-primary bg-gradient">Contact us</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-custom py-5">
+    <div class="container">
+        <h2 class="text-center display-5 fw-bold mb-4">Why Choose My Plans?</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            <div class="col">
+                <div class="text-center">
+                    <img src="{{ MEDIA_URL }}quality.webp" alt="Expertise" class="feature-icon mb-3">
+                    <h4>Expertise</h4>
+                    <p class="text-secondary">With over a decade of experience and multiple certifications, I bring professional expertise to your fitness journey.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="text-center">
+                    <img src="{{ MEDIA_URL }}customization.webp" alt="Customization" class="feature-icon mb-3">
+                    <h4>Customization</h4>
+                    <p class="text-secondary">Each plan is tailored to your specific goals, fitness level, and lifestyle, ensuring you get the best results.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="text-center">
+                    <img src="{{ MEDIA_URL }}support.webp" alt="Support" class="feature-icon mb-3">
+                    <h4>Support</h4>
+                    <p class="text-secondary">Receive continuous support and motivation through regular check-ins, community engagement, and 24/7 assistance.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="text-center">
+                    <img src="{{ MEDIA_URL }}task.webp" alt="Results" class="feature-icon mb-3">
+                    <h4>Results</h4>
+                    <p class="text-secondary">My clients have successfully transformed their lives, achieving their fitness goals and maintaining long-term health and wellness.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Interested in Finding Out More Section -->
+<section class="my-5 py-5">
+    <div class="container">
+        <div class="text-center mb-4">
+            <h2 class="display-5 fw-bold text-body-emphasis">Interested in finding out more?</h2>
+            <p class="lead">Fill out the short form below, and i’ll get back to you ASAP</p>
+            <p class="text-secondary"><small>Please take a look at my <a class="text-decoration-none" href="">FAQ</a> before submitting your enquiry - It covers prices, availability, plans, check-ins and much more </small></p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form>
+                    <div class="row form-row pb-3">
+                        <div class="form-group col-md-6 pb-3">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                    <div class="form-group pb-3">
+                        <label for="email">Email Address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <div class="text-center pt-5">
+                        <button type="submit" class="btn btn-primary bg-gradient btn-lg w-50">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

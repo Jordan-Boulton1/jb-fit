@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'home',
     'accounts',
     'about',
+    'plans',
 
     # Other
     'storages',
