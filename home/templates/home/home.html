@@ -5,6 +5,15 @@
 <main>
     <!-- Hero Section -->
     <section class="hero d-flex justify-content-center align-items-center text-center img-fluid">
+        {% if messages %}
+            <div class="mt-3">
+                {% for message in messages %}
+                    <div class="alert alert-success" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
         <div class="container py-5">
             <h1 class="display-4 fw-bold text-white mb-3">Transform Your Life with Personal Online Fitness Coaching</h1>
             <p class="lead text-white mb-3">Achieve your fitness goals with personalized training programs tailored to your needs.</p>
