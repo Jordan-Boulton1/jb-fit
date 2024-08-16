@@ -332,3 +332,12 @@ Using this approach, I was able to apply the MoSCow prioritization and labels to
 To achieve success in the implementation of this project, I have setup milestones for the end of each week, which represented my "sprints". My approach to solving the business problem in the domain area was to do vertical slicing of the system, instead of horizontal - an approach that I have used so far in my projects. Vertical slicing focuses on ensuring that at the end of each sprint you are able to produce something in the system that is deployable, worthy of a "demo", and that is useable by the client.
 
 ![screenshot](documentation/gh-milestones.png)
+
+## Ecommerce Business Model
+
+
+This site sells goods directly to individual customers, following a **Business to Customer (B2C)** model. In addition to individual transactions, it also offers subscription options, allowing customers to receive products or services on a regular basis, such as monthly or annually.
+
+The business is still in its early development stages but already features a newsletter and social media marketing links. Social media, particularly on larger platforms like Facebook, can play a crucial role in building a community around the business, increasing site traffic, and fostering customer loyalty.
+
+The newsletter list is a valuable tool for the business to engage with its customers. It can be used to send regular updates about special offers, new products, changes in business hours, event notifications, and more, ensuring that subscribers stay informed and connected.
