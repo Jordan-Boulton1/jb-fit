@@ -213,6 +213,31 @@ I've used [Figma](https://www.figma.com) to design my site mockups.
 ![screenshot](documentation/features/feat-unauthenticated-user.png)
 ![screenshot](documentation/features/feat-authenticated-user.png)
 
+### Footer
+
+- **Social Media Links**
+
+    - The footer includes prominent social media links, allowing users to connect with JB Fit across multiple platforms like Facebook, Instagram, Twitter, LinkedIn, and YouTube. This integration helps build a community around the brand and keeps users engaged with the latest updates and content from JB Fit.
+
+![screenshot](documentation/features/feat-social-links.png)
+
+- **Newsletter Subscription Form**
+
+	- The footer also includes a newsletter subscription form, which is a valuable tool for maintaining communication with users. By subscribing, users receive monthly updates on fitness trends, promotions, and news. This feature is crucial for user retention and driving ongoing engagement.
+
+![screenshot](documentation/features/feat-newsletter.png)
+
+- **Quick Links Section**
+
+	- A quick links section in the footer provides easy access to the most important pages on the site. This section is especially useful for users who may need to quickly navigate to another part of the site without returning to the top of the page.
+
+![screenshot](documentation/features/feat-quick-links.png)
+
+- **Custom Footer Branding**
+
+	- The footer is customized to include JB Fit’s branding, including a copyright notice and branding colors. This consistent branding across the site enhances the professional appearance and reinforces the site’s identity.
+
+![screenshot](documentation/features/feat-footer.png)
 ## Tools & Technologies Used
 
 - [![Markdown Builder](https://img.shields.io/badge/Markdown_Builder-grey?logo=markdown&logoColor=000000)](https://tim.2bn.dev/markdown-builder) used to generate README and TESTING templates.
