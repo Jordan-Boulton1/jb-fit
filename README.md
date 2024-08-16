@@ -238,6 +238,51 @@ I've used [Figma](https://www.figma.com) to design my site mockups.
 	- The footer is customized to include JB Fit’s branding, including a copyright notice and branding colors. This consistent branding across the site enhances the professional appearance and reinforces the site’s identity.
 
 ![screenshot](documentation/features/feat-footer.png)
+
+### Home Page
+
+- **Hero**
+
+    - The hero section is the first thing users see when they visit the website. It features a strong, compelling headline and a call-to-action button that encourages users to start their fitness journey. This section is visually impactful, with a background image that sets the tone for the site, and a clear value proposition that appeals to users looking for personal online fitness coaching.
+
+![screenshot](documentation/features/home/feat-home-hero.png)
+
+- **About**
+
+    - The About section introduces the site's founder, Jordan, providing credibility and a personal connection with visitors. It explains Jordan's experience and qualifications, which helps to build trust with potential clients. The section is accompanied by a professional image, further enhancing the personal connection with visitors.
+
+![screenshot](documentation/features/home/feat-home-about.png)
+
+- **Online Personal Training**
+
+    - This section explains what online personal training is and outlines its benefits, such as flexibility, personalization, accessibility, and affordability. It also includes visually appealing icons that represent each benefit, making it easy for users to understand the advantages of online training at a glance. This section is crucial for educating visitors about the unique value proposition of online training.
+
+![screenshot](documentation/features/home/feat-home-online-pt.png)
+
+- **How It Works**
+
+    - The "How It Works" section breaks down the process of getting started with JB Fit into four easy steps: Initial Consultation, Personalized Plan, Ongoing Support, and Community Interaction. Each step is visually represented with an icon and a brief description, helping users understand what to expect when they sign up. This transparency is key to converting visitors into clients.
+
+![screenshot](documentation/features/home/feat-home-how-it-works.png)
+
+- **Client Reviews**
+
+    - The Client Reviews section features testimonials from satisfied clients, which are essential for building social proof. Each review is accompanied by a star rating and a photo of the client, making the testimonials more relatable and trustworthy. This section helps reassure potential clients of the quality and effectiveness of JB Fit’s services.
+
+![screenshot](documentation/features/home/feat-home-client-review.png)
+
+- **Training Plans**
+
+    - The Training Plans section presents the different packages available, each with a clear breakdown of what’s included and the associated cost. This section is designed to help users easily compare the options and choose the one that best fits their needs. The use of distinct cards for each plan, along with prominent pricing, makes this information easy to digest.
+
+![screenshot](documentation/features/home/feat-home-training-plans.png)
+
+- **Contact Form**
+
+    - The Contact Form section invites users to get in touch for more information or inquiries, with a prompt to check the FAQ for common questions. This section is designed to facilitate easy communication between potential clients and JB Fit, enhancing the user experience by providing a straightforward way to ask questions or start the sign-up process.
+
+![screenshot](documentation/features/home/feat-home-contact-form.png)
+
 ## Tools & Technologies Used
 
 - [![Markdown Builder](https://img.shields.io/badge/Markdown_Builder-grey?logo=markdown&logoColor=000000)](https://tim.2bn.dev/markdown-builder) used to generate README and TESTING templates.
