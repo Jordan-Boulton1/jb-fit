@@ -349,3 +349,21 @@ This was generated using my deployed site URL: https://ci-jb-fit-73ac55dce174.he
 
 After it finished crawling the entire site, it created a
 [sitemap.xml](sitemap.xml) which I've downloaded and included in the repository.
+
+### Robots
+
+I've created the [robots.txt](robots.txt) file at the root-level.
+Inside, I've included the default settings:
+
+```
+User-agent: *
+Disallow:
+Sitemap: https://jb-ci-boutique-ado-0fd50c244260.herokuapp.com/sitemap.xml
+```
+
+Further links for future implementation:
+- [Google search console](https://search.google.com/search-console)
+- [Creating and submitting a sitemap](https://developers.google.com/search/docs/advanced/sitemaps/build-sitemap)
+- [Managing your sitemaps and using sitemaps reports](https://support.google.com/webmasters/answer/7451001)
+- [Testing the robots.txt file](https://support.google.com/webmasters/answer/6062598)
+

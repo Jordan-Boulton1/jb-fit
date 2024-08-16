@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://jb-ci-boutique-ado-0fd50c244260.herokuapp.com/sitemap.xml
