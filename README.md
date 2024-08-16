@@ -187,6 +187,32 @@ I've used [Figma](https://www.figma.com) to design my site mockups.
 
 </details>
 
+## Features
+
+### Existing Features
+
+#### Navigation Bar
+
+- **Responsive Navigation Bar**
+
+    - The site includes a fully responsive navigation bar that adapts to different screen sizes. On mobile devices, the navigation bar collapses into a toggleable menu, enhancing usability for users on the go. The navigation bar provides easy access to essential pages such as Home, About, Plans, FAQ, and Community, ensuring users can quickly navigate the site. For logged-in users, additional options like 'My Profile' and 'Logout' are available, making it easy to manage their account.
+
+![screenshot](documentation/features/feat-responsive-nav1.png)
+![screenshot](documentation/features/feat-responsive-nav2.png)
+
+- **Custom Logo**
+
+    - The website features a custom logo prominently displayed in the navigation bar, reinforcing brand identity. This visual element helps establish trust and recognition, as users can immediately identify the JB Fit brand. The logo is linked to the homepage, allowing users to return to the main page with a single click.
+
+![screenshot](documentation/features/feat-logo.png)
+
+- **Authentication Links**
+
+    - Depending on the user's authentication status, the navigation bar dynamically displays relevant options. For unauthenticated users, 'Login' and 'Register' links are provided, encouraging new sign-ups and making it easy for returning users to log in. Authenticated users are presented with 'My Profile' and 'Logout' options, enabling seamless account management.
+
+![screenshot](documentation/features/feat-unauthenticated-user.png)
+![screenshot](documentation/features/feat-authenticated-user.png)
+
 ## Tools & Technologies Used
 
 - [![Markdown Builder](https://img.shields.io/badge/Markdown_Builder-grey?logo=markdown&logoColor=000000)](https://tim.2bn.dev/markdown-builder) used to generate README and TESTING templates.
