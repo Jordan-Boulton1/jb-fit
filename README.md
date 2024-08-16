@@ -376,3 +376,10 @@ I've created a mockup Facebook business account.
 
 ![screenshot](documentation/mockup-facebook1.png)
 ![screenshot](documentation/mockup-facebook2.png)
+
+### Newsletter Marketing
+
+I have incorporate a newsletter sign-up form on my application, to allow users to supply their
+email address if they are interested in learning more.
+
+![screenshot](documentation/newsletter.png)
