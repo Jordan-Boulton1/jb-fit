@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'accounts',
     'about',
     'plans',
+    'faq',
 
     # Other
     'storages',
