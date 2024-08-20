@@ -24,7 +24,7 @@
                         <h5 class="card-title">Update Personal Information</h5>
                     </div>
                     <div class="card-body">
-                        <form method="POST">
+                        <form method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
 
                             {% if form.non_field_errors %}
@@ -34,6 +34,11 @@
                                     {% endfor %}
                                 </div>
                             {% endif %}
+                            <!-- Image -->
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Image</label>
+                                <input type="file" class="form-control {% if form.email.errors %}is-invalid{% endif %}" id="image" name="image" accept="image/*" value="{{ form.image.value|default_if_none:'' }}">
+                            </div>
                             <!-- Email address -->
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email address</label>
@@ -135,6 +140,7 @@
                                     <button type="button" id="promptConfirmDelete" class="btn btn-danger">Delete Account</button>
                                 </div>                             
                             </div>
+                            <input type="hidden" name="form_type" value="editProfile">
                         </form>
                     </div>
                 </div>

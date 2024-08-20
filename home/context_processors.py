@@ -2,9 +2,9 @@ from .forms import NewsletterForm
 from django.contrib import messages
 
 def newsletter_form(request):
+    print(request)
     form = NewsletterForm()
-    
-    if request.method == 'POST':
+    if request.method == 'POST' and request.POST.get('form_type') == 'newsletter':
         form = NewsletterForm(request.POST)
         if form.is_valid():
             form.save()

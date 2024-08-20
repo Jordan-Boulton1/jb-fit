@@ -74,7 +74,7 @@ class UserProfileForm(forms.ModelForm):
 
     class Meta:
         model = UserProfile
-        fields = ['email', 'phone_number', 'address', 'date_of_birth', 'current_weight', 'height', 'goal_weight']
+        fields = ['email', 'phone_number', 'address', 'date_of_birth', 'current_weight', 'height', 'goal_weight', 'image']
         widgets = {
             'date_of_birth': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
             'current_weight': forms.NumberInput(attrs={'step': '0.1'}),
@@ -90,7 +90,8 @@ class UserProfileForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
 
         self.fields['email'].widget.attrs.update({'class': 'form-control'})
-
+        self.fields['image'].widget.attrs.update({'class': 'form-control'})
+        
         # Initialize the email field with the user's email
         if self.instance and self.instance.pk:
             self.fields['email'].initial = self.instance.user.email
@@ -107,9 +108,18 @@ class UserProfileForm(forms.ModelForm):
         email = self.cleaned_data.get('email')
         if not email:
             raise ValidationError('Email is required.')
-        
-        if User.objects.filter(email=email).exclude(pk=self.instance.user.pk).exists():
-            raise ValidationError('This email address is already in use.')
+
+        # Check if the email has changed
+        if self.instance and self.instance.pk:
+            original_email = self.instance.user.email
+            if email != original_email:
+                # Check if the new email is already in use
+                if User.objects.filter(email=email).exclude(pk=self.instance.user.pk).exists():
+                    raise ValidationError('This email address is already in use.')
+        else:
+            # Check if the email is already in use for new instances
+            if User.objects.filter(email=email).exists():
+                raise ValidationError('This email address is already in use.')
         
         return email
 
