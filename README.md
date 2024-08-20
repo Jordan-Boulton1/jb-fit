@@ -323,6 +323,51 @@ I've used [Figma](https://www.figma.com) to design my site mockups.
 
 ![screenshot](documentation/features/plans/feat-plans-why-choose.png)
 
+### FAQ Page
+
+- **FAQ Section**
+
+    - The FAQ section is designed with an accordion layout, which organizes frequently asked questions into expandable panels. This structure makes it easy for users to find answers to their specific questions without having to scroll through long blocks of text. The accordion is divided into multiple categories such as General Questions, Services & Packages, Pricing & Payments, Personalized Plans, Support & Community, and Getting Started. Each category addresses key areas of interest for potential and current clients, providing detailed and helpful information to guide them through their fitness journey with JB Fit.
+
+![screenshot](documentation/features/faq/feat-faq-accordian-open.png)
+![screenshot](documentation/features/faq/feat-faq-accordian-closed.png)
+
+- **General Questions**
+
+    - This section addresses broad, introductory questions about JB Fit, such as what the platform is and how online personal training works. It helps new visitors quickly understand the core services offered and the benefits of choosing JB Fit for their fitness needs.
+
+![screenshot](documentation/features/faq/feat-faq-accordian-open.png)
+
+- **Services & Packages**
+
+    - The Services & Packages section provides detailed information about the various services available and helps users decide which package is right for them. This section is crucial for helping potential clients understand the offerings and make an informed decision about which plan best suits their fitness goals.
+
+![screenshot](documentation/features/faq/feat-faq-services.png)
+
+- **Pricing & Payments**
+
+    - This section covers important information about payment methods, discounts, and cancellation policies. It ensures that users are fully informed about the financial aspects of signing up for JB Fit services, providing transparency and building trust with potential clients.
+
+![screenshot](documentation/features/faq/feat-faq-pricing.png)
+
+- **Personalized Plans**
+
+    - The Personalized Plans section explains how JB Fit customizes workout and nutrition plans based on each client's unique needs and preferences. It highlights the flexibility and personalized attention clients receive, which are key selling points for JB Fit's services.
+
+![screenshot](documentation/features/faq/feat-faq-personalized-plans.png)
+
+- **Support & Community**
+
+    - This section outlines the various levels of support available to clients, including check-ins, email and chat support, video consultations, and access to a supportive community. It emphasizes the ongoing support that clients receive, which is essential for maintaining motivation and achieving long-term success.
+
+![screenshot](documentation/features/faq/feat-faq-support-community.png)
+
+- **Getting Started**
+
+    - The Getting Started section provides a step-by-step guide for new clients on how to begin their journey with JB Fit. It covers the initial consultation process and the information required to create a personalized plan. This section is designed to make onboarding new clients as smooth and straightforward as possible.
+
+![screenshot](documentation/features/faq/feat-faq-getting-started.png)
+
 ## Tools & Technologies Used
 
 - [![Markdown Builder](https://img.shields.io/badge/Markdown_Builder-grey?logo=markdown&logoColor=000000)](https://tim.2bn.dev/markdown-builder) used to generate README and TESTING templates.
