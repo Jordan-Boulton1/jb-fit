@@ -309,6 +309,20 @@ I've used [Figma](https://www.figma.com) to design my site mockups.
 
 ![screenshot](documentation/features/about/feat-about-philosophy.png)
 
+### Plans Page
+
+- **Training Plans**
+
+    - The Training Plans section offers users a detailed overview of the different fitness packages available at JB Fit. Each plan is presented in a clean, card-based layout, making it easy for users to compare options and select the one that best suits their needs. The plans include various levels of support and customization, from a one-time plan to the comprehensive Elite Coaching package. This section is essential for helping users make informed decisions about their fitness journey and provides clear pricing for each option.
+
+![screenshot](documentation/features/plans/feat-plans-training.png)
+
+- **Why Choose My Plans?**
+
+    - This section highlights the key advantages of choosing JB Fit’s training plans, such as Expertise, Customization, Support, and Results. Each benefit is visually represented with an icon and a brief description, reinforcing the value of the services offered. This section is designed to build trust and confidence in potential clients by emphasizing the quality and effectiveness of the plans.
+
+![screenshot](documentation/features/plans/feat-plans-why-choose.png)
+
 ## Tools & Technologies Used
 
 - [![Markdown Builder](https://img.shields.io/badge/Markdown_Builder-grey?logo=markdown&logoColor=000000)](https://tim.2bn.dev/markdown-builder) used to generate README and TESTING templates.
