@@ -26,7 +26,7 @@
         <div class="container col-xxl-8 pt-5">
             <div class="row flex-lg-row align-items-center g-md-5 py-5">
                 <div class="col-10 col-lg-6">
-                    <img src="{{ STATIC_URL }}images/jb-fit-about.webp" class="d-none d-md-block mx-lg-auto img-fluid rounded-3" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+                    <img src="{% static 'images/jb-fit-about.webp' %}" class="d-none d-md-block mx-lg-auto img-fluid rounded-3" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
                 </div>
                 <div class="col-lg-6">
                     <h2 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">About Me</h2>
@@ -60,28 +60,28 @@
                     <div class="row row-cols-1 row-cols-sm-2 g-4 justify-content-center">
                         <div class="col d-flex flex-column gap-2">
                             <div class="feature-icon-small d-inline-flex align-items-center justify-content-center bg-primary bg-gradient fs-4 rounded-3">
-                                <img src="{{ STATIC_URL }}images/flexibility.webp" height="32" width="32" alt="Flexibility">
+                                <img src="{% static 'images/flexibility.webp' %}" height="32" width="32" alt="Flexibility">
                             </div>
                             <h4 class="fw-semibold mb-0 text-body-emphasis">Flexibility</h4>
                             <p class="text-body-secondary">Train at a time and place that suits you best. No more scheduling conflicts or commuting to the gym.</p>
                         </div>
                         <div class="col d-flex flex-column gap-2">
                             <div class="feature-icon-small d-inline-flex align-items-center justify-content-center bg-primary bg-gradient fs-4 rounded-3">
-                                <img src="{{ STATIC_URL }}images/personalized.webp" height="32" width="32" alt="Personalization">
+                                <img src="{% static 'images/personalized.webp' %}" height="32" width="32" alt="Personalization">
                             </div>
                             <h4 class="fw-semibold mb-0 text-body-emphasis">Personalization</h4>
                             <p class="text-body-secondary">Receive customized workout and nutrition plans based on your specific goals, fitness level, and preferences.</p>
                         </div>
                         <div class="col d-flex flex-column gap-2">
                             <div class="feature-icon-small d-inline-flex align-items-center justify-content-center bg-primary bg-gradient fs-4 rounded-3">
-                                <img src="{{ STATIC_URL }}images/world.webp" height="32" width="32" alt="Accessibility">
+                                <img src="{% static 'images/world.webp' %}" height="32" width="32" alt="Accessibility">
                             </div>
                             <h4 class="fw-semibold mb-0 text-body-emphasis">Accessibility</h4>
                             <p class="text-body-secondary">Whether you're travelling, at home, or on the go, you can stay consistent with your fitness routine and maintain progress.</p>
                         </div>
                         <div class="col d-flex flex-column gap-2">
                             <div class="feature-icon-small d-inline-flex align-items-center justify-content-center bg-primary bg-gradient fs-4 rounded-3">
-                                <img src="{{ STATIC_URL }}images/best-price.webp" height="32" width="32" alt="Affordability">
+                                <img src="{% static 'images/best-price.webp' %}" height="32" width="32" alt="Affordability">
                             </div>
                             <h4 class="fw-semibold mb-0 text-body-emphasis">Affordability</h4>
                             <p class="text-body-secondary">Often more cost-effective than traditional in-person training, online personal training makes professional coaching accessible to more people.</p>
@@ -99,7 +99,7 @@
                     <div class="col-12 col-sm-6 col-xl-3 d-flex align-items-stretch">
                         <div class="card border-0 border-bottom border-primary shadow-sm flex-grow-1">
                             <div class="card-body text-center p-4 p-xxl-5 d-flex flex-column">
-                                <img class="mb-4 mx-auto" src="{{ STATIC_URL }}images/interview.webp" height="100" width="100">
+                                <img class="mb-4 mx-auto" src="{% static 'images/interview.webp' %}" height="100" width="100">
                                 <h5 class="mb-4 fw-semibold">Initial Consultation</h5>
                                 <p class="mb-4 pt-card-desc text-body-secondary flex-grow-1">Start with a detailed consultation to discuss your goals, fitness level, and any specific needs or preferences.</p>
                                 <a href="#!" class="fw-bold text-decoration-none link-primary">
@@ -111,7 +111,7 @@
                     <div class="col-12 col-sm-6 col-xl-3 d-flex align-items-stretch">
                         <div class="card border-0 border-bottom border-primary shadow-sm flex-grow-1">
                             <div class="card-body text-center p-4 p-xxl-5 d-flex flex-column">
-                                <img class="mb-4 mx-auto" src="{{ STATIC_URL }}images/task.webp" height="100" width="100">
+                                <img class="mb-4 mx-auto" src="{% static 'images/task.webp' %}" height="100" width="100">
                                 <h5 class="mb-4 fw-semibold">Personalized Plan</h5>
                                 <p class="mb-4 pt-card-desc text-secondary flex-grow-1">Based on your consultation, a tailored exercise and nutrition plan is created to help you achieve your goals efficiently and safely.</p>
                                 <a href="#!" class="fw-bold text-decoration-none link-primary">
@@ -123,7 +123,7 @@
                     <div class="col-12 col-sm-6 col-xl-3 d-flex align-items-stretch">
                         <div class="card border-0 border-bottom border-primary shadow-sm flex-grow-1">
                             <div class="card-body text-center p-4 p-xxl-5 d-flex flex-column">
-                                <img class="mb-4 mx-auto" src="{{ STATIC_URL }}images/support.webp" height="100" width="100">
+                                <img class="mb-4 mx-auto" src="{% static 'images/support.webp' %}" height="100" width="100">
                                 <h5 class="mb-4 fw-semibold">Ongoing Support</h5>
                                 <p class="mb-4 pt-card-desc text-secondary flex-grow-1">Weekly check-ins, progress tracking, and adjustments to your plan ensure you stay on track and continue to make progress so you can achieve your goals.</p>
                                 <a href="#!" class="fw-bold text-decoration-none link-primary">
@@ -135,7 +135,7 @@
                     <div class="col-12 col-sm-6 col-xl-3 d-flex align-items-stretch">
                         <div class="card border-0 border-bottom border-primary shadow-sm flex-grow-1">
                             <div class="card-body text-center p-4 p-xxl-5 d-flex flex-column">
-                                <img class="mb-4 mx-auto" src="{{ STATIC_URL }}images/community.webp" height="100" width="100">
+                                <img class="mb-4 mx-auto" src="{% static 'images/community.webp' %}" height="100" width="100">
                                 <h5 class="mb-4 fw-semibold">Community Interaction</h5>
                                 <p class="mb-4 pt-card-desc text-secondary flex-grow-1">Engage with a supportive community of like-minded individuals for motivation, tips, and shared experiences.</p>
                                 <a href="#!" class="fw-bold text-decoration-none link-primary">
