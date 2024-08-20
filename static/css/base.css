@@ -247,6 +247,22 @@ color: black;
     border-color: #bee5eb !important;
 }
 
+.text-primary-highlight {
+    color: var(--primary-color-highlight);
+}
+
+.card-title {
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+.shadow-custom {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 @media (min-width: 576px) {
     .about-text, .coach-desc {
         font-size: 1.25rem;
