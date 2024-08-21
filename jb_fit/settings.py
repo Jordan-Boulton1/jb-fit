@@ -205,17 +205,17 @@ if 'USE_AWS' in os.environ:
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
 
 
-    # Cloudinary settings for user-uploaded media files
-    CLOUDINARY_STORAGE = {
-        'CLOUD_NAME': os.environ.get('CLOUD_NAME'),
-        'API_KEY': os.environ.get('API_KEY'),
-        'API_SECRET': os.environ.get('API_SECRET'),
-    }
+# Cloudinary settings for user-uploaded media files
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUD_NAME'),
+    'API_KEY': os.environ.get('API_KEY'),
+    'API_SECRET': os.environ.get('API_SECRET'),
+}
 
-    # Cloudinary settings for media files
-    if 'USE_CLOUDINARY' in os.environ:
-        DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-        MEDIA_URL = '/media/'
+# Cloudinary settings for media files
+if 'USE_CLOUDINARY' in os.environ:
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+    MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

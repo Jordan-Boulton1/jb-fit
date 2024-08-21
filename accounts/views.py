@@ -5,7 +5,8 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserProfileForm, WeightLogForm
 from django.contrib.auth.models import User
 from django.contrib import messages
-from .models import UserProfile, WeightLog
+from .models import *
+from .forms import ProgressPictureForm
 
 # Create your views here.
 
@@ -120,3 +121,17 @@ def delete_user_profile(request):
         return redirect('not_found')
     return redirect("home")
 
+@login_required
+def upload_progress_picture(request):
+    profile = get_object_or_404(UserProfile, user=request.user)
+    if request.method == 'POST':
+        form = ProgressPictureForm(request.POST, request.FILES)
+        if form.is_valid():
+            progress_picture = form.save(commit=False)
+            progress_picture.user = profile
+            progress_picture.save()
+            messages.success(request, 'Your Progress Picture has been uploaded successfully!')
+            return redirect('profile')
+    else:
+        form = ProgressPictureForm()
+    return render(request, 'profile.html', {'form': form})

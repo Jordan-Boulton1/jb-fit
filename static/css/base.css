@@ -78,7 +78,7 @@ nav {
 
 /* Hero section */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('/media/jb-fit-hero.webp') no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('https://ci-jb-fit.s3.eu-west-2.amazonaws.com/static/images/jb-fit-hero.webp') no-repeat center center;
     background-size: cover;
     height: 750px;
     margin-top: -80px;
@@ -135,7 +135,8 @@ nav {
 }
 
 .client-reviews {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/media/jb-fit-client-review.webp') no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+    url('https://ci-jb-fit.s3.eu-west-2.amazonaws.com/static/images/jb-fit-client-review.webp') no-repeat center center;
     background-size: cover;
 }
 
@@ -164,14 +165,14 @@ footer {
 
 #quote {
     background-color: var(--primary-color);
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/media/about-page-hero.webp') no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://ci-jb-fit.s3.eu-west-2.amazonaws.com/static/images/about-page-hero.webp') no-repeat center center;
     background-size: cover;
     height: 750px;
     margin-top: -80px;
 }
 
 #philosophy {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/media/about-page-philosophy.webp') no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://ci-jb-fit.s3.eu-west-2.amazonaws.com/static/images/about-page-philosophy.webp') no-repeat center center;
     background-size: cover;
 }
 
@@ -188,7 +189,7 @@ footer {
 }
 
 .profile-header {
-    background-color: #f8f9fa;
+    background-color: var(--primary-color);
     padding: 2rem;
     border-bottom: 1px solid #e9ecef;
 }

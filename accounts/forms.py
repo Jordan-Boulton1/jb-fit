@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from allauth.account.forms import SignupForm, LoginForm
 from datetime import date, datetime
 
-from accounts.models import UserProfile, WeightLog
+from .models import *
 
 
 
@@ -178,3 +178,9 @@ class WeightLogForm(forms.ModelForm):
         widgets = {
             'weight': forms.NumberInput(attrs={'step': '0.1', 'class': 'form-control'}),
         }
+
+
+class ProgressPictureForm(forms.ModelForm):
+    class Meta:
+        model = ProgressPicture
+        fields = ['progress_image']

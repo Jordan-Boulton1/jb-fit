@@ -29,14 +29,14 @@
             {% if not profile.height %} <span class="fw-bold">Height</span> {% endif %}
         </div>
         {% endif %}
-        <div class="profile-header text-center">
+        <div class="profile-header text-center bg-gradient">
             {% if profile.image %}
                 <img src="{{ profile.image.url }}" alt="Profile Image" class="profile-image rounded mb-3">
             {% else %}
                 <img src="https://via.placeholder.com/150" alt="Profile Image" class="profile-image rounded mb-3">
             {% endif %}
-            <h1 class="display-4">{{ profile.user.first_name }} {{ profile.user.last_name }}</h1>
-            <p class="lead">{{ profile.phone_number }}</p>
+            <h1 class="display-4 text-white">{{ profile.user.first_name }} {{ profile.user.last_name }}</h1>
+            <p class="lead text-white">{{ profile.phone_number }}</p>
         </div>
 
         <div class="row mb-5">
@@ -106,6 +106,28 @@
             <div class="col-12 text-center">
                 <a href="{% url 'add_weight_log' %}" class="btn btn-lg btn-success bg-gradient d-block mx-auto text-center mt-2">Add Weight Log</a>
             </div>
+        </div>
+    </div>
+    <!-- Upload Progress Picture -->
+    <div class="col-12 text-center mt-4">
+        <h5 class="card-title">Upload Progress Picture</h5>
+        <form method="POST" enctype="multipart/form-data" action="{% url 'upload_progress_picture' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <input type="file" class="form-control" name="progress_image" required>
+            </div>
+            <button type="submit" class="btn btn-lg btn-primary bg-gradient">Upload Picture</button>
+        </form>
+    </div>
+    
+    <div class="col-12 text-center mt-4">
+        <h5 class="card-title mb-3">Your Progress Pictures</h5>
+        <div class="row">
+            {% for picture in profile.progress_pictures.all %}
+                <div class="col-md-4 mb-3">
+                    <img src="{{ picture.progress_image.url }}" alt="Progress Picture" class="img-fluid rounded" height="500" width="500">
+                </div>
+            {% endfor %}
         </div>
     </div>
 

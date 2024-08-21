@@ -32,3 +32,12 @@ class WeightLog(models.Model):
 
     def __str__(self):
         return f"{self.user.username} - {self.weight} kg on {self.entry_date.strftime('%Y-%M-%D')}"
+
+
+class ProgressPicture(models.Model):
+    user = models.ForeignKey(UserProfile, related_name="progress_pictures", on_delete=models.CASCADE)
+    progress_image = models.ImageField(upload_to='images/', null=True, blank=True)
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.user.user.username} - {self.uploaded_at}"
