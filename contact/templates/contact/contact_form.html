@@ -1,0 +1,21 @@
+<!-- Interested in Finding Out More Section -->
+<section class="my-5 py-5">
+    <div class="container">
+        <div class="text-center mb-4">
+            <h2 class="display-5 fw-bold text-body-emphasis">Interested in finding out more?</h2>
+            <p class="lead">Fill out the short form below, and I’ll get back to you ASAP</p>
+            <p class="text-secondary"><small>Please take a look at my <a class="text-decoration-none" href="{% url 'faq' %}">FAQ</a> before submitting your enquiry - It covers prices, availability, plans, check-ins and much more </small></p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form method="POST" action="{% url 'contact_coach' %}">
+                    {% csrf_token %}
+                    {{ contact_form.as_p }}
+                    <div class="text-center pt-5">
+                        <button type="submit" class="btn btn-primary bg-gradient btn-lg w-50">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

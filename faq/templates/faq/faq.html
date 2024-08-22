@@ -122,40 +122,5 @@
     </div>
 
     <!-- Interested in Finding Out More Section -->
-    <section class="my-5 py-5">
-        <div class="container">
-            <div class="text-center mb-4">
-                <h2 class="display-5 fw-bold text-body-emphasis">Interested in finding out more?</h2>
-                <p class="lead">Fill out the short form below, and i’ll get back to you ASAP</p>
-                <p class="text-secondary"><small>Please take a look at my <a class="text-decoration-none" href="">FAQ</a> before submitting your enquiry - It covers prices, availability, plans, check-ins and much more </small></p>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <form>
-                        <div class="row form-row pb-3">
-                            <div class="form-group col-md-6 pb-3">
-                                <label for="firstName">First Name</label>
-                                <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="lastName">Last Name</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
-                            </div>
-                        </div>
-                        <div class="form-group pb-3">
-                            <label for="email">Email Address</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email Address" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-                        <div class="text-center pt-5">
-                            <button type="submit" class="btn btn-primary bg-gradient btn-lg w-50">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+    {% include 'contact/contact_form.html' %}
 {% endblock %}

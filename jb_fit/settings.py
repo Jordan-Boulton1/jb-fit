@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'about',
     'plans',
     'faq',
+    'contact',
 
     # Other
     'storages', # Required for AWS S3
@@ -96,6 +97,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
                 'home.context_processors.newsletter_form',
+                'contact.context_processors.contact_form',
             ],
         },
     },
