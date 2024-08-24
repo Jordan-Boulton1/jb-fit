@@ -6,7 +6,6 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 
 from checkout.models import Order
-from .webhook_handler import StripeWebhookHandler
 
 @csrf_exempt
 def stripe_webhook(request):
