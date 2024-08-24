@@ -1,12 +1,13 @@
 from django.utils import timezone
 from django.http import JsonResponse
+from django.views.decorators.http import require_POST
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .forms import UserProfileForm, WeightLogForm
+from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib import messages
 from .models import *
-from .forms import ProgressPictureForm
+from .forms import *
 
 # Create your views here.
 
@@ -35,8 +36,6 @@ def edit_profile_view(request):
         form = UserProfileForm(instance=profile)
 
     return render(request, 'accounts/edit_profile.html', {'form': form})
-
-
 
 @login_required
 def add_weight_log(request):
@@ -135,3 +134,9 @@ def upload_progress_picture(request):
     else:
         form = ProgressPictureForm()
     return render(request, 'profile.html', {'form': form})
+
+@require_POST
+def delete_progress_picture(request, picture_id):
+    picture = get_object_or_404(ProgressPicture, id=picture_id)
+    picture.delete()
+    return redirect(reverse('profile'))
