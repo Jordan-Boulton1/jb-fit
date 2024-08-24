@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Thank you for your order!</h1>
+    <p>Your order was successfully placed.</p>
+    <p>You will receive a confirmation email, with the details of your order.</p>
+    
+    <p>Order ID: {{ order.id }}</p>
+    <p>Training Plan: {{ order.training_plan.name }}</p>
+    <p>Amount Paid: £{{ order.amount }}</p>
+{% endblock %}

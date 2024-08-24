@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'plans',
     'faq',
     'contact',
+    'checkout',
 
     # Other
     'storages', # Required for AWS S3
@@ -218,6 +219,10 @@ CLOUDINARY_STORAGE = {
 if 'USE_CLOUDINARY' in os.environ:
     DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
     MEDIA_URL = '/media/'
+
+STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
+STRIPE_WEBHOOK_SECRET = os.environ.get('STRIPE_WEBHOOK_SECRET')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

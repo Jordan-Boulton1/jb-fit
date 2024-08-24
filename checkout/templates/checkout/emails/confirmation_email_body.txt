@@ -1,0 +1,28 @@
+Dear {{ first_name }},
+
+Congratulations on purchasing the {{ training_plan }}. I am thrilled to have you on board and excited to support you in reaching your fitness goals.
+
+### Order Details:
+- **Training Plan:** {{ training_plan }}
+- **Amount Paid:** £{{ amount }}
+- **Order Date** {{ order_date }}
+
+Your order has been successfully processed, and your payment of £{{ amount }} has been received. You can now access your training plan by logging in to your account.
+
+### What Happens Next?
+1. **Access Your Training Plan:** Log in to your account at [JB Fit](https://ci-jb-fit-73ac55dce174.herokuapp.com/) to start your fitness journey.
+2. **Personalized Support:** If your plan includes consultations, check-ins, or any other personalized services, I will be in contact with you shortly to schedule your sessions.
+3. **Community Access:** Join our fitness community for additional support, motivation, and tips from fellow members. [Join Here](https://ci-jb-fit-73ac55dce174.herokuapp.com/)
+
+### Need Help?
+If you have any questions, need further assistance, or want to make changes to your plan, feel free to reach out to me and I will get back to you as quick as I can!
+
+### Contact:
+- **Email:** jordan@jbfit.com
+- **Phone:** +123 456-789
+
+I am excited to see your progress and help you achieve your fitness goals. Welcome to the JB Fit family!
+
+Best Regards,
+
+Jordan

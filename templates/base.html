@@ -32,6 +32,8 @@
             <script src="https://kit.fontawesome.com/c649b17804.js" crossorigin="anonymous"></script>
             <!-- Chart -->
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+            <!-- Stripe -->
+            <script src="https://js.stripe.com/v3/"></script>
         {% endblock %}
 
         <title>JB Fit</title>
@@ -95,7 +97,7 @@
         <footer class="py-3 mt-4" id="footer">
             <div class="container">
                 <div class="social-links fs-3 text-center border-bottom pb-3 mb-3">
-                    <a class="social-icon" href="" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a class="social-icon" href="https://www.facebook.com/profile.php?id=61564471676132" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                     <a class="social-icon" href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                     <a class="social-icon" href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
                     <a class="social-icon" href="https://linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
@@ -108,8 +110,8 @@
                         <h5 class="text-primary-highlight mb-3">Quick Links</h5>
                         <ul class="nav flex-column">
                             <li class="nav-item mb-2"><a href="{% url 'home' %}" class="nav-link p-1 text-body-secondary">Home</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-1 text-body-secondary">About</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-1 text-body-secondary">Plans</a></li>
+                            <li class="nav-item mb-2"><a href="{% url 'about' %}" class="nav-link p-1 text-body-secondary">About</a></li>
+                            <li class="nav-item mb-2"><a href="{% url 'plans' %}" class="nav-link p-1 text-body-secondary">Plans</a></li>
                             <li class="nav-item mb-2"><a href="#" class="nav-link p-1 text-body-secondary">FAQ</a></li>
                             <li class="nav-item mb-2"><a href="#" class="nav-link p-1 text-body-secondary">Community</a></li>
                         </ul>
