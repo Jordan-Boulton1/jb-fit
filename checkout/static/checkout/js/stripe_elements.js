@@ -1,9 +1,37 @@
+// Check if the browser supports the replaceState method
+if (window.history.replaceState) {
+    // Replace the current history state with a new one to prevent form resubmission
+    window.history.replaceState(null, null, window.location.href);
+}
+
+
 document.addEventListener('DOMContentLoaded', function () {
     var stripePublicKey = document.getElementById('id_stripe_public_key').textContent.slice(1, -1);
     var clientSecret = document.getElementById('id_client_secret').textContent.slice(1, -1);
     var stripe = Stripe(stripePublicKey);
     var elements = stripe.elements();
-    var card = elements.create('card');
+    var card = elements.create('card', {
+    iconStyle: 'solid',
+    style: {
+        base: {
+            iconColor: '#ff5100',
+            color: '#fff',
+            fontWeight: 500,
+            fontFamily: 'Roboto, Open Sans, Segoe UI, sans-serif',
+            fontSize: '16px',
+            fontSmoothing: 'antialiased',
+
+            ':-webkit-autofill': {
+                color: '#fce883',
+            },
+            '::placeholder': {
+                color: '#ffff',
+            },
+        },
+        
+        },
+    });
+
     card.mount('#card-element');
     var form = document.getElementById('payment-form');
 
@@ -12,10 +40,12 @@ document.addEventListener('DOMContentLoaded', function () {
         var errorDiv = document.getElementById('card-errors');
         if (event.error) {
             var html = `
-                <span class="icon" role="alert">
-                    <i class="fas fa-times"></i>
-                </span>
-                <span>${event.error.message}</span>
+                <div class="alert-danger>
+                    <span class="icon" role="alert">
+                        <i class="fas fa-times"></i>
+                    </span>
+                    <span>${event.error.message}</span>
+                </div>
             `;
             errorDiv.innerHTML = html;
         } else {

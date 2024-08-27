@@ -19,6 +19,10 @@ body {
     font-size: 18px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 h1 {
     font-family: 'Montserrat', sans-serif;
 }
@@ -180,25 +184,9 @@ footer {
     margin: 0;
 }
 
-.profile-card {
-    border-color: var(--primary-color) !important;
-}
 
-.profile-card-header {
-    border-bottom-color: var(--primary-color);
-}
 
-.profile-header {
-    background-color: var(--primary-color);
-    padding: 2rem;
-    border-bottom: 1px solid #e9ecef;
-}
-.profile-image {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-}
+
 /* The alert message box */
 .warning {
 padding: 20px !important;
@@ -284,4 +272,48 @@ color: black;
     .pt-card-desc {
         font-size: 16px !important;
     }
+}
+
+/*General Card Style*/
+.jb-fit-card {
+    background-color: #333333;
+    border-radius: 10px;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin-bottom: 20px;
+
+}
+
+.jb-fit-card-header {
+    background: linear-gradient(to right, #ff5100, #FF8F5C);
+    padding: 15px;
+    text-align: center;
+}
+
+.jb-fit-card-header h5 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.2em;
+}
+
+.jb-fit-card-body {
+    padding: 20px;
+    background-color: #2e2e2e;
+}
+
+.jb-fit-card-btn {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff5100;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.jb-fit-card-btn:hover {
+    background-color: #FF8F5C;
+    color: #333333;
 }

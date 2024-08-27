@@ -8,18 +8,36 @@ document.addEventListener('DOMContentLoaded', function () {
     $('#confirmDeleteButton').on('click', () => {
         confirmDeleteWeightLog();
     });
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    });
 });
 
 function loadChartData() {
-    var ctx = document.getElementById('weightChart').getContext('2d');
+    var current_weight = document.getElementById('current_weight').textContent.slice(1, -1);
+    let weights = [];
+    let labels = [];
+    var chart = document.getElementById('weightChart');
+    chart.innerHTML = '';
+    var ctx = chart.getContext('2d');
     fetch("/api/weight-logs-chart")
         .then(response => response.json())
         .then(data => {
-            var labels = data.map(log => {
-                let date = new Date(log.entry_date);
-                return date.toISOString().split('T')[0];  // Format date
+            if (current_weight !== null) {
+                // Add the current date and current weight as the first entry
+                let currentDate = new Date().toISOString().split('T')[0];
+                labels.push(currentDate);
+                weights.push(current_weight);
+            }
+    
+             // Append the rest of the data from the API to the existing arrays
+            data.forEach(log => {
+                let date = new Date(log.entry_date).toISOString().split('T')[0];
+                labels.push(date);
+                weights.push(log.weight);
             });
-            var weights = data.map(log => log.weight);
 
             var myChart = new Chart(ctx, {
                 type: 'line',
@@ -113,6 +131,8 @@ function confirmDeleteWeightLog() {
                 if (rowToDelete) {
                     rowToDelete.remove();
                 }
+                // Reload the chart data after deletion
+                loadChartData();
             } else {
                 console.error('Failed to delete log');
             }

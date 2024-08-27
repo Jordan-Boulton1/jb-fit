@@ -3,6 +3,8 @@ import stripe
 from django.conf import settings
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+
+from accounts.models import UserProfile
 from .forms import OrderForm
 from django.contrib import messages
 from .models import TrainingPlan
@@ -35,11 +37,23 @@ def checkout(request, plan_id):
                 messages.error(request, f"An error occurred: {str(e)}")
                 return redirect('checkout', plan_id=plan_id)
         else:
-            messages.error(request, "Form is invalid. Please check the details.")
-            return redirect('checkout', plan_id=plan_id)
+            # Iterate over form errors and add them to messages
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{field.capitalize()}: {error}")
     else:
         # Handle GET request
-        form = OrderForm()
+        try:
+            profile = UserProfile.objects.get(user=request.user)
+            form = OrderForm(initial={
+                    'first_name': request.user.first_name,
+                    'last_name': request.user.last_name,
+                    'email': request.user.email,
+                    'phone_number': profile.phone_number
+            })
+        except UserProfile.DoesNotExist:
+            form = OrderForm()
+            
         stripe.api_key = stripe_secret_key
         # Create PaymentIntent with metadata
         intent = stripe.PaymentIntent.create(

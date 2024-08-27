@@ -48,11 +48,11 @@
         <div class="row mt-5">
             <div class="col-md-6">
                 <!-- Personal Information Card-->
-                <div class="card profile-card mb-4 profile-view-card">
-                    <div class="card-header profile-card-header profile-view-card-header">
+                <div class="card profile-card mb-4 jb-fit-card">
+                    <div class="card-header profile-card-header jb-fit-card-header">
                         <h5 class="card-title">Personal Information</h5>
                     </div>
-                    <div class="card-body profile-view-card-body">
+                    <div class="card-body jb-fit-card-body">
                         <p><strong>Email Address:</strong> {{ profile.user.email }}</p>
                         <p><strong>Address:</strong> {{ profile.address }}</p>
                         <p><strong>Gender:</strong> {{ profile.gender }}</p>
@@ -64,11 +64,11 @@
 
             <div class="col-md-6">
                 <!-- Physical Measurements Card-->
-                <div class="card profile-card mb-4 profile-view-card">
-                    <div class="card-header profile-card-header profile-view-card-header">
+                <div class="card profile-card mb-4 jb-fit-card">
+                    <div class="card-header profile-card-header jb-fit-card-header">
                         <h5 class="card-title">Physical Measurements</h5>
                     </div>
-                    <div class="card-body profile-view-card-body">
+                    <div class="card-body jb-fit-card-body">
                         <p><strong>Current Weight:</strong> {{ profile.current_weight }} kg</p>
                         <p><strong>Height:</strong> {{ profile.height }} cm</p>
                         <p><strong>Goal Weight:</strong> {{ profile.goal_weight }} kg</p>
@@ -78,11 +78,11 @@
 
             <!-- Weight Chart Card -->
             <div class="col-md-6">
-                <div class="card profile-card mb-4 profile-view-card">
-                    <div class="card-header profile-card-header profile-view-card-header">
+                <div class="card profile-card mb-4 jb-fit-card">
+                    <div class="card-header profile-card-header jb-fit-card-header">
                         <h5 class="card-title">Weight Progress Tracker</h5>
                     </div>
-                    <div class="card-body profile-view-card-body">
+                    <div class="card-body jb-fit-card-body">
                         <div class="chart-container">
                             <canvas id="weightChart"></canvas>
                         </div>
@@ -92,11 +92,11 @@
 
             <div class="col-md-6">
                 <!-- Historical Data Table Card -->
-                <div class="card profile-card mb-4 profile-view-card">
-                    <div class="card-header profile-card-header profile-view-card-header">
+                <div class="card profile-card mb-4 jb-fit-card">
+                    <div class="card-header profile-card-header jb-fit-card-header">
                         <h5 class="card-title">Weight Log History</h5>
                     </div>
-                    <div class="card-body profile-view-card-body">
+                    <div class="card-body jb-fit-card-body">
                         <table class="table table-striped" id="weightLogsTable">
                             <thead>
                                 <tr>
@@ -110,8 +110,14 @@
                             </tbody>
                         </table>
 
-                        <div class="col-12 text-center">
-                            <a href="{% url 'add_weight_log' %}" class="btn btn-lg bg-gradient d-block mx-auto text-center mt-2 profile-view-btn">Add Weight Log</a>
+                        <div class="col-12 text-center" data-bs-toggle="tooltip" title="{% if profile.current_weight is None or profile.goal_weight is None %}
+                        Button is disabled because either your goal weight or current weight is missing from your personal information.{% endif %}">
+                            <a href="{% url 'add_weight_log' %}" 
+                                class="btn btn-lg btn-primary bg-gradient d-block mx-auto text-center mt-2 jb-fit-card-btn 
+                                {% if profile.current_weight is None or profile.goal_weight is None %}disabled{% endif %}" 
+                                {% if profile.current_weight is None or profile.goal_weight is None %}aria-disabled="true" onclick="return false;"{% endif %}>
+                                Add Weight Log
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -119,17 +125,29 @@
 
             <div class="col-md-12">
                 <!-- Progress Pictures Card-->
-                <div class="card profile-card mb-4 profile-view-card">
-                    <div class="card-header profile-card-header profile-view-card-header">
+                <div class="card profile-card mb-4 jb-fit-card">
+                    <div class="card-header profile-card-header jb-fit-card-header">
                         <h5 class="card-title">Upload Progress Picture</h5>
                     </div>
-                    <div class="card-body profile-view-card-body">
+                    <div class="card-body jb-fit-card-body">
                         <form method="POST" enctype="multipart/form-data" action="{% url 'upload_progress_picture' %}" class="upload-progress-picture-form">
                             {% csrf_token %}
                             <div class="mb-3">
                                 <input type="file" class="form-control" name="progress_image" required>
                             </div>
-                            <button type="submit" class="btn btn-lg btn-primary bg-gradient">Upload Picture</button>
+                            <div class="tooltip-wrapper"
+                                {% if profile.current_weight is None or profile.goal_weight is None %}
+                                data-bs-toggle="tooltip"
+                                title="Button is disabled because either your goal weight or current weight is missing from your personal information."
+                                {% endif %}>
+                                <button type="submit" class="btn btn-lg w-100 btn-primary bg-gradient jb-fit-card-btn"
+                                    {% if profile.current_weight is None or profile.goal_weight is None %}
+                                    aria-disabled="true" disabled
+                                    {% endif %}>
+                                    Upload Picture
+                                </button>
+                            </div>
+
                         </form>
                         <div class="row gallery">
                             {% for picture in profile.progress_pictures.all %}
@@ -175,6 +193,7 @@
     </div>
 
     {% block postloadjs %}
+    {{ profile.current_weight|json_script:"current_weight" }}
         <script src="{% static 'accounts/js/profile.js' %}"></script>
     {% endblock %}
 </body>

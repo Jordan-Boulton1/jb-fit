@@ -1,45 +1,17 @@
-.profile-view-card {
-    background-color: #333333;
-    border-radius: 10px;
-    color: #ffffff !important;
-    border: none !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    margin-bottom: 20px;
-
+/* Profile Image Section*/
+.profile-header {
+    background-color: var(--primary-color);
+    padding: 2rem;
+    border-bottom: 1px solid #e9ecef;
+}
+.profile-image {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
 }
 
-.profile-view-card-header {
-    background: linear-gradient(to right, #ff5100, #FF8F5C);
-    padding: 15px;
-    text-align: center;
-}
-
-.profile-view-card-header h5 {
-    margin: 0;
-    color: #ffffff;
-    font-size: 1.2em;
-}
-
-.profile-view-card-body {
-    padding: 20px;
-    background-color: #2e2e2e;
-}
-
-.profile-view-btn {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #ff5100;
-    color: #ffffff;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-.profile-view-btn:hover {
-    background-color: #FF8F5C;
-    color: #333333;
-}
+/*Profile Details Section*/
 
 #weightLogsTable {
     width: 100%;
@@ -86,3 +58,4 @@ input[type="file"] {
     width: 100%;
     border-radius: 5px;
 }
+

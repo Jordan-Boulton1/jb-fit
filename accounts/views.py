@@ -49,8 +49,10 @@ def add_weight_log(request):
             weight_log.save()
             return redirect('profile')
         else:
-            # Print form errors for debugging
-            print(form.errors)
+        # Iterate over form errors and add them to messages
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{field.capitalize()}: {error}")
     else:
         form = WeightLogForm()
     return render(request, 'accounts/add_weight_log.html', {'form': form})
@@ -87,6 +89,11 @@ def edit_weight_log(request, log_id):
         if form.is_valid():
             form.save()
             return redirect('profile')
+        else:
+            # Iterate over form errors and add them to messages
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{field.capitalize()}: {error}")
     else:
         form = WeightLogForm(instance=weight_log)
 
@@ -131,6 +138,11 @@ def upload_progress_picture(request):
             progress_picture.save()
             messages.success(request, 'Your Progress Picture has been uploaded successfully!')
             return redirect('profile')
+        else:
+            # Iterate over form errors and add them to messages
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{field.capitalize()}: {error}")
     else:
         form = ProgressPictureForm()
     return render(request, 'profile.html', {'form': form})

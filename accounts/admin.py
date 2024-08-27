@@ -6,11 +6,14 @@ from .models import UserProfile
 
 # Register your models here.
 
+
 class UserProfileInline(admin.StackedInline):
     model = UserProfile
 
+
 class UserAdmin(BaseUserAdmin):
     inlines = [UserProfileInline]
+
 
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
