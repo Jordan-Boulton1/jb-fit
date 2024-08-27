@@ -8,6 +8,7 @@ class NewsletterForm(forms.ModelForm):
         widgets = {
             'email': forms.EmailInput(attrs={
                 'class': 'form-control', 
-                'placeholder': 'Email address'
+                'placeholder': 'Email address',
+                'id': 'newsletter_email'
             }),
         }
