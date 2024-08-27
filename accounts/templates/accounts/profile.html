@@ -32,9 +32,9 @@
         {% endif %}
         <div class="profile-header text-center bg-gradient">
             {% if profile.image %}
-                <img src="{{ profile.image.url }}" alt="Profile Image" class="profile-image rounded mb-3">
+                <img src="{{ profile.image.url }}" alt="User Profile Image" class="profile-image rounded mb-3">
             {% else %}
-                <img src="https://via.placeholder.com/150" alt="Profile Image" class="profile-image rounded mb-3">
+                <img src="https://via.placeholder.com/150" alt="User Profile Image" class="profile-image rounded mb-3">
             {% endif %}
             <h1 class="display-4 text-white">{{ profile.user.first_name }} {{ profile.user.last_name }}</h1>
             <div class="row mb-3">

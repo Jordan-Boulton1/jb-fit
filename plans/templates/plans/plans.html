@@ -22,93 +22,6 @@
             </li>
             {% endfor %}
         </ul>
-        <!-- <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row gy-4 gy-xl-0 text-center">
-            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
-                <div class="card plan-card mb-4 rounded-3 shadow-sm h-100 border-primary">
-                    <div class="card-header py-3 border-primary">
-                        <h4 class="my-0 fw-normal">{{ plan.name }}</h4>
-                    </div>
-                    <div class="card-body d-flex flex-column">
-                        <h1 class="card-title pricing-card-title">£{{ plan.price }}</h1>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li>Workout Plan</li>
-                            <li>Nutrition Plan</li>
-                            <li>Consultation Session</li>
-                            <li>Email Support</li>
-                        </ul>
-                        <form action="{% url 'checkout' 1 %}" method="get" class="mt-auto w-100 ">
-                            <button type="submit" class="btn btn-lg btn-primary bg-gradient">Get started</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
-                <div class="card plan-card mb-4 rounded-3 shadow-sm h-100 border-primary">
-                    <div class="card-header py-3 border-primary">
-                        <h4 class="my-0 fw-normal">Essential Fitness</h4>
-                    </div>
-                    <div class="card-body d-flex flex-column">
-                        <h1 class="card-title pricing-card-title">£99<small class="text-body-secondary fw-light">/mo</small></h1>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li>Personalized Workout Plan</li>
-                            <li>Custom Nutrition Plan</li>
-                            <li>Bi-Weekly Check-Ins</li>
-                            <li>Access to Fitness Community</li>
-                            <li>Email & Chat Support</li>
-                        </ul>
-                        <form action="{% url 'checkout' 2 %}" method="get" class="mt-auto w-100">
-                            <button type="submit" class="btn btn-lg btn-primary bg-gradient">Get started</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
-                <div class="card plan-card mb-4 rounded-3 shadow-sm h-100 border-primary">
-                    <div class="card-header py-3 border-primary">
-                        <h4 class="my-0 fw-normal">Peak Performance</h4>
-                    </div>
-                    <div class="card-body d-flex flex-column">
-                        <h1 class="card-title pricing-card-title">£199<small class="text-body-secondary fw-light">/mo</small></h1>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li>Personalized Workout Plan</li>
-                            <li>Custom Nutrition Plan</li>
-                            <li>Weekly Check-Ins</li>
-                            <li>Video Consultations</li>
-                            <li>Access to Fitness Community</li>
-                            <li>Priority Email & Chat Support</li>
-                        </ul>
-                        <form action="{% url 'checkout' 3 %}" method="get" class="mt-auto w-100">
-                            <button type="submit" class="btn btn-lg btn-primary bg-gradient">Get started</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col col-md-6 col-lg-6 col-xl-3">
-                <div class="card plan-card mb-4 rounded-3 shadow-sm h-100 border-primary">
-                    <div class="card-header py-3 text-bg-primary border-primary">
-                        <h4 class="my-0 fw-normal">Elite Coaching</h4>
-                    </div>
-                    <div class="card-body d-flex flex-column">
-                        <h1 class="card-title pricing-card-title">£299<small class="text-body-secondary fw-light">/mo</small></h1>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li>Personalized Workout Plan</li>
-                            <li>Custom Nutrition Plan</li>
-                            <li>Weekly Video Consultations</li>
-                            <li>Unlimited Check-Ins</li>
-                            <li>Exclusive Access to Workshops</li>
-                            <li>Access to Fitness Community</li>
-                            <li>Priority 24/7 Support</li>
-                        </ul>
-                        <form action="{% url 'checkout' 4 %}" method="get" class="mt-auto w-100">
-                            <button type="submit" class="btn btn-lg btn-primary bg-gradient">Contact us</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </div> 
 </section>
 
@@ -118,28 +31,28 @@
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
             <div class="col">
                 <div class="text-center">
-                    <img src="{% static 'images/quality.webp' %}" alt="Expertise" class="feature-icon mb-3">
+                    <img src="{% static 'images/quality.webp' %}" alt="Certified expertise icon symbolizing over a decade of professional experience and multiple certifications in fitness coaching." class="feature-icon mb-3">
                     <h4>Expertise</h4>
                     <p class="text-secondary">With over a decade of experience and multiple certifications, I bring professional expertise to your fitness journey.</p>
                 </div>
             </div>
             <div class="col">
                 <div class="text-center">
-                    <img src="{% static 'images/customization.webp' %}" alt="Customization" class="feature-icon mb-3">
+                    <img src="{% static 'images/customization.webp' %}" alt="Customized plan icon representing tailored fitness plans designed to match individual goals, fitness level, and lifestyle." class="feature-icon mb-3">
                     <h4>Customization</h4>
                     <p class="text-secondary">Each plan is tailored to your specific goals, fitness level, and lifestyle, ensuring you get the best results.</p>
                 </div>
             </div>
             <div class="col">
                 <div class="text-center">
-                    <img src="{% static 'images/support.webp' %}" alt="Support" class="feature-icon mb-3">
+                    <img src="{% static 'images/support.webp' %}" alt="Continuous support icon representing regular check-ins, community engagement, and 24/7 assistance for ongoing motivation." class="feature-icon mb-3">
                     <h4>Support</h4>
                     <p class="text-secondary">Receive continuous support and motivation through regular check-ins, community engagement, and 24/7 assistance.</p>
                 </div>
             </div>
             <div class="col">
                 <div class="text-center">
-                    <img src="{% static 'images/task.webp' %}" alt="Results" class="feature-icon mb-3">
+                    <img src="{% static 'images/task.webp' %}" alt="Results icon symbolizing clients' successful transformation, achievement of fitness goals, and long-term health maintenance." class="feature-icon mb-3">
                     <h4>Results</h4>
                     <p class="text-secondary">My clients have successfully transformed their lives, achieving their fitness goals and maintaining long-term health and wellness.</p>
                 </div>
