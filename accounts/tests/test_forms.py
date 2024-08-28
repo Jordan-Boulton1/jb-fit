@@ -6,6 +6,7 @@ from allauth.account.models import EmailAddress
 from accounts.forms import CustomSignupForm, CustomLoginForm
 from accounts.models import UserProfile
 
+
 class TestCustomSignupForm(TestCase):
 
     def test_valid_signup_form(self):
@@ -42,11 +43,21 @@ class TestCustomSignupForm(TestCase):
         self.assertIn('first_name', form.errors)
         self.assertIn('last_name', form.errors)
 
+
 class TestCustomLoginForm(TestCase):
 
     def setUp(self):
-        self.user = User.objects.create_user(username='testuser', email='testuser@example.com', password='strongpassword123')
-        EmailAddress.objects.create(user=self.user, email=self.user.email, verified=True, primary=True)
+        self.user = User.objects.create_user(
+            username='testuser',
+            email='testuser@example.com',
+            password='strongpassword123'
+        )
+        EmailAddress.objects.create(
+            user=self.user,
+            email=self.user.email,
+            verified=True,
+            primary=True
+        )
 
     def test_valid_login_form(self):
         form_data = {
@@ -64,4 +75,7 @@ class TestCustomLoginForm(TestCase):
         form = CustomLoginForm(data=form_data)
         self.assertFalse(form.is_valid())
         self.assertIn('__all__', form.errors)
-        self.assertIn('The email address and/or password you specified are not correct.', form.errors['__all__'])
+        self.assertIn(
+            'The email address and/or password you specified are not correct.',
+            form.errors['__all__']
+        )

@@ -1,6 +1,7 @@
 from django.test import TestCase
 from home.models import Newsletter
 
+
 class NewsletterModelTest(TestCase):
 
     def test_newsletter_creation(self):

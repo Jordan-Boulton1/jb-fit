@@ -1,6 +1,7 @@
 from django.test import TestCase
 from contact.models import ContactSubmission
 
+
 class ContactSubmissionModelTest(TestCase):
 
     def test_contact_submission_creation(self):

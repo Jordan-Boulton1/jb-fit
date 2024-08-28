@@ -1,9 +1,10 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
-from accounts.models import *
+from accounts.models import UserProfile
 from datetime import date
 
 # Create your tests here.
+
 
 class TestUserProfileModel(TestCase):
 
@@ -29,7 +30,10 @@ class TestUserProfileModel(TestCase):
         """
         self.assertEqual(self.user_profile.user.username, 'testuser')
         self.assertEqual(self.user_profile.phone_number, "1234567890")
-        self.assertEqual(self.user_profile.address, "123 Test St, Test City, Test Country")
+        self.assertEqual(
+            self.user_profile.address,
+            "123 Test St, Test City, Test Country"
+        )
         self.assertEqual(self.user_profile.gender, "Male")
         self.assertEqual(self.user_profile.date_of_birth, date(1990, 1, 1))
         self.assertEqual(self.user_profile.current_weight, 70.5)
@@ -58,5 +62,3 @@ class TestUserProfileModel(TestCase):
         self.user_profile.delete()
         with self.assertRaises(UserProfile.DoesNotExist):
             UserProfile.objects.get(id=self.user_profile.id)
-
-   

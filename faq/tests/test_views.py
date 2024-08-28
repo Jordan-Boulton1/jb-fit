@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
 
+
 class FaqViewTest(TestCase):
 
     def test_faq_view(self):

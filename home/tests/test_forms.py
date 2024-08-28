@@ -2,6 +2,7 @@ from django.test import TestCase
 from home.forms import NewsletterForm
 from home.models import Newsletter
 
+
 class NewsletterFormTest(TestCase):
 
     def test_newsletter_form_valid_data(self):

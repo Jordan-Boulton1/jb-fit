@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
 
+
 class HomeViewTest(TestCase):
 
     def test_home_view(self):
