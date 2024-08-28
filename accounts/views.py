@@ -11,22 +11,28 @@ from .forms import *
 
 # Create your views here.
 
+
 @login_required
 def profile_view(request):
     profile = get_object_or_404(UserProfile, user=request.user)
-    weight_logs = WeightLog.objects.filter(user=request.user).order_by('entry_date')
+    weight_logs = WeightLog.objects.filter(user=request.user).order_by(
+        'entry_date'
+    )
     return render(request, 'accounts/profile.html', {'profile': profile})
+
 
 @login_required
 def edit_profile_view(request):
     profile = get_object_or_404(UserProfile, user=request.user)
-
-    if request.method == 'POST' and request.POST.get('form_type') == 'editProfile':
+    if (
+        request.method == 'POST' and
+        request.POST.get('form_type') == 'editProfile'
+    ):
         form = UserProfileForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():
             form.save()  # This will now update both User and UserProfile
             messages.success(request, "Profile updated successfully.")
-            return redirect('profile')  # Redirect to the profile page after saving
+            return redirect('profile')  # Redirect to the profile page
         else:
             # Iterate over form errors and add them to messages
             for field, errors in form.errors.items():
@@ -36,6 +42,7 @@ def edit_profile_view(request):
         form = UserProfileForm(instance=profile)
 
     return render(request, 'accounts/edit_profile.html', {'form': form})
+
 
 @login_required
 def add_weight_log(request):
@@ -49,7 +56,7 @@ def add_weight_log(request):
             weight_log.save()
             return redirect('profile')
         else:
-        # Iterate over form errors and add them to messages
+            # Iterate over form errors and add them to messages
             for field, errors in form.errors.items():
                 for error in errors:
                     messages.error(request, f"{field.capitalize()}: {error}")
@@ -57,28 +64,30 @@ def add_weight_log(request):
         form = WeightLogForm()
     return render(request, 'accounts/add_weight_log.html', {'form': form})
 
+
 @login_required
 def get_user_weight_logs(request):
     try:
-        weight_logs = WeightLog.objects.filter(user=request.user).order_by('entry_date').values('weight', 'entry_date')
+        weight_logs = WeightLog.objects.filter(
+            user=request.user
+        ).order_by('entry_date').values('weight', 'entry_date')
         weight_log_list = list(weight_logs)
         return JsonResponse(weight_log_list, safe=False)
-        
     except WeightLog.DoesNotExist:
         return JsonResponse({"message": 'Weight log not found'}, status=404)
-    
 
 
 @login_required
 def get_user_weight_logs_history(request):
     try:
-        weight_logs = WeightLog.objects.filter(user=request.user).order_by('-entry_date').values('id', 'entry_date', 'weight')
+        weight_logs = WeightLog.objects.filter(
+            user=request.user
+        ).order_by('-entry_date').values('id', 'entry_date', 'weight')
         weight_logs_list = list(weight_logs)
         return JsonResponse(weight_logs_list, safe=False)
-        
     except WeightLog.DoesNotExist:
         return JsonResponse({"message": 'Weight logs not found'}, status=404)
-    
+
 
 @login_required
 def edit_weight_log(request, log_id):
@@ -97,7 +106,11 @@ def edit_weight_log(request, log_id):
     else:
         form = WeightLogForm(instance=weight_log)
 
-    return render(request, 'accounts/edit_weight_log.html', {'form': form, 'weight_log': weight_log}) 
+    return render(
+        request,
+        'accounts/edit_weight_log.html',
+        {'form': form, 'weight_log': weight_log}
+    )
 
 
 @login_required
@@ -107,25 +120,30 @@ def delete_weight_log(request, log_id):
     if request.method == 'DELETE':
         weight_log.delete()
         return JsonResponse({'success': True})
-    
+
     return JsonResponse({'success': False})
+
 
 @login_required
 def delete_user_profile(request):
     try:
         user = get_object_or_404(User, id=request.user.id)
         if user == request.user:
-            # TODO: add a check before deletion for the user subscription. Issue #17
+            # TODO: add a check before deletion for the user subscription. Issue #17 # noqa
             user.delete()
-            messages.success(request,
-                                "Your account has been successfully deleted")
+            messages.success(
+                request,
+                "Your account has been successfully deleted"
+            )
         else:
-            messages.error(request, "You do not have permission"
-                                    " to delete this user.")
+            messages.error(
+                request, "You do not have permission to delete this user."
+            )
     except User.DoesNotExist:
         messages.error(request, "The requested user does not exist.")
         return redirect('not_found')
     return redirect("home")
+
 
 @login_required
 def upload_progress_picture(request):
@@ -136,7 +154,10 @@ def upload_progress_picture(request):
             progress_picture = form.save(commit=False)
             progress_picture.user = profile
             progress_picture.save()
-            messages.success(request, 'Your Progress Picture has been uploaded successfully!')
+            messages.success(
+                request,
+                'Your Progress Picture has been uploaded successfully!'
+            )
             return redirect('profile')
         else:
             # Iterate over form errors and add them to messages
@@ -146,6 +167,7 @@ def upload_progress_picture(request):
     else:
         form = ProgressPictureForm()
     return render(request, 'profile.html', {'form': form})
+
 
 @require_POST
 def delete_progress_picture(request, picture_id):
