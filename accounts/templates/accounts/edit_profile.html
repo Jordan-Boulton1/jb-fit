@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+<link href="{% static 'accounts/css/profile.css' %}" rel="stylesheet">
 <body>
     <div class="container mt-4">
         <!-- Message section -->
@@ -19,11 +20,11 @@
         {% endif %}
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <div class="card mb-4">
-                    <div class="card-header">
+                <div class="card mb-4 jb-fit-card">
+                    <div class="card-header jb-fit-card-header">
                         <h5 class="card-title">Update Personal Information</h5>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body jb-fit-card-body">
                         <form method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
 
@@ -134,7 +135,7 @@
 
                             <div class="row">
                                 <div class="col-md-6">
-                                    <button type="submit" class="btn btn-primary">Save</button>
+                                    <button type="submit" class="btn btn-primary edit-profile-btn">Save</button>
                                 </div>
                                 <div class="col-md-6 d-flex justify-content-end">
                                     <button type="button" id="promptConfirmDelete" class="btn btn-danger">Delete Account</button>

@@ -315,5 +315,16 @@ color: black;
 
 .jb-fit-card-btn:hover {
     background-color: #FF8F5C;
-    color: #333333;
+    color:#ffffff;
+}
+
+/* Login Styling*/
+.login-link {
+    text-decoration: none;
+    color: var(--primary-color-highlight);
+}
+
+.login-link:hover {
+    text-decoration: none;
+    color: #FF8F5C;
 }

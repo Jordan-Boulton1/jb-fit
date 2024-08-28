@@ -97,7 +97,7 @@ class CustomLoginForm(LoginForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-
+        self.label_suffix = ''
         self.fields['login'].widget.attrs.update({'class': 'form-control'})
         self.fields['password'].widget.attrs.update({'class': 'form-control'})
         self.fields['remember'].widget.attrs.update(
