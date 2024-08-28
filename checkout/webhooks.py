@@ -7,6 +7,7 @@ from django.template.loader import render_to_string
 
 from checkout.models import Order
 
+
 @csrf_exempt
 def stripe_webhook(request):
     """Listen for webhooks from stripe"""
@@ -18,10 +19,10 @@ def stripe_webhook(request):
         event = stripe.Webhook.construct_event(
             payload, sig_header, settings.STRIPE_WEBHOOK_SECRET
         )
-    except ValueError as e:
+    except ValueError:
         # Invalid payload
         return HttpResponse(status=400)
-    except stripe.error.SignatureVerificationError as e:
+    except stripe.error.SignatureVerificationError:
         # Invalid signature
         return HttpResponse(status=400)
 
@@ -29,17 +30,18 @@ def stripe_webhook(request):
     try:
         if event['type'] == 'payment_intent.succeeded':
             payment_intent = event['data']['object']
-            order = Order.objects.get(stripe_payment_intent_id=payment_intent['id'])
+            order = Order.objects.get(
+                stripe_payment_intent_id=payment_intent['id']
+            )
             order.paid = True
             order.save()
 
             __send_confirmation_email(order)
 
     except Order.DoesNotExist:
-        return "Order not found."
+        return HttpResponse("Order not found.", status=404)
 
     return HttpResponse(status=200)
-
 
 
 def __send_confirmation_email(order):

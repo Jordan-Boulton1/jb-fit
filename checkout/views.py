@@ -7,9 +7,11 @@ from django.contrib.auth.decorators import login_required
 from accounts.models import UserProfile
 from .forms import OrderForm
 from django.contrib import messages
-from .models import TrainingPlan
+from .models import TrainingPlan, Order
 
 # Create your views here.
+
+
 @login_required
 def checkout(request, plan_id):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
@@ -30,7 +32,9 @@ def checkout(request, plan_id):
                 order.save()
 
                 print(order)
-                stripe.PaymentIntent.modify(pid,  metadata={'order_id': order.id})
+                stripe.PaymentIntent.modify(
+                    pid, metadata={'order_id': order.id}
+                )
 
                 return redirect(reverse('checkout_success', args=[order.id]))
             except Exception as e:
@@ -46,14 +50,14 @@ def checkout(request, plan_id):
         try:
             profile = UserProfile.objects.get(user=request.user)
             form = OrderForm(initial={
-                    'first_name': request.user.first_name,
-                    'last_name': request.user.last_name,
-                    'email': request.user.email,
-                    'phone_number': profile.phone_number
+                'first_name': request.user.first_name,
+                'last_name': request.user.last_name,
+                'email': request.user.email,
+                'phone_number': profile.phone_number
             })
         except UserProfile.DoesNotExist:
             form = OrderForm()
-            
+
         stripe.api_key = stripe_secret_key
         # Create PaymentIntent with metadata
         intent = stripe.PaymentIntent.create(
@@ -62,8 +66,10 @@ def checkout(request, plan_id):
         )
 
     if not stripe_public_key:
-        messages.warning(request, 'Stripe public key is missing. \
-            Did you forget to set it in your environment?')
+        messages.warning(
+            request, 'Stripe public key is missing. Did you forget to set it '
+            'in your environment?'
+        )
 
     template = 'checkout/checkout.html'
     context = {
@@ -75,9 +81,6 @@ def checkout(request, plan_id):
 
     return render(request, template, context)
 
-
-
-from .models import Order
 
 @login_required
 def checkout_success(request, order_id):
