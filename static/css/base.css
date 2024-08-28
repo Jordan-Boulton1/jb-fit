@@ -45,6 +45,11 @@ hr {
     color: var(--primary-color-highlight);
 }
 
+.reset-icon {
+    font-size: 60px;
+    color: var(--primary-color-highlight);
+}
+
 /* Navbar */
 nav {
     background-color: var(--primary-color);
@@ -318,13 +323,28 @@ color: black;
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #ff5100;
+    background-color: var(--primary-color-highlight);
     color: #ffffff;
     cursor: pointer;
     font-size: 1em;
 }
 
 .jb-fit-card-btn:hover {
-    background-color: #FF8F5C;
+    background-color: var(--secondary-color-highlight);
     color:#ffffff;
+}
+
+/* Reset Done Styling*/
+.info-container{
+    background-color: rgba(119, 136, 153, 0.208);
+}
+
+.info-text-container {
+    max-width: 350px;
+}
+
+.reset-info-icon{
+    font-size: 20px;
+    color: var(--primary-color-highlight);
+    margin-top: 20px;
 }
