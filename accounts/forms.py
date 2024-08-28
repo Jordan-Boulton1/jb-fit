@@ -40,6 +40,7 @@ class CustomSignupForm(SignupForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.label_suffix = ''
         self.fields['email'].widget.attrs.update({'class': 'form-control'})
         self.fields['first_name'].widget.attrs.update(
             {'class': 'form-control'}

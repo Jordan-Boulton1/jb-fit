@@ -1,6 +1,6 @@
 /*Stripe Styling*/
 .stripe-elements{
-  border-bottom: 1px #ff5100 solid;
+  border-bottom: 1px var(--primary-color-highlight) solid;
 }
 
 .stripe-elements .StripeElement {
