@@ -592,7 +592,7 @@ To obtain my own Postgres Database from Code Institute, I followed these steps:
 
 ### Amazon AWS
 
-This project uses [AWS](https://aws.amazon.com) to store media and static files online, due to the fact that Heroku doesn't persist this type of data.
+This project uses [AWS](https://aws.amazon.com) to store static files and images online, due to the fact that Heroku doesn't persist this type of data.
 
 Once you've created an AWS account and logged-in, follow these series of steps to get your project connected.
 Make sure you're on the **AWS Management Console** page.
@@ -715,6 +715,17 @@ Once on the IAM page, follow these steps:
 - Select any existing media images for your project to prepare them for being uploaded into the new folder.
 - Under **Manage Public Permissions**, select **Grant public read access to this object(s)**.
 - No further settings are required, so click **Upload**.
+
+### Cloudinary API
+
+This project uses the [Cloudinary API](https://cloudinary.com) to store media assets online, due to the fact that Heroku doesn't persist this type of data.
+
+To obtain your own Cloudinary API key, create an account and log in.
+
+- For *Primary interest*, you can choose *Programmable Media for image and video API*.
+- Optional: *edit your assigned cloud name to something more memorable*.
+- On your Cloudinary Dashboard, you can copy your **API Environment Variable**.
+- Be sure to remove the `CLOUDINARY_URL=` as part of the API **value**; this is the **key**.
 
 ### Stripe API
 
