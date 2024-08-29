@@ -26,3 +26,13 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 | | login.html | ![screenshot](documentation/testing/validation/html/html-validation-login.png) | |
 | | password_reset.html | ![screenshot](documentation/testing/validation/html/html-validation-password-reset.png) | |
 | | password_reset_done.html | ![screenshot](documentation/testing/validation/html/html-validation-password-reset-done.png) | |
+
+### CSS
+
+I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
+
+| Directory | File | Screenshot | Notes |
+| --- | --- | --- | --- |
+| accounts | profile.css | ![screenshot](documentation/testing/validation/css/css-validation-profile.png) | |
+| checkout | checkout.css | ![screenshot](documentation/testing/validation/css/css-validation-checkout.png) | |
+| static | base.css | ![screenshot](documentation/testing/validation/css/css-validation-base.png) | |
