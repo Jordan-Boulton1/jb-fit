@@ -73,3 +73,12 @@ input[type="file"] {
     color:#ffffff;
 }
 
+.back-btn{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.back-btn:hover {
+    text-decoration: none;
+    color: var(--primary-color);
+}

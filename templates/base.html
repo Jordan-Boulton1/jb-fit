@@ -41,7 +41,7 @@
     <body>
         <!-- Header -->
         <header class="header">
-            <nav class="navbar navbar-expand-lg fixed-top">
+            <nav class="navbar navbar-expand-lg sticky-top">
                 <div class="container">
                     <a class="navbar-brand" href="{% url 'home' %}">
                         <img src="{% static 'images/jb-fit-logo.webp' %}" alt="Online Personal Coaching Logo" width="100" height="45">
@@ -86,12 +86,14 @@
             </nav>
         </header>
 
+        <main>
+            {% block content %}
 
-        {% block content %}
-        {% endblock %}
+            {% endblock %}
+        </main>
 
         <!-- Footer -->
-        <footer class="py-3 mt-4" id="footer">
+        <footer class="py-3" id="footer">
             <div class="container">
                 <div class="social-links fs-3 text-center border-bottom pb-3 mb-3">
                     <a class="social-icon" href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>

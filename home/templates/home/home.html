@@ -2,302 +2,300 @@
 {% load static %}
 
 {% block content %}
-<main>
-    <!-- Hero Section -->
-    <section class="hero d-flex justify-content-center align-items-center text-center img-fluid">
-        {% if messages %}
-            <div class="mt-3">
-                {% for message in messages %}
-                    <div class="alert alert-success" role="alert">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            </div>
-        {% endif %}
-        <div class="container py-5">
-            <h1 class="display-4 fw-bold text-white mb-3">Transform Your Life with Personal Online Fitness Coaching</h1>
-            <p class="lead text-white mb-3">Achieve your fitness goals with personalized training programs tailored to your needs.</p>
+<!-- Hero Section -->
+<section class="hero d-flex justify-content-center align-items-center text-center img-fluid">
+    {% if messages %}
+        <div class="mt-3">
+            {% for message in messages %}
+                <div class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
         </div>
-    </section>
+    {% endif %}
+    <div class="container py-5">
+        <h1 class="display-4 fw-bold text-white mb-3">Transform Your Life with Personal Online Fitness Coaching</h1>
+        <p class="lead text-white mb-3">Achieve your fitness goals with personalized training programs tailored to your needs.</p>
+    </div>
+</section>
 
-    <!-- About Section-->
-    <section id="about">
-        <div class="container col-xxl-8 pt-5">
-            <div class="row flex-lg-row align-items-center g-md-5 py-5">
-                <div class="col-10 col-lg-6">
-                    <img src="{% static 'images/jb-fit-about.webp' %}" class="d-none d-md-block mx-lg-auto img-fluid rounded-3" alt="Young male online coach standing thoughtfully by a window, arms crossed, looking outside during a coaching session in a modern office." width="700" height="500" loading="lazy">
-                </div>
-                <div class="col-lg-6">
-                    <h2 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">About Me</h2>
-                    <p class="coach-desc">Hi, I'm Jordan, the founder of <strong>JB Fit</strong>. 
-                        With over a 5 years of experience in the fitness industry, I'm passionate about helping individuals achieve their health and fitness goals. 
-                        As a Certified Personal Trainer and Nutrition Specialist, I create personalized workout and nutrition plans tailored to your unique needs. 
-                        My approach is holistic, focusing not only on physical fitness but also on mental well-being and sustainable health habits.
-                    </p>
-                </div>
+<!-- About Section-->
+<section id="about">
+    <div class="container col-xxl-8 pt-5">
+        <div class="row flex-lg-row align-items-center g-md-5 py-5">
+            <div class="col-10 col-lg-6">
+                <img src="{% static 'images/jb-fit-about.webp' %}" class="d-none d-md-block mx-lg-auto img-fluid rounded-3" alt="Young male online coach standing thoughtfully by a window, arms crossed, looking outside during a coaching session in a modern office." width="700" height="500" loading="lazy">
+            </div>
+            <div class="col-lg-6">
+                <h2 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">About Me</h2>
+                <p class="coach-desc">Hi, I'm Jordan, the founder of <strong>JB Fit</strong>. 
+                    With over a 5 years of experience in the fitness industry, I'm passionate about helping individuals achieve their health and fitness goals. 
+                    As a Certified Personal Trainer and Nutrition Specialist, I create personalized workout and nutrition plans tailored to your unique needs. 
+                    My approach is holistic, focusing not only on physical fitness but also on mental well-being and sustainable health habits.
+                </p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Online Personal Training Section -->
-    <section id="online-training">
-        <div class="container px-4 py-5">
-            <div class="row justify-content-center justify-content-lg-start">
-                <div class="col-12 col-md-10 col-lg-8 col-xl-7">
-                    <h2 class="display-5 mb-3 fw-bold text-center text-body-emphasis text-lg-start">What is Online Personal Training?</h2>
+<!-- Online Personal Training Section -->
+<section id="online-training">
+    <div class="container px-4 py-5">
+        <div class="row justify-content-center justify-content-lg-start">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-7">
+                <h2 class="display-5 mb-3 fw-bold text-center text-body-emphasis text-lg-start">What is Online Personal Training?</h2>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+            <div class="col-md-12 col-lg-6">
+                <p class="about-text">Online personal training is a modern approach to fitness coaching that allows you to receive expert guidance, 
+                    personalized workout plans, and nutrition advice from the comfort of your own home or wherever you are. 
+                    By leveraging digital tools and communication platforms, online personal training offers flexibility, convenience, 
+                    and a tailored fitness experience to fit your unique lifestyle.
+                </p>
+            </div>
+            <div class="col-md-12 col-lg-6">
+                <div class="row row-cols-1 row-cols-sm-2 g-4 justify-content-center">
+                    <div class="col d-flex flex-column gap-2">
+                        <div class="feature-icon-small d-inline-flex align-items-center justify-content-center bg-primary bg-gradient fs-4 rounded-3">
+                            <img src="{% static 'images/flexibility.webp' %}" height="32" width="32" alt="Flexibility icon representing adaptability in personal online coaching programs.">
+                        </div>
+                        <h4 class="fw-semibold mb-0 text-body-emphasis">Flexibility</h4>
+                        <p class="text-body-secondary">Train at a time and place that suits you best. No more scheduling conflicts or commuting to the gym.</p>
+                    </div>
+                    <div class="col d-flex flex-column gap-2">
+                        <div class="feature-icon-small d-inline-flex align-items-center justify-content-center bg-primary bg-gradient fs-4 rounded-3">
+                            <img src="{% static 'images/personalized.webp' %}" height="32" width="32" alt="Personalized coaching icon symbolizing tailored online coaching services.">
+                        </div>
+                        <h4 class="fw-semibold mb-0 text-body-emphasis">Personalization</h4>
+                        <p class="text-body-secondary">Receive customized workout and nutrition plans based on your specific goals, fitness level, and preferences.</p>
+                    </div>
+                    <div class="col d-flex flex-column gap-2">
+                        <div class="feature-icon-small d-inline-flex align-items-center justify-content-center bg-primary bg-gradient fs-4 rounded-3">
+                            <img src="{% static 'images/world.webp' %}" height="32" width="32" alt="Global accessibility icon representing the ability to access personalized gym plans from anywhere in the world">
+                        </div>
+                        <h4 class="fw-semibold mb-0 text-body-emphasis">Accessibility</h4>
+                        <p class="text-body-secondary">Whether you're travelling, at home, or on the go, you can stay consistent with your fitness routine and maintain progress.</p>
+                    </div>
+                    <div class="col d-flex flex-column gap-2">
+                        <div class="feature-icon-small d-inline-flex align-items-center justify-content-center bg-primary bg-gradient fs-4 rounded-3">
+                            <img src="{% static 'images/best-price.webp' %}" height="32" width="32" alt="Best price icon highlighting affordable online coaching plans.">
+                        </div>
+                        <h4 class="fw-semibold mb-0 text-body-emphasis">Affordability</h4>
+                        <p class="text-body-secondary">Often more cost-effective than traditional in-person training, online personal training makes professional coaching accessible to more people.</p>
+                    </div>
                 </div>
             </div>
-            <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
-                <div class="col-md-12 col-lg-6">
-                    <p class="about-text">Online personal training is a modern approach to fitness coaching that allows you to receive expert guidance, 
-                        personalized workout plans, and nutrition advice from the comfort of your own home or wherever you are. 
-                        By leveraging digital tools and communication platforms, online personal training offers flexibility, convenience, 
-                        and a tailored fitness experience to fit your unique lifestyle.
-                    </p>
-                </div>
-                <div class="col-md-12 col-lg-6">
-                    <div class="row row-cols-1 row-cols-sm-2 g-4 justify-content-center">
-                        <div class="col d-flex flex-column gap-2">
-                            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center bg-primary bg-gradient fs-4 rounded-3">
-                                <img src="{% static 'images/flexibility.webp' %}" height="32" width="32" alt="Flexibility icon representing adaptability in personal online coaching programs.">
-                            </div>
-                            <h4 class="fw-semibold mb-0 text-body-emphasis">Flexibility</h4>
-                            <p class="text-body-secondary">Train at a time and place that suits you best. No more scheduling conflicts or commuting to the gym.</p>
-                        </div>
-                        <div class="col d-flex flex-column gap-2">
-                            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center bg-primary bg-gradient fs-4 rounded-3">
-                                <img src="{% static 'images/personalized.webp' %}" height="32" width="32" alt="Personalized coaching icon symbolizing tailored online coaching services.">
-                            </div>
-                            <h4 class="fw-semibold mb-0 text-body-emphasis">Personalization</h4>
-                            <p class="text-body-secondary">Receive customized workout and nutrition plans based on your specific goals, fitness level, and preferences.</p>
-                        </div>
-                        <div class="col d-flex flex-column gap-2">
-                            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center bg-primary bg-gradient fs-4 rounded-3">
-                                <img src="{% static 'images/world.webp' %}" height="32" width="32" alt="Global accessibility icon representing the ability to access personalized gym plans from anywhere in the world">
-                            </div>
-                            <h4 class="fw-semibold mb-0 text-body-emphasis">Accessibility</h4>
-                            <p class="text-body-secondary">Whether you're travelling, at home, or on the go, you can stay consistent with your fitness routine and maintain progress.</p>
-                        </div>
-                        <div class="col d-flex flex-column gap-2">
-                            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center bg-primary bg-gradient fs-4 rounded-3">
-                                <img src="{% static 'images/best-price.webp' %}" height="32" width="32" alt="Best price icon highlighting affordable online coaching plans.">
-                            </div>
-                            <h4 class="fw-semibold mb-0 text-body-emphasis">Affordability</h4>
-                            <p class="text-body-secondary">Often more cost-effective than traditional in-person training, online personal training makes professional coaching accessible to more people.</p>
-                        </div>
-                    </div>
-                </div>
+        </div>
+        <div class="row justify-content-md-center justify-content-md-center justify-content-lg-start">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-7">
+                <h2 class="display-5 fw-bold text-center text-body-emphasis text-lg-start">Here's How it Works</h2>
             </div>
-            <div class="row justify-content-md-center justify-content-md-center justify-content-lg-start">
-                <div class="col-12 col-md-10 col-lg-8 col-xl-7">
-                    <h2 class="display-5 fw-bold text-center text-body-emphasis text-lg-start">Here's How it Works</h2>
+        </div>
+        <div class="container overflow-hidden px-4 py-5">
+            <div class="row gy-4 gy-xl-0">
+                <div class="col-12 col-sm-6 col-xl-3 d-flex align-items-stretch">
+                    <div class="card border-0 border-bottom border-primary shadow-sm flex-grow-1">
+                        <div class="card-body text-center p-4 p-xxl-5 d-flex flex-column">
+                            <img class="mb-4 mx-auto" src="{% static 'images/interview.webp' %}" alt="Initial consultation icon representing the first step in the online coaching process where goals and expectations are discussed." height="100" width="100">
+                            <h5 class="mb-4 fw-semibold">Initial Consultation</h5>
+                            <p class="mb-4 pt-card-desc text-body-secondary flex-grow-1">Start with a detailed consultation to discuss your goals, fitness level, and any specific needs or preferences.</p>
+                            <a href="#contact" class="fw-bold text-decoration-none link-primary">
+                                <p>Learn More <i class="fa-solid fa-arrow-right"></i></p>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="container overflow-hidden px-4 py-5">
-                <div class="row gy-4 gy-xl-0">
-                    <div class="col-12 col-sm-6 col-xl-3 d-flex align-items-stretch">
-                        <div class="card border-0 border-bottom border-primary shadow-sm flex-grow-1">
-                            <div class="card-body text-center p-4 p-xxl-5 d-flex flex-column">
-                                <img class="mb-4 mx-auto" src="{% static 'images/interview.webp' %}" alt="Initial consultation icon representing the first step in the online coaching process where goals and expectations are discussed." height="100" width="100">
-                                <h5 class="mb-4 fw-semibold">Initial Consultation</h5>
-                                <p class="mb-4 pt-card-desc text-body-secondary flex-grow-1">Start with a detailed consultation to discuss your goals, fitness level, and any specific needs or preferences.</p>
-                                <a href="#contact" class="fw-bold text-decoration-none link-primary">
-                                    <p>Learn More <i class="fa-solid fa-arrow-right"></i></p>
-                                </a>
-                            </div>
+                <div class="col-12 col-sm-6 col-xl-3 d-flex align-items-stretch">
+                    <div class="card border-0 border-bottom border-primary shadow-sm flex-grow-1">
+                        <div class="card-body text-center p-4 p-xxl-5 d-flex flex-column">
+                            <img class="mb-4 mx-auto" src="{% static 'images/task.webp' %}" alt="Personalized plan creation icon representing the development of a tailored exercise and nutrition plan following the initial consultation." height="100" width="100">
+                            <h5 class="mb-4 fw-semibold">Personalized Plan</h5>
+                            <p class="mb-4 pt-card-desc text-secondary flex-grow-1">Based on your consultation, a tailored exercise and nutrition plan is created to help you achieve your goals efficiently and safely.</p>
+                            <a href="{% url 'plans' %}" class="fw-bold text-decoration-none link-primary">
+                                <p>Learn More <i class="fa-solid fa-arrow-right"></i></p>
+                            </a>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-xl-3 d-flex align-items-stretch">
-                        <div class="card border-0 border-bottom border-primary shadow-sm flex-grow-1">
-                            <div class="card-body text-center p-4 p-xxl-5 d-flex flex-column">
-                                <img class="mb-4 mx-auto" src="{% static 'images/task.webp' %}" alt="Personalized plan creation icon representing the development of a tailored exercise and nutrition plan following the initial consultation." height="100" width="100">
-                                <h5 class="mb-4 fw-semibold">Personalized Plan</h5>
-                                <p class="mb-4 pt-card-desc text-secondary flex-grow-1">Based on your consultation, a tailored exercise and nutrition plan is created to help you achieve your goals efficiently and safely.</p>
-                                <a href="{% url 'plans' %}" class="fw-bold text-decoration-none link-primary">
-                                    <p>Learn More <i class="fa-solid fa-arrow-right"></i></p>
-                                </a>
-                            </div>
+                </div>
+                <div class="col-12 col-sm-6 col-xl-3 d-flex align-items-stretch">
+                    <div class="card border-0 border-bottom border-primary shadow-sm flex-grow-1">
+                        <div class="card-body text-center p-4 p-xxl-5 d-flex flex-column">
+                            <img class="mb-4 mx-auto" src="{% static 'images/support.webp' %}" alt="Weekly check-ins icon representing ongoing support, progress tracking, and plan adjustments to ensure continuous progress towards your goals." height="100" width="100">
+                            <h5 class="mb-4 fw-semibold">Ongoing Support</h5>
+                            <p class="mb-4 pt-card-desc text-secondary flex-grow-1">Weekly check-ins, progress tracking, and adjustments to your plan ensure you stay on track and continue to make progress so you can achieve your goals.</p>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-xl-3 d-flex align-items-stretch">
-                        <div class="card border-0 border-bottom border-primary shadow-sm flex-grow-1">
-                            <div class="card-body text-center p-4 p-xxl-5 d-flex flex-column">
-                                <img class="mb-4 mx-auto" src="{% static 'images/support.webp' %}" alt="Weekly check-ins icon representing ongoing support, progress tracking, and plan adjustments to ensure continuous progress towards your goals." height="100" width="100">
-                                <h5 class="mb-4 fw-semibold">Ongoing Support</h5>
-                                <p class="mb-4 pt-card-desc text-secondary flex-grow-1">Weekly check-ins, progress tracking, and adjustments to your plan ensure you stay on track and continue to make progress so you can achieve your goals.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-xl-3 d-flex align-items-stretch">
-                        <div class="card border-0 border-bottom border-primary shadow-sm flex-grow-1">
-                            <div class="card-body text-center p-4 p-xxl-5 d-flex flex-column">
-                                <img class="mb-4 mx-auto" src="{% static 'images/community.webp' %}" alt="Supportive community icon representing engagement with like-minded individuals for motivation, tips, and shared experiences." height="100" width="100">
-                                <h5 class="mb-4 fw-semibold">Community Interaction</h5>
-                                <p class="mb-4 pt-card-desc text-secondary flex-grow-1">Engage with a supportive community of like-minded individuals for motivation, tips, and shared experiences.</p>
-                            </div>
+                </div>
+                <div class="col-12 col-sm-6 col-xl-3 d-flex align-items-stretch">
+                    <div class="card border-0 border-bottom border-primary shadow-sm flex-grow-1">
+                        <div class="card-body text-center p-4 p-xxl-5 d-flex flex-column">
+                            <img class="mb-4 mx-auto" src="{% static 'images/community.webp' %}" alt="Supportive community icon representing engagement with like-minded individuals for motivation, tips, and shared experiences." height="100" width="100">
+                            <h5 class="mb-4 fw-semibold">Community Interaction</h5>
+                            <p class="mb-4 pt-card-desc text-secondary flex-grow-1">Engage with a supportive community of like-minded individuals for motivation, tips, and shared experiences.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Review Section -->
-    <section class="py-5 py-xl-8 client-reviews">
-        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-            <h2 class="display-5 fw-bold text-white">Client Reviews</h2>
-        </div>
-        <div class="container mt-5 mb-5">
-            <div class="row g-2">
-                <div class="col-12 col-md-4">
-                    <div class="card review-card p-3 text-center">
-                        <div class="user-image">
-                            <img src="https://i.imgur.com/PKHvlRS.jpg" alt="User providing a positive review for personalized online coaching services." class="rounded-circle" width="80">
-                        </div>
-                        <div class="user-content">
-                            <h5 class="my-2">Bruce Hardy</h5>
-                            <p>"I was skeptical about online personal training at first, but Jordan made the entire process seamless and effective. The regular check-ins kept me motivated, and the personalized nutrition plan was exactly what I needed to stay on track. I’ve seen great improvements in my strength and endurance, and I couldn’t have done it without JB Fit!"</p>
-                        </div>
-                        <div class="ratings">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
+<!-- Review Section -->
+<section class="py-5 py-xl-8 client-reviews">
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <h2 class="display-5 fw-bold text-white">Client Reviews</h2>
+    </div>
+    <div class="container mt-5 mb-5">
+        <div class="row g-2">
+            <div class="col-12 col-md-4">
+                <div class="card review-card p-3 text-center">
+                    <div class="user-image">
+                        <img src="https://i.imgur.com/PKHvlRS.jpg" alt="User providing a positive review for personalized online coaching services." class="rounded-circle" width="80">
+                    </div>
+                    <div class="user-content">
+                        <h5 class="my-2">Bruce Hardy</h5>
+                        <p>"I was skeptical about online personal training at first, but Jordan made the entire process seamless and effective. The regular check-ins kept me motivated, and the personalized nutrition plan was exactly what I needed to stay on track. I’ve seen great improvements in my strength and endurance, and I couldn’t have done it without JB Fit!"</p>
+                    </div>
+                    <div class="ratings">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
                     </div>
                 </div>
-                <div class="col-12 col-md-4">
-                    <div class="card review-card p-3 text-center">
-                        <div class="user-image">
-                            <img src="https://i.imgur.com/w2CKRB9.jpg" alt="User providing a positive review for personalized online coaching services." class="rounded-circle" width="80">
-                        </div>
-                        <div class="user-content">
-                            <h5 class="my-2">Mark Smith</h5>
-                            <p>"JB Fit has completely transformed my approach to fitness. The personalized plans are spot on, and I love how Jordan tailors everything to my specific needs. The flexibility of online training means I can fit workouts into my busy schedule without any hassle. The results speak for themselves—I’m stronger, more energetic, and I’ve never felt better!"</p>
-                        </div>
-                        <div class="ratings">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card review-card p-3 text-center">
+                    <div class="user-image">
+                        <img src="https://i.imgur.com/w2CKRB9.jpg" alt="User providing a positive review for personalized online coaching services." class="rounded-circle" width="80">
+                    </div>
+                    <div class="user-content">
+                        <h5 class="my-2">Mark Smith</h5>
+                        <p>"JB Fit has completely transformed my approach to fitness. The personalized plans are spot on, and I love how Jordan tailors everything to my specific needs. The flexibility of online training means I can fit workouts into my busy schedule without any hassle. The results speak for themselves—I’m stronger, more energetic, and I’ve never felt better!"</p>
+                    </div>
+                    <div class="ratings">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
                     </div>
                 </div>
-                <div class="col-12 col-md-4">
-                    <div class="card review-card p-3 text-center">
-                        <div class="user-image">
-                            <img src="https://i.imgur.com/ACeArwY.jpg" alt="User providing a positive review for personalized online coaching services." class="rounded-circle" width="80">
-                        </div>
-                        <div class="user-content">
-                            <h5 class="my-2">Michael Lee</h5>
-                            <p>"I’ve tried various fitness programs in the past, but nothing compares to the personalized approach at JB Fit. Jordan’s expertise is evident in the detailed workout plans and the nutritional advice. The progress I’ve made in just a few months is incredible. The best part? I can do it all from the comfort of my home!"</p>
-                        </div>
-                        <div class="ratings">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card review-card p-3 text-center">
+                    <div class="user-image">
+                        <img src="https://i.imgur.com/ACeArwY.jpg" alt="User providing a positive review for personalized online coaching services." class="rounded-circle" width="80">
+                    </div>
+                    <div class="user-content">
+                        <h5 class="my-2">Michael Lee</h5>
+                        <p>"I’ve tried various fitness programs in the past, but nothing compares to the personalized approach at JB Fit. Jordan’s expertise is evident in the detailed workout plans and the nutritional advice. The progress I’ve made in just a few months is incredible. The best part? I can do it all from the comfort of my home!"</p>
+                    </div>
+                    <div class="ratings">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Training Plans Section -->
-    <section class="my-5 pb-5 py-xl-8" id="training-plans">
-        <div class="dumbell"></div>
-        <div class="container">
-            <div class="pricing-header p-3 pb-md-4 mx-auto">
-                <h2 class="display-5 fw-bold text-center text-body-emphasis">Training Plans</h2>
+<!-- Training Plans Section -->
+<section class="my-5 pb-5 py-xl-8" id="training-plans">
+    <div class="dumbell"></div>
+    <div class="container">
+        <div class="pricing-header p-3 pb-md-4 mx-auto">
+            <h2 class="display-5 fw-bold text-center text-body-emphasis">Training Plans</h2>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row gy-4 gy-xl-0 text-center">
+            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                <div class="card plan-card mb-4 rounded-3 shadow-sm h-100 border-primary">
+                    <div class="card-header py-3 border-primary">
+                        <h4 class="my-0 fw-normal">One-Time</h4>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h1 class="card-title pricing-card-title">£150</h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Workout Plan</li>
+                            <li>Nutrition Plan</li>
+                            <li>Consultation Session</li>
+                            <li>Email Support</li>
+                        </ul>
+                        <button type="button" class="mt-auto w-100 btn btn-lg btn-primary bg-gradient">Get started</button>
+                    </div>
+                </div>
             </div>
-            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row gy-4 gy-xl-0 text-center">
-                <div class="col-12 col-md-6 col-lg-6 col-xl-3">
-                    <div class="card plan-card mb-4 rounded-3 shadow-sm h-100 border-primary">
-                        <div class="card-header py-3 border-primary">
-                            <h4 class="my-0 fw-normal">One-Time</h4>
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h1 class="card-title pricing-card-title">£150</h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>Workout Plan</li>
-                                <li>Nutrition Plan</li>
-                                <li>Consultation Session</li>
-                                <li>Email Support</li>
-                            </ul>
-                            <button type="button" class="mt-auto w-100 btn btn-lg btn-primary bg-gradient">Get started</button>
-                        </div>
+
+            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                <div class="card plan-card mb-4 rounded-3 shadow-sm h-100 border-primary">
+                    <div class="card-header py-3 border-primary">
+                        <h4 class="my-0 fw-normal">Essential Fitness</h4>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h1 class="card-title pricing-card-title">£99<small class="text-body-secondary fw-light">/mo</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Personalized Workout Plan</li>
+                            <li>Custom Nutrition Plan</li>
+                            <li>Bi-Weekly Check-Ins</li>
+                            <li>Access to Fitness Community</li>
+                            <li>Email & Chat Support</li>
+                        </ul>
+                        <button type="button" class="mt-auto w-100 btn btn-lg btn-primary bg-gradient">Get started</button>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-12 col-md-6 col-lg-6 col-xl-3">
-                    <div class="card plan-card mb-4 rounded-3 shadow-sm h-100 border-primary">
-                        <div class="card-header py-3 border-primary">
-                            <h4 class="my-0 fw-normal">Essential Fitness</h4>
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h1 class="card-title pricing-card-title">£99<small class="text-body-secondary fw-light">/mo</small></h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>Personalized Workout Plan</li>
-                                <li>Custom Nutrition Plan</li>
-                                <li>Bi-Weekly Check-Ins</li>
-                                <li>Access to Fitness Community</li>
-                                <li>Email & Chat Support</li>
-                            </ul>
-                            <button type="button" class="mt-auto w-100 btn btn-lg btn-primary bg-gradient">Get started</button>
-                        </div>
+            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                <div class="card plan-card mb-4 rounded-3 shadow-sm h-100 border-primary">
+                    <div class="card-header py-3 border-primary">
+                        <h4 class="my-0 fw-normal">Peak Performance</h4>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h1 class="card-title pricing-card-title">£199<small class="text-body-secondary fw-light">/mo</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Personalized Workout Plan</li>
+                            <li>Custom Nutrition Plan</li>
+                            <li>Weekly Check-Ins</li>
+                            <li>Video Consultations</li>
+                            <li>Access to Fitness Community</li>
+                            <li>Priority Email & Chat Support</li>
+                        </ul>
+                        <button type="button" class="mt-auto w-100 btn btn-lg btn-primary bg-gradient">Get started</button>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-12 col-md-6 col-lg-6 col-xl-3">
-                    <div class="card plan-card mb-4 rounded-3 shadow-sm h-100 border-primary">
-                        <div class="card-header py-3 border-primary">
-                            <h4 class="my-0 fw-normal">Peak Performance</h4>
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h1 class="card-title pricing-card-title">£199<small class="text-body-secondary fw-light">/mo</small></h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>Personalized Workout Plan</li>
-                                <li>Custom Nutrition Plan</li>
-                                <li>Weekly Check-Ins</li>
-                                <li>Video Consultations</li>
-                                <li>Access to Fitness Community</li>
-                                <li>Priority Email & Chat Support</li>
-                            </ul>
-                            <button type="button" class="mt-auto w-100 btn btn-lg btn-primary bg-gradient">Get started</button>
-                        </div>
+            <div class="col col-md-6 col-lg-6 col-xl-3">
+                <div class="card plan-card mb-4 rounded-3 shadow-sm h-100 border-primary">
+                    <div class="card-header py-3 text-bg-primary border-primary">
+                        <h4 class="my-0 fw-normal">Elite Coaching</h4>
                     </div>
-                </div>
-
-                <div class="col col-md-6 col-lg-6 col-xl-3">
-                    <div class="card plan-card mb-4 rounded-3 shadow-sm h-100 border-primary">
-                        <div class="card-header py-3 text-bg-primary border-primary">
-                            <h4 class="my-0 fw-normal">Elite Coaching</h4>
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h1 class="card-title pricing-card-title">£299<small class="text-body-secondary fw-light">/mo</small></h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>Personalized Workout Plan</li>
-                                <li>Custom Nutrition Plan</li>
-                                <li>Weekly Video Consultations</li>
-                                <li>Unlimited Check-Ins</li>
-                                <li>Exclusive Access to Workshops</li>
-                                <li>Access to Fitness Community</li>
-                                <li>Priority 24/7 Support</li>
-                            </ul>
-                            <button type="button" class="mt-auto w-100 btn btn-lg btn-primary bg-gradient">Contact us</button>
-                        </div>
+                    <div class="card-body d-flex flex-column">
+                        <h1 class="card-title pricing-card-title">£299<small class="text-body-secondary fw-light">/mo</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Personalized Workout Plan</li>
+                            <li>Custom Nutrition Plan</li>
+                            <li>Weekly Video Consultations</li>
+                            <li>Unlimited Check-Ins</li>
+                            <li>Exclusive Access to Workshops</li>
+                            <li>Access to Fitness Community</li>
+                            <li>Priority 24/7 Support</li>
+                        </ul>
+                        <button type="button" class="mt-auto w-100 btn btn-lg btn-primary bg-gradient">Contact us</button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <hr class="w-100">
+<hr class="w-100">
 
     {% include 'contact/contact_form.html' %}
-</main>
 {% endblock %}

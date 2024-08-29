@@ -2,13 +2,39 @@
 {% load static %}
 
 {% block content %}
-<div class="container mt-4">
-    <h1>Edit Weight Log</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Save Changes</button>
-        <a href="{% url 'profile' %}" class="btn btn-secondary">Cancel</a>
-    </form>
+<div class="container-fluid d-flex justify-content-center align-items-center content-container">
+    <div class="col-md-5">
+        <div class="card mb-4 jb-fit-card">
+            <div class="card-header jb-fit-card-header">
+                <h5 class="card-title signup-heading text-center">Edit Weight Log</h5>
+            </div>
+            <div class="card-body jb-fit-card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="id_weight" class="form-label">Weight </label>
+                        <input type="number" step="0.1" class="form-control" id="id_weight" name="weight" value="{{ form.weight.value }}">
+                        {% if form.weight.errors %}
+                        <div class="alert alert-danger py-1 my-1">
+                            {% for error in form.weight.errors %}
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="mb-0">{{ error }}</p>
+                                <span class="closeerrorbtn">&times;</span>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-2 w-100 bg-gradient">Save Changes</button>
+                    <div class="text-center mt-2 w-100">
+                        <a href="{% url 'profile' %}" class="btn btn-secondary w-100">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
+{% block postloadjs %}
+        <script src="{% static 'js/base.js' %}"></script>
+    {% endblock %}
 {% endblock %}

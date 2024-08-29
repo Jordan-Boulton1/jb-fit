@@ -1,11 +1,53 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-    <h1>Thank you for your order!</h1>
-    <p>Your order was successfully placed.</p>
-    <p>You will receive a confirmation email, with the details of your order.</p>
-    
-    <p>Order ID: {{ order.id }}</p>
-    <p>Training Plan: {{ order.training_plan.name }}</p>
-    <p>Amount Paid: £{{ order.amount }}</p>
+<link href="{% static 'checkout/css/checkout.css' %}" rel="stylesheet">
+<div class="container d-flex justify-content-center align-items-center content-container">
+    <div class="col-md-5">
+        <div class="card mb-4 jb-fit-card">
+            <div class="card-header jb-fit-card-header">
+                <i class="fa-regular fa-circle-check checkout-success-icon"></i>
+                <h5 class="card-title text-center mt-3">Payment Successful</h5>
+            </div>
+            <div class="card-body jb-fit-card-body">
+                <div class="d-flex justify-content-center">
+                    <p class="text-center mt-4">
+                        Thank you for purchasing the {{ order.training_plan.name }}
+                        Training Plan.<br>A confirmation email has been sent to the specified
+                        email address.
+                    </p>
+                </div>
+                <div class="p-4 info-container rounded mt-4">
+                    <div class="info-text-container">
+                        <p class="purchase-details"><strong>Purchase Details</strong></p>
+
+                        <div class="d-flex align-items-center">
+                            <p class="purchase-description mb-0">Plan:</p>
+                            <p class="mb-0 ms-2"> {{ order.training_plan.name }} Training Plan</p>
+                        </div>
+                    
+                        <div class="d-flex align-items-center">
+                            <p class="purchase-description mb-0">Duration:</p>
+                            <p class="mb-0 ms-2">Always</p>
+                        </div>
+                    
+                        <div class="d-flex align-items-center">
+                            <p class="purchase-description mb-0">Access:</p>
+                            <p class="mb-0 ms-2">Immediate</p>
+                        </div>
+                    
+                        <div class="d-flex align-items-center">
+                            <p class="purchase-description mb-0">Purchase Date:</p>
+                            <p class="mb-0 ms-2">{{order.created_at}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <a class="btn btn-primary mt-2 w-100 bg-gradient" href="{% url 'profile' %}">Back to profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

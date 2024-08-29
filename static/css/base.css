@@ -12,12 +12,15 @@
 body {
     scroll-behavior: smooth;
     margin: 0;
-    margin-top: 150px;
     padding: 0;
     height: 100%;
     width: 100%;
     background-color: var(--bs-body-bg);
     font-size: 18px;
+}
+
+main {
+    min-height: 60vh;
 }
 
 html {
@@ -59,10 +62,6 @@ nav {
     color: #f5f5f5 !important;
 }
 
-.navbar {
-    margin-bottom: 150px;
-}
-
 .navbar-nav .nav-link.active {
     color: var(--primary-color-highlight) !important;
 }
@@ -96,12 +95,15 @@ nav {
     background-color: #E04700 !important;
 }
 
+.content-container {
+    min-height: 80vh !important;
+}
+
 /* Hero section */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('https://ci-jb-fit.s3.eu-west-2.amazonaws.com/static/images/jb-fit-hero.webp') no-repeat center center;
     background-size: cover;
     height: 750px;
-    margin-top: -80px;
 }
 
 /* Feature section */
@@ -162,6 +164,7 @@ nav {
 
 footer {
     background-color: var(--primary-color);
+    margin-top: auto !important;
 }
 
 .social-icon {
@@ -200,14 +203,10 @@ footer {
     margin: 0;
 }
 
-
-
-
 /* The alert message box */
 .warning {
 padding: 20px !important;
 background-color: #FF9800 !important;
-color: white !important;
 margin-bottom: 15px !important;
 }
 
@@ -222,6 +221,31 @@ line-height: 20px;
 cursor: pointer;
 transition: 0.3s;
 }
+
+.closesuccessbtn {
+    margin-left: 15px;
+    font-weight: bold;
+    float: right;
+    font-size: 30px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.closeerrorbtn {
+    font-weight: bold;
+    float: right;
+    font-size: 30px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closeerrorbtn:hover {
+    color: #ffffff;
+}
+
 
 /* When moving the mouse over the close button */
 .closebtn:hover {
@@ -347,4 +371,8 @@ color: black;
     font-size: 20px;
     color: var(--primary-color-highlight);
     margin-top: 20px;
+}
+
+.checkout-success-icon{
+    font-size: 50px;
 }

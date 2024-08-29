@@ -3,177 +3,195 @@
 
 {% block content %}
 <link href="{% static 'accounts/css/profile.css' %}" rel="stylesheet">
-<body>
-    <div class="container mt-4">
-        <!-- Message section -->
-        {% if messages %}
-        <div class="alert alert-dismissable fade show" role="alert">
-            {% for message in messages %}
-            <div class="alert alert-{{ message.tags }} mt-2" role="alert">
-                {{ message }}
-                <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card mb-4 jb-fit-card">
+                <div class="card-header jb-fit-card-header d-flex flex-column align-items-center"> <!-- Flexbox for vertical alignment -->
+                    <div class="row">
+                        <h5 class="card-title mb-2">Update Personal Information</h5> <!-- Adjusted margin for spacing -->
+                    </div>
+                    <div class="row">
+                        <a class="btn back-btn" href="{% url 'profile' %}">&larr; Back</a>
+                    </div>
+                </div>
+                
+                
+                <div class="card-body jb-fit-card-body">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        {% if form.non_field_errors %}
+                            <div class="alert alert-danger">
+                                {% for error in form.non_field_errors %}
+                                    <div class="d-flex align-items-center justify-content-between"> 
+                                        <p class="mb-0">{{ error }}</p>
+                                        <span class="closeerrorbtn">&times;</span> 
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                        <!-- Image -->
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Image</label>
+                            <input type="file" class="form-control {% if form.email.errors %}is-invalid{% endif %}" id="image" name="image" accept="image/*" value="{{ form.image.value|default_if_none:'' }}">
+                        </div>
+                        <!-- Email address -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control {% if form.email.errors %}is-invalid{% endif %}" id="email" name="email" value="{{ form.email.value|default_if_none:'' }}">
+                        </div>
+                        <!-- Email address validation -->
+                        {% if form.email.errors %}
+                            <div class="alert alert-danger py-1 my-1">
+                                {% for error in form.email.errors %}
+                                    <div class="d-flex align-items-center justify-content-between"> 
+                                        <p class="mb-0">{{ error }}</p>
+                                        <span class="closeerrorbtn">&times;</span> 
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                        <!-- Phone Number -->
+                        <div class="mb-3">
+                            <label for="id_phone_number" class="form-label">Phone Number</label>
+                            <input type="text" class="form-control" id="id_phone_number" name="phone_number" value="{{ form.phone_number.value }}">
+                        </div>
+                        <!-- Phone number validation -->
+                        {% if form.phone_number.errors %}
+                            <div class="alert alert-danger py-1 my-1">
+                                {% for error in form.phone_number.errors %}
+                                    <div class="d-flex align-items-center justify-content-between"> 
+                                        <p class="mb-0">{{ error }}</p>
+                                        <span class="closeerrorbtn">&times;</span> 
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+
+                        <!-- Address -->
+                        <div class="mb-3">
+                            <label for="id_address" class="form-label">Address</label>
+                            <textarea class="form-control" id="id_address" name="address" rows="3">{{ form.address.value }}</textarea>
+                        </div>
+                        <!-- Address validation -->
+                        {% if form.address.errors %}
+                            <div class="alert alert-danger py-1 my-1">
+                                {% for error in form.address.errors %}
+                                    <div class="d-flex align-items-center justify-content-between"> 
+                                        <p class="mb-0">{{ error }}</p>
+                                        <span class="closeerrorbtn">&times;</span> 
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+
+                        <!-- Date of birth -->
+                        <div class="mb-3">
+                            {{ form.date_of_birth.label }}
+                            {{ form.date_of_birth }}
+                        </div>
+                        {% if form.date_of_birth.errors %}
+                            <div class="alert alert-danger py-1 my-1">
+                                {% for error in form.date_of_birth.errors %}
+                                    <div class="d-flex align-items-center justify-content-between"> 
+                                        <p class="mb-0">{{ error }}</p>
+                                        <span class="closeerrorbtn">&times;</span> 
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+
+                        <!-- Current weight -->
+                        <div class="mb-3">
+                            <label for="id_current_weight" class="form-label">Current Weight (kg)</label>
+                            <input type="number" step="0.01" class="form-control" id="id_current_weight" name="current_weight" value="{{ form.current_weight.value }}">
+                            {% if form.current_weight.errors %}
+                                <div class="alert alert-danger py-1 my-1">
+                                    {% for error in form.current_weight.errors %}
+                                    <div class="d-flex align-items-center justify-content-between current_weight_container"> 
+                                        <p class="mb-0">{{ error }}</p>
+                                        <span class="closeerrorbtn">&times;</span> 
+                                    </div>
+                                    {% endfor %}
+                                    
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Height -->
+                        <div class="mb-3">
+                            <label for="id_height" class="form-label">Height (cm)</label>
+                            <input type="number" step="0.01" class="form-control" id="id_height" name="height" value="{{ form.height.value }}">
+                            {% if form.height.errors %}
+                                <div class="alert alert-danger py-1 my-1">
+                                    {% for error in form.height.errors %}
+                                        <div class="d-flex align-items-center justify-content-between"> 
+                                            <p class="mb-0">{{ error }}</p>
+                                            <span class="closeerrorbtn">&times;</span> 
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Goal weight -->
+                        <div class="mb-3">
+                            <label for="id_goal_weight" class="form-label">Goal Weight (kg)</label>
+                            <input type="number" step="0.01" class="form-control" id="id_goal_weight" name="goal_weight" value="{{ form.goal_weight.value }}">
+                            {% if form.goal_weight.errors %}
+                                <div class="alert alert-danger py-1 my-1">
+                                    {% for error in form.goal_weight.errors %}
+                                        <div class="d-flex align-items-center justify-content-between"> 
+                                            <p class="mb-0">{{ error }}</p>
+                                            <span class="closeerrorbtn">&times;</span> 
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-primary edit-profile-btn">Save</button>
+                            </div>
+                            <div class="col-md-6 d-flex justify-content-end">
+                                <button type="button" id="promptConfirmDelete" class="btn btn-danger">Delete Account</button>
+                            </div>                             
+                        </div>
+                        <input type="hidden" name="form_type" value="editProfile">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            {% endfor %}
-        </div>
-        {% endif %}
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <div class="card mb-4 jb-fit-card">
-                    <div class="card-header jb-fit-card-header">
-                        <h5 class="card-title">Update Personal Information</h5>
-                    </div>
-                    <div class="card-body jb-fit-card-body">
-                        <form method="POST" enctype="multipart/form-data">
-                            {% csrf_token %}
-
-                            {% if form.non_field_errors %}
-                                <div class="alert alert-danger">
-                                    {% for error in form.non_field_errors %}
-                                        <p>{{ error }}</p>
-                                    {% endfor %}
-                                </div>
-                            {% endif %}
-                            <!-- Image -->
-                            <div class="mb-3">
-                                <label for="image" class="form-label">Image</label>
-                                <input type="file" class="form-control {% if form.email.errors %}is-invalid{% endif %}" id="image" name="image" accept="image/*" value="{{ form.image.value|default_if_none:'' }}">
-                            </div>
-                            <!-- Email address -->
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email address</label>
-                                <input type="email" class="form-control {% if form.email.errors %}is-invalid{% endif %}" id="email" name="email" value="{{ form.email.value|default_if_none:'' }}">
-                            </div>
-                            <!-- Email address validation -->
-                            {% if form.email.errors %}
-                                <div class="alert alert-danger py-1 my-1">
-                                    {% for error in form.email.errors %}
-                                        <p class="mb-0">{{ error }}</p>
-                                    {% endfor %}
-                                </div>
-                            {% endif %}
-                            <!-- Phone Number -->
-                            <div class="mb-3">
-                                <label for="id_phone_number" class="form-label">Phone Number</label>
-                                <input type="text" class="form-control" id="id_phone_number" name="phone_number" value="{{ form.phone_number.value }}">
-                            </div>
-                            <!-- Phone number validation -->
-                            {% if form.phone_number.errors %}
-                                <div class="alert alert-danger py-1 my-1">
-                                    {% for error in form.phone_number.errors %}
-                                        <p class="mb-0">{{ error }}</p>
-                                    {% endfor %}
-                                </div>
-                            {% endif %}
-
-                            <!-- Address -->
-                            <div class="mb-3">
-                                <label for="id_address" class="form-label">Address</label>
-                                <textarea class="form-control" id="id_address" name="address" rows="3">{{ form.address.value }}</textarea>
-                            </div>
-                            <!-- Address validation -->
-                            {% if form.address.errors %}
-                                <div class="alert alert-danger py-1 my-1">
-                                    {% for error in form.address.errors %}
-                                        <p class="mb-0">{{ error }}</p>
-                                    {% endfor %}
-                                </div>
-                            {% endif %}
-
-                            <!-- Date of birth -->
-                            <div class="mb-3">
-                                {{ form.date_of_birth.label }}
-                                {{ form.date_of_birth }}
-                            </div>
-                            {% if form.date_of_birth.errors %}
-                                <div class="alert alert-danger py-1 my-1">
-                                    {% for error in form.date_of_birth.errors %}
-                                        <p class="mb-0">{{ error }}</p>
-                                    {% endfor %}
-                                </div>
-                            {% endif %}
-
-                            <!-- Current weight -->
-                            <div class="mb-3">
-                                <label for="id_current_weight" class="form-label">Current Weight (kg)</label>
-                                <input type="number" step="0.01" class="form-control" id="id_current_weight" name="current_weight" value="{{ form.current_weight.value }}">
-                                {% if form.current_weight.errors %}
-                                    <div class="alert alert-danger py-1 my-1">
-                                        {% for error in form.current_weight.errors %}
-                                            <p class="mb-0">{{ error }}</p>
-                                        {% endfor %}
-                                    </div>
-                                {% endif %}
-                            </div>
-
-                            <!-- Height -->
-                            <div class="mb-3">
-                                <label for="id_height" class="form-label">Height (cm)</label>
-                                <input type="number" step="0.01" class="form-control" id="id_height" name="height" value="{{ form.height.value }}">
-                                {% if form.height.errors %}
-                                    <div class="alert alert-danger py-1 my-1">
-                                        {% for error in form.height.errors %}
-                                            <p class="mb-0">{{ error }}</p>
-                                        {% endfor %}
-                                    </div>
-                                {% endif %}
-                            </div>
-
-                            <!-- Goal weight -->
-                            <div class="mb-3">
-                                <label for="id_goal_weight" class="form-label">Goal Weight (kg)</label>
-                                <input type="number" step="0.01" class="form-control" id="id_goal_weight" name="goal_weight" value="{{ form.goal_weight.value }}">
-                                {% if form.goal_weight.errors %}
-                                    <div class="alert alert-danger py-1 my-1">
-                                        {% for error in form.goal_weight.errors %}
-                                            <p class="mb-0">{{ error }}</p>
-                                        {% endfor %}
-                                    </div>
-                                {% endif %}
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <button type="submit" class="btn btn-primary edit-profile-btn">Save</button>
-                                </div>
-                                <div class="col-md-6 d-flex justify-content-end">
-                                    <button type="button" id="promptConfirmDelete" class="btn btn-danger">Delete Account</button>
-                                </div>                             
-                            </div>
-                            <input type="hidden" name="form_type" value="editProfile">
-                        </form>
-                    </div>
-                </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete your account?<br><i>This action cannot be reversed.</i></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteButton">Delete</button>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Delete Confirmation Modal -->
-    <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Are you sure you want to delete your account?<br><i>This action cannot be reversed.</i></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-danger" id="confirmDeleteButton">Delete</button>
-                </div>
-            </div>
-        </div>
-    </div>
+{% block postloadjs %}
+    <script src="{% static 'js/base.js' %}"></script>
+    <script src="{% static 'accounts/js/edit_profile.js' %}"></script>
+{% endblock %}
 
-    {% block postloadjs %}
-        <script src="{% static 'js/base.js' %}"></script>
-        <script src="{% static 'accounts/js/edit_profile.js' %}"></script>
-    {% endblock %}
-</body>
 {% endblock %}
 </html>

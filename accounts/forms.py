@@ -229,6 +229,15 @@ class WeightLogForm(forms.ModelForm):
             ),
         }
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    def clean_weight(self):  # Corrected method name to match the field
+        weight = self.cleaned_data.get('weight')
+        if weight is not None and weight <= 0:  # Ensure weight is not None before checking
+            raise ValidationError('Value must be greater than zero.')
+        return weight
+
 
 class ProgressPictureForm(forms.ModelForm):
     class Meta:

@@ -3,7 +3,7 @@
 
 {% block content %}
 <link href="{% static 'checkout/css/checkout.css' %}" rel="stylesheet">
-<body>
+<div class="container d-flex justify-content-center align-items-center content-container">
     {% if messages %}
         <div class="alert alert-dismissable fade show" role="alert">
             {% for message in messages %}
@@ -76,8 +76,7 @@
             </div>
         </form>
     </div>
-</body>
-
+</div>
 
 
 
