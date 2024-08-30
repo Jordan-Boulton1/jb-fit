@@ -162,7 +162,7 @@ nav {
     width: 30%;
 }
 
-.ratings i{
+.ratings i {
     color: var(--primary-color-highlight);
 }
 
@@ -246,7 +246,6 @@ transition: 0.3s;
     transition: 0.3s;
 }
 
-
 .closeerrorbtn {
     font-weight: bold;
     float: right;
@@ -259,7 +258,6 @@ transition: 0.3s;
 .closeerrorbtn:hover {
     color: #ffffff;
 }
-
 
 /* When moving the mouse over the close button */
 .closebtn:hover {
@@ -306,33 +304,6 @@ color: black;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-@media(max-width: 425px) {
-    .user-content{
-        margin-top: 45px;
-    }
-}
-
-@media (min-width: 576px) {
-    .about-text, .coach-desc {
-        font-size: 1.25rem;
-    }
-}
-
-@media (min-width: 992px) {
-    .about-text {
-        font-size: 1.5rem;
-    }
-
-    .user-content{
-        margin-top: 45px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .pt-card-desc {
-        font-size: 16px !important;
-    }
-}
 
 /*General Card Style*/
 .jb-fit-card {
@@ -379,7 +350,7 @@ color: black;
 }
 
 /* Reset Done Styling*/
-.info-container{
+.info-container {
     background-color: rgba(119, 136, 153, 0.208);
 }
 
@@ -387,17 +358,45 @@ color: black;
     max-width: 350px;
 }
 
-.reset-info-icon{
+.reset-info-icon {
     font-size: 20px;
     color: var(--primary-color-highlight);
     margin-top: 20px;
 }
 
-.checkout-success-icon{
+.checkout-success-icon {
     font-size: 50px;
 }
 
 /* Plans Section */
-.training-plans-find-out-more-container{
+.training-plans-find-out-more-container {
     background-color: var(--primary-color);
+}
+
+@media(max-width: 425px) {
+    .user-content{
+        margin-top: 45px;
+    }
+}
+
+@media (min-width: 576px) {
+    .about-text, .coach-desc {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .about-text {
+        font-size: 1.5rem;
+    }
+
+    .user-content{
+        margin-top: 45px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .pt-card-desc {
+        font-size: 16px !important;
+    }
 }

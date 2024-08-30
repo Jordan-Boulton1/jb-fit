@@ -49,7 +49,7 @@ The colour scheme for the JB Fit website has been thoughtfully selected to creat
 - `#f5f5f5` used as the  primary background colour.
 - `#353431` used as the secondary background colour, primarily in the navbar and footer.
 
-I used [coolors.co](https://coolors.co/ffffff-f5f5f5-ff5100-353431-000000) to generate my colour palette.
+I used [coolors.co](https://coolors.co/ffffff-f5f5f5-ff8f5c-ff5100-353431-000000) to generate my colour palette.
 
 ![screenshot](documentation/coolors.png)
 
