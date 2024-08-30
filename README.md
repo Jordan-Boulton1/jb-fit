@@ -468,6 +468,12 @@ I've used [Figma](https://www.figma.com) to design my site mockups.
 
 		![screenshot](documentation/features/reset-password/feat-reset-password-check-email.png)
 
+### Future Features
+
+- **Community Forum**: The Community Forum will serve as a dedicated space where users can connect, share their fitness journeys, ask questions, and support each other. This feature aims to foster a sense of community among JB Fit users, allowing them to engage in discussions about workouts, nutrition tips, success stories, and challenges. The forum will include topic-specific threads, private messaging, and the ability to follow and interact with other users’ posts. This interactive platform will enhance user engagement, encourage knowledge sharing, and provide a supportive environment for individuals striving to reach their fitness goals.
+
+- **Community Forum**: Social Media Integration will allow users to log in or sign up using their existing social media accounts, such as Facebook, Google, or Twitter. This feature aims to streamline the login process, making it quicker and more convenient for users to access their accounts. By reducing the barriers to entry, social media login integration will help improve user acquisition and retention rates. Additionally, it will provide an easy way for users to share their progress and milestones directly on their social media profiles, enhancing the visibility of JB Fit within their personal networks.
+
 
 ## Tools & Technologies Used
 
