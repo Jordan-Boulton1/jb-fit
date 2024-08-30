@@ -146,10 +146,20 @@ nav {
 
 .review-card {
     border:none;
+    min-height: 384px;
+    height: 468px;
 }
 
+.user-content {
+    min-height: 245px;
+    height: 330px;
+}
 .user-content p {
     font-size: 14px;
+}
+
+.user-image img {
+    width: 30%;
 }
 
 .ratings i{
@@ -292,19 +302,25 @@ color: black;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+@media(max-width: 425px) {
+    .user-content{
+        margin-top: 45px;
+    }
+}
+
 @media (min-width: 576px) {
     .about-text, .coach-desc {
         font-size: 1.25rem;
     }
 }
 
-@media (min-width: 768px) {
-
-}
-
 @media (min-width: 992px) {
     .about-text {
         font-size: 1.5rem;
+    }
+
+    .user-content{
+        margin-top: 45px;
     }
 }
 
