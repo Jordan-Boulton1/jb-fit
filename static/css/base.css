@@ -99,6 +99,27 @@ nav {
     min-height: 80vh !important;
 }
 
+/* Custom Scrollbar using CSS */
+.custom-scrollbar {
+    overflow-y: scroll;
+}
+
+  /* scrollbar width */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+}
+
+  /* scrollbar track */
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #eee;
+}
+
+  /* scrollbar handle */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background-image: linear-gradient(to right, #ff5100 20%, #FF8F5C 100%);
+}
+
 /* Hero section */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('https://ci-jb-fit.s3.eu-west-2.amazonaws.com/static/images/jb-fit-hero.webp') no-repeat center center;

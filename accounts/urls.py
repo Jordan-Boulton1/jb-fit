@@ -9,6 +9,11 @@ urlpatterns = [
         name='profile'
     ),
     path(
+        "accounts/profile/user_order_history",
+        views.user_order_history,
+        name='user_order_history'
+    ),
+    path(
         "accounts/profile/edit/",
         views.edit_profile_view,
         name='edit_profile'

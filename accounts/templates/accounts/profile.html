@@ -34,12 +34,15 @@
         {% endif %}
         <h1 class="display-4 text-white">{{ profile.user.first_name }} {{ profile.user.last_name }}</h1>
         <div class="row mb-3">
-            <div class="col-12 d-flex justify-content-center align-items-center mt-3">
-                <a href="{% url 'edit_profile' %}" class="btn btn-lg btn-primary bg-gradient">Edit Profile</a>
+            <div class="col-12 d-flex flex-column flex-md-row justify-content-center align-items-center mt-3 gy-3">
+                <!-- Stacks vertically on small screens and side-by-side on medium and larger screens -->
+                <a href="{% url 'edit_profile' %}" class="btn btn-lg btn-primary bg-gradient mb-2 mb-md-0 me-0 me-md-3">Edit Profile</a>
+                <a href="{% url 'user_order_history' %}" class="btn btn-lg btn-primary bg-gradient">View Purchase History</a>
             </div>
         </div>
-
+        
     </div>
+    
 
     <div class="row mt-5">
         <div class="col-md-6">
@@ -145,7 +148,7 @@
                         </div>
 
                     </form>
-                    <div class="row gallery d-flex justify-content-start flex-wrap overflow-auto custom-scrollbar-css progress-picture-container">
+                    <div class="row gallery d-flex justify-content-start flex-wrap overflow-auto custom-scrollbar progress-picture-container">
                         {% for picture in profile.progress_pictures.all %}
                             <div class="col-md-3 col-sm-6 col-12 mb-3 position-relative mt-3">
                                 <img src="{{ picture.progress_image.url }}" alt="Progress Picture" class="img-fluid rounded progress-picture">

@@ -5,9 +5,15 @@
 <div class="container-fluid d-flex justify-content-center align-items-center content-container">
     <div class="col-md-5">
         <div class="card mb-4 jb-fit-card">
-            <div class="card-header jb-fit-card-header">
-                <h5 class="card-title signup-heading text-center">Edit Weight Log</h5>
+            <div class="card-header jb-fit-card-header d-flex flex-column align-items-center"> <!-- Flexbox for vertical alignment -->
+                <div class="row">
+                    <h5 class="card-title mb-2">Edit Weight Log</h5> <!-- Adjusted margin for spacing -->
+                </div>
+                <div class="row">
+                    <a class="btn back-btn" href="{% url 'profile' %}">&larr; Back</a>
+                </div>
             </div>
+
             <div class="card-body jb-fit-card-body">
                 <form method="post">
                     {% csrf_token %}

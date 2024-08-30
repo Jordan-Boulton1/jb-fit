@@ -4,7 +4,7 @@
 {% block content %}
 <link href="{% static 'checkout/css/checkout.css' %}" rel="stylesheet">
 <div class="container d-flex justify-content-center align-items-center content-container">
-    <div class="col-md-5">
+    <div class="col-12 col-xl-6 my-5">
         <div class="card mb-4 jb-fit-card">
             <div class="card-header jb-fit-card-header">
                 <i class="fa-regular fa-circle-check checkout-success-icon"></i>
@@ -24,7 +24,7 @@
 
                         <div class="d-flex align-items-center">
                             <p class="purchase-description mb-0">Plan:</p>
-                            <p class="mb-0 ms-2 training-plan-description"> {{ order.training_plan.name }} Training Plan</p>
+                            <p class="mb-0 ms-2 training-plan-description"> {{ order.training_plan.name }}</p>
                         </div>
                     
                         <div class="d-flex align-items-center">

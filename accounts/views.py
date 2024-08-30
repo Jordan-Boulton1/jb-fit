@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from .models import *
 from .forms import *
+from checkout.models import *
 
 # Create your views here.
 
@@ -19,6 +20,14 @@ def profile_view(request):
         'entry_date'
     )
     return render(request, 'accounts/profile.html', {'profile': profile})
+
+
+@login_required
+def user_order_history(request):
+    order_history = Order.objects.filter(user=request.user).select_related('training_plan').order_by(
+        '-created_at'
+    )
+    return render(request, 'accounts/user_order_history.html', {'order_history': order_history})
 
 
 @login_required

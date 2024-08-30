@@ -93,23 +93,11 @@ input[type="file"] {
     right: 30px;
 }
 
-/* Custom Scrollbar using CSS */
-.custom-scrollbar-css {
-    overflow-y: scroll;
+#order-history-table {
+    color:#ffffff;
 }
 
-  /* scrollbar width */
-.custom-scrollbar-css::-webkit-scrollbar {
-    width: 5px;
-}
 
-  /* scrollbar track */
-.custom-scrollbar-css::-webkit-scrollbar-track {
-    background: #eee;
-}
-
-  /* scrollbar handle */
-.custom-scrollbar-css::-webkit-scrollbar-thumb {
-    border-radius: 1rem;
-    background-image: linear-gradient(to right, #ff5100 20%, #FF8F5C 100%);
+.order-history-container {
+    max-height: 500px;
 }
