@@ -1,0 +1,62 @@
+
+.plans-card {
+    position: relative; /* Needed for pseudo-element positioning */
+    overflow: hidden; /* Hide overflow to cut off the pseudo-element */
+    border-radius: 8px; /* Optional: Add some rounded corners to the card */
+    min-height: 450px;
+    max-height: 450px;
+    max-width: 410px;
+    color: #ffffff;
+    margin-bottom: 0 !important;
+}
+
+.plans-card-header {
+    padding: 1rem;
+    position: relative;
+    z-index: 1; 
+    background: linear-gradient(to right, #ff5100 20%, #FF8F5C 100%);
+    height: 180px;
+}
+
+.plans-card-body {
+    width: 100%;
+    padding: 5px 25px 10px;
+    float: left;
+    background-color: #333333;
+    border-radius: 10px;
+    color: #ffffff !important;
+    border: none !important;
+    height: 100%;
+    border-radius: 0 0 5px 5px;
+    position: relative;
+    z-index: 1;
+}
+
+.plans-card-body form h5 {
+    color: var(--secondary-color-highlight)
+}
+
+.plans-card-body form .plans-payment-description {
+    color: rgba(194, 191, 191, 0.759);
+    min-width: 160px;
+}
+
+/* Pseudo-element for the diagonal line */
+.plans-card-body::before {
+    content: '';
+    background-color: #333333;
+    border-radius: 10px;
+    color: #ffffff !important;
+    border: none !important;
+    width: 120%;
+    height: 100%;
+    left: 1px;
+    bottom: 30px;
+    position: absolute;
+    z-index: -1;
+    transform: rotate(176deg);
+}
+
+.plans-description{
+    min-height: 135px;
+}

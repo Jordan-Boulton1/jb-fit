@@ -2,28 +2,47 @@
 {% load static %}
 
 {% block content %}
+<link href="{% static 'plans/css/plans.css' %}" rel="stylesheet">
 <section class="my-5 pb-5 py-xl-8" id="training-plans">
-    <div class="container">
+    <div class="container ">
         <h1 class="fw-bold display-4 text-center text-body-emphasis plan-title">Training Plans</h1>
         <p class="lead py-3">At JB Fit, I offer a range of personalized fitness services designed to help you achieve your health and fitness goals. Whether you're just starting your fitness journey or looking to take your training to the next level, there's a package that's right for you.</p>
-        <ul class="list-group">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 gy-3 gy-xl-5 g-4 text-center mt-5">
             {% for plan in plans %}
-            <li class="list-group-item mb-4">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                        <h4 class="my-0 fw-normal">{{ plan.name }}</h4>
-                        <p class="mb-1">{{ plan.description }}</p>
-                        <h5 class="mb-0">£{{ plan.price }}</h5>
+                <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                    <div class="card plans-card">
+                        <div class="card-header plans-card-header p-2">
+                            <h5 class="card-title text-center my-5">{{ plan.name }} Training Plan</h5>
+                        </div>
+                        <div class="card-body plans-card-body p-3">
+                            <p class="mb-2 plans-description">{{ plan.description }}</p>
+                            <form action="{% url 'checkout' plan.id %}" method="get" class="ml-auto">
+                                <div class="row d-flex justify-content-between align-items-center">
+                                    <div class="col-4 text-start">
+                                        <h5 class="mb-0">£{{ plan.price }}</h5>
+                                    </div>
+                                    <div class="col-8 text-end plans-payment-description">
+                                        <p class="mb-0">One-time payment</p>
+                                    </div>
+                                </div>
+                                {% if user.is_authenticated and plan.id in user_ordered_plan_ids %}
+                                <div class="tooltip-wrapper" data-bs-toggle="tooltip" title="You have already purchased this training plan.">
+                                    <button type="submit" class="btn btn-primary w-100 bg-gradient mt-3" disabled>
+                                        Already Purchased
+                                    </button>
+                                </div>
+                                    {% else %}
+                                    <button type="submit" class="btn btn-primary w-100 bg-gradient mt-3">Purchase</button>
+                                {% endif %}
+                            </form>
+                        </div>
                     </div>
-                    <form action="{% url 'checkout' plan.id %}" method="get" class="ml-auto">
-                        <button type="submit" class="btn btn-lg btn-primary bg-gradient">Checkout</button>
-                    </form>
                 </div>
-            </li>
             {% endfor %}
-        </ul>
+        </div>
     </div> 
 </section>
+
 
 <section class="bg-custom py-5">
     <div class="container">
@@ -61,6 +80,9 @@
     </div>
 </section>
 
+{% block postloadjs %}
+    <script src="{% static 'js/base.js' %}"></script>
+{% endblock %}
 <!-- Interested in Finding Out More Section -->
 {% include 'contact/contact_form.html' %}
 {% endblock %}

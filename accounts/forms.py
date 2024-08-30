@@ -38,6 +38,13 @@ class CustomSignupForm(SignupForm):
         widget=forms.DateInput(attrs={'type': 'date'})
     )
 
+    password1 = forms.CharField(
+        widget=forms.PasswordInput(attrs={'aria-describedby': 'id_password1_error'})
+    )
+    password2 = forms.CharField(
+        widget=forms.PasswordInput(attrs={'aria-describedby': 'id_password2_error'})
+    )
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.label_suffix = ''
