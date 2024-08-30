@@ -376,3 +376,8 @@ color: black;
 .checkout-success-icon{
     font-size: 50px;
 }
+
+/* Plans Section */
+.training-plans-find-out-more-container{
+    background-color: var(--primary-color);
+}
