@@ -468,6 +468,20 @@ I've used [Figma](https://www.figma.com) to design my site mockups.
 
 		![screenshot](documentation/features/reset-password/feat-reset-password-check-email.png)
 
+### Checkout
+
+- **Checkout Page**
+
+	- The checkout page provides a streamlined and user-friendly interface for completing purchases on the JB Fit platform. It features two main sections: "Checkout Details" and "Order Summary." In the "Checkout Details" section, users can enter their personal and payment information, including their first and last name, email, phone number, and credit card details. The "Order Summary" section displays a clear breakdown of the selected training plan, its description, and the total cost, ensuring transparency and accuracy before finalizing the payment. This layout ensures a smooth and efficient checkout process, enhancing the overall user experience.
+
+		![screenshot](documentation/features/checkout/feat-checkout-page.png)
+
+- **Payment Successful**
+
+	- The payment successful page confirms the completion of a user's purchase in a clear and reassuring manner. It features a confirmation message that thanks the user for their purchase and notifies them that a confirmation email has been sent to their specified email address. Below the confirmation, the "Purchase Details" section provides specific information about the purchased training plan, including the plan name, duration, access details, and the exact purchase date and time. This feature enhances the user experience by providing immediate feedback and clear next steps after a purchase, reinforcing a sense of trust and satisfaction.
+
+		![screenshot](documentation/features/checkout/feat-checkout-page-successful.png)
+
 ### Future Features
 
 - **Community Forum**: The Community Forum will serve as a dedicated space where users can connect, share their fitness journeys, ask questions, and support each other. This feature aims to foster a sense of community among JB Fit users, allowing them to engage in discussions about workouts, nutrition tips, success stories, and challenges. The forum will include topic-specific threads, private messaging, and the ability to follow and interact with other users’ posts. This interactive platform will enhance user engagement, encourage knowledge sharing, and provide a supportive environment for individuals striving to reach their fitness goals.
