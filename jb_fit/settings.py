@@ -32,7 +32,6 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = os.environ.get("DEBUG", False)
 
 ALLOWED_HOSTS = []
-
 CSRF_TRUSTED_ORIGINS = []
 
 host = os.environ.get('HOST')
@@ -63,7 +62,7 @@ INSTALLED_APPS = [
     'checkout',
 
     # Other
-    'storages', # Required for AWS S3
+    'storages',  # Required for AWS S3
     'cloudinary',  # Required for Cloudinary
     'cloudinary_storage',  # Required for Cloudinary storage
 ]
@@ -131,8 +130,6 @@ WSGI_APPLICATION = 'jb_fit.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-
-
 if 'test' in sys.argv:
     DATABASES = {
         'default': {
@@ -146,22 +143,25 @@ else:
     }
 
 
-
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'NumericPasswordValidator',
     },
 ]
 
