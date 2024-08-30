@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 import sys
 import dj_database_url
+from django.contrib.messages import constants as messages
 
 if os.path.isfile('env.py'):
     import env
@@ -80,6 +81,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'jb_fit.urls'
+
+MESSAGE_TAGS = {
+    messages.SUCCESS: 'alert alert-success',
+    messages.ERROR: 'alert alert-danger'
+}
 
 TEMPLATES = [
     {
