@@ -59,6 +59,7 @@ I've used CSS `:root` variables to easily update the global colour scheme by cha
 :root {
 --primary-color: #353431;
 --primary-color-highlight: #FF5100;
+--secondary-color-highlight: #FF8F5C;
 /* Bootstrap overrides */
 --bs-body-bg: #f5f5f5;
 --bs-body-font-family: 'Cambay', sans-serif;
@@ -111,7 +112,7 @@ I've used [Figma](https://www.figma.com) to design my site mockups.
 <summary> Click here to see the Home Page Mock-ups</summary>
 
 #### Home
-  - ![screenshot](documentation/wireframes/home/home-mockup1.png)
+   - ![screenshot](documentation/wireframes/home/home-mockup1.png)
 
   - ![screenshot](documentation/wireframes/home/home-mockup2.png)
 
@@ -197,21 +198,21 @@ I've used [Figma](https://www.figma.com) to design my site mockups.
 
     - The site includes a fully responsive navigation bar that adapts to different screen sizes. On mobile devices, the navigation bar collapses into a toggleable menu, enhancing usability for users on the go. The navigation bar provides easy access to essential pages such as Home, About, Plans, FAQ, and Community, ensuring users can quickly navigate the site. For logged-in users, additional options like 'My Profile' and 'Logout' are available, making it easy to manage their account.
 
-![screenshot](documentation/features/feat-responsive-nav1.png)
-![screenshot](documentation/features/feat-responsive-nav2.png)
+		![screenshot](documentation/features/feat-responsive-nav1.png)
+		![screenshot](documentation/features/feat-responsive-nav2.png)
 
 - **Custom Logo**
 
     - The website features a custom logo prominently displayed in the navigation bar, reinforcing brand identity. This visual element helps establish trust and recognition, as users can immediately identify the JB Fit brand. The logo is linked to the homepage, allowing users to return to the main page with a single click.
 
-![screenshot](documentation/features/feat-logo.png)
+		![screenshot](documentation/features/feat-logo.png)
 
 - **Authentication Links**
 
     - Depending on the user's authentication status, the navigation bar dynamically displays relevant options. For unauthenticated users, 'Login' and 'Register' links are provided, encouraging new sign-ups and making it easy for returning users to log in. Authenticated users are presented with 'My Profile' and 'Logout' options, enabling seamless account management.
 
-![screenshot](documentation/features/feat-unauthenticated-user.png)
-![screenshot](documentation/features/feat-authenticated-user.png)
+		![screenshot](documentation/features/feat-unauthenticated-user.png)
+		![screenshot](documentation/features/feat-authenticated-user.png)
 
 ### Footer
 
@@ -219,25 +220,25 @@ I've used [Figma](https://www.figma.com) to design my site mockups.
 
     - The footer includes prominent social media links, allowing users to connect with JB Fit across multiple platforms like Facebook, Instagram, Twitter, LinkedIn, and YouTube. This integration helps build a community around the brand and keeps users engaged with the latest updates and content from JB Fit.
 
-![screenshot](documentation/features/feat-social-links.png)
+		![screenshot](documentation/features/feat-social-links.png)
 
 - **Newsletter Subscription Form**
 
 	- The footer also includes a newsletter subscription form, which is a valuable tool for maintaining communication with users. By subscribing, users receive monthly updates on fitness trends, promotions, and news. This feature is crucial for user retention and driving ongoing engagement.
 
-![screenshot](documentation/features/feat-newsletter.png)
+		![screenshot](documentation/features/feat-newsletter.png)
 
 - **Quick Links Section**
 
 	- A quick links section in the footer provides easy access to the most important pages on the site. This section is especially useful for users who may need to quickly navigate to another part of the site without returning to the top of the page.
 
-![screenshot](documentation/features/feat-quick-links.png)
+		![screenshot](documentation/features/feat-quick-links.png)
 
 - **Custom Footer Branding**
 
 	- The footer is customized to include JB Fit’s branding, including a copyright notice and branding colors. This consistent branding across the site enhances the professional appearance and reinforces the site’s identity.
 
-![screenshot](documentation/features/feat-footer.png)
+		![screenshot](documentation/features/feat-footer.png)
 
 ### Home Page
 
@@ -245,43 +246,43 @@ I've used [Figma](https://www.figma.com) to design my site mockups.
 
     - The hero section is the first thing users see when they visit the website. It features a strong, compelling headline and a call-to-action button that encourages users to start their fitness journey. This section is visually impactful, with a background image that sets the tone for the site, and a clear value proposition that appeals to users looking for personal online fitness coaching.
 
-![screenshot](documentation/features/home/feat-home-hero.png)
+		![screenshot](documentation/features/home/feat-home-hero.png)
 
 - **About**
 
     - The About section introduces the site's founder, Jordan, providing credibility and a personal connection with visitors. It explains Jordan's experience and qualifications, which helps to build trust with potential clients. The section is accompanied by a professional image, further enhancing the personal connection with visitors.
 
-![screenshot](documentation/features/home/feat-home-about.png)
+		![screenshot](documentation/features/home/feat-home-about.png)
 
 - **Online Personal Training**
 
     - This section explains what online personal training is and outlines its benefits, such as flexibility, personalization, accessibility, and affordability. It also includes visually appealing icons that represent each benefit, making it easy for users to understand the advantages of online training at a glance. This section is crucial for educating visitors about the unique value proposition of online training.
 
-![screenshot](documentation/features/home/feat-home-online-pt.png)
+		![screenshot](documentation/features/home/feat-home-online-pt.png)
 
 - **How It Works**
 
     - The "How It Works" section breaks down the process of getting started with JB Fit into four easy steps: Initial Consultation, Personalized Plan, Ongoing Support, and Community Interaction. Each step is visually represented with an icon and a brief description, helping users understand what to expect when they sign up. This transparency is key to converting visitors into clients.
 
-![screenshot](documentation/features/home/feat-home-how-it-works.png)
+		![screenshot](documentation/features/home/feat-home-how-it-works.png)
 
 - **Client Reviews**
 
     - The Client Reviews section features testimonials from satisfied clients, which are essential for building social proof. Each review is accompanied by a star rating and a photo of the client, making the testimonials more relatable and trustworthy. This section helps reassure potential clients of the quality and effectiveness of JB Fit’s services.
 
-![screenshot](documentation/features/home/feat-home-client-review.png)
+		![screenshot](documentation/features/home/feat-home-client-review.png)
 
 - **Training Plans**
 
     - The Training Plans section presents the different packages available, each with a clear breakdown of what’s included and the associated cost. This section is designed to help users easily compare the options and choose the one that best fits their needs. The use of distinct cards for each plan, along with prominent pricing, makes this information easy to digest.
 
-![screenshot](documentation/features/home/feat-home-training-plans.png)
+		![screenshot](documentation/features/home/feat-home-training-plans.png)
 
 - **Contact Form**
 
     - The Contact Form section invites users to get in touch for more information or inquiries, with a prompt to check the FAQ for common questions. This section is designed to facilitate easy communication between potential clients and JB Fit, enhancing the user experience by providing a straightforward way to ask questions or start the sign-up process.
 
-![screenshot](documentation/features/home/feat-home-contact-form.png)
+		![screenshot](documentation/features/home/feat-home-contact-form.png)
 
 ### About Page
 
@@ -289,25 +290,25 @@ I've used [Figma](https://www.figma.com) to design my site mockups.
 
     - The About page opens with a powerful and inspirational quote, which sets a motivational tone for visitors. This section uses a full-width, centred layout with a bold, white font against a hero image, making the quote stand out. The quote encapsulates the philosophy of perseverance and determination, resonating with the core values of the JB Fit coaching program.
 
-![screenshot](documentation/features/about/feat-about-hero.png)
+		![screenshot](documentation/features/about/feat-about-hero.png)
 
 - **Biography**
 
     - The Coach Biography section provides a detailed overview of the coach's background, including academic qualifications, certifications, and professional experience. This section builds credibility and trust by highlighting the coach’s expertise and the personalized approach they bring to their training. The biography is divided into text and bullet points, making it easy for users to digest the information and understand the coach’s qualifications and commitment to continuous learning.
 
-![screenshot](documentation/features/about/feat-about-biography.png)
+		![screenshot](documentation/features/about/feat-about-biography.png)
 
 - **Mission and Vision**
 
     - The Mission and Vision section clearly outlines the purpose and goals of JB Fit. The mission statement emphasizes the commitment to empowering individuals through personalized coaching and supportive community engagement. The vision statement reflects the long-term goals of making professional fitness coaching accessible to all and fostering a culture of health and wellness. This section is essential for communicating the core values and long-term aspirations of the brand to potential clients.
 
-![screenshot](documentation/features/about/feat-about-mission-vision.png)
+		![screenshot](documentation/features/about/feat-about-mission-vision.png)
 
 - **Personal Fitness Philosophy**
 
     - The Personal Fitness Philosophy section is a key feature that showcases the coach's unique approach to fitness. It emphasizes a holistic and sustainable approach to health and wellness, focusing not only on physical strength but also on mental resilience and overall well-being. The section is visually divided into individual cards, each highlighting a different aspect of the coach’s philosophy, such as Individualized Approach, Sustainable Practices, Holistic Health, Continuous Learning, and Community Support. This layout makes the philosophy accessible and relatable to users, encouraging them to connect with the values of JB Fit.
 
-![screenshot](documentation/features/about/feat-about-philosophy.png)
+		![screenshot](documentation/features/about/feat-about-philosophy.png)
 
 ### Plans Page
 
@@ -315,13 +316,13 @@ I've used [Figma](https://www.figma.com) to design my site mockups.
 
     - The Training Plans section offers users a detailed overview of the different fitness packages available at JB Fit. Each plan is presented in a clean, card-based layout, making it easy for users to compare options and select the one that best suits their needs. The plans include various levels of support and customization, from a one-time plan to the comprehensive Elite Coaching package. This section is essential for helping users make informed decisions about their fitness journey and provides clear pricing for each option.
 
-![screenshot](documentation/features/plans/feat-plans-training.png)
+		![screenshot](documentation/features/plans/feat-plans-training.png)
 
 - **Why Choose My Plans?**
 
     - This section highlights the key advantages of choosing JB Fit’s training plans, such as Expertise, Customization, Support, and Results. Each benefit is visually represented with an icon and a brief description, reinforcing the value of the services offered. This section is designed to build trust and confidence in potential clients by emphasizing the quality and effectiveness of the plans.
 
-![screenshot](documentation/features/plans/feat-plans-why-choose.png)
+		![screenshot](documentation/features/plans/feat-plans-why-choose.png)
 
 ### FAQ Page
 
@@ -329,44 +330,78 @@ I've used [Figma](https://www.figma.com) to design my site mockups.
 
     - The FAQ section is designed with an accordion layout, which organizes frequently asked questions into expandable panels. This structure makes it easy for users to find answers to their specific questions without having to scroll through long blocks of text. The accordion is divided into multiple categories such as General Questions, Services & Packages, Pricing & Payments, Personalized Plans, Support & Community, and Getting Started. Each category addresses key areas of interest for potential and current clients, providing detailed and helpful information to guide them through their fitness journey with JB Fit.
 
-![screenshot](documentation/features/faq/feat-faq-accordian-open.png)
-![screenshot](documentation/features/faq/feat-faq-accordian-closed.png)
+		![screenshot](documentation/features/faq/feat-faq-accordian-open.png)
+		![screenshot](documentation/features/faq/feat-faq-accordian-closed.png)
 
 - **General Questions**
 
     - This section addresses broad, introductory questions about JB Fit, such as what the platform is and how online personal training works. It helps new visitors quickly understand the core services offered and the benefits of choosing JB Fit for their fitness needs.
 
-![screenshot](documentation/features/faq/feat-faq-accordian-open.png)
+		![screenshot](documentation/features/faq/feat-faq-accordian-open.png)
 
 - **Services & Packages**
 
     - The Services & Packages section provides detailed information about the various services available and helps users decide which package is right for them. This section is crucial for helping potential clients understand the offerings and make an informed decision about which plan best suits their fitness goals.
 
-![screenshot](documentation/features/faq/feat-faq-services.png)
+		![screenshot](documentation/features/faq/feat-faq-services.png)
 
 - **Pricing & Payments**
 
     - This section covers important information about payment methods, discounts, and cancellation policies. It ensures that users are fully informed about the financial aspects of signing up for JB Fit services, providing transparency and building trust with potential clients.
 
-![screenshot](documentation/features/faq/feat-faq-pricing.png)
+		![screenshot](documentation/features/faq/feat-faq-pricing.png)
 
 - **Personalized Plans**
 
     - The Personalized Plans section explains how JB Fit customizes workout and nutrition plans based on each client's unique needs and preferences. It highlights the flexibility and personalized attention clients receive, which are key selling points for JB Fit's services.
 
-![screenshot](documentation/features/faq/feat-faq-personalized-plans.png)
+		![screenshot](documentation/features/faq/feat-faq-personalized-plans.png)
 
 - **Support & Community**
 
     - This section outlines the various levels of support available to clients, including check-ins, email and chat support, video consultations, and access to a supportive community. It emphasizes the ongoing support that clients receive, which is essential for maintaining motivation and achieving long-term success.
 
-![screenshot](documentation/features/faq/feat-faq-support-community.png)
+		![screenshot](documentation/features/faq/feat-faq-support-community.png)
 
 - **Getting Started**
 
     - The Getting Started section provides a step-by-step guide for new clients on how to begin their journey with JB Fit. It covers the initial consultation process and the information required to create a personalized plan. This section is designed to make onboarding new clients as smooth and straightforward as possible.
 
-![screenshot](documentation/features/faq/feat-faq-getting-started.png)
+		![screenshot](documentation/features/faq/feat-faq-getting-started.png)
+
+### Login Page
+
+- **Login Form**
+
+	- The login form is designed to provide a seamless and user-friendly experience for users trying to access their accounts. It includes standard input fields for the username/email and password, and a visually appealing layout that aligns with the overall JB Fit branding. The form is easy to navigate, and the use of clear labels and placeholders ensures that users can quickly understand the required information. The design includes responsive elements to ensure compatibility with various device sizes, providing a consistent experience across desktops, tablets, and mobile devices.
+
+		![screenshot](documentation/features/login/feat-login-page.png)
+
+- **Error Handling and Validation**
+
+	- The login form includes robust error handling and validation features to guide users when inputting incorrect information. If errors occur, such as missing or incorrect credentials, clear and concise error messages are displayed within the form. These error messages are highlighted in a distinct alert box with a close button, making it easy for users to correct their inputs and resubmit the form. This functionality improves the overall user experience by providing immediate feedback and reducing the frustration of multiple failed login attempts.
+
+		![screenshot](documentation/features/login/feat-login-validation.png)
+
+- **Forgot Password Link**
+
+	- A "Forgot Password?" link is prominently placed beneath the login button, allowing users who have forgotten their passwords to easily initiate the password reset process. This feature is crucial for user retention, as it provides a straightforward path to regain account access, thereby reducing barriers and potential drop-offs due to forgotten credentials.
+
+		![screenshot](documentation/features/login/feat-login-reset-password-link.png)
+
+- **Sign-Up Redirect**
+
+	- The login page also includes a prompt for users who do not have an account, directing them to the registration page with a "Sign up" link. This feature encourages new user acquisition by providing a clear call-to-action for potential clients who have landed on the login page but have yet to create an account. It seamlessly integrates the onboarding process, making it easy for new users to join JB Fit.
+
+		![screenshot](documentation/features/login/feat-sign-up-link.png)
+
+- **Registration Page**
+
+	- The sign-up page provides a comprehensive and intuitive interface for new users to create an account. It includes fields for entering essential details such as first and last names, email, and password. Users can also specify their gender by selecting from "Male," "Female," or "Other" options. The form requires users to confirm their password by entering it twice, ensuring accuracy and reducing the likelihood of login issues later. Additionally, a date of birth field with a calendar picker enhances usability, making it easy for users to input their information correctly.<br>
+	The page features a "Sign Up" button to submit the registration form and create an account. If a user already has an account, a convenient login link is provided to redirect them to the login page. The layout maintains a clean, modern design with a user-friendly color scheme that emphasizes accessibility and ease of navigation, offering a smooth onboarding experience.
+
+		![screenshot](documentation/features/feat-sign-up.png)
+
 
 ## Tools & Technologies Used
 
