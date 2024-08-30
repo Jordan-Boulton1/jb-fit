@@ -54,6 +54,7 @@ def add_weight_log(request):
             weight_log.weight = form.cleaned_data["weight"]
             weight_log.entry_date = timezone.now()
             weight_log.save()
+            messages.success(request, "Your weight log was successfully saved.")
             return redirect('profile')
         else:
             # Iterate over form errors and add them to messages
@@ -97,6 +98,7 @@ def edit_weight_log(request, log_id):
         form = WeightLogForm(request.POST, instance=weight_log)
         if form.is_valid():
             form.save()
+            messages.success(request, "Your weight log was successfully updated.")
             return redirect('profile')
         else:
             # Iterate over form errors and add them to messages
@@ -119,6 +121,7 @@ def delete_weight_log(request, log_id):
 
     if request.method == 'DELETE':
         weight_log.delete()
+        messages.success(request, "Your weight log was successfully deleted.")
         return JsonResponse({'success': True})
 
     return JsonResponse({'success': False})

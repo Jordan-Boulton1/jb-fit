@@ -104,6 +104,23 @@ nav {
     background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('https://ci-jb-fit.s3.eu-west-2.amazonaws.com/static/images/jb-fit-hero.webp') no-repeat center center;
     background-size: cover;
     height: 750px;
+    position: relative;
+}
+
+.message-alert {
+    top: 0; /* Aligns the message at the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust centering */
+    padding: 10px; /* Add some padding if needed */
+    z-index: 10; /* Make sure it stays above other elements */
+}
+
+.message-alert-home {
+    width: auto; /* Adjust width as necessary */
+    display: flex; /* Aligns the content */
+    justify-content: center; /* Centers the message text */
+    align-items: center; /* Centers the close button */
+    max-width: 90%; /* Prevents overflow */
 }
 
 /* Feature section */
@@ -236,7 +253,7 @@ cursor: pointer;
 transition: 0.3s;
 }
 
-.closesuccessbtn {
+.closebtn-variant {
     margin-left: 15px;
     font-weight: bold;
     float: right;

@@ -8,9 +8,9 @@
     {% if messages %}
     <div class="alert alert-dismissable fade show" role="alert">
         {% for message in messages %}
-        <div class="alert alert-{{ message.tags }} mt-2" role="alert">
+        <div class="{{ message.tags }} mt-2" role="alert">
             {{ message }}
-            <span class="closesuccessbtn mt-1">&times;</span>
+            <span class="closebtn-variant mt-1">&times;</span>
         </div>
         {% endfor %}
     </div>
@@ -18,7 +18,6 @@
     
     {% if not profile.address or not profile.phone_number or not profile.current_weight or not profile.goal_weight or not profile.height %}
     <div class="warning">
-        <span class="closebtn">&times;</span>
         <strong>Warning:</strong> Please complete your profile by filling out the missing fields: 
         {% if not profile.address %} <span class="fw-bold">Address</span> {% endif %}
         {% if not profile.phone_number %} <span class="fw-bold">Phone Number</span> {% endif %}

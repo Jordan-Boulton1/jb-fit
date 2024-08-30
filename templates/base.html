@@ -120,13 +120,6 @@
                             {% csrf_token %}
                             <h5 class="text-primary-highlight text-center text-xl-start">Subscribe to our newsletter</h5>
                             <p class="text-white text-center text-xl-start">Monthly news of everything going on in the fitness world.</p>
-
-                            {% for message in messages %}
-                            <div class="alert alert-success" role="alert">
-                                {{ message }}
-                            </div>
-                            {% endfor %}
-
                             <div class="d-flex flex-column flex-sm-row w-100 gap-2">
                                 {{ newsletter_form.email }}
                                 <button class="btn btn-primary bg-gradient" type="submit">Subscribe</button>

@@ -15,12 +15,14 @@ def newsletter_form(request):
             form.save()
             messages.success(
                 request,
-                'Successfully subscribed to the newsletter!'
+                'Successfully subscribed to the newsletter!',
+                extra_tags='newsletter'
             )
         else:
             for field, errors in form.errors.items():
                 for error in errors:
-                    messages.error(request, f"{field.capitalize()}: {error}")
+                    messages.error(request, f"{field.capitalize()}: {error}",
+                    extra_tags='newsletter')
 
     # Always return the form in the context dictionary
     return {'newsletter_form': form}

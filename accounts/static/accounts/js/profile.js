@@ -128,6 +128,19 @@ function confirmDeleteWeightLog() {
                 }
                 // Reload the chart data after deletion
                 loadChartData();
+                
+                // Dynamically insert the success message into the messages loop
+                const messagesDiv = document.querySelector('.alert.alert-dismissable');
+                if (messagesDiv) {
+                    const successMessage = document.createElement('div');
+                    successMessage.className = 'alert alert-success mt-2';
+                    successMessage.setAttribute('role', 'alert');
+                    successMessage.innerHTML = `
+                        ${data.message}
+                        <span class="closebtn-variant mt-1" onclick="this.parentElement.style.display='none';">&times;</span>
+                    `;
+                    messagesDiv.appendChild(successMessage);
+                }
             } else {
                 console.error('Failed to delete log');
             }

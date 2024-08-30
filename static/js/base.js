@@ -1,41 +1,35 @@
-// Check if the browser supports the replaceState method
+// Prevent form resubmission on page reload
 if (window.history.replaceState) {
-    // Replace the current history state with a new one to prevent form resubmission
     window.history.replaceState(null, null, window.location.href);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    var successMessageCloseBtns = document.getElementsByClassName("closesuccessbtn");
-    closeParentElement(successMessageCloseBtns);
+    // Add click event listeners to all close buttons
+    setupCloseButtons('.closebtn-variant');
+    setupCloseButtons('.closebtn');
+    setupCloseButtons('.closeerrorbtn');
 
-    var warningMessageCloseBtns = document.getElementsByClassName("closebtn");
-    closeParentElement(warningMessageCloseBtns);
-
-    var errorMessageCloseBtn = document.getElementsByClassName('closeerrorbtn');
-    closeClosestParentElementOnError(errorMessageCloseBtn);
-
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
+    // Initialize Bootstrap tooltips
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
     });
-   
 });
 
-
-function closeParentElement(btns) {
-    Array.from(btns).forEach(element => {
-        element.addEventListener('click', function () {
-            element.parentElement.style.display = 'none';
-        });
-    });
-}
-
-function closeClosestParentElementOnError(btns) {
-    Array.from(btns).forEach(element => {
-        element.addEventListener('click', function () {
-            var parent = this.closest('.alert'); // Find the closest parent with class 'alert'
-            if (parent) {
-                parent.style.display = 'none'; // Hide the parent element
+/**
+ * Sets up click event listeners on buttons with the specified selector
+ * to close their parent alert elements.
+ * 
+ * @param {string} selector - The CSS selector for the close buttons.
+ */
+function setupCloseButtons(selector) {
+    // Select all elements matching the selector
+    var closeBtns = document.querySelectorAll(selector);
+    closeBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var parentAlert = this.closest('.alert'); // Find the closest '.alert' parent
+            if (parentAlert) {
+                parentAlert.style.display = 'none'; // Hide the alert
             }
         });
     });

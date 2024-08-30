@@ -18,11 +18,15 @@ def contact_coach(request):
 
             messages.success(
                 request,
-                'Your message has been sent and saved successfully.'
+                'Your message has been sent and saved successfully.',
+                extra_tags='contact'
             )
             # Redirect to home or any other page after submission
             return redirect('home')
     else:
-        form = ContactForm()
+        for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{field.capitalize()}: {error}",
+                    extra_tags='contact')
 
     return render(request, 'contact/contact_form.html', {'form': form})

@@ -1,3 +1,4 @@
+import re
 from django import forms
 from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
@@ -38,11 +39,12 @@ class CustomSignupForm(SignupForm):
         widget=forms.DateInput(attrs={'type': 'date'})
     )
 
+   # In your form class where you define password1 and password2
     password1 = forms.CharField(
-        widget=forms.PasswordInput(attrs={'aria-describedby': 'id_password1_error'})
+        widget=forms.PasswordInput(attrs={'class': 'form-control'})
     )
     password2 = forms.CharField(
-        widget=forms.PasswordInput(attrs={'aria-describedby': 'id_password2_error'})
+        widget=forms.PasswordInput(attrs={'class': 'form-control'})
     )
 
     def __init__(self, *args, **kwargs):
@@ -68,6 +70,18 @@ class CustomSignupForm(SignupForm):
             {'class': 'form-control'}
         )
 
+    def clean_first_name(self):
+        first_name = self.cleaned_data.get('first_name')
+        if not re.match(r'^[a-zA-Z]+$', first_name):
+            raise ValidationError(_('First name can only contain alphabetical characters.'))
+        return first_name
+
+    def clean_last_name(self):
+        last_name = self.cleaned_data.get('last_name')
+        if not re.match(r'^[a-zA-Z]+$', last_name):
+            raise ValidationError(_('Last name can only contain alphabetical characters.'))
+        return last_name
+        
     def clean_date_of_birth(self):
         date_of_birth = self.cleaned_data.get('date_of_birth')
         if date_of_birth and date_of_birth > date.today():
