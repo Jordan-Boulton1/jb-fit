@@ -2,28 +2,26 @@
 {% load static %}
 
 {% block content %}
-<div class="container mt-4">
-    <div class="row">``
-        <div class="col-md-6 offset-md-3">
-            <div class="card jb-fit-card">
-                <div class="card-header jb-fit-card-header d-flex flex-column align-items-center"> <!-- Flexbox for vertical alignment -->
-                    <div class="row">
-                        <h5 class="card-title mb-2">Add Weight Log</h5> <!-- Adjusted margin for spacing -->
-                    </div>
-                    <div class="row">
-                        <a class="btn back-btn" href="{% url 'profile' %}">&larr; Back</a>
-                    </div>
+<div class="container-fluid d-flex justify-content-center align-items-center content-container">
+    <div class="col-md-5">
+        <div class="card jb-fit-card">
+            <div class="card-header jb-fit-card-header d-flex flex-column align-items-center"> <!-- Flexbox for vertical alignment -->
+                <div class="row">
+                    <h5 class="card-title mb-2">Add Weight Log</h5> <!-- Adjusted margin for spacing -->
                 </div>
-                <div class="card-body jb-fit-card-body">
-                    <form method="post">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            {{ form.weight.label_tag }}
-                            {{ form.weight }}
-                        </div>
-                        <button type="submit" class="btn btn-primary mt-2 w-100 bg-gradien">Save</button>
-                    </form>
+                <div class="row">
+                    <a class="btn back-btn" href="{% url 'profile' %}">&larr; Back</a>
                 </div>
+            </div>
+            <div class="card-body jb-fit-card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ form.weight.label_tag }}
+                        {{ form.weight }}
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-2 w-100 bg-gradien">Save</button>
+                </form>
             </div>
         </div>
     </div>

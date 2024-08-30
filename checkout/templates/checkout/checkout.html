@@ -4,39 +4,44 @@
 {% block content %}
 <link href="{% static 'checkout/css/checkout.css' %}" rel="stylesheet">
 <div class="container d-flex justify-content-center align-items-center content-container">
-    {% if messages %}
-        <div class="alert alert-dismissable fade show" role="alert">
-            {% for message in messages %}
-            <div class="alert alert-{{ message.tags }} mt-2" role="alert">
-                {{ message }}
-                <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            {% endfor %}
-        </div>
-    {% endif %}
-
-    {% if order_form.non_field_errors %}
-        <div class="alert alert-danger mt-2" role="alert">
-            {% for error in order_form.non_field_errors %}
-                <div>{{ error }}</div>
-            {% endfor %}
-        </div>
-    {% endif %}
     <div class="container mt-4">
+        {% if messages %}
+            <div class="alert alert-dismissable fade show" role="alert">
+                {% for message in messages %}
+                <div class="{{ message.tags }} mt-2" role="alert">
+                    {{ message }}
+                    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if order_form.non_field_errors %}
+            <div class="alert alert-danger mt-2" role="alert">
+                {% for error in order_form.non_field_errors %}
+                    <div>{{ error }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
         <form id="payment-form" method="post">
             <div class="row mt-5">
                 <!--Checkout Summary-->
                 <div class="col-md-7">
                     <div class="card mb-4 jb-fit-card">
-                        <div class="card-header jb-fit-card-header">
-                            <h5>Checkout Details</h5>
+                        <div class="card-header jb-fit-card-header d-flex flex-column align-items-center"> <!-- Flexbox for vertical alignment -->
+                            <div class="row">
+                                <h5 class="card-title mb-2">Checkout Details</h5> <!-- Adjusted margin for spacing -->
+                            </div>
+                            <div class="row">
+                                <a class="btn back-btn" href="{% url 'plans' %}">&larr; Back</a>
+                            </div>
                         </div>
                         <div class="card-body jb-fit-card-body">
                             {% csrf_token %}
                             {{ order_form.as_p }}
-                            
+
                             <div class="stripe-elements mt-4">
                                 <div id="card-element"></div>
                                 <div id="card-errors" role="alert"></div>
