@@ -84,3 +84,11 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | plans | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/plans/views.py) | ![screenshot](documentation/testing/validation/python/plans/python-validation-plans-views.png) | |
 | plans | test_urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/plans/tests/test_urls.py) | ![screenshot](documentation/testing/validation/python/plans/python-validation-plans-test-urls.png) | |
 | plans | test_views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/plans/tests/test_views.py) | ![screenshot](documentation/testing/validation/python/plans/python-validation-plans-test-views.png) | |
+
+## Browser Compatibility
+
+I've tested my deployed project on multiple browsers to check for compatibility issues.
+
+| Browser | Home | About | Plans | FAQ | Profile | Edit Profile | Logout | Login | Register | Checkout | Checkout Success | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Chrome | ![screenshot](documentation/browser-compatibility/chrome/chrome-home.png) | ![screenshot](documentation/browser-compatibility/chrome/chrome-about.png) | ![screenshot](documentation/browser-compatibility/chrome/chrome-plans.png) | ![screenshot](documentation/browser-compatibility/chrome/chrome-faq.png) | ![screenshot](documentation/browser-compatibility/chrome/chrome-profile.png) | ![screenshot](documentation/browser-compatibility/chrome/chrome-edit-profile.png) | ![screenshot](documentation/browser-compatibility/chrome/chrome-logout.png) | ![screenshot](documentation/browser-compatibility/chrome/chrome-login.png) | ![screenshot](documentation/browser-compatibility/chrome/chrome-register.png) | ![screenshot](documentation/browser-compatibility/chrome/chrome-checkout.png) | ![screenshot](documentation/browser-compatibility/chrome/chrome-checkout-successful.png) | Works as expected |
