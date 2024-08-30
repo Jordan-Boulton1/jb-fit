@@ -30,8 +30,7 @@ def checkout(request, plan_id):
                 order.amount = training_plan.price
                 order.stripe_payment_intent_id = pid
                 order.save()
-
-                print(order)
+                
                 stripe.PaymentIntent.modify(
                     pid, metadata={'order_id': order.id}
                 )
@@ -45,6 +44,7 @@ def checkout(request, plan_id):
             for field, errors in form.errors.items():
                 for error in errors:
                     messages.error(request, f"{field.capitalize()}: {error}")
+            return redirect('checkout', plan_id=plan_id)
     else:
         # Handle GET request
         try:
@@ -59,7 +59,7 @@ def checkout(request, plan_id):
             form = OrderForm()
 
         stripe.api_key = stripe_secret_key
-        # Create PaymentIntent with metadata
+
         intent = stripe.PaymentIntent.create(
             amount=int(training_plan.price * 100),
             currency='gbp'

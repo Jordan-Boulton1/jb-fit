@@ -39,7 +39,7 @@ class CustomSignupForm(SignupForm):
         widget=forms.DateInput(attrs={'type': 'date'})
     )
 
-   # In your form class where you define password1 and password2
+    # In your form class where you define password1 and password2
     password1 = forms.CharField(
         widget=forms.PasswordInput(attrs={'class': 'form-control'})
     )
@@ -252,7 +252,8 @@ class WeightLogForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-
+        self.label_suffix = ''
+        
     def clean_weight(self):  # Corrected method name to match the field
         weight = self.cleaned_data.get('weight')
         if weight is not None and weight <= 0:  # Ensure weight is not None before checking

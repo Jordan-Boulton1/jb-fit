@@ -33,6 +33,9 @@ canvas {
     border-radius: 5px;
 }
 
+.progress-picture-container {
+    max-height: 500px
+}
 .upload-progress-picture-form {
     display: flex;
     flex-direction: column;
@@ -48,15 +51,17 @@ input[type="file"] {
 }
 
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
     margin-top: 20px;
 }
 
 .gallery img {
     width: 100%;
     border-radius: 5px;
+    min-height: 100%; /* Ensures the image doesn't exceed its container's width */
+    min-width: 100%;
+    height: auto; /* Maintains the aspect ratio */
+    object-fit: cover; /* Ensures the image scales nicely within the given dimensions */
+    border-radius: 8px; /* Keeps the rounded corners */
 }
 
 .edit-profile-btn{
@@ -81,4 +86,30 @@ input[type="file"] {
 .back-btn:hover {
     text-decoration: none;
     color: var(--primary-color);
+}
+
+.btn-delete-picture {
+    top: 10px;
+    right: 30px;
+}
+
+/* Custom Scrollbar using CSS */
+.custom-scrollbar-css {
+    overflow-y: scroll;
+}
+
+  /* scrollbar width */
+.custom-scrollbar-css::-webkit-scrollbar {
+    width: 5px;
+}
+
+  /* scrollbar track */
+.custom-scrollbar-css::-webkit-scrollbar-track {
+    background: #eee;
+}
+
+  /* scrollbar handle */
+.custom-scrollbar-css::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background-image: linear-gradient(to right, #ff5100 20%, #FF8F5C 100%);
 }
