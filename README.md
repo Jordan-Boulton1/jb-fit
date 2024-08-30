@@ -369,6 +369,52 @@ I've used [Figma](https://www.figma.com) to design my site mockups.
 
 		![screenshot](documentation/features/faq/feat-faq-getting-started.png)
 
+### Profile Page
+
+- **User Profile Overview**
+
+	- The profile page provides a comprehensive overview of the user's personal information and fitness metrics. It includes sections for personal information, physical measurements, a weight progress tracker, weight log history, and the option to upload progress pictures. This structured layout allows users to easily monitor and update their fitness journey in one centralized location, making it a vital tool for personal accountability and tracking progress.
+
+		![screenshot](documentation/features/profile/feat-profile-overview.png)
+
+- **Personal Information Management**
+
+	- Users can view and update their personal details, including email, address, gender, date of birth, and phone number, ensuring that their profile is always accurate and up-to-date.
+
+		![screenshot](documentation/features/profile/feat-profile-personal-info.png)
+	
+- **Physical Measurements Tracking**
+
+	- The physical measurements section displays the user's current weight, height, and goal weight, providing a quick snapshot of their fitness status and goals.
+
+		![screenshot](documentation/features/profile/feat-profile-physical-measurements.png)
+
+- **Weight Progress Tracker**
+
+	- A visual graph allows users to track their weight changes over time, providing a clear visual representation of their progress towards their fitness goals.
+
+		![screenshot](documentation/features/profile/feat-profile-weight-progress.png)
+
+- **Weight Log History**
+
+	- The weight log feature on the profile page allows users to track their weight over time by adding new entries. However, the feature includes a validation mechanism that disables the "Add Weight Log" button if required information, such as the current weight or goal weight, is missing from the user's personal information. A tooltip is displayed explaining why the button is disabled, guiding users to complete their profile before they can log their weight. This validation ensures that users maintain accurate and complete data, enhancing the effectiveness of their progress tracking.
+
+		![screenshot](documentation/features/profile/feat-profile-weight-log.png)
+		![screenshot](documentation/features/profile/feat-profile-weight-log-validation.png)
+
+- **Progress Picture Upload**
+
+	- The progress picture upload feature allows users to visually track their fitness journey by uploading images of their progress. However, similar to the weight log feature, this functionality includes a validation mechanism that disables the "Upload Picture" button if required data, such as the current weight or goal weight, is missing from the user's personal information. A tooltip provides a clear explanation for the button’s disabled state, guiding users to complete their profile before they can upload progress pictures. This validation helps ensure that all relevant data is in place, making the progress tracking more effective and meaningful.
+
+		![screenshot](documentation/features/profile/feat-profile-progress-pictures.png)
+		![screenshot](documentation/features/profile/feat-profile-progress-pictures-validation.png)
+		
+- **Edit Profile Page**
+
+	- The profile edit page allows users to manage and update their personal information, including profile picture, contact details, and fitness metrics such as current weight, height, and goal weight. The page features a clean and user-friendly design with clear input fields, making it easy for users to keep their profiles up-to-date. It includes essential functionalities like secure data handling, navigation back to the profile overview, and an option to delete the account, giving users full control over their personal data.
+
+		![screenshot](documentation/features/profile/feat-profile-edit.png)
+
 ### Login Page
 
 - **Login Form**
@@ -395,12 +441,32 @@ I've used [Figma](https://www.figma.com) to design my site mockups.
 
 		![screenshot](documentation/features/login/feat-sign-up-link.png)
 
-- **Registration Page**
+### Registration Page
 
-	- The sign-up page provides a comprehensive and intuitive interface for new users to create an account. It includes fields for entering essential details such as first and last names, email, and password. Users can also specify their gender by selecting from "Male," "Female," or "Other" options. The form requires users to confirm their password by entering it twice, ensuring accuracy and reducing the likelihood of login issues later. Additionally, a date of birth field with a calendar picker enhances usability, making it easy for users to input their information correctly.<br>
-	The page features a "Sign Up" button to submit the registration form and create an account. If a user already has an account, a convenient login link is provided to redirect them to the login page. The layout maintains a clean, modern design with a user-friendly color scheme that emphasizes accessibility and ease of navigation, offering a smooth onboarding experience.
+- **Sign up Form**
+	- The sign-up form provides a comprehensive and user-friendly registration experience for new users. It includes fields for first name, last name, gender, date of birth, email, and password, ensuring all necessary information is captured to create a personalized account. The form is laid out in a clear and intuitive manner, making it easy for users to complete the registration process. This feature is essential for onboarding new clients and expanding the JB Fit community.
 
-		![screenshot](documentation/features/feat-sign-up.png)
+		![screenshot](documentation/features/sign-up/feat-sign-up-form.png)
+	
+- **Sign up Form Validation**
+
+	- The sign-up form incorporates robust error handling and validation to guide users through the registration process. If any errors occur, such as missing or incorrectly formatted information, the form provides immediate feedback with clear and concise error messages displayed next to the relevant fields. This helps users correct their mistakes easily and proceed with the registration process, enhancing the overall user experience.
+
+		![screenshot](documentation/features/sign-up/feat-sign-up-form-validation.png)
+
+### Reset Password
+
+- **Reset Password Form**
+
+	- The password reset form allows users to securely reset their passwords if they have forgotten them. It features a clean and straightforward interface, requiring only the user's email address to initiate the password reset process. The design is visually appealing, with contrasting colors and clear prompts to guide the user through the process. This feature enhances the overall user experience by providing an easy way for users to regain access to their accounts without needing to contact support.
+
+		![screenshot](documentation/features/reset-password/feat-reset-password.png)
+
+- **Check your Email**
+
+	- After a user submits their email address for password reset, they are presented with a confirmation message that instructs them to check their inbox for a reset link. This feature provides clear guidance on the next steps, enhancing the user experience by setting proper expectations. It also includes a helpful reminder to check the spam folder if the email does not appear in the inbox promptly, addressing a common user pain point.
+
+		![screenshot](documentation/features/reset-password/feat-reset-password-check-email.png)
 
 
 ## Tools & Technologies Used
