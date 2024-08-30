@@ -181,6 +181,10 @@ footer {
     color: var(--primary-color-highlight);
 }
 
+.social-icon:hover {
+    color: #ffffff;
+}
+
 .icon-sm {
     width: 2.6875rem;
     height: 2.6875rem;
