@@ -6,4 +6,4 @@ from django.contrib import messages
 def on_user_logged_in(sender, request, user, **kwargs):
     # Use the first name of the user in the success message
     first_name = user.first_name  # Fallback to username if first name is empty
-    messages.success(request, f"Welcome back, {first_name}!")
+    messages.success(request, f"Welcome, {first_name}!")
