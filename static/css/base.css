@@ -48,6 +48,10 @@ hr {
     color: var(--primary-color-highlight);
 }
 
+.text-secondary-highlight {
+    color: var(--secondary-color-highlight);
+}
+
 .reset-icon {
     font-size: 60px;
     color: var(--primary-color-highlight);
@@ -77,12 +81,12 @@ nav {
 
 .jb-fit-link {
     text-decoration: none;
-    color: var(--primary-color-highlight);
+    color: var(--secondary-color-highlight);
 }
 
 .jb-fit-link:hover {
     text-decoration: none;
-    color: var( --secondary-color-highlight);
+    color: var(--primary-color-highlight);
 }
 
 /* Bootstrap button override */
@@ -216,11 +220,11 @@ footer {
 }
 
 .social-icon {
-    color: var(--primary-color-highlight);
+    color: var(--secondary-color-highlight);
 }
 
 .social-icon:hover {
-    color: #ffffff;
+    color: var(--primary-color-highlight);
 }
 
 .icon-sm {
@@ -326,10 +330,6 @@ color: black;
     border-color: #bee5eb !important;
 }
 
-.text-primary-highlight {
-    color: var(--primary-color-highlight);
-}
-
 .card-title {
     font-weight: 600;
 }
@@ -412,7 +412,7 @@ color: black;
 }
 
 @media(max-width: 425px) {
-    .user-content{
+    .user-content {
         margin-top: 45px;
     }
 }
