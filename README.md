@@ -82,17 +82,31 @@ I've used CSS `:root` variables to easily update the global colour scheme by cha
 - As a **new user**, I want to **register and create an account**, so that I can **access personalized fitness and nutrition plans.**
 - As a **new user**, I want to **read success stories and testimonials** so that **I can trust the effectiveness of the coaching services.**
 - As a **new user**, I want to **be able to message the coach with any queries I have before purchasing a plan**, so that I **can make an informed decision.**
+- As a **new user**, I want to **be able to access a comprehensive FAQ section**, so that I **can quickly find answers to common questions about the platform and its services without needing to contact support.**
 
 ### Registered Site Users
 
-- As a **registered user**, I want to **manage and update my profile information**, so that my **fitness and nutrition plans remain accurate and relevant.**
+- As a **registered user**, I want to **update my profile information**, so that my **information remains accurate and relevant.**
 - As a **registered user**, I want to **securely pay for my selected training package using Stripe**, so that I can **access my plans and coaching services.**
-- As a **registered user**, I want to **have regular check-ins and track my progress**, so that **I stay motivated and on track with my fitness goals.**
 - As a **registered user**, I want to **access community forums** so that **I can engage with other users and share my experiences.**
-- As a **registered user**, I want to **book video consultations with my coach** so that I can **receive personalized guidance and feedback.**
-- As a **registered user** that has bought the elite plan, I want access to **exclusive fitness and nutrition workshops** so that I can **deepen my knowledge and skills.**
-- As a **registered user**, I want to **understand the cancellation and refund policy** so that I **know what to expect if I need to stop my subscription.**
 - As a **registered user**, I want to **contact my coach for support** so that I **can get help when I need it.**
+- As a **registered user**, I want to **be able to reset my password if I forget it**, so that I **can regain access to my account securely.**
+- As a **registered user**, I want to **receive a confirmation message after successfully purchasing a training plan**, so that I **know my payment was processed and I have access to the purchased plan.**
+- As a **registered user**, I want to **be able to view my order history**, so that I **can keep track of the training plans or products I have purchased.**
+- As a **registered user**, I want to **be able to see which training plans I have already purchased**, so that I **don’t accidentally buy the same plan again.**
+- As a **registered user**, I want to **be able to view my weight progress on a graph**, so that I **can easily visualize my weight changes over time and assess my progress toward my goals.**
+- As a **registered user**, I want to **delete a progress image**, so that I **can remove pictures that I no longer want to keep or that were uploaded by mistake.**
+- As a **registered user**, I want to **see all my uploaded progress images**, so that I **can compare my current and past progress visually.**
+- As a  **registered user**, I want to **be able to upload a progress image**, so that I **can visually track my progress over time.**
+- As a **registered user**, I want to **view and purchase training plans** so that I **can select the plan that best fits my needs.**
+- As a **registered user**, I want to **delete a weight log entry**, so that I **can remove any incorrect or unwanted entries from my history.**
+- As a **new user**, I want to **be able to create a new account with my personal information**, so that I **can start tracking my weight and physical measurements.**
+- As a **new or registered user**, I want to **be able to subscribe to the newsletter**, so that I **can receive monthly updates about the latest news in the fitness world.**
+- As a **registered user**, I want to **edit an existing weight log entry**, so that I **can correct any mistakes or update my records if my weight changes.**
+- As a **registered user**, I want to **view my profile information and progress**, so that I **can monitor my weight changes and keep track of my goals.**
+- As a **registered user**, I want to **see a list of all my weight logs**, so that I **can review my progress and make adjustments as needed.**
+- As a **registered user**, I want to **be able to add a new weight log entry**, so that **I can track my progress over time.**
+- As a **registered user**, I want to **delete my profile**, so that **my personal information is no longer stored in the system.**
 
 ### Site Admin
 
@@ -486,7 +500,7 @@ I've used [Figma](https://www.figma.com) to design my site mockups.
 
 - **Community Forum**: The Community Forum will serve as a dedicated space where users can connect, share their fitness journeys, ask questions, and support each other. This feature aims to foster a sense of community among JB Fit users, allowing them to engage in discussions about workouts, nutrition tips, success stories, and challenges. The forum will include topic-specific threads, private messaging, and the ability to follow and interact with other users’ posts. This interactive platform will enhance user engagement, encourage knowledge sharing, and provide a supportive environment for individuals striving to reach their fitness goals.
 
-- **Community Forum**: Social Media Integration will allow users to log in or sign up using their existing social media accounts, such as Facebook, Google, or Twitter. This feature aims to streamline the login process, making it quicker and more convenient for users to access their accounts. By reducing the barriers to entry, social media login integration will help improve user acquisition and retention rates. Additionally, it will provide an easy way for users to share their progress and milestones directly on their social media profiles, enhancing the visibility of JB Fit within their personal networks.
+- **Social Media Integration**: Social Media Integration will allow users to log in or sign up using their existing social media accounts, such as Facebook, Google, or Twitter. This feature aims to streamline the login process, making it quicker and more convenient for users to access their accounts. By reducing the barriers to entry, social media login integration will help improve user acquisition and retention rates. Additionally, it will provide an easy way for users to share their progress and milestones directly on their social media profiles, enhancing the visibility of JB Fit within their personal networks.
 
 
 ## Tools & Technologies Used
