@@ -111,6 +111,24 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 | iPhone 11 | ![screenshot](documentation/testing/responsiveness/iphone/iphone-home.png) | ![screenshot](documentation/testing/responsiveness/iphone/iphone-about.png) | ![screenshot](documentation/testing/responsiveness/iphone/iphone-plans.png) | ![screenshot](documentation/testing/responsiveness/iphone/iphone-faq.png) | ![screenshot](documentation/testing/responsiveness/iphone/iphone-profile.png) | ![screenshot](documentation/testing/responsiveness/iphone/iphone-edit-profile.png) | ![screenshot](documentation/testing/responsiveness/iphone/iphone-logout.png) | ![screenshot](documentation/testing/responsiveness/iphone/iphone-login.png) | ![screenshot](documentation/testing/responsiveness/iphone/iphone-signup.png) | ![screenshot](documentation/testing/responsiveness/iphone/iphone-checkout.png) | ![screenshot](documentation/testing/responsiveness/iphone/iphone-checkout-successful.png) | Works as expected |
 | Safari | ![screenshot](documentation/testing/browser-compatibility/safari/safari-home.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-about.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-plans.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-faq.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-profile.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-edit-profile.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-logout.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-login.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-signup.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-checkout.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-checkout-successful.png) | Minor Text Issues |
 
+## Lighthouse Audit
+
+I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
+
+| Page | Mobile | Desktop | Notes |
+| --- | --- | --- | --- |
+| Home | ![screenshot](documentation/testing/lighthouse/mobile/home.png) | ![screenshot](documentation/testing/lighthouse/desktop/home.png) | Slow response time due to large images and some minor warnings |
+| About | ![screenshot](documentation/testing/lighthouse/mobile/about.png) | ![screenshot](documentation/testing/lighthouse/desktop/about.png) | slow response time due to large images and some minor warnings |
+| Plans | ![screenshot](documentation/testing/lighthouse/mobile/plans.png) | ![screenshot](documentation/testing/lighthouse/desktop/plans.png) | Some minor warnings |
+| FAQ | ![screenshot](documentation/testing/lighthouse/mobile/faq.png) | ![screenshot](documentation/testing/lighthouse/desktop/faq.png) | Some minor warnings |
+| Profile | ![screenshot](documentation/testing/lighthouse/mobile/profile.png) | ![screenshot](documentation/testing/lighthouse/desktop/profile.png) | Some minor warnings |
+| Edit Profile | ![screenshot](documentation/testing/lighthouse/mobile/edit-profile.png) | ![screenshot](documentation/testing/lighthouse/desktop/edit-profile.png) | Some minor warnings |
+| Logout | ![screenshot](documentation/testing/lighthouse/mobile/logout.png) | ![screenshot](documentation/testing/lighthouse/desktop/logout.png) | Some minor warnings |
+| Login | ![screenshot](documentation/testing/lighthouse/mobile/login.png) | ![screenshot](documentation/testing/lighthouse/desktop/login.png) | Some minor warnings |
+| Register | ![screenshot](documentation/testing/lighthouse/mobile/signup.png) | ![screenshot](documentation/testing/lighthouse/desktop/signup.png) | Some minor warnings |
+| Checkout | ![screenshot](documentation/testing/lighthouse/mobile/checkout.png) | ![screenshot](documentation/testing/lighthouse/desktop/checkout.png) | Some minor warnings |
+| Checkout Success | ![screenshot](documentation/testing/lighthouse/mobile/checkout-successful.png) | ![screenshot](documentation/testing/lighthouse/desktop/checkout-successful.png) | Some minor warnings |
+
 ## Automated Testing
 
 I have conducted a series of automated tests on my application.

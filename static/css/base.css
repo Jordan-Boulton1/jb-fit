@@ -221,6 +221,7 @@ footer {
 
 .social-icon {
     color: var(--secondary-color-highlight);
+    text-decoration: none;
 }
 
 .social-icon:hover {
