@@ -16,7 +16,8 @@ from .models import TrainingPlan, Order
 def checkout(request, plan_id):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-
+    stripe.api_key = stripe_secret_key
+    
     training_plan = get_object_or_404(TrainingPlan, id=plan_id)
 
     if request.method == 'POST':
@@ -53,12 +54,12 @@ def checkout(request, plan_id):
                 'first_name': request.user.first_name,
                 'last_name': request.user.last_name,
                 'email': request.user.email,
-                'phone_number': profile.phone_number
+                'phone_number': profile.phone_number or ''
             })
         except UserProfile.DoesNotExist:
             form = OrderForm()
 
-        stripe.api_key = stripe_secret_key
+        
 
         intent = stripe.PaymentIntent.create(
             amount=int(training_plan.price * 100),
