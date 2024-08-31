@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from plans.models import TrainingPlan
+from decimal import Decimal, ROUND_HALF_UP
 
 # Create your models here.
 
@@ -30,3 +31,8 @@ class Order(models.Model):
             f"{self.first_name} {self.last_name} - "
             f"{self.training_plan.name}"
         )
+    
+    def save(self, *args, **kwargs):
+        # Ensure the amount is rounded to two decimal places
+        self.amount = Decimal(self.amount).quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)
+        super().save(*args, **kwargs)

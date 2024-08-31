@@ -77,7 +77,7 @@ def checkout(request, plan_id):
         'order_form': form,
         'training_plan': training_plan,
         'stripe_public_key': stripe_public_key,
-        'client_secret': intent.client_secret,
+        'client_secret': intent['client_secret'],  # Corrected line
     }
 
     return render(request, template, context)
