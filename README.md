@@ -79,7 +79,7 @@ I've used CSS `:root` variables to easily update the global colour scheme by cha
 
 ### New Site Users
 
-- As a **new user**, I want to **register and create an account**, so that I can **access personalized fitness and nutrition plans.**
+- As a **new user**, I want to **be able to create a new account with my personal information**, so that I **can start tracking my weight and physical measurements.**
 - As a **new user**, I want to **read success stories and testimonials** so that **I can trust the effectiveness of the coaching services.**
 - As a **new user**, I want to **be able to message the coach with any queries I have before purchasing a plan**, so that I **can make an informed decision.**
 - As a **new user**, I want to **be able to access a comprehensive FAQ section**, so that I **can quickly find answers to common questions about the platform and its services without needing to contact support.**
@@ -88,7 +88,6 @@ I've used CSS `:root` variables to easily update the global colour scheme by cha
 
 - As a **registered user**, I want to **update my profile information**, so that my **information remains accurate and relevant.**
 - As a **registered user**, I want to **securely pay for my selected training package using Stripe**, so that I can **access my plans and coaching services.**
-- As a **registered user**, I want to **access community forums** so that **I can engage with other users and share my experiences.**
 - As a **registered user**, I want to **contact my coach for support** so that I **can get help when I need it.**
 - As a **registered user**, I want to **be able to reset my password if I forget it**, so that I **can regain access to my account securely.**
 - As a **registered user**, I want to **receive a confirmation message after successfully purchasing a training plan**, so that I **know my payment was processed and I have access to the purchased plan.**
@@ -100,7 +99,6 @@ I've used CSS `:root` variables to easily update the global colour scheme by cha
 - As a  **registered user**, I want to **be able to upload a progress image**, so that I **can visually track my progress over time.**
 - As a **registered user**, I want to **view and purchase training plans** so that I **can select the plan that best fits my needs.**
 - As a **registered user**, I want to **delete a weight log entry**, so that I **can remove any incorrect or unwanted entries from my history.**
-- As a **new user**, I want to **be able to create a new account with my personal information**, so that I **can start tracking my weight and physical measurements.**
 - As a **new or registered user**, I want to **be able to subscribe to the newsletter**, so that I **can receive monthly updates about the latest news in the fitness world.**
 - As a **registered user**, I want to **edit an existing weight log entry**, so that I **can correct any mistakes or update my records if my weight changes.**
 - As a **registered user**, I want to **view my profile information and progress**, so that I **can monitor my weight changes and keep track of my goals.**
@@ -110,10 +108,9 @@ I've used CSS `:root` variables to easily update the global colour scheme by cha
 
 ### Site Admin
 
-- As an **admin**, I want to **create, manage and update subscription plans** so that **users can see the up-to-date plans and services at the current time**
-- As an **admin**, I want to **view and manage payments** so that **I can keep track of subscription fees and payment statuses.**
-- As an **admin**, I want to **manage community content** so that **the forum remains a positive and supportive environment.**
-- As an **admin**, I want to **integrate Stripe for handling payments** so that **users can subscribe to plans and make payments securely.**
+- As an **admin**, I want to **create, manage and update plans** so that **users can see the up-to-date plans and services at the current time**
+As an **admin**, I want to **view and manage the list of newsletter subscribers**, so that I **can effectively communicate with users and ensure the newsletter reaches the intended audience.**
+- As an **admin**, I want to **integrate Stripe for handling payments** so that **users can pay for plans and make payments securely.**
 
 ## Mock-ups
 

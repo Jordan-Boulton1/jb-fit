@@ -251,3 +251,33 @@ Below are the results from the various apps on my application that I've tested:
 | plans| test_models.py | 88% | ![screenshot](documentation/testing/automated-testing/python/py-test-plans-models.png)  |
 | plans| test_views.py | 44% | ![screenshot](documentation/testing/automated-testing/python/py-test-plans-views.png)  |
 | plans| test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-plans-urls.png)  |
+
+## User Story Testing
+
+| User Story | Screenshot |
+| --- | --- |
+| As a **new user**, I want to **be able to create a new account with my personal information**, so that I **can start tracking my weight and physical measurements.** | ![screenshot](documentation/features/sign-up/feat-sign-up-form.png) |
+| As a **new user**, I want to **read success stories and testimonials** so that **I can trust the effectiveness of the coaching services.** | ![screenshot](documentation/features/home/feat-home-client-review.png) |
+| As a **new user**, I want to **be able to message the coach with any queries I have before purchasing a plan**, so that I **can make an informed decision.** | ![screenshot](documentation/features/home/feat-home-contact-form.png) |
+| As a **new user**, I want to **be able to access a comprehensive FAQ section**, so that I **can quickly find answers to common questions about the platform and its services without needing to contact support.** | ![screenshot](documentation/features/faq/feat-faq-accordian-open.png) |
+| As a **registered user**, I want to **update my profile information**, so that my **information remains accurate and relevant.** | ![screenshot](documentation/features/profile/feat-profile-edit.png) |
+| As a **registered user**, I want to **securely pay for my selected training package using Stripe**, so that I can **access my plans and coaching services.** | ![screenshot](documentation/features/checkout/feat-checkout-page.png) |
+| As a **registered user**, I want to **contact my coach for support** so that I **can get help when I need it.** | ![screenshot](documentation/features/home/feat-home-contact-form.png) |
+| As a **registered user**, I want to **be able to reset my password if I forget it**, so that I **can regain access to my account securely.** | ![screenshot](documentation/features/reset-password/feat-reset-password.png) |
+| As a **registered user**, I want to **receive a confirmation message after successfully purchasing a training plan**, so that I **know my payment was processed and I have access to the purchased plan.** | ![screenshot](documentation/features/checkout/feat-checkout-page-successful.png) |
+| As a **registered user**, I want to **be able to view my order history**, so that I **can keep track of the training plans or products I have purchased.** | ![screenshot](documentation/testing/defensive-programming/view-purchase-history.png) |
+| As a **registered user**, I want to **be able to see which training plans I have already purchased**, so that I **don’t accidentally buy the same plan again.** | ![screenshot](documentation/testing/defensive-programming/plan-already-purchased.png) |
+| As a **registered user**, I want to **be able to view my weight progress on a graph**, so that I **can easily visualize my weight changes over time and assess my progress toward my goals.** | ![screenshot](documentation/features/profile/feat-profile-weight-progress.png) |
+| As a **registered user**, I want to **delete a progress image**, so that I **can remove pictures that I no longer want to keep or that were uploaded by mistake.** | ![screenshot](documentation/testing/defensive-programming/upload-progress-picture-with-image.png) |
+| As a **registered user**, I want to **see all my uploaded progress images**, so that I **can compare my current and past progress visually.** | ![screenshot](documentation/testing/defensive-programming/upload-progress-picture-with-image.png) |
+| As a **registered user**, I want to **view and purchase training plans** so that I **can select the plan that best fits my needs.** | ![screenshot](documentation/features/plans/feat-plans-training.png) |
+| As a **registered user**, I want to **delete a weight log entry**, so that I **can remove any incorrect or unwanted entries from my history.** | ![screenshot](documentation/testing/defensive-programming/weight-log-delete.png) |
+| As a **new or registered user**, I want to **be able to subscribe to the newsletter**, so that I **can receive monthly updates about the latest news in the fitness world.** | ![screenshot](documentation/newsletter.png) |
+| As a **registered user**, I want to **edit an existing weight log entry**, so that I **can correct any mistakes or update my records if my weight changes.** | ![screenshot](documentation/testing/defensive-programming/weight-log-edit.png) |
+| As a **registered user**, I want to **view my profile information and progress**, so that I **can monitor my weight changes and keep track of my goals.** | ![screenshot](documentation/features/profile/feat-profile-overview.png) |
+| As a **registered user**, I want to **see a list of all my weight logs**, so that I **can review my progress and make adjustments as needed.** | ![screenshot](documentation/features/profile/feat-profile-weight-log.png) |
+| As a **registered user**, I want to **be able to add a new weight log entry**, so that **I can track my progress over time.** | ![screenshot](documentation/features/profile/feat-profile-weight-log.png) |
+| As a **registered user**, I want to **delete my profile**, so that **my personal information is no longer stored in the system.** | ![screenshot](documentation/testing/defensive-programming/edit-profile-delete-btn.png) |
+| As an **admin**, I want to **create, manage and update plans** so that **users can see the up-to-date plans and services at the current time** | ![screenshot](documentation/testing/user-stories/admin-training-plan.png) |
+| As an **admin**, I want to **view and manage payments** so that **I can keep track of subscription fees and payment statuses.** | ![screenshot](documentation/testing/user-stories/stripe-dashboard.png) |
+| As an **admin**, I want to **view and manage the list of newsletter subscribers**, so that I **can effectively communicate with users and ensure the newsletter reaches the intended audience.** | ![screenshot](documentation/testing/user-stories/admin-newsletter.png) |
