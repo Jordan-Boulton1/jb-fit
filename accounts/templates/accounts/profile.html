@@ -32,14 +32,11 @@
         <div class="row mb-3">
             <div class="col-12 d-flex flex-column flex-md-row justify-content-center align-items-center mt-3 gy-3">
                 <!-- Stacks vertically on small screens and side-by-side on medium and larger screens -->
-                <a href="{% url 'edit_profile' %}" class="btn btn-lg btn-primary bg-gradient mb-2 mb-md-0 me-0 me-md-3">Edit Profile</a>
-                <a href="{% url 'user_order_history' %}" class="btn btn-lg btn-primary bg-gradient">View Purchase History</a>
+                <a href="{% url 'edit_profile' %}" class="btn btn-lg btn-primary bg-gradient mb-2 mb-md-0 me-0 me-md-3" aria-label="Edit your profile information">Edit Profile</a>
+                <a href="{% url 'user_order_history' %}" class="btn btn-lg btn-primary bg-gradient" aria-label="View your purchase history">View Purchase History</a>
             </div>
         </div>
-        
     </div>
-    
-
     <div class="row mt-5">
         <div class="col-md-6">
             <!-- Personal Information Card-->
@@ -110,7 +107,7 @@
                         <a href="{% url 'add_weight_log' %}" 
                             class="btn btn-lg btn-primary bg-gradient d-block mx-auto text-center mt-2 jb-fit-card-btn 
                             {% if profile.current_weight is None or profile.goal_weight is None %}disabled{% endif %}" 
-                            {% if profile.current_weight is None or profile.goal_weight is None %}aria-disabled="true" onclick="return false;"{% endif %}>
+                            {% if profile.current_weight is None or profile.goal_weight is None %}aria-disabled="true" onclick="return false;"{% endif %} aria-label="Add a weight log">
                             Add Weight Log
                         </a>
                     </div>

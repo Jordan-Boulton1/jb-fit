@@ -4,8 +4,12 @@
         <div class="text-center mb-4">
             <h2 class="display-5 fw-bold text-body-emphasis">Interested in finding out more?</h2>
             <p class="lead">Fill out the short form below, and I’ll get back to you ASAP</p>
-            <p class="text-secondary"><small>Please take a look at my <a class="text-decoration-none" href="{% url 'faq' %}">FAQ</a> before submitting your enquiry - It covers prices, availability, plans, check-ins and much more </small></p>
-        </div>
+            <p class="text-secondary">
+                <small>
+                    Please take a look at my <a class="text-decoration-none" href="{% url 'faq' %}" aria-label="Read the FAQ section to learn about prices, availability, plans, check-ins, and more">FAQ</a> before submitting your enquiry - It covers prices, availability, plans, check-ins and much more
+                </small>
+            </p>
+        </div>        
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <form method="POST" action="{% url 'contact_coach' %}">

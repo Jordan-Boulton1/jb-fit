@@ -7,6 +7,7 @@
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="description" content="Achieve your fitness goals with personalized online personal training for all levels, from beginner to advanced. Get one-on-one coaching and purchase custom workout plans tailored to your needs. Start your fitness journey today!">
         {% endblock %}
 
         {% block corecss %}
@@ -43,7 +44,7 @@
         <header class="header">
             <nav class="navbar navbar-expand-lg sticky-top">
                 <div class="container">
-                    <a class="navbar-brand" href="{% url 'home' %}">
+                    <a class="navbar-brand" href="{% url 'home' %}" aria-label="Go to the home page">
                         <img src="{% static 'images/jb-fit-logo.webp' %}" alt="Online Personal Coaching Logo" width="100" height="45">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,32 +53,32 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+                                <a class="nav-link" aria-current="page" href="{% url 'home' %}" aria-label="Navigate to the home page">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'about' %}">About</a>
+                                <a class="nav-link" href="{% url 'about' %}" aria-label="Learn more about me">About</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'plans' %}">Plans</a>
+                                <a class="nav-link" href="{% url 'plans' %}" aria-label="View available training plans">Plans</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'faq' %}">FAQ</a>
+                                <a class="nav-link" href="{% url 'faq' %}" aria-label="Read frequently asked questions">FAQ</a>
                             </li>
-                        </ul>
+                        </ul>                        
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             {% if request.user.is_authenticated %}
                                 <li class="nav-item">
-                                    <a href="{% url 'profile' %}" class="nav-link">My Profile</a>
+                                    <a href="{% url 'profile' %}" class="nav-link" aria-label="View your profile">My Profile</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{% url 'account_logout' %}" class="nav-link">Logout</a>
+                                    <a href="{% url 'account_logout' %}" class="nav-link" aria-label="Logout from your account">Logout</a>
                                 </li>
                             {% else %}
                                 <li class="nav-item">
-                                    <a href="{% url 'account_login' %}" class="nav-link">Login</a>
+                                    <a href="{% url 'account_login' %}" class="nav-link" aria-label="Login to your account">Login</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{% url 'account_signup' %}" class="nav-link">Register</a>
+                                    <a href="{% url 'account_signup' %}" class="nav-link" aria-label="Register for a new account">Register</a>
                                 </li>
                             {% endif %}
                         </ul>
@@ -96,11 +97,21 @@
         <footer class="py-3" id="footer">
             <div class="container">
                 <div class="social-links fs-3 text-center border-bottom pb-3 mb-3">
-                    <a class="social-icon" href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                    <a class="social-icon" href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a class="social-icon" href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                    <a class="social-icon" href="https://linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                    <a class="social-icon" href="https://youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a class="social-icon" href="https://www.facebook.com/" target="_blank" aria-label="Visit my Facebook page">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a class="social-icon" href="https://www.instagram.com/" target="_blank" aria-label="Visit my Instagram profile">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a class="social-icon" href="https://twitter.com/" target="_blank" aria-label="Visit my Twitter profile">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a class="social-icon" href="https://linkedin.com/" target="_blank" aria-label="Visit my LinkedIn profile">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a class="social-icon" href="https://youtube.com/" target="_blank" aria-label="Visit my YouTube channel">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
                 </div>
             </div>
             <div class="container">
@@ -108,13 +119,20 @@
                     <div class="col-12 col-lg-6 col-xl-6 my-3 text-center text-xl-start">
                         <h5 class="text-secondary-highlight mb-3">Quick Links</h5>
                         <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="{% url 'home' %}" class="nav-link p-1 text-body-secondary">Home</a></li>
-                            <li class="nav-item mb-2"><a href="{% url 'about' %}" class="nav-link p-1 text-body-secondary">About</a></li>
-                            <li class="nav-item mb-2"><a href="{% url 'plans' %}" class="nav-link p-1 text-body-secondary">Plans</a></li>
-                            <li class="nav-item mb-2"><a href="{% url 'faq' %}" class="nav-link p-1 text-body-secondary">FAQ</a></li>
+                            <li class="nav-item mb-2">
+                                <a href="{% url 'home' %}" class="nav-link p-1 text-body-secondary" aria-label="Navigate to the home page">Home</a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a href="{% url 'about' %}" class="nav-link p-1 text-body-secondary" aria-label="Learn more about me">About</a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a href="{% url 'plans' %}" class="nav-link p-1 text-body-secondary" aria-label="View available training plans">Plans</a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a href="{% url 'faq' %}" class="nav-link p-1 text-body-secondary" aria-label="Read frequently asked questions">FAQ</a>
+                            </li>
                         </ul>
                     </div>
-
                     <div class="col-12 col-lg-5 col-xl-5 offset-xl-1 my-3">
                         <form method="post">
                             {% csrf_token %}

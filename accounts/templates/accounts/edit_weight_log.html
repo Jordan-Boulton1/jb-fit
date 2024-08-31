@@ -10,7 +10,7 @@
                     <h5 class="card-title mb-2">Edit Weight Log</h5> <!-- Adjusted margin for spacing -->
                 </div>
                 <div class="row">
-                    <a class="btn back-btn" href="{% url 'profile' %}">&larr; Back</a>
+                    <a class="btn back-btn" href="{% url 'profile' %}" aria-label="Go back to your profile page">&larr; Back</a>
                 </div>
             </div>
 
@@ -33,8 +33,8 @@
                     </div>
                     <button type="submit" class="btn btn-primary mt-2 w-100 bg-gradient">Save Changes</button>
                     <div class="text-center mt-2 w-100">
-                        <a href="{% url 'profile' %}" class="btn btn-secondary w-100">Cancel</a>
-                    </div>
+                        <a href="{% url 'profile' %}" class="btn btn-secondary w-100" aria-label="Cancel and return to your profile page">Cancel</a>
+                    </div>                    
                 </form>
             </div>
         </div>

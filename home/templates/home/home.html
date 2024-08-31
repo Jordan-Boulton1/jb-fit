@@ -108,7 +108,7 @@
                             <img class="mb-4 mx-auto" src="{% static 'images/interview.webp' %}" alt="Initial consultation icon representing the first step in the online coaching process where goals and expectations are discussed." height="100" width="100">
                             <h5 class="mb-4 fw-semibold">Initial Consultation</h5>
                             <p class="mb-4 pt-card-desc text-body-secondary flex-grow-1">Start with a detailed consultation to discuss your goals, fitness level, and any specific needs or preferences.</p>
-                            <a href="#contact" class="fw-bold text-decoration-none link-primary">
+                            <a href="#contact" class="fw-bold text-decoration-none link-primary" aria-label="Learn more about the initial consultation by navigating to the contact section">
                                 <p>Learn More <i class="fa-solid fa-arrow-right"></i></p>
                             </a>
                         </div>
@@ -120,10 +120,10 @@
                             <img class="mb-4 mx-auto" src="{% static 'images/task.webp' %}" alt="Personalized plan creation icon representing the development of a tailored exercise and nutrition plan following the initial consultation." height="100" width="100">
                             <h5 class="mb-4 fw-semibold">Personalized Plan</h5>
                             <p class="mb-4 pt-card-desc text-secondary flex-grow-1">Based on your consultation, a tailored exercise and nutrition plan is created to help you achieve your goals efficiently and safely.</p>
-                            <a href="{% url 'plans' %}" class="fw-bold text-decoration-none link-primary">
+                            <a href="{% url 'plans' %}" class="fw-bold text-decoration-none link-primary" aria-label="Learn more about the personalized plans available">
                                 <p>Learn More <i class="fa-solid fa-arrow-right"></i></p>
                             </a>
-                        </div>
+                        </div>                        
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-xl-3 d-flex align-items-stretch">
@@ -249,7 +249,7 @@
                             Explore my range of training plans and find the perfect fit for your fitness goals.
                         </p>
                         <div class="col-12 text-center">
-                            <a class="btn btn-primary mt-2 w-100 bg-gradient" href="{% url 'plans' %}">Find out more</a>
+                            <a class="btn btn-primary mt-2 w-100 bg-gradient" href="{% url 'plans' %}" aria-label="Find out more about our available plans">Find out more</a>
                         </div>
                     </div>
                 </div>

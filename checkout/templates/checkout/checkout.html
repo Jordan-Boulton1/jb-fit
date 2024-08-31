@@ -35,9 +35,9 @@
                                 <h5 class="card-title mb-2">Checkout Details</h5> <!-- Adjusted margin for spacing -->
                             </div>
                             <div class="row">
-                                <a class="btn back-btn" href="{% url 'plans' %}">&larr; Back</a>
+                                <a class="btn back-btn" href="{% url 'plans' %}" aria-label="Go back to the plans page">&larr; Back</a>
                             </div>
-                        </div>
+                        </div>                        
                         <div class="card-body jb-fit-card-body">
                             {% csrf_token %}
                             {{ order_form.as_p }}
