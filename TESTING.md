@@ -96,6 +96,7 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 | Chrome | ![screenshot](documentation/testing/browser-compatibility/chrome/chrome-home.png) | ![screenshot](documentation/testing/browser-compatibility/chrome/chrome-about.png) | ![screenshot](documentation/testing/browser-compatibility/chrome/chrome-plans.png) | ![screenshot](documentation/testing/browser-compatibility/chrome/chrome-faq.png) | ![screenshot](documentation/testing/browser-compatibility/chrome/chrome-profile.png) | ![screenshot](documentation/testing/browser-compatibility/chrome/chrome-edit-profile.png) | ![screenshot](documentation/testing/browser-compatibility/chrome/chrome-logout.png) | ![screenshot](documentation/testing/browser-compatibility/chrome/chrome-login.png) | ![screenshot](documentation/testing/browser-compatibility/chrome/chrome-register.png) | ![screenshot](documentation/testing/browser-compatibility/chrome/chrome-checkout.png) | ![screenshot](documentation/testing/browser-compatibility/chrome/chrome-checkout-successful.png) | Works as expected |
 | Firefox | ![screenshot](documentation/testing/browser-compatibility/firefox/firefox-home.png) | ![screenshot](documentation/testing/browser-compatibility/firefox/firefox-about.png) | ![screenshot](documentation/testing/browser-compatibility/firefox/firefox-plans.png) | ![screenshot](documentation/testing/browser-compatibility/firefox/firefox-faq.png) | ![screenshot](documentation/testing/browser-compatibility/firefox/firefox-profile.png) | ![screenshot](documentation/testing/browser-compatibility/firefox/firefox-edit-profile.png) | ![screenshot](documentation/testing/browser-compatibility/firefox/firefox-logout.png) | ![screenshot](documentation/testing/browser-compatibility/firefox/firefox-login.png) | ![screenshot](documentation/testing/browser-compatibility/firefox/firefox-signup.png) | ![screenshot](documentation/testing/browser-compatibility/firefox/firefox-checkout.png) | ![screenshot](documentation/testing/browser-compatibility/firefox/firefox-checkout-successful.png) | Works as expected |
 | Edge | ![screenshot](documentation/testing/browser-compatibility/edge/edge-home.png) | ![screenshot](documentation/testing/browser-compatibility/edge/edge-about.png) | ![screenshot](documentation/testing/browser-compatibility/edge/edge-plans.png) | ![screenshot](documentation/testing/browser-compatibility/edge/edge-faq.png) | ![screenshot](documentation/testing/browser-compatibility/edge/edge-profile.png) | ![screenshot](documentation/testing/browser-compatibility/edge/edge-edit-profile.png) | ![screenshot](documentation/testing/browser-compatibility/edge/edge-logout.png) | ![screenshot](documentation/testing/browser-compatibility/edge/edge-login.png) | ![screenshot](documentation/testing/browser-compatibility/edge/edge-signup.png) | ![screenshot](documentation/testing/browser-compatibility/edge/edge-checkout.png) | ![screenshot](documentation/testing/browser-compatibility/edge/edge-checkout-successful.png) | Works as expected |
+<<<<<<< Updated upstream
 | Safari | ![screenshot](documentation/testing/browser-compatibility/safari/safari-home.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-about.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-plans.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-faq.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-profile.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-edit-profile.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-logout.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-login.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-signup.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-checkout.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-checkout-successful.png) | Minor CSS differences |
 
 ## Responsiveness
@@ -108,3 +109,56 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 | Tablet (DevTools) | ![screenshot](documentation/testing/responsiveness/tablet/tablet-home.png) | ![screenshot](documentation/testing/responsiveness/tablet/tablet-about.png) | ![screenshot](documentation/testing/responsiveness/tablet/tablet-plans.png) | ![screenshot](documentation/testing/responsiveness/tablet/tablet-faq.png) | ![screenshot](documentation/testing/responsiveness/tablet/tablet-profile.png) | ![screenshot](documentation/testing/responsiveness/tablet/tablet-edit-profile.png) | ![screenshot](documentation/testing/responsiveness/tablet/tablet-logout.png) | ![screenshot](documentation/testing/responsiveness/tablet/tablet-login.png) | ![screenshot](documentation/testing/responsiveness/tablet/tablet-signup.png) | ![screenshot](documentation/testing/responsiveness/tablet/tablet-checkout.png) | ![screenshot](documentation/testing/responsiveness/tablet/tablet-checkout-successful.png) | Works as expected |
 | Desktop | ![screenshot](documentation/testing/responsiveness/desktop/desktop-home.png) | ![screenshot](documentation/testing/responsiveness/desktop/desktop-about.png) | ![screenshot](documentation/testing/responsiveness/desktop/desktop-plans.png) | ![screenshot](documentation/testing/responsiveness/desktop/desktop-faq.png) | ![screenshot](documentation/testing/responsiveness/desktop/desktop-profile.png) | ![screenshot](documentation/testing/responsiveness/desktop/desktop-edit-profile.png) | ![screenshot](documentation/testing/responsiveness/desktop/desktop-logout.png) | ![screenshot](documentation/testing/responsiveness/desktop/desktop-login.png) | ![screenshot](documentation/testing/responsiveness/desktop/desktop-signup.png) | ![screenshot](documentation/testing/responsiveness/desktop/desktop-checkout.png) | ![screenshot](documentation/testing/responsiveness/desktop/desktop-checkout-successful.png) | Works as expected |
 | iPhone 11 | ![screenshot](documentation/testing/responsiveness/iphone/iphone-home.png) | ![screenshot](documentation/testing/responsiveness/iphone/iphone-about.png) | ![screenshot](documentation/testing/responsiveness/iphone/iphone-plans.png) | ![screenshot](documentation/testing/responsiveness/iphone/iphone-faq.png) | ![screenshot](documentation/testing/responsiveness/iphone/iphone-profile.png) | ![screenshot](documentation/testing/responsiveness/iphone/iphone-edit-profile.png) | ![screenshot](documentation/testing/responsiveness/iphone/iphone-logout.png) | ![screenshot](documentation/testing/responsiveness/iphone/iphone-login.png) | ![screenshot](documentation/testing/responsiveness/iphone/iphone-signup.png) | ![screenshot](documentation/testing/responsiveness/iphone/iphone-checkout.png) | ![screenshot](documentation/testing/responsiveness/iphone/iphone-checkout-successful.png) | Works as expected |
+| Safari | ![screenshot](documentation/testing/browser-compatibility/safari/safari-home.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-about.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-plans.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-faq.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-profile.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-edit-profile.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-logout.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-login.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-signup.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-checkout.png) | ![screenshot](documentation/testing/browser-compatibility/safari/safari-checkout-successful.png) | Minor Text Issues |
+
+## Automated Testing
+
+I have conducted a series of automated tests on my application.
+
+I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
+
+### Python (Unit Testing)
+I have used Django's built-in unit testing framework to test the application functionality.
+
+In order to run the tests, I ran the following command in the terminal each time:
+
+`python manage.py test`
+
+To create the coverage report, I would then run the following commands:
+
+`coverage run manage.py test`
+
+`coverage report`
+
+To see the HTML version of the reports, and find out whether some pieces of code were missing, I ran the following commands:
+
+`coverage html`
+
+`python -m http.server`
+
+Below are the results from the various apps on my application that I've tested:
+| App | File | Coverage | Screenshot                                                                                   | 
+| --- | --- | --- |----------------------------------------------------------------------------------------------| 
+  | about | test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-about-urls.png) | 
+  | about  | test_views.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-about-views.png)  |
+| accounts | test_models.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-accounts-models.png) | 
+  | accounts  | test_forms.py | 98% | ![screenshot](documentation/testing/automated-testing/python/py-test-accounts-forms.png)  |
+| accounts | test_views.py | 71% | ![screenshot](documentation/testing/automated-testing/python/py-test-accounts-views.png)  |
+| accounts | test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-accounts-urls.png)  |
+| checkout| test_models.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-checkout-models.png)  |
+| checkout| test_forms.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-checkout-forms.png)  |
+| checkout| test_views.py | 90% | ![screenshot](documentation/testing/automated-testing/python/py-test-checkout-views.png)  |
+| checkout| test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-checkout-urls.png)  |
+| contact| test_models.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-contact-models.png)  |
+| contact| test_forms.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-contact-forms.png)  |
+| contact| test_views.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-contact-views.png)  |
+| contact| test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-contact-urls.png)  |
+| faq| test_views.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-faq-views.png)  |
+| faq| test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-faq-urls.png)  |
+| home| test_models.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-home-models.png)  |
+| home| test_forms.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-home-forms.png)  |
+| home| test_views.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-home-views.png)  |
+| home| test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-home-urls.png)  |
+| plans| test_models.py | 88% | ![screenshot](documentation/testing/automated-testing/python/py-test-plans-models.png)  |
+| plans| test_views.py | 44% | ![screenshot](documentation/testing/automated-testing/python/py-test-plans-views.png)  |
+| plans| test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-plans-urls.png)  |
