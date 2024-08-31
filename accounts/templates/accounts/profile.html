@@ -27,11 +27,7 @@
     </div>
     {% endif %}
     <div class="profile-header text-center bg-gradient">
-        {% if profile.image %}
-            <img src="{{ profile.image.url }}" alt="User Profile Image" class="profile-image rounded mb-3">
-        {% else %}
-            <img src="https://via.placeholder.com/150" alt="User Profile Image" class="profile-image rounded mb-3">
-        {% endif %}
+        <img src="{{ profile.image.url }}" alt="User Profile Image" class="profile-image rounded mb-3">
         <h1 class="display-4 text-white">{{ profile.user.first_name }} {{ profile.user.last_name }}</h1>
         <div class="row mb-3">
             <div class="col-12 d-flex flex-column flex-md-row justify-content-center align-items-center mt-3 gy-3">

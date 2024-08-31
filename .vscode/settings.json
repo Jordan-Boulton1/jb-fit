@@ -15,4 +15,9 @@
    "files.autoSave": "off",
    "workbench.colorTheme": "Visual Studio Dark",
    "terminal.integrated.gpuAcceleration": "canvas",
+   "python.testing.pytestArgs": [
+      "."
+   ],
+   "python.testing.unittestEnabled": false,
+   "python.testing.pytestEnabled": true,
 }
