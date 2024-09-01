@@ -29,10 +29,10 @@ def contact_coach(request):
                 'Your message has been sent and saved successfully.',
                 extra_tags='contact'
             )
-            
+
             # Redirect back to the referring page using the 'next' parameter
             # Default to 'home' if 'next' is not present
-            next_url = request.POST.get('next', 'home') 
+            next_url = request.POST.get('next', 'home')
             return redirect(next_url)
         else:
             # Handle form errors if the form is not valid
