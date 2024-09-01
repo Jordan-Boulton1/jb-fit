@@ -81,7 +81,7 @@
 </section>
 
 {% block postloadjs %}
-    <script src="{% static 'js/base.js' %}"></script>
+    <script type="module" src="{% static 'js/base.js' %}"></script>
 {% endblock %}
 <!-- Interested in Finding Out More Section -->
 {% include 'contact/contact_form.html' %}

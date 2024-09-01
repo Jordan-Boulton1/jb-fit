@@ -4,7 +4,6 @@ if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);
 }
 
-
 document.addEventListener('DOMContentLoaded', function () {
     var stripePublicKey = document.getElementById('id_stripe_public_key').textContent.slice(1, -1);
     var clientSecret = document.getElementById('id_client_secret').textContent.slice(1, -1);

@@ -10,10 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setupCloseButtons('.closeerrorbtn');
 
     // Initialize Bootstrap tooltips
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl);
-    });
+    loadTooltips();
 });
 
 /**
@@ -22,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
  * 
  * @param {string} selector - The CSS selector for the close buttons.
  */
-function setupCloseButtons(selector) {
+export function setupCloseButtons(selector) {
     // Select all elements matching the selector
     var closeBtns = document.querySelectorAll(selector);
     closeBtns.forEach(function (btn) {
@@ -32,5 +29,12 @@ function setupCloseButtons(selector) {
                 parentAlert.style.display = 'none'; // Hide the alert
             }
         });
+    });
+}
+
+export function loadTooltips() {
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
     });
 }

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-function loadChartData() {
+export function loadChartData() {
     var current_weight = document.getElementById('current_weight').textContent.slice(1, -1);
     let weights = [];
     let labels = [];
@@ -77,7 +77,7 @@ function loadChartData() {
         .catch(error => console.error('Error fetching weight logs:', error));
 }
 
-function loadLogHistory() {
+export function loadLogHistory() {
     const weightLogsTableBody = document.querySelector('#weightLogsTable tbody');
     fetch('/api/weight-logs-history')
     .then(response => response.json())

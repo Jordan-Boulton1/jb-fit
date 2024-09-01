@@ -6,17 +6,22 @@ document.addEventListener('DOMContentLoaded', function () {
     $('#confirmDeleteButton').on('click', () => {
         deleteUserAccount();
     });
+
+    $('#deleteConfirmationModal').on('hidden.bs.modal', function () {
+        $('body').removeClass('modal-open'); // Ensure body class is removed
+        $('.modal-backdrop').remove(); // Remove the backdrop manually
+    });
 });
 
 
-function showConfirmationModal() {
+export function showConfirmationModal() {
     var confirmationModal = document.getElementById('deleteConfirmationModal');
     var modal = new bootstrap.Modal(confirmationModal);
     modal.show();
 }
 
 
-function deleteUserAccount(){
+export function deleteUserAccount(){
     const csrfToken = getCookie('csrftoken');
     fetch(`/api/delete-user`, {
         method: 'DELETE',
@@ -34,7 +39,7 @@ function deleteUserAccount(){
 }
 
 
-function getCookie(name) {
+export function getCookie(name) {
     let cookieValue = null;
     if (document.cookie && document.cookie !== '') {
         const cookies = document.cookie.split(';');

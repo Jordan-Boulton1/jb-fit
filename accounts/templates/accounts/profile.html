@@ -191,8 +191,8 @@
 
 {% block postloadjs %}
 {{ profile.current_weight|json_script:"current_weight" }}
-    <script src="{% static 'accounts/js/profile.js' %}"></script>
-    <script src="{% static 'js/base.js' %}"></script>
+    <script type="module" src="{% static 'accounts/js/profile.js' %}"></script>
+    <script type="module" src="{% static 'js/base.js' %}"></script>
 {% endblock %}
 {% endblock %}
 
