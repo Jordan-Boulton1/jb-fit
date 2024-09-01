@@ -252,6 +252,21 @@ Below are the results from the various apps on my application that I've tested:
 | plans| test_views.py | 44% | ![screenshot](documentation/testing/automated-testing/python/py-test-plans-views.png)  |
 | plans| test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-plans-urls.png)  |
 
+## JavaScript (Jest Testing)
+During the implementation of unit testing using Jest, I encountered several challenges, primarily due to extensive DOM manipulation by third-party libraries such as Chart.js and Stripe. Mocking Chart.js proved particularly challenging, leading to multiple obstacles that prevented precise testing. As a result, I had to resort to more generalized assertions to verify that data was correctly loaded into the chart.
+
+Stubbing Stripe was another complex task that presented significant difficulties, and as a result, I was unable to fully unit test the associated script. Additionally, several other third-party services required mocking, which was handled with the help of jest.setup.js.
+
+To run the tests, it is necessary to execute the command npm install to install all the required packages needed for compiling and running the tests. Tests can then be executed using the command npm test, and to obtain coverage reports, the command npm test --coverage should be used.
+
+Below are the coverage results and successful test runs generated during the testing process:
+
+| Test Suites | Tests | Screenshot                                                      |
+| --- | --- |-----------------------------------------------------------------|
+| 3 passed | 9 passed | ![screenshot](documentation\testing\automated-testing\javascript\javascript-unit-test-coverage.png) |
+
+
+
 ## User Story Testing
 
 | User Story | Screenshot |
