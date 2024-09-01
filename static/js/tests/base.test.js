@@ -1,6 +1,9 @@
+/* jshint esversion: 11, jquery: true */
+/* global beforeEach, describe, expect, jest, test */
+
 import '@testing-library/jest-dom';
 import { fireEvent } from '@testing-library/dom';
-import {setupCloseButtons, loadTooltips} from '../base'
+import {setupCloseButtons, loadTooltips} from '../base';
 
 beforeEach(() => {
     // Set up the HTML structure required for the script
@@ -31,13 +34,13 @@ describe('Page functionality', () => {
         const closeErrorBtn = document.querySelector('.closeerrorbtn');
 
         // Add spies to check if event listeners are attached
-        setupCloseButtons('.closebtn-variant')
-         setupCloseButtons('.closebtn')
-         setupCloseButtons('.closeerrorbtn')
+        setupCloseButtons('.closebtn-variant');
+        setupCloseButtons('.closebtn');
+        setupCloseButtons('.closeerrorbtn');
 
-         fireEvent.click(closeBtnVariant);
-         fireEvent.click(closeBtn);
-         fireEvent.click(closeErrorBtn);
+        fireEvent.click(closeBtnVariant);
+        fireEvent.click(closeBtn);
+        fireEvent.click(closeErrorBtn);
 
         // Check if the parent alerts are hidden
         expect(closeBtnVariant.closest('.alert')).toHaveStyle('display: none');

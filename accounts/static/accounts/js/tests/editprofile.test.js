@@ -1,6 +1,9 @@
+/* jshint esversion: 11, jquery: true */
+/* global bootstrap */
+/* global beforeEach, describe, expect, jest, bootstrap, test */
+
 import '@testing-library/jest-dom';
-import { fireEvent } from '@testing-library/dom';
-import { showConfirmationModal, deleteUserAccount, getCookie } from '../edit_profile'; // Adjust path as needed
+import { deleteUserAccount, getCookie } from '../edit_profile'; // Adjust path as needed
 
 beforeEach(() => {
     // Set up the HTML structure required for the script

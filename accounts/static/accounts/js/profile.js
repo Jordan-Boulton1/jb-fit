@@ -1,3 +1,7 @@
+/* jshint esversion: 11, jquery: true */
+/* global Chart */
+/* global bootstrap */
+
 var selectedLogId = null;
 
 document.addEventListener('DOMContentLoaded', function () {

@@ -1,3 +1,5 @@
+/* jshint esversion: 11, jquery: true */
+
 // Prevent form resubmission on page reload
 if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);

@@ -1,3 +1,6 @@
+/* jshint esversion: 11, jquery: true */
+/* global Stripe */
+
 // Check if the browser supports the replaceState method
 if (window.history.replaceState) {
     // Replace the current history state with a new one to prevent form resubmission
@@ -54,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     form.addEventListener('submit', function (ev) {
         ev.preventDefault();
-        console.log('Form submission prevented. Processing payment...');
 
         var email = $.trim(form.querySelector('[name="email"]').value);
         var first_name = $.trim(form.querySelector('[name="first_name"]').value);
@@ -64,14 +66,12 @@ document.addEventListener('DOMContentLoaded', function () {
             payment_method: {
                 card: card,
                 billing_details: {
-                    name: first_name,
+                    name: `${first_name} ${last_name}`,
                     email: email
                 },
             }
         }).then(function(result) {
             if (result.error) {
-                // Show error to your customer (e.g., insufficient funds)
-                console.error('Payment failed:', result.error.message);
                 var errorDiv = document.getElementById('card-errors');
                 var html = `
                     <span class="icon" role="alert">
@@ -83,7 +83,6 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 // The payment has been processed!
                 if (result.paymentIntent.status === 'succeeded') {
-                    console.log('Payment successful! Submitting form...');
                     form.submit(); // Submit the form to complete the process
                 }
             }

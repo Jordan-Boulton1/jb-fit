@@ -1,7 +1,12 @@
+/* jshint esversion: 11, jquery: true */
+/* global beforeEach, describe, expect, jest, test */
+
+let selectedLogId = null;  // Declare the variable as writable
+
 import '@testing-library/jest-dom';
-import { screen, fireEvent } from '@testing-library/dom';
+import { screen } from '@testing-library/dom';
 import fetchMock from 'jest-fetch-mock';
-import { loadChartData, loadLogHistory } from '../profile.js'
+import { loadChartData, loadLogHistory } from '../profile.js';
 
 // Enable fetch mocks
 fetchMock.enableMocks();
@@ -20,7 +25,7 @@ beforeEach(() => {
     `;
 
     // Initialize or reset global selectedLogId as needed for each test
-    global.selectedLogId = null;
+    selectedLogId = null;
 
     // Mock scrollTo normally
     global.scrollTo = jest.fn();
@@ -125,9 +130,9 @@ describe('deleteWeightLog', () => {
         deleteWeightLog(1);
 
         // Check if the selected log id is set
-        expect(global.selectedLogId).toBe(1);
+        expect(selectedLogId).toBe(1);
 
-          // Check if the Bootstrap modal was initialized correctly
+        // Check if the Bootstrap modal was initialized correctly
         expect(global.bootstrap.Modal).toHaveBeenCalledWith(document.getElementById('deleteConfirmationModal'));
 
         // Retrieve the modal instance and check if the show method was called
@@ -136,7 +141,6 @@ describe('deleteWeightLog', () => {
     });
 });
 
-
 describe('confirmDeleteWeightLog', () => {
     test('sends DELETE request and reloads page on successful deletion', async () => {
         // Mock fetch response to simulate successful deletion
@@ -144,9 +148,9 @@ describe('confirmDeleteWeightLog', () => {
 
         // Define the confirmDeleteWeightLog function
         function confirmDeleteWeightLog() {
-            if (global.selectedLogId) {
+            if (selectedLogId) {
                 const csrfToken = 'mockCsrfToken'; // Mock token for test purposes
-                fetch(`/api/delete-weight-log/${global.selectedLogId}`, {
+                fetch(`/api/delete-weight-log/${selectedLogId}`, {
                     method: 'DELETE',
                     headers: {
                         'X-CSRFToken': csrfToken,
@@ -167,7 +171,7 @@ describe('confirmDeleteWeightLog', () => {
 
         // Define the deleteWeightLog function
         function deleteWeightLog(logId) {
-            global.selectedLogId = logId;  // Use global scope
+            selectedLogId = logId;  // Use global scope
             const confirmationModal = document.getElementById('deleteConfirmationModal');
             const modal = new global.bootstrap.Modal(confirmationModal);
             modal.show();

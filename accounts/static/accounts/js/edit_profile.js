@@ -1,3 +1,6 @@
+/* jshint esversion: 11, jquery: true */
+/* global bootstrap */
+
 document.addEventListener('DOMContentLoaded', function () {
     // Set up the click event for the confirm delete button
     $('#promptConfirmDelete').on('click', () => {
