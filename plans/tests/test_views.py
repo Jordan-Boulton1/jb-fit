@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
 
+
 class PlansViewTest(TestCase):
     """
     Test case for the plans view to ensure it loads correctly.

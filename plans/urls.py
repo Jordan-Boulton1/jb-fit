@@ -22,4 +22,3 @@ urlpatterns = [
     # URL pattern for the 'plans' page, mapped to the plans view in views.py
     path('plans/', views.plans, name='plans')
 ]
-

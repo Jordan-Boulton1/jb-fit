@@ -265,4 +265,3 @@ def delete_progress_picture(request, picture_id):
                 'Your Progress Picture has been deleted successfully!'
             )
     return redirect(reverse('profile'))
-
