@@ -17,7 +17,7 @@ def checkout(request, plan_id):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
     stripe.api_key = stripe_secret_key
-    
+
     training_plan = get_object_or_404(TrainingPlan, id=plan_id)
 
     if request.method == 'POST':
@@ -31,7 +31,7 @@ def checkout(request, plan_id):
                 order.amount = training_plan.price
                 order.stripe_payment_intent_id = pid
                 order.save()
-                
+
                 stripe.PaymentIntent.modify(
                     pid, metadata={'order_id': order.id}
                 )
@@ -59,8 +59,6 @@ def checkout(request, plan_id):
         except UserProfile.DoesNotExist:
             form = OrderForm()
 
-        
-
         intent = stripe.PaymentIntent.create(
             amount=int(training_plan.price * 100),
             currency='gbp'
@@ -77,7 +75,7 @@ def checkout(request, plan_id):
         'order_form': form,
         'training_plan': training_plan,
         'stripe_public_key': stripe_public_key,
-        'client_secret': intent['client_secret'],  # Corrected line
+        'client_secret': intent['client_secret'],
     }
 
     return render(request, template, context)

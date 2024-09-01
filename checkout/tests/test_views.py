@@ -10,17 +10,17 @@ from plans.models import TrainingPlan
 from checkout.models import Order
 from decimal import Decimal
 
+
 class CheckoutViewsTestCase(TestCase):
 
     def setUp(self):
         self.client = Client()
         # Create a user and set up their profile
-
         self.user = User.objects.create_user(
-            email='testuser@test.com', 
-            username="test", 
-            password='testpass', 
-            first_name='testy', 
+            email='testuser@test.com',
+            username="test",
+            password='testpass',
+            first_name='testy',
             last_name='testy'
         )
 
@@ -33,6 +33,7 @@ class CheckoutViewsTestCase(TestCase):
             description='A sample training plan',
             price=50.00
         )
+
         # Mark the email as verified to simulate a real user login with Allauth
         EmailAddress.objects.create(
             user=self.user,
@@ -43,10 +44,9 @@ class CheckoutViewsTestCase(TestCase):
 
         # Use the client to log in through Allauth's login view
         self.client.post(reverse('account_login'), {
-            'login': 'testuser@test.com',  # Replace 'login' with the field name used in your login form (e.g., 'username' or 'email')
+            'login': 'testuser@test.com',
             'password': 'testpass'
         })
-
 
     @patch('stripe.PaymentIntent.create')
     @patch('stripe.PaymentIntent.modify')
@@ -56,14 +56,16 @@ class CheckoutViewsTestCase(TestCase):
             'client_secret': 'test_client_secret',
             'id': 'test_pid'
         }
-        response = self.client.post(reverse('checkout', args=[self.training_plan.id]), {
-            'first_name': 'testy',
-            'last_name': 'testy',
-            'email': 'testuser@test.com',
-            'phone_number': '1234567890',
-            'client_secret': 'test_pid_secret'
-        }, follow=True)
-        
+        response = self.client.post(
+            reverse('checkout', args=[self.training_plan.id]), {
+                'first_name': 'testy',
+                'last_name': 'testy',
+                'email': 'testuser@test.com',
+                'phone_number': '1234567890',
+                'client_secret': 'test_pid_secret'
+            }, follow=True
+        )
+
         self.assertRedirects(response, reverse('checkout_success', args=[1]))
         order = Order.objects.get(id=1)
         self.assertEqual(order.user, self.user)
@@ -79,15 +81,20 @@ class CheckoutViewsTestCase(TestCase):
             'id': 'test_pid'
         }
 
-        response = self.client.post(reverse('checkout', args=[self.training_plan.id]), {
-            'first_name': '',
-            'last_name': 'testy',
-            'email': 'testuser@test.com',
-            'phone_number': '1234567890',
-            'client_secret': 'test_pid_secret'
-        }, follow=True)
-        
-        self.assertRedirects(response, reverse('checkout', args=[self.training_plan.id]))
+        response = self.client.post(
+            reverse('checkout', args=[self.training_plan.id]), {
+                'first_name': '',
+                'last_name': 'testy',
+                'email': 'testuser@test.com',
+                'phone_number': '1234567890',
+                'client_secret': 'test_pid_secret'
+            }, follow=True
+        )
+
+        self.assertRedirects(
+            response,
+            reverse('checkout', args=[self.training_plan.id])
+        )
 
     @patch('stripe.PaymentIntent.create')
     def test_checkout_view_get(self, mock_create):
@@ -99,17 +106,25 @@ class CheckoutViewsTestCase(TestCase):
 
         # Temporarily change the STRIPE_PUBLIC_KEY setting
         with self.settings(STRIPE_PUBLIC_KEY=''):
-            response = self.client.get(reverse('checkout', args=[self.training_plan.id]))
+            response = self.client.get(
+                reverse('checkout', args=[self.training_plan.id])
+            )
             messages = list(get_messages(response.wsgi_request))
-            self.assertTrue(any('Stripe public key is missing' in str(message) for message in messages))
+            self.assertTrue(any(
+                'Stripe public key is missing' in str(message) for message in messages)  # noqa
+            )
 
-        response = self.client.get(reverse('checkout', args=[self.training_plan.id]))
+        response = self.client.get(
+            reverse('checkout', args=[self.training_plan.id])
+        )
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'checkout/checkout.html')
         self.assertIn('order_form', response.context)
         self.assertIn('training_plan', response.context)
         self.assertEqual(response.context['training_plan'], self.training_plan)
-        self.assertEqual(response.context['stripe_public_key'], settings.STRIPE_PUBLIC_KEY)
+        self.assertEqual(
+            response.context['stripe_public_key'], settings.STRIPE_PUBLIC_KEY
+        )
 
     @patch('stripe.PaymentIntent.create')
     def test_checkout_view_missing_stripe_public_key(self, mock_create):
@@ -120,9 +135,13 @@ class CheckoutViewsTestCase(TestCase):
         }
         # Temporarily change the STRIPE_PUBLIC_KEY setting
         with self.settings(STRIPE_PUBLIC_KEY=''):
-            response = self.client.get(reverse('checkout', args=[self.training_plan.id]))
+            response = self.client.get(
+                reverse('checkout', args=[self.training_plan.id])
+            )
             messages = list(get_messages(response.wsgi_request))
-            self.assertTrue(any('Stripe public key is missing' in str(message) for message in messages))
+            self.assertTrue(
+                any('Stripe public key is missing' in str(message) for message in messages)  # noqa
+            )
 
     def test_checkout_success_view(self):
         """Test the checkout success view."""
@@ -136,7 +155,9 @@ class CheckoutViewsTestCase(TestCase):
             amount=Decimal('50.00'),
             stripe_payment_intent_id='test_pid'
         )
-        response = self.client.get(reverse('checkout_success', args=[order.id]))
+        response = self.client.get(
+            reverse('checkout_success', args=[order.id])
+        )
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'checkout/checkout_success.html')
         self.assertIn('order', response.context)

@@ -1,6 +1,6 @@
 from django.test import TestCase
-from django.core.exceptions import ValidationError
 from checkout.forms import OrderForm
+
 
 class OrderFormTest(TestCase):
 
@@ -14,7 +14,10 @@ class OrderFormTest(TestCase):
         }
 
     def test_form_initialization(self):
-        """Test that the form initializes correctly with the expected attributes."""
+        """
+        Test that the form initializes
+        correctly with the expected attributes.
+        """
         form = OrderForm()
         for field_name, field in form.fields.items():
             self.assertIn('class', field.widget.attrs)
@@ -40,7 +43,10 @@ class OrderFormTest(TestCase):
         form = OrderForm(data=data)
         self.assertFalse(form.is_valid())
         self.assertIn('first_name', form.errors)
-        self.assertEqual(form.errors['first_name'], ['First name should only contain alphabetic characters.'])
+        self.assertEqual(
+            form.errors['first_name'],
+            ['First name should only contain alphabetic characters.']
+        )
 
     def test_clean_last_name_valid(self):
         """Test last name validation with valid input."""
@@ -55,7 +61,10 @@ class OrderFormTest(TestCase):
         form = OrderForm(data=data)
         self.assertFalse(form.is_valid())
         self.assertIn('last_name', form.errors)
-        self.assertEqual(form.errors['last_name'], ['Last name should only contain alphabetic characters.'])
+        self.assertEqual(
+            form.errors['last_name'],
+            ['Last name should only contain alphabetic characters.']
+        )
 
     def test_clean_phone_number_valid(self):
         """Test phone number validation with valid input."""
@@ -70,7 +79,10 @@ class OrderFormTest(TestCase):
         form = OrderForm(data=data)
         self.assertFalse(form.is_valid())
         self.assertIn('phone_number', form.errors)
-        self.assertEqual(form.errors['phone_number'], ['Phone number should only contain numeric characters.'])
+        self.assertEqual(
+            form.errors['phone_number'],
+            ['Phone number should only contain numeric characters.']
+        )
 
     def test_clean_phone_number_empty(self):
         """Test phone number validation with an empty input."""
@@ -79,4 +91,7 @@ class OrderFormTest(TestCase):
         form = OrderForm(data=data)
         self.assertFalse(form.is_valid())
         self.assertIn('phone_number', form.errors)
-        self.assertEqual(form.errors['phone_number'], ['Phone number should only contain numeric characters.'])
+        self.assertEqual(
+            form.errors['phone_number'],
+            ['Phone number should only contain numeric characters.']
+        )

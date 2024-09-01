@@ -4,9 +4,9 @@ from django.contrib.auth.models import User
 from django.contrib.messages import get_messages
 from accounts.forms import *
 from accounts.models import *
-from django.contrib.sites.models import Site
 from allauth.account.models import EmailAddress
 from django.core.files.uploadedfile import SimpleUploadedFile
+
 
 class ProfileViewTests(TestCase):
 
@@ -14,14 +14,14 @@ class ProfileViewTests(TestCase):
         self.client = Client()
         # Create a user and set up their profile
         self.user = User.objects.create_user(
-            email='testuser@test.com', 
-            username="test", 
-            password='testpass', 
-            first_name='testy', 
+            email='testuser@test.com',
+            username="test",
+            password='testpass',
+            first_name='testy',
             last_name='testy'
         )
         self.user_profile = UserProfile.objects.create(user=self.user)
-        
+
         # Mark the email as verified to simulate a real user login with Allauth
         EmailAddress.objects.create(
             user=self.user,
@@ -32,7 +32,7 @@ class ProfileViewTests(TestCase):
 
         # Use the client to log in through Allauth's login view
         self.client.post(reverse('account_login'), {
-            'login': 'testuser@test.com',  # Replace 'login' with the field name used in your login form (e.g., 'username' or 'email')
+            'login': 'testuser@test.com',
             'password': 'testpass'
         })
 
@@ -89,7 +89,8 @@ class ProfileViewTests(TestCase):
     def test_add_weight_log_view_post_valid(self):
         """Test submitting valid data to add weight log view."""
         data = {'weight': 75.5}
-        response = self.client.post(reverse('add_weight_log'), data, follow=True)
+        response = self.client.post(
+            reverse('add_weight_log'), data, follow=True)
         self.assertRedirects(response, reverse('profile'))
         self.assertEqual(WeightLog.objects.filter(user=self.user).count(), 1)
 
@@ -105,16 +106,20 @@ class ProfileViewTests(TestCase):
     def test_edit_weight_log_view_get(self):
         """Test the GET request to edit weight log view."""
         weight_log = WeightLog.objects.create(user=self.user, weight=75.5)
-        response = self.client.get(reverse('edit_weight_log', args=[weight_log.id]))
+        response = self.client.get(
+            reverse('edit_weight_log', args=[weight_log.id])
+        )
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'accounts/edit_weight_log.html')
         self.assertIsInstance(response.context['form'], WeightLogForm)
-    
+
     def test_edit_weight_log_view_post_valid(self):
         """Test submitting valid data to edit weight log view."""
         weight_log = WeightLog.objects.create(user=self.user, weight=75.5)
         data = {'weight': 76.0}
-        response = self.client.post(reverse('edit_weight_log', args=[weight_log.id]), data, follow=True)
+        response = self.client.post(
+            reverse('edit_weight_log', args=[weight_log.id]), data, follow=True
+        )
         self.assertRedirects(response, reverse('profile'))
         weight_log.refresh_from_db()
         self.assertEqual(weight_log.weight, 76.0)
@@ -122,7 +127,9 @@ class ProfileViewTests(TestCase):
     def test_delete_weight_log_view(self):
         """Test deleting a weight log."""
         weight_log = WeightLog.objects.create(user=self.user, weight=75.5)
-        response = self.client.delete(reverse('delete-weight-log', args=[weight_log.id]))
+        response = self.client.delete(
+            reverse('delete-weight-log', args=[weight_log.id])
+        )
         self.assertEqual(response.status_code, 200)
         self.assertFalse(WeightLog.objects.filter(id=weight_log.id).exists())
 
@@ -131,15 +138,22 @@ class ProfileViewTests(TestCase):
         response = self.client.post(reverse('delete-user'), follow=True)
         self.assertRedirects(response, reverse('home'))
         self.assertFalse(User.objects.filter(username='testuser').exists())
-        
+
     def test_upload_progress_picture_view_post_valid(self):
         """Test submitting valid data to upload progress picture view."""
         progress_image = SimpleUploadedFile(
             name='test_image.jpg',
-            content=b'\x47\x49\x46\x38\x39\x61\x01\x00\x01\x00\x00\xff\x00,\x00\x00\x00\x00\x01\x00\x01\x00\x00\x02\x02D\x01\x00;',
+            content=(
+                b'\x47\x49\x46\x38\x39\x61\x01\x00\x01\x00\x00\xff\x00,'
+                b'\x00\x00\x00\x00\x01\x00\x01\x00\x00\x02\x02D\x01\x00;'
+            ),
             content_type='image/jpeg'
         )
         data = {'progress_image': progress_image}
-        response = self.client.post(reverse('upload_progress_picture'), data, follow=True)
+        response = self.client.post(
+            reverse('upload_progress_picture'), data, follow=True
+        )
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(ProgressPicture.objects.filter(user=self.user_profile).count(), 1)
+        self.assertEqual(
+            ProgressPicture.objects.filter(user=self.user_profile).count(), 1
+        )
