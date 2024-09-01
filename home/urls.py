@@ -17,6 +17,9 @@ Including another URLconf
 from django.urls import path
 from . import views
 
+# Define URL patterns for the application
 urlpatterns = [
+    # URL pattern for the home page, mapped to the home view in views.py
     path('', views.home, name='home')
 ]
+
