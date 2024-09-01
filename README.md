@@ -908,6 +908,61 @@ Once you've created a Gmail (Google) account and logged-in, follow these series 
 	- `EMAIL_HOST_PASS` = user's 16-character API key
 	- `EMAIL_HOST_USER` = user's own personal Gmail email address
 
+## Credits
+
+### Content
+
+| Source | Location | Notes |
+| --- | --- | --- |
+| [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
+| [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
+| [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | profile page | interactive pop-up (modal) |
+| [W3Schools](https://www.w3schools.com/css/css3_variables.asp) | entire site | how to use CSS :root variables |
+| [strftime](https://strftime.org) | CRUD functionality | helpful tool to format date/time from string |
+| [Bootstrap](https://getbootstrap.com/docs/5.2/components/accordion/) | FAQ page | interactive accordion |
+| [BootstrapBrain](https://bootstrapbrain.com/component/bootstrap-5-services-section-card-design-example/#code) | home page | card template |
+| [David Kingsbury](https://www.davidkingsbury.co.uk/) | entire page | used as inspiration when building the website. |
+| [Gymsick](https://pxdraft.com/wrap/gymsick/) | entire page | used as inspiration when building the website. |
+| [Chart](https://www.chartjs.org/docs/latest/) | profile page | helpful chart tool used to visual weight progress. |
+| [Vercel](https://v0.dev/) | entire site | helpful tool to generate mock-up pages for inspiration |
+| [Amp-What](https://www.amp-what.com/) | entire site | helpful tool to find characters and icons |
+| [GitHub](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams) | readme | implementing the ERD diagram |
+
+### Media
+
+| Source | Location | Type | Notes |
+| --- | --- | --- | --- |
+| [Unsplash](https://unsplash.com/photos/a-young-man-working-out-with-a-barbell-rW5H8kZ5wSc) | home page | image | hero image background |
+| [Unsplash](https://unsplash.com/photos/w9NE_4XfRBo) | home page | image | about image |
+| [Flaticon](https://www.flaticon.com/free-icon/flexibility_4471955?term=flexibility&page=1&position=41&origin=search&related_id=4471955) | home page | image | flexibility icon |
+| [Flaticon](https://www.flaticon.com/free-icon/personalized_15765387?term=personalization&page=1&position=3&origin=tag&related_id=15765387) | home page | image | personalization icon |
+| [Flaticon](https://www.flaticon.com/free-icon/world_3187401?term=world+pin&page=1&position=14&origin=search&related_id=3187401) | home page | image | accessibility icon |
+| [Flaticon](https://www.flaticon.com/free-icon/best-price_10693587?term=pricing&page=1&position=29&origin=search&related_id=10693587) | home page | image | affordability icon |
+| [Flaticon](https://www.flaticon.com/free-icon/interview_10896610?term=consultation&page=1&position=3&origin=search&related_id=10896610) | home page | image | consultation icon |
+| [Flaticon](https://www.flaticon.com/free-icon/task_2098313?term=plan&page=1&position=3&origin=search&related_id=2098313) | home page | image | personalized plan icon |
+| [Flaticon](https://www.flaticon.com/free-icon/support_2058768?term=support&page=1&position=2&origin=search&related_id=2058768) | home page | image | support icon |
+| [Flaticon](https://www.flaticon.com/free-icon/community_17189111?term=globe+community&related_id=17189111) | home page | image | community icon |
+| [Unsplash](https://unsplash.com/photos/a-couple-of-men-standing-in-front-of-a-window-pKze3waMYVw) | home page | image | about image |
+| [Imgur](https://imgur.com/PKHvlRS) | home page | image | review image 1 |
+| [Imgur](https://imgur.com/w2CKRB9) | home page | image | review image 2 |
+| [Imgur](https://imgur.com/ACeArwY) | home page | image | review image 3 |
+| [Fontawesome](https://fontawesome.com/icons/clipboard-check?f=classic&s=solid) | home page | icon | training plans icon |
+| [Fontawesome](https://fontawesome.com/icons/facebook?f=brands&s=solid) | all pages | icon | facebook icon |
+| [Fontawesome](https://fontawesome.com/icons/instagram?f=brands&s=solid) | all pages | icon | instagram icon |
+| [Fontawesome](https://fontawesome.com/icons/twitter?f=brands&s=solid) | all pages | icon | twitter icon |
+| [Fontawesome](https://fontawesome.com/icons/linkedin?f=brands&s=solid) | all pages | icon | linkedin icon |
+| [Fontawesome](https://fontawesome.com/icons/youtube?f=brands&s=solid) | all pages | icon | youtube icon |
+| [Unsplash](https://unsplash.com/photos/person-in-white-nike-sneakers-A4579vLezz8) | about page | image | about hero image |
+| [Fontawesome](https://fontawesome.com/icons/circle-check?f=classic&s=solid) | all pages | icon | check icon |
+| [Unsplash](https://unsplash.com/photos/a-man-standing-next-to-another-man-in-a-gym-kvJYlUXk4hQ) | about page | image | philosophy image |
+| [Flaticon](https://www.flaticon.com/free-icon/quality_10498049?term=expertise&related_id=10498049) | plans page | image | expertise image |
+| [Flaticon](https://www.flaticon.com/free-icon/personalized_15765386?term=personalized&page=1&position=8&origin=search&related_id=15765386) | plans page | image | customization image |
+| [Flaticon](https://www.flaticon.com/free-icon/support_2058768?term=support&page=1&position=3&origin=search&related_id=2058768) | plans page | image | support image |
+| [Flaticon](https://www.flaticon.com/free-icon/task_2098313?term=plan&page=1&position=3&origin=search&related_id=2098313) | plans page | image | results image |
+| [Github](https://github.com/Code-Institute-Solutions/blog/blob/main/10_create_about_app/static/images/nobody.jpg) | profile page | image | default user image |
+| [Chatgpt](https://chatgpt.com/) | 404 page | image | used to generate the cartoon image | 
+| [ImageResizer](https://imageresizer.com/) | entire site | image | tool for image compression & sizing |
+
 ### Acknowledgements
 
 - I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for their support throughout the development of this project.
