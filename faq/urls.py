@@ -17,6 +17,8 @@ Including another URLconf
 from django.urls import path
 from . import views
 
+# Define URL patterns for the application
 urlpatterns = [
+    # URL pattern for the FAQ page, mapped to the faq view in views.py
     path('faq/', views.faq, name='faq')
 ]
