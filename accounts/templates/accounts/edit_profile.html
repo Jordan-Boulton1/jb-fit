@@ -1,26 +1,52 @@
 {% extends 'base.html' %}
+<!-- Extending the base template which includes the common layout structure -->
+
 {% load static %}
+<!-- Loading static files to use within this template, like images and CSS -->
 
 {% block content %}
+<!-- Start of the content block which will be inserted into the 'base.html' template -->
+
+<!-- Link to custom CSS for styling the profile update page -->
 <link href="{% static 'accounts/css/profile.css' %}" rel="stylesheet">
+
 <div class="container mt-5 mb-5">
+    <!-- Main container with top and bottom margins for spacing -->
+
     <div class="row">
+        <!-- Row for layout management -->
+
         <div class="col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+            <!-- Centered column on the page, adjusted for medium and extra-large screens -->
+
             <div class="card mb-4 jb-fit-card">
-                <div class="card-header jb-fit-card-header d-flex flex-column align-items-center"> <!-- Flexbox for vertical alignment -->
+                <!-- Card component for displaying the update form -->
+
+                <div class="card-header jb-fit-card-header d-flex flex-column align-items-center">
+                    <!-- Card header with flexbox for vertical alignment -->
+
                     <div class="row">
-                        <h5 class="card-title mb-2">Update Personal Information</h5> <!-- Adjusted margin for spacing -->
+                        <h5 class="card-title mb-2">Update Personal Information</h5>
+                        <!-- Title for the update form with adjusted bottom margin for spacing -->
                     </div>
+
                     <div class="row">
+                        <!-- Back button linking to the user's profile page -->
                         <a class="btn back-btn" href="{% url 'profile' %}" aria-label="Go back to your profile page">&larr; Back</a>
                     </div>
                 </div>
-            
+
                 <div class="card-body jb-fit-card-body">
+                    <!-- Card body containing the form for updating personal information -->
+
                     <form method="POST" enctype="multipart/form-data">
+                        <!-- Form with POST method and multipart encoding for file uploads -->
+
                         {% csrf_token %}
+                        <!-- CSRF token for security -->
 
                         {% if form.non_field_errors %}
+                            <!-- Displaying non-field errors for the form if there are any -->
                             <div class="alert alert-danger">
                                 {% for error in form.non_field_errors %}
                                     <div class="d-flex align-items-center justify-content-between"> 
@@ -30,17 +56,20 @@
                                 {% endfor %}
                             </div>
                         {% endif %}
-                        <!-- Image -->
+
+                        <!-- Image upload field -->
                         <div class="mb-3">
                             <label for="image" class="form-label">Image</label>
-                            <input type="file" class="form-control {% if form.email.errors %}is-invalid{% endif %}" id="image" name="image" accept="image/*" value="{{ form.image.value|default_if_none:'' }}">
+                            <input type="file" class="form-control {% if form.image.errors %}is-invalid{% endif %}" id="image" name="image" accept="image/*" value="{{ form.image.value|default_if_none:'' }}">
                         </div>
-                        <!-- Email address -->
+
+                        <!-- Email address field -->
                         <div class="mb-3">
                             <label for="email" class="form-label">Email address</label>
                             <input type="email" class="form-control {% if form.email.errors %}is-invalid{% endif %}" id="email" name="email" value="{{ form.email.value|default_if_none:'' }}">
                         </div>
-                        <!-- Email address validation -->
+
+                        <!-- Displaying email validation errors if there are any -->
                         {% if form.email.errors %}
                             <div class="alert alert-danger py-1 my-1">
                                 {% for error in form.email.errors %}
@@ -51,12 +80,14 @@
                                 {% endfor %}
                             </div>
                         {% endif %}
-                        <!-- Phone Number -->
+
+                        <!-- Phone number field -->
                         <div class="mb-3">
                             <label for="id_phone_number" class="form-label">Phone Number</label>
                             <input type="text" class="form-control" id="id_phone_number" name="phone_number" value="{{ form.phone_number.value }}">
                         </div>
-                        <!-- Phone number validation -->
+
+                        <!-- Displaying phone number validation errors if there are any -->
                         {% if form.phone_number.errors %}
                             <div class="alert alert-danger py-1 my-1">
                                 {% for error in form.phone_number.errors %}
@@ -68,12 +99,13 @@
                             </div>
                         {% endif %}
 
-                        <!-- Address -->
+                        <!-- Address field -->
                         <div class="mb-3">
                             <label for="id_address" class="form-label">Address</label>
                             <textarea class="form-control" id="id_address" name="address" rows="3">{{ form.address.value }}</textarea>
                         </div>
-                        <!-- Address validation -->
+
+                        <!-- Displaying address validation errors if there are any -->
                         {% if form.address.errors %}
                             <div class="alert alert-danger py-1 my-1">
                                 {% for error in form.address.errors %}
@@ -85,11 +117,13 @@
                             </div>
                         {% endif %}
 
-                        <!-- Date of birth -->
+                        <!-- Date of birth field -->
                         <div class="mb-3">
                             {{ form.date_of_birth.label }}
                             {{ form.date_of_birth }}
                         </div>
+
+                        <!-- Displaying date of birth validation errors if there are any -->
                         {% if form.date_of_birth.errors %}
                             <div class="alert alert-danger py-1 my-1">
                                 {% for error in form.date_of_birth.errors %}
@@ -101,10 +135,12 @@
                             </div>
                         {% endif %}
 
-                        <!-- Current weight -->
+                        <!-- Current weight field -->
                         <div class="mb-3">
                             <label for="id_current_weight" class="form-label">Current Weight (kg)</label>
                             <input type="number" step="0.01" class="form-control" id="id_current_weight" name="current_weight" value="{{ form.current_weight.value }}">
+                            
+                            <!-- Displaying current weight validation errors if there are any -->
                             {% if form.current_weight.errors %}
                                 <div class="alert alert-danger py-1 my-1">
                                     {% for error in form.current_weight.errors %}
@@ -113,15 +149,16 @@
                                         <span class="closeerrorbtn">&times;</span> 
                                     </div>
                                     {% endfor %}
-                                    
                                 </div>
                             {% endif %}
                         </div>
 
-                        <!-- Height -->
+                        <!-- Height field -->
                         <div class="mb-3">
                             <label for="id_height" class="form-label">Height (cm)</label>
                             <input type="number" step="0.01" class="form-control" id="id_height" name="height" value="{{ form.height.value }}">
+                            
+                            <!-- Displaying height validation errors if there are any -->
                             {% if form.height.errors %}
                                 <div class="alert alert-danger py-1 my-1">
                                     {% for error in form.height.errors %}
@@ -134,10 +171,12 @@
                             {% endif %}
                         </div>
 
-                        <!-- Goal weight -->
+                        <!-- Goal weight field -->
                         <div class="mb-3">
                             <label for="id_goal_weight" class="form-label">Goal Weight (kg)</label>
                             <input type="number" step="0.01" class="form-control" id="id_goal_weight" name="goal_weight" value="{{ form.goal_weight.value }}">
+                            
+                            <!-- Displaying goal weight validation errors if there are any -->
                             {% if form.goal_weight.errors %}
                                 <div class="alert alert-danger py-1 my-1">
                                     {% for error in form.goal_weight.errors %}
@@ -151,14 +190,21 @@
                         </div>
 
                         <div class="row">
+                            <!-- Row for action buttons -->
+                            
                             <div class="col-md-6">
+                                <!-- Save button for submitting the form -->
                                 <button type="submit" class="btn btn-primary edit-profile-btn">Save</button>
                             </div>
+
                             <div class="col-md-6 d-flex justify-content-end">
+                                <!-- Delete account button triggering the delete confirmation modal -->
                                 <button type="button" id="promptConfirmDelete" class="btn btn-danger">Delete Account</button>
                             </div>                             
                         </div>
+
                         <input type="hidden" name="form_type" value="editProfile">
+                        <!-- Hidden input to specify the form type -->
                     </form>
                 </div>
             </div>
@@ -168,18 +214,25 @@
 
 <!-- Delete Confirmation Modal -->
 <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <!-- Modal for confirming account deletion -->
+
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
+                <!-- Modal header with title and close button -->
                 <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+            
             <div class="modal-body">
+                <!-- Modal body with warning message about account deletion -->
                 <p>Are you sure you want to delete your account?<br><i>This action cannot be reversed.</i></p>
             </div>
+
             <div class="modal-footer">
+                <!-- Modal footer with action buttons for canceling or confirming deletion -->
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                 <button type="button" class="btn btn-danger" id="confirmDeleteButton">Delete</button>
             </div>
@@ -188,8 +241,14 @@
 </div>
 
 {% block postloadjs %}
-    <script type="module"  src="{% static 'js/base.js' %}"></script>
+<!-- JavaScript block for additional scripts loaded after the content -->
+
+    <script type="module" src="{% static 'js/base.js' %}"></script>
+    <!-- Base JavaScript module -->
+
     <script type="module" src="{% static 'accounts/js/edit_profile.js' %}"></script>
+    <!-- Custom JavaScript for the edit profile page -->
 {% endblock %}
 
 {% endblock %}
+<!-- End of the content block -->

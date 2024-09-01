@@ -1,15 +1,29 @@
 {% extends "base.html" %}
+<!-- Extending the base template which includes the common layout structure -->
+
 {% load static %}
+<!-- Loading static files to use within this template, like images and CSS -->
 
 {% block content %}
+<!-- Start of the content block which will be inserted into the 'base.html' template -->
+
+<!-- Link to custom CSS for styling the checkout page -->
 <link href="{% static 'checkout/css/checkout.css' %}" rel="stylesheet">
+
 <div class="container d-flex justify-content-center align-items-center content-container">
+    <!-- Main container with Bootstrap classes for centering the content both vertically and horizontally -->
+
     <div class="container mt-4">
+        <!-- Inner container with top margin for spacing -->
+
         {% if messages %}
+            <!-- Displaying alert messages if there are any -->
+
             <div class="alert alert-dismissable fade show" role="alert">
                 {% for message in messages %}
                 <div class="{{ message.tags }} mt-2" role="alert">
                     {{ message }}
+                    <!-- Close button for the alert message -->
                     <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -19,60 +33,108 @@
         {% endif %}
 
         {% if order_form.non_field_errors %}
+            <!-- Displaying non-field errors for the order form if there are any -->
+
             <div class="alert alert-danger mt-2" role="alert">
                 {% for error in order_form.non_field_errors %}
                     <div>{{ error }}</div>
                 {% endfor %}
             </div>
         {% endif %}
+
         <form id="payment-form" method="post">
+            <!-- Payment form with POST method -->
+
+            {% csrf_token %}
+            <!-- CSRF token for security -->
+
             <div class="row mt-5">
-                <!--Checkout Summary-->
+                <!-- Row for the layout of checkout and order summary sections -->
+
+                <!-- Checkout Summary Section -->
                 <div class="col-md-7">
+                    <!-- Column for the checkout details with responsive width adjustment -->
+
                     <div class="card mb-4 jb-fit-card">
-                        <div class="card-header jb-fit-card-header d-flex flex-column align-items-center"> <!-- Flexbox for vertical alignment -->
+                        <!-- Card for displaying the checkout details -->
+
+                        <div class="card-header jb-fit-card-header d-flex flex-column align-items-center">
+                            <!-- Card header with vertical alignment for title and back button -->
+
                             <div class="row">
-                                <h5 class="card-title mb-2">Checkout Details</h5> <!-- Adjusted margin for spacing -->
+                                <h5 class="card-title mb-2">Checkout Details</h5>
+                                <!-- Title for the checkout details section -->
                             </div>
+
                             <div class="row">
+                                <!-- Back button linking to the plans page -->
                                 <a class="btn back-btn" href="{% url 'plans' %}" aria-label="Go back to the plans page">&larr; Back</a>
                             </div>
-                        </div>                        
+                        </div>
+
                         <div class="card-body jb-fit-card-body">
-                            {% csrf_token %}
+                            <!-- Card body containing the checkout form fields -->
+
                             {{ order_form.as_p }}
+                            <!-- Render the order form fields with paragraph tags -->
 
                             <div class="stripe-elements mt-4">
+                                <!-- Stripe Elements container for payment details -->
+
                                 <div id="card-element"></div>
+                                <!-- Placeholder for the Stripe card element -->
+
                                 <div id="card-errors" role="alert"></div>
+                                <!-- Container to display card errors -->
+
                                 <input type="hidden" value="{{ client_secret }}" name="client_secret">
+                                <!-- Hidden input field to hold the client secret for Stripe payment -->
                             </div>
+
+                            <!-- Submit button for payment -->
                             <button type="submit" class="mt-3 w-100 btn btn-lg btn-primary bg-gradient jb-fit-card-btn">Pay Now</button>
                         </div>
                     </div>
                 </div>
-    
-                <!--Order Summary-->
+
+                <!-- Order Summary Section -->
                 <div class="col-md-5">
+                    <!-- Column for the order summary with responsive width adjustment -->
+
                     <div class="card mb-4 jb-fit-card">
+                        <!-- Card for displaying the order summary -->
+
                         <div class="card-header jb-fit-card-header">
+                            <!-- Card header with title for order summary -->
                             <h5>Order Summary</h5>
                         </div>
+
                         <div class="card-body jb-fit-card-body">
+                            <!-- Card body containing the order summary details -->
+
                             <div class="row">
                                 <div class="col-md-8">
-                                    <p>Training Plan: {{ training_plan.name}}</p>
+                                    <!-- Details of the training plan -->
+                                    <p>Training Plan: {{ training_plan.name }}</p>
                                     <i>Includes: {{ training_plan.description }}</i>
                                 </div>
+
                                 <div class="col-md-4 d-flex justify-content-end">
-                                    <p>£{{ training_plan.price}}</p>
+                                    <!-- Price of the training plan -->
+                                    <p>£{{ training_plan.price }}</p>
                                 </div>
+
+                                <!-- Divider line between details and total -->
                                 <hr class="mt-4">
+
                                 <div class="col-md-6 mt-3">
+                                    <!-- Label for the total price -->
                                     <p>Total</p>
                                 </div>
-                                <div class="col-md-6  d-flex justify-content-end mt-3">
-                                    <p>£{{ training_plan.price}}</p>
+
+                                <div class="col-md-6 d-flex justify-content-end mt-3">
+                                    <!-- Displaying the total price -->
+                                    <p>£{{ training_plan.price }}</p>
                                 </div>
                             </div>
                         </div>
@@ -82,14 +144,20 @@
         </form>
     </div>
 </div>
-
-
-
 {% endblock %}
 
 {% block postloadjs %}
+<!-- Additional JavaScript for Stripe integration and handling payment -->
+
     {{ block.super }}
+    <!-- Including parent block's post-load JavaScript -->
+
     {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    <!-- JSON script tag to securely include the Stripe public key -->
+
     {{ client_secret|json_script:"id_client_secret" }}
+    <!-- JSON script tag to securely include the client secret for Stripe payment -->
+
     <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+    <!-- Including custom JavaScript for Stripe Elements integration -->
 {% endblock %}

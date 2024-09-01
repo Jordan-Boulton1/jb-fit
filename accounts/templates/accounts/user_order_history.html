@@ -1,39 +1,73 @@
 {% extends 'base.html' %}
+<!-- Extending the base template which includes the common layout structure -->
+
 {% load static %}
+<!-- Loading static files to use within this template, like images and CSS -->
 
 {% block content %}
+<!-- Start of the content block which will be inserted into the 'base.html' template -->
+
+<!-- Link to custom CSS for styling the order history page -->
 <link href="{% static 'accounts/css/profile.css' %}" rel="stylesheet">
+
 <div class="container-fluid d-flex justify-content-center align-items-center content-container py-4">
-    <div class="col-12 col-xl-8"> <!-- Ensures it scales down on smaller devices -->
+    <!-- Main container with Bootstrap classes for full-width layout, centering the content both vertically and horizontally, and adding padding on the y-axis -->
+
+    <div class="col-12 col-xl-8">
+        <!-- Column that adjusts to full width on smaller screens and 8/12 on extra-large screens to ensure proper scaling -->
+
         <div class="card mb-4 jb-fit-card shadow-sm">
-            <div class="card-header jb-fit-card-header d-flex flex-column align-items-center"> <!-- Flexbox for vertical alignment -->
+            <!-- Card component for displaying the order history with a shadow effect for visual depth -->
+
+            <div class="card-header jb-fit-card-header d-flex flex-column align-items-center">
+                <!-- Card header with flexbox for vertical alignment -->
+
                 <div class="row">
-                    <h5 class="card-title mb-2">Order History</h5> <!-- Adjusted margin for spacing -->
+                    <h5 class="card-title mb-2">Order History</h5>
+                    <!-- Title for the order history section with adjusted bottom margin for spacing -->
                 </div>
+
                 <div class="row">
+                    <!-- Back button linking to the user's profile page -->
                     <a class="btn back-btn" href="{% url 'profile' %}" aria-label="Go back to your profile page">&larr; Back</a>
                 </div>
             </div>
 
             <div class="card-body jb-fit-card-body order-history-container overflow-auto custom-scrollbar" style="max-height: 400px;">
-                <!-- Responsive table with Bootstrap's table-responsive class -->
-                <div class="table-responsive"> <!-- Allows table to scroll on small devices -->
+                <!-- Card body containing the order history table with custom scrollbar, allowing overflow and setting a maximum height for the container -->
+
+                <div class="table-responsive">
+                    <!-- Responsive table container to allow horizontal scrolling on small devices -->
+
                     <table class="table table-striped table-hover" id="order-history-table">
+                        <!-- Table with Bootstrap classes for striped rows, hover effects, and a unique ID for targeting -->
+
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <!-- Column header for row numbers -->
                                 <th>Training Plan</th>
+                                <!-- Column header for training plan names -->
                                 <th>Date of Purchase</th>
+                                <!-- Column header for purchase dates -->
                             </tr>
                         </thead>
+
                         <tbody>
                             {% for order in order_history %}
+                                <!-- Loop through the order history to display each order -->
+
                                 <tr>
-                                    <td>{{ forloop.counter }}</td> <!-- Displays the row number -->
-                                    <td>{{ order.training_plan.name }}</td> <!-- Training Plan Name -->
-                                    <td>{{ order.created_at|date:"F j, Y, g:i a" }}</td> <!-- Date of Purchase -->
+                                    <td>{{ forloop.counter }}</td>
+                                    <!-- Displays the row number using the loop counter -->
+                                    <td>{{ order.training_plan.name }}</td>
+                                    <!-- Displays the name of the training plan purchased -->
+                                    <td>{{ order.created_at|date:"F j, Y, g:i a" }}</td>
+                                    <!-- Displays the date and time of purchase formatted nicely -->
                                 </tr>
+
                             {% empty %}
+                                <!-- Display a message if no orders are found in the order history -->
                                 <tr>
                                     <td colspan="4" class="text-center">No orders found.</td>
                                 </tr>
@@ -47,3 +81,4 @@
 </div>
 
 {% endblock %}
+<!-- End of the content block -->

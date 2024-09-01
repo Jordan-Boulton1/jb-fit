@@ -1,18 +1,46 @@
 {% extends 'base.html' %}
+<!-- Extending the base template which includes the common layout structure -->
+
 {% load static %}
+<!-- Loading static files to use within this template, like images and CSS -->
+
 {% block content %}
+<!-- Start of the content block which will be inserted into the 'base.html' template -->
+
+<!-- Main container with Bootstrap classes for centering text -->
 <div class="container text-center">
+
+    <!-- Row with Bootstrap classes for vertical and horizontal centering, occupying minimum 100% viewport height -->
     <div class="row mb-5 justify-content-center align-items-center min-vh-100">
+        
+        <!-- Column that adjusts to full width on smaller screens and 4/12 on medium screens, with padding for spacing -->
         <div class="col-12 col-md-4 py-5">
+            
+            <!-- Wrapper for the error content -->
             <div class="error-container">
+
+                <!-- Error image with responsive Bootstrap classes for fluid scaling, rounded corners, and centered alignment -->
                 <img src="{% static 'images/404page.webp' %}" alt="404 Page" class="img-fluid rounded mx-auto d-block mb-4 error-img">
+                
+                <!-- Large display heading for the error code -->
                 <h1 class="display-4">404</h1>
+                
+                <!-- Subheading indicating the error message -->
                 <h2>Page Not Found</h2>
+
+                <!-- Lead paragraph with a humorous message to lighten the error experience -->
                 <p class="lead">Oops! Looks like you skipped leg day on your way here!</p>
+
+                <!-- Additional message providing a playful context to the error -->
                 <p>Don't worry, we'll give you a few extra reps to make up for it. In the meantime, let's get you back on track to your fitness goals!</p>
+
+                <!-- Button linking back to the home page, styled with Bootstrap classes for a large, full-width primary button with a gradient background -->
                 <a href="{% url 'home' %}" class="btn btn-lg w-100 btn-primary bg-gradient">Back to Home</a>
+                
             </div>
         </div>
     </div>
 </div>
+
 {% endblock %}
+<!-- End of the content block -->
