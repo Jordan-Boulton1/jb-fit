@@ -493,6 +493,12 @@ I've used [Figma](https://www.figma.com) to design my site mockups.
 
 		![screenshot](documentation/features/checkout/feat-checkout-page-successful.png)
 
+### 404 Page
+
+- The 404 page informs users that the requested page is not found and provides navigation options to return to the home page or other sections. This enhances site usability by preventing dead ends and guiding users back to functional areas, ensuring a smooth browsing experience.
+
+	![screenshot](documentation/features/404-page.png)
+
 ### Future Features
 
 - **Community Forum**: The Community Forum will serve as a dedicated space where users can connect, share their fitness journeys, ask questions, and support each other. This feature aims to foster a sense of community among JB Fit users, allowing them to engage in discussions about workouts, nutrition tips, success stories, and challenges. The forum will include topic-specific threads, private messaging, and the ability to follow and interact with other users’ posts. This interactive platform will enhance user engagement, encourage knowledge sharing, and provide a supportive environment for individuals striving to reach their fitness goals.
