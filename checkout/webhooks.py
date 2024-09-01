@@ -1,54 +1,73 @@
-import stripe
-from django.http import HttpResponse
+# Import necessary modules and functions
+import stripe  # Stripe API for handling payment-related events
+from django.http import HttpResponse  # For sending HTTP responses
 from django.views.decorators.csrf import csrf_exempt
-from django.conf import settings
-from django.core.mail import send_mail
+from django.conf import settings  # For accessing project settings
+from django.core.mail import send_mail  # For sending emails
 from django.template.loader import render_to_string
 
-from checkout.models import Order
+from checkout.models import Order  # Import the Order model
 
 
-@csrf_exempt
+# Define a view to handle Stripe webhooks
+@csrf_exempt  # Exempt this view from CSRF protection
+# as it receives requests from external sources
 def stripe_webhook(request):
-    """Listen for webhooks from stripe"""
+    """Listen for webhooks from Stripe"""
+    # Get the webhook payload and Stripe signature header from the request
     payload = request.body
     sig_header = request.META['HTTP_STRIPE_SIGNATURE']
-    event = None
+    event = None  # Initialize the event variable
 
     try:
+        # Construct the event using Stripe's helper
+        # method and verify the signature
         event = stripe.Webhook.construct_event(
             payload, sig_header, settings.STRIPE_WEBHOOK_SECRET
         )
     except ValueError:
-        # Invalid payload
+        # If the payload is invalid, return a 400 Bad Request response
         return HttpResponse(status=400)
     except stripe.error.SignatureVerificationError:
-        # Invalid signature
+        # If the signature verification fails,
+        # return a 400 Bad Request response
         return HttpResponse(status=400)
 
-    # Handle the event
+    # Handle the event based on its type
     try:
         if event['type'] == 'payment_intent.succeeded':
+            # If the payment was successful, retrieve the payment intent object
             payment_intent = event['data']['object']
+            # Find the corresponding order using the Stripe payment intent ID
             order = Order.objects.get(
                 stripe_payment_intent_id=payment_intent['id']
             )
+            # Mark the order as paid
             order.paid = True
-            order.save()
+            order.save()  # Save the changes to the database
 
+            # Send a confirmation email to the user
             __send_confirmation_email(order)
 
     except Order.DoesNotExist:
+        # If the order does not exist, return a 404 Not Found response
         return HttpResponse("Order not found.", status=404)
 
+    # Return a 200 OK response to acknowledge receipt of the event
     return HttpResponse(status=200)
 
 
+# Private function to send a confirmation email to the user
 def __send_confirmation_email(order):
     """Send a confirmation email to the user"""
+    # Render the subject of the email from
+    # a template and strip extra whitespace
     subject = render_to_string(
         'checkout/emails/confirmation_email_subject.txt'
     ).strip()
+
+    # Render the body of the email using a template
+    # and pass order details as context
     message = render_to_string(
         'checkout/emails/confirmation_email_body.txt',
         {
@@ -58,11 +77,15 @@ def __send_confirmation_email(order):
             'order_date': order.created_at.strftime('%B %d, %Y'),
         }
     )
+
+    # Get the recipient email address from the order
     recipient = order.email
+
+    # Send the email using Django's send_mail function
     send_mail(
-        subject,
-        message,
-        settings.DEFAULT_FROM_EMAIL,
-        [recipient],
-        fail_silently=False,
+        subject,  # Email subject
+        message,  # Email message body
+        settings.DEFAULT_FROM_EMAIL,  # Sender's email address (from settings)
+        [recipient],  # List of recipient email addresses
+        fail_silently=False,  # Raise an exception if sending fails
     )
