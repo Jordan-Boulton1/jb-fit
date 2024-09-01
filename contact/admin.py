@@ -1,6 +1,8 @@
 from django.contrib import admin
 from contact.models import ContactSubmission
+
 # Register your models here.
+
 
 class ContactSubmissionAdmin(admin.ModelAdmin):
     """
@@ -24,11 +26,12 @@ class ContactSubmissionAdmin(admin.ModelAdmin):
         :return: DateTime of when the subscription was created
         """
         return obj.submitted_at
-    
+
     # Allows sorting of the 'Submitted At' column
     submitted_at.admin_order_field = 'submitted_at'
 
     # Renames the column header to 'Subscribed At' in the admin
     submitted_at.short_description = 'Submitted At'
+
 
 admin.site.register(ContactSubmission, ContactSubmissionAdmin)

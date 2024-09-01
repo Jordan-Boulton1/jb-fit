@@ -83,6 +83,7 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | checkout | test_models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/checkout/tests/test_models.py) | ![screenshot](documentation/testing/validation/python/checkout/python-validation-checkout-test-models.png) | Pass: No Errors |
 | checkout | test_urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/checkout/tests/test_urls.py) | ![screenshot](documentation/testing/validation/python/checkout/python-validation-checkout-test-urls.png) | Pass: No Errors |
 | checkout | test_views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/checkout/tests/test_views.py) | ![screenshot](documentation/testing/validation/python/checkout/python-validation-checkout-test-views.png) | Pass: No Errors |
+| contact | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/contact/admin.py) | ![screenshot](documentation/testing/validation/python/contact/python-validation-contact-admin.png) | Pass: No Errors |
 | contact | context_processors.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/contact/context_processors.py) | ![screenshot](documentation/testing/validation/python/contact/python-validation-contact-context-processors.png) | Pass: No Errors |
 | contact | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/contact/forms.py) | ![screenshot](documentation/testing/validation/python/contact/python-validation-contact-forms.png) | Pass: No Errors |
 | contact | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/contact/models.py) | ![screenshot](documentation/testing/validation/python/contact/python-validation-contact-models.png) | Pass: No Errors |
@@ -316,6 +317,7 @@ Below are the coverage results and successful test runs generated during the tes
 | As an **admin**, I want to **create, manage and update plans** so that **users can see the up-to-date plans and services at the current time** | ![screenshot](documentation/testing/user-stories/admin-training-plan.png) |
 | As an **admin**, I want to **view and manage payments** so that **I can keep track of subscription fees and payment statuses.** | ![screenshot](documentation/testing/user-stories/stripe-dashboard.png) |
 | As an **admin**, I want to **view and manage the list of newsletter subscribers**, so that I **can effectively communicate with users and ensure the newsletter reaches the intended audience.** | ![screenshot](documentation/testing/user-stories/admin-newsletter.png) |
+| As an **admin**, I want to **be able to sort received messages from users by date and alphabetically**, so that **I can efficiently manage and review messages in a more organized manner.** | ![screenshot](documentation/testing/user-stories/admin-contact-submission.png) |
 
 ## Bugs
 

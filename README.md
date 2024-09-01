@@ -111,6 +111,7 @@ I've used CSS `:root` variables to easily update the global colour scheme by cha
 - As an **admin**, I want to **create, manage and update plans** so that **users can see the up-to-date plans and services at the current time**
 - As an **admin**, I want to **view and manage the list of newsletter subscribers**, so that I **can effectively communicate with users and ensure the newsletter reaches the intended audience.**
 - As an **admin**, I want to **integrate Stripe for handling payments** so that **users can pay for plans and make payments securely.**
+- As an **admin**, I want to **be able to sort received messages from users by date and alphabetically**, so that **I can efficiently manage and review messages in a more organized manner.**
 
 ## Mock-ups
 
