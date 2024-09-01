@@ -11,8 +11,6 @@ from .forms import *
 from checkout.models import *
 
 # Create your views here.
-
-
 @login_required
 def profile_view(request):
     profile = get_object_or_404(UserProfile, user=request.user)
