@@ -901,3 +901,10 @@ Once you've created a Gmail (Google) account and logged-in, follow these series 
 	- Save this somewhere locally, as you cannot access this key again later!
 	- `EMAIL_HOST_PASS` = user's 16-character API key
 	- `EMAIL_HOST_USER` = user's own personal Gmail email address
+
+### Acknowledgements
+
+- I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for their support throughout the development of this project.
+- I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
+- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going during periods of self-doubt and imposter syndrome.
+- I would like to thank my partner (Stefani), for believing in me, and allowing me to make this transition into software development.
