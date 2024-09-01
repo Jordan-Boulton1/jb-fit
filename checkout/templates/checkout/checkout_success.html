@@ -1,53 +1,92 @@
 {% extends "base.html" %}
+<!-- Extending the base template which includes the common layout structure -->
+
 {% load static %}
+<!-- Loading static files to use within this template, like images and CSS -->
 
 {% block content %}
+<!-- Start of the content block which will be inserted into the 'base.html' template -->
+
+<!-- Link to custom CSS for styling the checkout section -->
 <link href="{% static 'checkout/css/checkout.css' %}" rel="stylesheet">
+
 <div class="container d-flex justify-content-center align-items-center content-container">
+    <!-- Main container with Bootstrap classes for centering the content both vertically and horizontally -->
+
     <div class="col-12 col-xl-6 my-5">
+        <!-- Column that adjusts to full width on smaller screens and 6/12 on extra-large screens, with margin for spacing -->
+
         <div class="card mb-4 jb-fit-card">
+            <!-- Card component with custom styling for displaying the payment success message -->
+
             <div class="card-header jb-fit-card-header">
+                <!-- Card header with icon and title -->
+
                 <i class="fa-regular fa-circle-check checkout-success-icon"></i>
+                <!-- Success icon indicating the payment was successful -->
+
                 <h5 class="card-title text-center mt-3">Payment Successful</h5>
+                <!-- Title indicating that the payment was successful, centered with top margin for spacing -->
             </div>
+
             <div class="card-body jb-fit-card-body">
+                <!-- Card body containing the details of the successful purchase -->
+
                 <div class="d-flex justify-content-center">
+                    <!-- Flex container to center the text content -->
+
                     <p class="text-center mt-4">
                         Thank you for purchasing the {{ order.training_plan.name }}
                         Training Plan.<br>A confirmation email has been sent to the specified
                         email address.
                     </p>
+                    <!-- Thank you message confirming the purchase and email notification -->
                 </div>
-                <div class="p-4 info-container rounded mt-4">
-                    <div class="info-text-container">
-                        <p class="purchase-details"><strong>Purchase Details</strong></p>
 
+                <div class="p-4 info-container rounded mt-4">
+                    <!-- Container for displaying the purchase details, with padding and rounded corners -->
+
+                    <div class="info-text-container">
+                        <!-- Text container for purchase details -->
+
+                        <p class="purchase-details"><strong>Purchase Details</strong></p>
+                        <!-- Heading for the purchase details section -->
+
+                        <!-- Detail: Training plan name -->
                         <div class="d-flex align-items-center">
                             <p class="purchase-description mb-0">Plan:</p>
                             <p class="mb-0 ms-2 training-plan-description"> {{ order.training_plan.name }}</p>
                         </div>
-                    
+                        
+                        <!-- Detail: Duration of access -->
                         <div class="d-flex align-items-center">
                             <p class="purchase-description mb-0">Duration:</p>
                             <p class="mb-0 ms-2">Always</p>
                         </div>
-                    
+                        
+                        <!-- Detail: Access availability -->
                         <div class="d-flex align-items-center">
                             <p class="purchase-description mb-0">Access:</p>
                             <p class="mb-0 ms-2">Immediate</p>
                         </div>
-                    
+                        
+                        <!-- Detail: Purchase date -->
                         <div class="d-flex align-items-center">
                             <p class="purchase-description mb-0">Purchase Date:</p>
                             <p class="mb-0 ms-2">{{order.created_at}}</p>
                         </div>
                     </div>
                 </div>
+
                 <div class="text-center mt-5">
+                    <!-- Button to return to the profile page, centered with top margin for spacing -->
+
                     <a class="btn btn-primary mt-2 w-100 bg-gradient" href="{% url 'profile' %}" aria-label="Return to your profile page">Back to profile</a>
+                    <!-- Link styled as a button to navigate back to the user's profile page -->
                 </div>                
             </div>
         </div>
     </div>
 </div>
 {% endblock %}
+<!-- End of the content block -->

@@ -1,37 +1,58 @@
 {% extends "base.html" %}
+<!-- Extending the base template which includes the common layout structure -->
+
 {% load static %}
+<!-- Loading static files to use within this template, like images and CSS -->
 
 {% block content %}
+<!-- Start of the content block which will be inserted into the 'base.html' template -->
+
+<!-- Link to custom CSS for styling the plans section -->
 <link href="{% static 'plans/css/plans.css' %}" rel="stylesheet">
+
+<!-- Training Plans Section -->
 <section class="my-5 pb-5 py-xl-8" id="training-plans">
-    <div class="container ">
+    <div class="container">
+        <!-- Title and description of the Training Plans section -->
         <h1 class="fw-bold display-4 text-center text-body-emphasis plan-title">Training Plans</h1>
         <p class="lead py-3">At JB Fit, I offer a range of personalized fitness services designed to help you achieve your health and fitness goals. Whether you're just starting your fitness journey or looking to take your training to the next level, there's a package that's right for you.</p>
+        
+        <!-- Grid of training plans with responsive columns -->
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 gy-3 gy-xl-5 g-4 text-center mt-5">
             {% for plan in plans %}
+                <!-- Individual training plan card -->
                 <div class="col-12 col-md-6 col-lg-6 col-xl-3">
                     <div class="card plans-card">
+                        <!-- Card header displaying the plan name -->
                         <div class="card-header plans-card-header p-2">
                             <h5 class="card-title text-center my-5">{{ plan.name }} Training Plan</h5>
                         </div>
+                        
+                        <!-- Card body with plan details and purchase button -->
                         <div class="card-body plans-card-body p-3">
                             <p class="mb-2 plans-description">{{ plan.description }}</p>
+                            
+                            <!-- Form for purchasing the plan -->
                             <form action="{% url 'checkout' plan.id %}" method="get" class="ml-auto">
                                 <div class="row d-flex justify-content-between align-items-center">
+                                    <!-- Plan price display -->
                                     <div class="col-4 text-start">
                                         <h5 class="mb-0">£{{ plan.price }}</h5>
                                     </div>
+                                    <!-- Payment description -->
                                     <div class="col-8 text-end plans-payment-description">
                                         <p class="mb-0">One-time payment</p>
                                     </div>
                                 </div>
+
+                                <!-- Conditional button: disabled if the plan is already purchased -->
                                 {% if user.is_authenticated and plan.id in user_ordered_plan_ids %}
                                 <div class="tooltip-wrapper" data-bs-toggle="tooltip" title="You have already purchased this training plan.">
                                     <button type="submit" class="btn btn-primary w-100 bg-gradient mt-3" disabled>
                                         Already Purchased
                                     </button>
                                 </div>
-                                    {% else %}
+                                {% else %}
                                     <button type="submit" class="btn btn-primary w-100 bg-gradient mt-3">Purchase</button>
                                 {% endif %}
                             </form>
@@ -43,11 +64,15 @@
     </div> 
 </section>
 
-
+<!-- Why Choose My Plans Section -->
 <section class="bg-custom py-5">
     <div class="container">
+        <!-- Section title -->
         <h2 class="text-center display-5 fw-bold mb-4">Why Choose My Plans?</h2>
+
+        <!-- Features grid -->
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            <!-- Expertise feature -->
             <div class="col">
                 <div class="text-center">
                     <img src="{% static 'images/quality.webp' %}" alt="Certified expertise icon symbolizing over a decade of professional experience and multiple certifications in fitness coaching." class="feature-icon mb-3">
@@ -55,6 +80,8 @@
                     <p class="text-secondary">With over a decade of experience and multiple certifications, I bring professional expertise to your fitness journey.</p>
                 </div>
             </div>
+
+            <!-- Customization feature -->
             <div class="col">
                 <div class="text-center">
                     <img src="{% static 'images/customization.webp' %}" alt="Customized plan icon representing tailored fitness plans designed to match individual goals, fitness level, and lifestyle." class="feature-icon mb-3">
@@ -62,6 +89,8 @@
                     <p class="text-secondary">Each plan is tailored to your specific goals, fitness level, and lifestyle, ensuring you get the best results.</p>
                 </div>
             </div>
+
+            <!-- Support feature -->
             <div class="col">
                 <div class="text-center">
                     <img src="{% static 'images/support.webp' %}" alt="Continuous support icon representing regular check-ins, community engagement, and 24/7 assistance for ongoing motivation." class="feature-icon mb-3">
@@ -69,6 +98,8 @@
                     <p class="text-secondary">Receive continuous support and motivation through regular check-ins, community engagement, and 24/7 assistance.</p>
                 </div>
             </div>
+
+            <!-- Results feature -->
             <div class="col">
                 <div class="text-center">
                     <img src="{% static 'images/task.webp' %}" alt="Results icon symbolizing clients' successful transformation, achievement of fitness goals, and long-term health maintenance." class="feature-icon mb-3">
@@ -81,8 +112,11 @@
 </section>
 
 {% block postloadjs %}
+    <!-- Script for any additional JavaScript loaded after the main content -->
     <script type="module" src="{% static 'js/base.js' %}"></script>
 {% endblock %}
-<!-- Interested in Finding Out More Section -->
+
+<!-- Including a contact form for additional inquiries -->
 {% include 'contact/contact_form.html' %}
 {% endblock %}
+<!-- End of the content block -->

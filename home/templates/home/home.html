@@ -1,10 +1,16 @@
 {% extends "base.html" %}
+<!-- Extending the base template which includes the common layout structure -->
+
 {% load static %}
+<!-- Loading static files to use within this template, like images and CSS -->
 
 {% block content %}
+<!-- Start of the content block which will be inserted into the 'base.html' template -->
+
 <!-- Hero Section -->
 <section class="hero d-flex justify-content-center align-items-center text-center img-fluid">
     {% if messages %}
+        <!-- Displaying messages if there are any, including special handling for contact or newsletter messages -->
         {% for message in messages %}
             {% if 'contact' in message.tags or 'newsletter' in message.tags %}
                 <div class="mt-2 contact {{ message.tags }} message-alert-home message-alert position-absolute w-100">
@@ -21,19 +27,21 @@
     {% endif %}
     
     <div class="container py-5">
+        <!-- Hero section title and description -->
         <h1 class="display-4 fw-bold text-white mb-3">Transform Your Life with Personal Online Fitness Coaching</h1>
         <p class="lead text-white mb-3">Achieve your fitness goals with personalized training programs tailored to your needs.</p>
     </div>
 </section>
 
-
-<!-- About Section-->
+<!-- About Section -->
 <section id="about">
     <div class="container col-xxl-8 pt-5">
         <div class="row flex-lg-row align-items-center g-md-5 py-5">
+            <!-- Image in the About section -->
             <div class="col-10 col-lg-6">
                 <img src="{% static 'images/jb-fit-about.webp' %}" class="d-none d-md-block mx-lg-auto img-fluid rounded-3" alt="Young male online coach standing thoughtfully by a window, arms crossed, looking outside during a coaching session in a modern office." width="700" height="500" loading="lazy">
             </div>
+            <!-- About me text content -->
             <div class="col-lg-6">
                 <h2 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">About Me</h2>
                 <p class="coach-desc">Hi, I'm Jordan, the founder of <strong>JB Fit</strong>. 
@@ -49,12 +57,14 @@
 <!-- Online Personal Training Section -->
 <section id="online-training">
     <div class="container px-4 py-5">
+        <!-- Section title -->
         <div class="row justify-content-center justify-content-lg-start">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7">
                 <h2 class="display-5 mb-3 fw-bold text-center text-body-emphasis text-lg-start">What is Online Personal Training?</h2>
             </div>
         </div>
         <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+            <!-- Description of online personal training -->
             <div class="col-md-12 col-lg-6">
                 <p class="about-text">Online personal training is a modern approach to fitness coaching that allows you to receive expert guidance, 
                     personalized workout plans, and nutrition advice from the comfort of your own home or wherever you are. 
@@ -62,8 +72,10 @@
                     and a tailored fitness experience to fit your unique lifestyle.
                 </p>
             </div>
+            <!-- Features of online personal training -->
             <div class="col-md-12 col-lg-6">
                 <div class="row row-cols-1 row-cols-sm-2 g-4 justify-content-center">
+                    <!-- Flexibility feature -->
                     <div class="col d-flex flex-column gap-2">
                         <div class="feature-icon-small d-inline-flex align-items-center justify-content-center bg-primary bg-gradient fs-4 rounded-3">
                             <img src="{% static 'images/flexibility.webp' %}" height="32" width="32" alt="Flexibility icon representing adaptability in personal online coaching programs.">
@@ -71,6 +83,7 @@
                         <h4 class="fw-semibold mb-0 text-body-emphasis">Flexibility</h4>
                         <p class="text-body-secondary">Train at a time and place that suits you best. No more scheduling conflicts or commuting to the gym.</p>
                     </div>
+                    <!-- Personalization feature -->
                     <div class="col d-flex flex-column gap-2">
                         <div class="feature-icon-small d-inline-flex align-items-center justify-content-center bg-primary bg-gradient fs-4 rounded-3">
                             <img src="{% static 'images/personalized.webp' %}" height="32" width="32" alt="Personalized coaching icon symbolizing tailored online coaching services.">
@@ -78,6 +91,7 @@
                         <h4 class="fw-semibold mb-0 text-body-emphasis">Personalization</h4>
                         <p class="text-body-secondary">Receive customized workout and nutrition plans based on your specific goals, fitness level, and preferences.</p>
                     </div>
+                    <!-- Accessibility feature -->
                     <div class="col d-flex flex-column gap-2">
                         <div class="feature-icon-small d-inline-flex align-items-center justify-content-center bg-primary bg-gradient fs-4 rounded-3">
                             <img src="{% static 'images/world.webp' %}" height="32" width="32" alt="Global accessibility icon representing the ability to access personalized gym plans from anywhere in the world">
@@ -85,6 +99,7 @@
                         <h4 class="fw-semibold mb-0 text-body-emphasis">Accessibility</h4>
                         <p class="text-body-secondary">Whether you're travelling, at home, or on the go, you can stay consistent with your fitness routine and maintain progress.</p>
                     </div>
+                    <!-- Affordability feature -->
                     <div class="col d-flex flex-column gap-2">
                         <div class="feature-icon-small d-inline-flex align-items-center justify-content-center bg-primary bg-gradient fs-4 rounded-3">
                             <img src="{% static 'images/best-price.webp' %}" height="32" width="32" alt="Best price icon highlighting affordable online coaching plans.">
@@ -95,6 +110,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- How it Works Section -->
         <div class="row justify-content-md-center justify-content-md-center justify-content-lg-start">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7">
                 <h2 class="display-5 fw-bold text-center text-body-emphasis text-lg-start">Here's How it Works</h2>
@@ -102,6 +119,7 @@
         </div>
         <div class="container overflow-hidden px-4 py-5">
             <div class="row gy-4 gy-xl-0">
+                <!-- Initial Consultation step -->
                 <div class="col-12 col-sm-6 col-xl-3 d-flex align-items-stretch">
                     <div class="card border-0 border-bottom border-primary shadow-sm flex-grow-1">
                         <div class="card-body text-center p-4 p-xxl-5 d-flex flex-column">
@@ -114,6 +132,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Personalized Plan step -->
                 <div class="col-12 col-sm-6 col-xl-3 d-flex align-items-stretch">
                     <div class="card border-0 border-bottom border-primary shadow-sm flex-grow-1">
                         <div class="card-body text-center p-4 p-xxl-5 d-flex flex-column">
@@ -126,6 +145,7 @@
                         </div>                        
                     </div>
                 </div>
+                <!-- Ongoing Support step -->
                 <div class="col-12 col-sm-6 col-xl-3 d-flex align-items-stretch">
                     <div class="card border-0 border-bottom border-primary shadow-sm flex-grow-1">
                         <div class="card-body text-center p-4 p-xxl-5 d-flex flex-column">
@@ -135,6 +155,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Community Interaction step -->
                 <div class="col-12 col-sm-6 col-xl-3 d-flex align-items-stretch">
                     <div class="card border-0 border-bottom border-primary shadow-sm flex-grow-1">
                         <div class="card-body text-center p-4 p-xxl-5 d-flex flex-column">
@@ -159,9 +180,7 @@
             <div class="col-12 col-md-4">
                 <div class="card review-card p-3 text-center">
                     <div class="user-image">
-                        <img src="{% static 'images/bruce-customer-review.webp' %}" 
-                        alt="User providing a positive review for personalized online coaching services." 
-                        class="rounded-circle">
+                        <img src="{% static 'images/bruce-customer-review.webp' %}" alt="User providing a positive review for personalized online coaching services." class="rounded-circle">
                     </div>
                     <div class="user-content">
                         <h5 class="my-2">Bruce Hardy</h5>
@@ -220,6 +239,7 @@
 <section class="my-5 pb-5 py-xl-8" id="training-plans">
     <div class="container">
         <div class="row flex-lg-row align-items-center g-md-5 py-5">
+            <!-- Information about training plans -->
             <div class="col-lg-6">
                 <h2 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Discover my Premium Training Plans</h2>
                 <p class="coach-desc">Whether you're just starting out or looking to take your fitness to the next level, 
@@ -233,6 +253,7 @@
                     </ul>
                 </p>
             </div>
+            <!-- Call to action card for finding out more about training plans -->
             <div class="col-12 col-lg-6">
                 <div class="card-body jb-fit-card">
                     <div class="card-body jb-fit-card-body d-flex flex-column align-items-center">
@@ -258,8 +279,10 @@
     </div>
 </section>
 
-
+<!-- Horizontal divider -->
 <hr class="w-100">
 
-    {% include 'contact/contact_form.html' %}
+<!-- Including a contact form for inquiries -->
+{% include 'contact/contact_form.html' %}
 {% endblock %}
+<!-- End of the content block -->

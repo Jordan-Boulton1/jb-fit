@@ -1,25 +1,50 @@
 {% extends 'base.html' %}
+<!-- Extending the base template which includes the common layout structure -->
+
 {% load static %}
+<!-- Loading static files to use within this template, like images and CSS -->
 
 {% block content %}
+<!-- Start of the content block which will be inserted into the 'base.html' template -->
+
 <div class="container-fluid d-flex justify-content-center align-items-center content-container">
+    <!-- Main container with Bootstrap classes for full-width layout and centering the content both vertically and horizontally -->
+
     <div class="col-md-5">
+        <!-- Column that adjusts to 5/12 of the container on medium and larger screens -->
+
         <div class="card mb-4 jb-fit-card">
-            <div class="card-header jb-fit-card-header d-flex flex-column align-items-center"> <!-- Flexbox for vertical alignment -->
+            <!-- Card component for displaying the weight log editing form -->
+
+            <div class="card-header jb-fit-card-header d-flex flex-column align-items-center">
+                <!-- Card header with flexbox for vertical alignment -->
+
                 <div class="row">
-                    <h5 class="card-title mb-2">Edit Weight Log</h5> <!-- Adjusted margin for spacing -->
+                    <h5 class="card-title mb-2">Edit Weight Log</h5>
+                    <!-- Title for the weight log editing form with adjusted bottom margin for spacing -->
                 </div>
+
                 <div class="row">
+                    <!-- Back button linking to the user's profile page -->
                     <a class="btn back-btn" href="{% url 'profile' %}" aria-label="Go back to your profile page">&larr; Back</a>
                 </div>
             </div>
 
             <div class="card-body jb-fit-card-body">
+                <!-- Card body containing the form for editing a weight log -->
+
                 <form method="post">
+                    <!-- Form with POST method for submitting edited weight log data -->
+
                     {% csrf_token %}
+                    <!-- CSRF token for security -->
+
+                    <!-- Weight input field -->
                     <div class="mb-3">
                         <label for="id_weight" class="form-label">Weight </label>
                         <input type="number" step="0.1" class="form-control" id="id_weight" name="weight" value="{{ form.weight.value }}">
+                        
+                        <!-- Displaying weight validation errors if there are any -->
                         {% if form.weight.errors %}
                         <div class="alert alert-danger py-1 my-1">
                             {% for error in form.weight.errors %}
@@ -31,7 +56,11 @@
                         </div>
                         {% endif %}
                     </div>
+
+                    <!-- Submit button to save changes -->
                     <button type="submit" class="btn btn-primary mt-2 w-100 bg-gradient">Save Changes</button>
+
+                    <!-- Cancel button to return to the profile page without saving changes -->
                     <div class="text-center mt-2 w-100">
                         <a href="{% url 'profile' %}" class="btn btn-secondary w-100" aria-label="Cancel and return to your profile page">Cancel</a>
                     </div>                    
@@ -40,7 +69,13 @@
         </div>
     </div>
 </div>
+
 {% block postloadjs %}
+<!-- JavaScript block for additional scripts loaded after the content -->
+
     <script type="module" src="{% static 'js/base.js' %}"></script>
+    <!-- Base JavaScript module -->
 {% endblock %}
+
 {% endblock %}
+<!-- End of the content block -->

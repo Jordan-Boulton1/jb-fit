@@ -1,126 +1,143 @@
 {% extends 'base.html' %}
+<!-- Extending the base template which includes the common layout structure -->
+
 {% load static %}
+<!-- Loading static files to use within this template, like images and CSS -->
 
 {% block content %}
-    <div class="container my-5">
-        <h1 class="mb-4 text-center">Frequently Asked Questions</h1>
+<!-- Start of the content block which will be inserted into the 'base.html' template -->
 
-        <div class="accordion" id="faqAccordion">
+<div class="container my-5">
+    <!-- Main container for the FAQ page with margin spacing -->
 
-            <!-- General Questions -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        General Questions
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        <strong>Q: What is JB Fit?</strong>
-                        <p>A: JB Fit is an online personal fitness coaching platform designed to help you achieve your fitness goals through personalized workout plans, tailored nutrition plans, and ongoing support from a certified fitness coach.</p>
-                        <strong>Q: How does Online Personal Training work?</strong>
-                        <p>A: Online personal training allows you to receive expert guidance and support from anywhere. After an initial consultation, you'll receive customized workout and nutrition plans, regular check-ins, and access to a supportive community, all through digital communication.</p>
-                    </div>
-                </div>
-            </div>
+    <h1 class="mb-4 text-center">Frequently Asked Questions</h1>
+    <!-- Page title centered with bottom margin for spacing -->
 
-            <!-- Services & Packages -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Services & Packages
-                    </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        <strong>Q: What services do you offer?</strong>
-                        <p>A: I offer a range of services including personalized workout plans, custom nutrition plans, regular check-ins, video consultations, community support, and more. Please refer to the Services/Packages page for detailed information.</p>
-                        <strong>Q: How do I choose the right package for me?</strong>
-                        <p>A: Consider your fitness goals, current fitness level, and the level of support you need. The Essential Fitness Plan is great for beginners, the Peak Performance Plan is ideal for those seeking more intensive support, and the Elite Coaching Plan is designed for dedicated fitness enthusiasts or athletes. If you're unsure, feel free to contact me for a recommendation.</p>
-                        <strong>Q: Can I switch between packages?</strong>
-                        <p>A: Yes, you can switch between packages at any time. Just contact me to discuss your needs and we’ll make the necessary adjustments to your plan.</p>
-                    </div>
-                </div>
-            </div>
+    <div class="accordion" id="faqAccordion">
+        <!-- Accordion component to organize FAQs with Bootstrap classes -->
 
-            <!-- Pricing & Payments -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Pricing & Payments
-                    </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        <strong>Q: How do I make payments?</strong>
-                        <p>A: Payments are processed securely through Stripe. You can set up your payment method during the sign-up process, and your subscription will be billed automatically each month.</p>
-                        <strong>Q: Are there any discounts available?</strong>
-                        <p>A: Occasionally, I offer promotional discounts. Be sure to subscribe to our newsletter and follow us on social media for updates on any special offers.</p>
-                        <strong>Q: What is your cancellation policy?</strong>
-                        <p>A: You can cancel your subscription at any time. If you cancel mid-month, you will still have access to your plan and services until the end of the billing cycle. No refunds are provided for partial months.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Personalized Plans -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFour">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        Personalized Plans
-                    </button>
-                </h2>
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        <strong>Q: How are the workout and nutrition plans personalized?</strong>
-                        <p>A: Your plans are tailored based on the information you provide during the initial consultation, including your fitness goals, current fitness level, dietary preferences, and any specific needs or restrictions. Plans are adjusted regularly based on your progress and feedback.</p>
-                        <strong>Q: Can I request changes to my plan?</strong>
-                        <p>A: Absolutely! Your feedback is important. If you need any adjustments or have specific requests, simply contact me and I’ll make the necessary changes to your plan.</p>
-                        <strong>Q: How often are the plans updated?</strong>
-                        <p>A: Plans are updated regularly based on your progress and feedback. For most clients, this means adjustments are made during your check-ins, which can be weekly, bi-weekly, or as needed depending on your package.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Support & Community -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFive">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                        Support & Community
-                    </button>
-                </h2>
-                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        <strong>Q: What kind of support do you offer?</strong>
-                        <p>A: I offer various levels of support depending on your package, including regular check-ins, email and chat support, and video consultations. All clients also have access to a supportive community of like-minded individuals.</p>
-                        <strong>Q: How can I contact you if I have questions or need help?</strong>
-                        <p>A: You can contact me via email at jbfitness@gmail.com or through the messaging system in your client dashboard. Elite Coaching Plan members also have access to priority support.</p>
-                        <strong>Q: What is the fitness community, and how do I join?</strong>
-                        <p>A: The fitness community is a group of like-minded individuals who share their fitness journeys, offer support, and motivate each other. You can join the community through the forums on the client dashboard once you sign up for any of the packages.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Getting Started -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingSix">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                        Getting Started
-                    </button>
-                </h2>
-                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        <strong>Q: How do I get started with JB Fit?</strong>
-                        <p>A: Getting started is easy! Simply choose the package that best suits your needs, sign up through the website, and complete the initial consultation. From there, I’ll create your personalized plans and provide you with all the tools and support you need to succeed.</p>
-                        <strong>Q: What information do I need for the initial consultation?</strong>
-                        <p>A: During the initial consultation, you’ll need to provide information about your fitness goals, current fitness level, dietary preferences, and any specific needs or restrictions. This helps me create the most effective and personalized plans for you.</p>
-                        <strong>Q: Can I try the service before committing to a subscription?</strong>
-                        <p>A: While I don’t offer free trials, the Custom One-Time Plans are a great way to get a feel for the personalized coaching and support without a long-term commitment.</p>
-                    </div>
+        <!-- General Questions Section -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    General Questions
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    <!-- Content for General Questions -->
+                    <strong>Q: What is JB Fit?</strong>
+                    <p>A: JB Fit is an online personal fitness coaching platform designed to help you achieve your fitness goals through personalized workout plans, tailored nutrition plans, and ongoing support from a certified fitness coach.</p>
+                    <strong>Q: How does Online Personal Training work?</strong>
+                    <p>A: Online personal training allows you to receive expert guidance and support from anywhere. After an initial consultation, you'll receive customized workout and nutrition plans, regular check-ins, and access to a supportive community, all through digital communication.</p>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Interested in Finding Out More Section -->
-    {% include 'contact/contact_form.html' %}
+        <!-- Services & Packages Section -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Services & Packages
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    <!-- Content for Services & Packages -->
+                    <strong>Q: What services do you offer?</strong>
+                    <p>A: I offer a range of services including personalized workout plans, custom nutrition plans, regular check-ins, video consultations, community support, and more. Please refer to the Services/Packages page for detailed information.</p>
+                    <strong>Q: How do I choose the right package for me?</strong>
+                    <p>A: Consider your fitness goals, current fitness level, and the level of support you need. The Essential Fitness Plan is great for beginners, the Peak Performance Plan is ideal for those seeking more intensive support, and the Elite Coaching Plan is designed for dedicated fitness enthusiasts or athletes. If you're unsure, feel free to contact me for a recommendation.</p>
+                    <strong>Q: Can I switch between packages?</strong>
+                    <p>A: Yes, you can switch between packages at any time. Just contact me to discuss your needs and we’ll make the necessary adjustments to your plan.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing & Payments Section -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Pricing & Payments
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    <!-- Content for Pricing & Payments -->
+                    <strong>Q: How do I make payments?</strong>
+                    <p>A: Payments are processed securely through Stripe. You can set up your payment method during the sign-up process, and your subscription will be billed automatically each month.</p>
+                    <strong>Q: Are there any discounts available?</strong>
+                    <p>A: Occasionally, I offer promotional discounts. Be sure to subscribe to our newsletter and follow us on social media for updates on any special offers.</p>
+                    <strong>Q: What is your cancellation policy?</strong>
+                    <p>A: You can cancel your subscription at any time. If you cancel mid-month, you will still have access to your plan and services until the end of the billing cycle. No refunds are provided for partial months.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personalized Plans Section -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Personalized Plans
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    <!-- Content for Personalized Plans -->
+                    <strong>Q: How are the workout and nutrition plans personalized?</strong>
+                    <p>A: Your plans are tailored based on the information you provide during the initial consultation, including your fitness goals, current fitness level, dietary preferences, and any specific needs or restrictions. Plans are adjusted regularly based on your progress and feedback.</p>
+                    <strong>Q: Can I request changes to my plan?</strong>
+                    <p>A: Absolutely! Your feedback is important. If you need any adjustments or have specific requests, simply contact me and I’ll make the necessary changes to your plan.</p>
+                    <strong>Q: How often are the plans updated?</strong>
+                    <p>A: Plans are updated regularly based on your progress and feedback. For most clients, this means adjustments are made during your check-ins, which can be weekly, bi-weekly, or as needed depending on your package.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support & Community Section -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    Support & Community
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    <!-- Content for Support & Community -->
+                    <strong>Q: What kind of support do you offer?</strong>
+                    <p>A: I offer various levels of support depending on your package, including regular check-ins, email and chat support, and video consultations. All clients also have access to a supportive community of like-minded individuals.</p>
+                    <strong>Q: How can I contact you if I have questions or need help?</strong>
+                    <p>A: You can contact me via email at jbfitness@gmail.com or through the messaging system in your client dashboard. Elite Coaching Plan members also have access to priority support.</p>
+                    <strong>Q: What is the fitness community, and how do I join?</strong>
+                    <p>A: The fitness community is a group of like-minded individuals who share their fitness journeys, offer support, and motivate each other. You can join the community through the forums on the client dashboard once you sign up for any of the packages.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Getting Started Section -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    Getting Started
+                </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    <!-- Content for Getting Started -->
+                    <strong>Q: How do I get started with JB Fit?</strong>
+                    <p>A: Getting started is easy! Simply choose the package that best suits your needs, sign up through the website, and complete the initial consultation. From there, I’ll create your personalized plans and provide you with all the tools and support you need to succeed.</p>
+                    <strong>Q: What information do I need for the initial consultation?</strong>
+                    <p>A: During the initial consultation, you’ll need to provide information about your fitness goals, current fitness level, dietary preferences, and any specific needs or restrictions. This helps me create the most effective and personalized plans for you.</p>
+                    <strong>Q: Can I try the service before committing to a subscription?</strong>
+                    <p>A: While I don’t offer free trials, the Custom One-Time Plans are a great way to get a feel for the personalized coaching and support without a long-term commitment.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Including a contact form for additional inquiries -->
+{% include 'contact/contact_form.html' %}
 {% endblock %}
+<!-- End of the content block -->
