@@ -40,7 +40,7 @@
 
                     {{ contact_form.as_p }}
                     <!-- Render the contact form fields with paragraph tags -->
-
+                    <input type="hidden" name="next" value="{{ request.path }}">
                     <div class="text-center pt-5">
                         <!-- Centered submit button with padding on top for spacing -->
 

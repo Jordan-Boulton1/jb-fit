@@ -9,8 +9,23 @@
 
 <div class="container my-5">
     <!-- Main container for the FAQ page with margin spacing -->
-
-    <h1 class="mb-4 text-center">Frequently Asked Questions</h1>
+    {% if messages %}
+    <!-- Displaying messages if there are any, including special handling for contact or newsletter messages -->
+        {% for message in messages %}
+            {% if 'contact' in message.tags or 'newsletter' in message.tags %}
+                <div class="mt-2 contact {{ message.tags }} message-alert-home message-alert w-100">
+                    {{ message|safe }}
+                    <span class="closebtn-variant mt-1">&times;</span> 
+                </div>
+            {% else %}
+                <div class="mt-2 {{ message.tags }} message-alert w-100">
+                    {{ message|safe }}
+                    <span class="closebtn-variant mt-1">&times;</span> 
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    <h1 class="mb-4 text-center py-5">Frequently Asked Questions</h1>
     <!-- Page title centered with bottom margin for spacing -->
 
     <div class="accordion" id="faqAccordion">

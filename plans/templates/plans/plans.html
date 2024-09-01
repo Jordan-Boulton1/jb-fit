@@ -12,7 +12,23 @@
 
 <!-- Training Plans Section -->
 <section class="my-5 pb-5 py-xl-8" id="training-plans">
-    <div class="container">
+    {% if messages %}
+        <!-- Displaying messages if there are any, including special handling for contact or newsletter messages -->
+        {% for message in messages %}
+            {% if 'contact' in message.tags or 'newsletter' in message.tags %}
+                <div class="mt-2 contact {{ message.tags }} message-alert-home message-alert w-100">
+                    {{ message|safe }}
+                    <span class="closebtn-variant mt-1">&times;</span> 
+                </div>
+            {% else %}
+                <div class="mt-2 {{ message.tags }} message-alert w-100">
+                    {{ message|safe }}
+                    <span class="closebtn-variant mt-1">&times;</span> 
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    <div class="container py-5">
         <!-- Title and description of the Training Plans section -->
         <h1 class="fw-bold display-4 text-center text-body-emphasis plan-title">Training Plans</h1>
         <p class="lead py-3">At JB Fit, I offer a range of personalized fitness services designed to help you achieve your health and fitness goals. Whether you're just starting your fitness journey or looking to take your training to the next level, there's a package that's right for you.</p>

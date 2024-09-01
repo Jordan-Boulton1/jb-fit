@@ -9,6 +9,22 @@
 
 <!-- Quote Section -->
 <section class="d-flex justify-content-center align-items-center text-center img-fluid" id="quote">
+    {% if messages %}
+        <!-- Displaying messages if there are any, including special handling for contact or newsletter messages -->
+        {% for message in messages %}
+                {% if 'contact' in message.tags or 'newsletter' in message.tags %}
+                    <div class="mt-2 contact {{ message.tags }} message-alert-home message-alert position-absolute w-100">
+                        {{ message|safe }}
+                        <span class="closebtn-variant mt-1">&times;</span> 
+                    </div>
+                {% else %}
+                    <div class="mt-2 {{ message.tags }} message-alert position-absolute w-100">
+                        {{ message|safe }}
+                        <span class="closebtn-variant mt-1">&times;</span> 
+                    </div>
+                {% endif %}
+            {% endfor %}
+    {% endif %}
     <!-- Section with background image, centered text, and full-width layout -->
     <div class="container py-5">
         <!-- Container with padding for spacing -->

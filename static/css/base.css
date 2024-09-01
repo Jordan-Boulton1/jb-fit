@@ -248,7 +248,7 @@ footer {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://ci-jb-fit.s3.eu-west-2.amazonaws.com/static/images/about-page-hero.webp') no-repeat center center;
     background-size: cover;
     height: 750px;
-    margin-top: -80px;
+    position: relative;
 }
 
 #philosophy {
@@ -410,6 +410,7 @@ color: black;
 /* Plans Section */
 .training-plans-find-out-more-container {
     background-color: var(--primary-color);
+    position: relative;
 }
 
 @media(max-width: 425px) {
