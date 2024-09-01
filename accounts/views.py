@@ -260,4 +260,9 @@ def delete_progress_picture(request, picture_id):
     """
     picture = get_object_or_404(ProgressPicture, id=picture_id)
     picture.delete()
+    messages.success(
+                request,
+                'Your Progress Picture has been deleted successfully!'
+            )
     return redirect(reverse('profile'))
+
