@@ -11,8 +11,16 @@ from .forms import *
 from checkout.models import *
 
 # Create your views here.
+
+
 @login_required
 def profile_view(request):
+    """
+    View to display the user's profile page.
+
+    Retrieves the user's profile and weight logs,
+    then renders the profile page.
+    """
     profile = get_object_or_404(UserProfile, user=request.user)
     weight_logs = WeightLog.objects.filter(user=request.user).order_by(
         'entry_date'
@@ -22,6 +30,12 @@ def profile_view(request):
 
 @login_required
 def user_order_history(request):
+    """
+    View to display the user's order history.
+
+    Retrieves the user's order history, including related training plans, and
+    renders the order history page.
+    """
     order_history = Order.objects.filter(
         user=request.user).select_related('training_plan').order_by(
         '-created_at'
@@ -35,6 +49,12 @@ def user_order_history(request):
 
 @login_required
 def edit_profile_view(request):
+    """
+    View to edit the user's profile information.
+
+    Handles the form submission for updating the user's profile and displays
+    success or error messages as appropriate.
+    """
     profile = get_object_or_404(UserProfile, user=request.user)
     if (
         request.method == 'POST' and
@@ -58,6 +78,12 @@ def edit_profile_view(request):
 
 @login_required
 def add_weight_log(request):
+    """
+    View to add a new weight log entry.
+
+    Handles form submission for adding a new weight log, validates the data,
+    and provides feedback messages on success or failure.
+    """
     if request.method == 'POST':
         form = WeightLogForm(request.POST)
         if form.is_valid():
@@ -83,6 +109,11 @@ def add_weight_log(request):
 
 @login_required
 def get_user_weight_logs(request):
+    """
+    API view to retrieve the user's weight logs for chart display.
+
+    Returns a JSON response with the user's weight logs ordered by entry date.
+    """
     try:
         weight_logs = WeightLog.objects.filter(
             user=request.user
@@ -95,6 +126,11 @@ def get_user_weight_logs(request):
 
 @login_required
 def get_user_weight_logs_history(request):
+    """
+    API view to retrieve the user's weight logs history.
+
+    Returns a JSON response with the user's weight logs ordered by entry date.
+    """
     try:
         weight_logs = WeightLog.objects.filter(
             user=request.user
@@ -107,6 +143,12 @@ def get_user_weight_logs_history(request):
 
 @login_required
 def edit_weight_log(request, log_id):
+    """
+    View to edit a specific weight log entry by its ID.
+
+    Handles form submission for editing a weight log, validates the data,
+    and provides feedback messages on success or failure.
+    """
     weight_log = get_object_or_404(WeightLog, id=log_id, user=request.user)
 
     if request.method == 'POST':
@@ -135,6 +177,12 @@ def edit_weight_log(request, log_id):
 
 @login_required
 def delete_weight_log(request, log_id):
+    """
+    View to delete a specific weight log entry by its ID.
+
+    Handles the deletion of the weight log and provides feedback messages
+    on success or failure.
+    """
     weight_log = get_object_or_404(WeightLog, id=log_id, user=request.user)
 
     if request.method == 'DELETE':
@@ -147,6 +195,12 @@ def delete_weight_log(request, log_id):
 
 @login_required
 def delete_user_profile(request):
+    """
+    View to delete the user's profile and account.
+
+    Handles the deletion of the user's account, providing confirmation messages
+    and redirecting to the home page.
+    """
     try:
         user = get_object_or_404(User, id=request.user.id)
         if user == request.user:
@@ -168,6 +222,12 @@ def delete_user_profile(request):
 
 @login_required
 def upload_progress_picture(request):
+    """
+    View to upload a progress picture for the user's profile.
+
+    Handles form submission for uploading a progress picture and provides
+    feedback messages on success or failure.
+    """
     profile = get_object_or_404(UserProfile, user=request.user)
     if request.method == 'POST':
         form = ProgressPictureForm(request.POST, request.FILES)
@@ -192,6 +252,12 @@ def upload_progress_picture(request):
 
 @require_POST
 def delete_progress_picture(request, picture_id):
+    """
+    View to delete a specific progress picture by its ID.
+
+    Handles the deletion of the progress picture
+    and redirects to the profile page.
+    """
     picture = get_object_or_404(ProgressPicture, id=picture_id)
     picture.delete()
     return redirect(reverse('profile'))

@@ -1,15 +1,16 @@
+# Import necessary modules and classes for testing
 from django.test import TestCase
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 from django.core.files.uploadedfile import SimpleUploadedFile
-from accounts.models import *
+from accounts.models import *  # Import all models from accounts app
 from datetime import date
 
-# Create your tests here.
 
-
+# Test cases for the UserProfile model
 class TestUserProfileModel(TestCase):
     def setUp(self):
+        # Set up a user and associated user profile for testing
         self.user = User.objects.create_user(
             username='testuser',
             password='testpass123'
@@ -25,6 +26,7 @@ class TestUserProfileModel(TestCase):
             goal_weight=65.0
         )
 
+    # Test that the UserProfile instance is created correctly
     def test_user_profile_creation(self):
         """
         Test if the UserProfile instance is created correctly.
@@ -41,24 +43,27 @@ class TestUserProfileModel(TestCase):
         self.assertEqual(self.user_profile.height, 175.0)
         self.assertEqual(self.user_profile.goal_weight, 65.0)
 
+    # Test updating a UserProfile instance
     def test_user_profile_update(self):
         """
         Test updating a UserProfile instance.
         """
-        self.user_profile.phone_number = "0987654321"
-        self.user_profile.save()
+        self.user_profile.phone_number = "0987654321"  # Update phone number
+        self.user_profile.save()  # Save changes
         updated_profile = UserProfile.objects.get(id=self.user_profile.id)
         self.assertEqual(updated_profile.phone_number, "0987654321")
 
+    # Test deleting a UserProfile instance
     def test_user_profile_deletion(self):
         """
         Test deleting a UserProfile instance.
         """
-        self.user_profile.delete()
+        self.user_profile.delete()  # Delete the user profile
         with self.assertRaises(UserProfile.DoesNotExist):
             UserProfile.objects.get(id=self.user_profile.id)
 
 
+# Test cases for the WeightLog model
 class WeightLogModelTest(TestCase):
     def setUp(self):
         # Create a sample user for testing
@@ -68,17 +73,19 @@ class WeightLogModelTest(TestCase):
             password='correct_password'
         )
 
+    # Test that a WeightLog instance can be created successfully
     def test_weightlog_creation(self):
         """Test that a WeightLog instance can be created successfully."""
         weight_log = WeightLog.objects.create(
             user=self.user,
             weight=70.50
         )
-        self.assertIsInstance(weight_log, WeightLog)
-        self.assertEqual(weight_log.user, self.user)
-        self.assertEqual(weight_log.weight, 70.50)
-        self.assertIsNotNone(weight_log.entry_date)
+        self.assertIsInstance(weight_log, WeightLog)  # Check instance type
+        self.assertEqual(weight_log.user, self.user)  # Check user association
+        self.assertEqual(weight_log.weight, 70.50)  # Check weight value
+        self.assertIsNotNone(weight_log.entry_date)  # Check entry date is set
 
+    # Test the string representation of a WeightLog instance
     def test_str_representation(self):
         """Test the string representation of a WeightLog instance."""
         weight_log = WeightLog.objects.create(
@@ -91,19 +98,22 @@ class WeightLogModelTest(TestCase):
         )
         self.assertEqual(str(weight_log), expected_str)
 
+    # Test that the weight field maintains the correct decimal precision
     def test_weight_decimal_precision(self):
-        """Test that the weight field maintains the correct decimal precision."""  # noqa
+        """Test that the weight field maintains
+        the correct decimal precision."""
         weight_log = WeightLog.objects.create(
-            user_id=self.user.id,  # Corrected to pass the User instance
-            weight=70.555,  # More than two decimal places
+            user_id=self.user.id,  # Associate with user
+            weight=70.555,  # Use weight with more than two decimal places
         )
-        # Assert that the weight was saved with correct precision
+        # Assert that the weight was saved with correct precision (rounded)
         self.assertEqual(weight_log.weight, Decimal('70.56'))
 
 
+# Test cases for the ProgressPicture model
 class ProgressPictureModelTest(TestCase):
     def setUp(self):
-        # Create a sample user and user profile for testing
+        # Create a sample user and associated user profile for testing
         self.user = User.objects.create_user(
             username='testuser',
             email='testuser@example.com',
@@ -115,6 +125,7 @@ class ProgressPictureModelTest(TestCase):
             date_of_birth='1990-01-01'
         )
 
+    # Test that a ProgressPicture instance can be created successfully
     def test_progresspicture_creation(self):
         """Test that a ProgressPicture instance can be created successfully."""
         progress_image = SimpleUploadedFile(
@@ -133,8 +144,10 @@ class ProgressPictureModelTest(TestCase):
         self.assertEqual(progress_picture.user, self.user_profile)
         self.assertIsNotNone(progress_picture.uploaded_at)
 
+    # Test that a ProgressPicture instance can be created without an image
     def test_progresspicture_creation_without_image(self):
-        """Test that a ProgressPicture instance can be created without an image."""  # noqa
+        """Test that a ProgressPicture instance
+        can be created without an image."""
         progress_picture = ProgressPicture.objects.create(
             user=self.user_profile
         )
@@ -143,6 +156,7 @@ class ProgressPictureModelTest(TestCase):
         self.assertEqual(progress_picture.progress_image.name, None)
         self.assertIsNotNone(progress_picture.uploaded_at)
 
+    # Test the string representation of a ProgressPicture instance
     def test_str_representation(self):
         """Test the string representation of a ProgressPicture instance."""
         progress_picture = ProgressPicture.objects.create(

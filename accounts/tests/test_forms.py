@@ -1,16 +1,18 @@
-# tests/test_forms.py
+# Import necessary modules and classes for testing
 from django.test import TestCase
 from unittest.mock import MagicMock
 from django.contrib.auth import get_user_model
 from django.core.files.uploadedfile import SimpleUploadedFile
 from datetime import date, timedelta
-from accounts.forms import *
+from accounts.forms import *  # Import custom forms from accounts app
 from django.contrib.auth.models import User
 from accounts.models import UserProfile
 
 
+# Test cases for the CustomSignupForm
 class CustomSignupFormTests(TestCase):
     def setUp(self):
+        # Define valid data for form testing
         self.valid_data = {
             'email': 'testuser@example.com',
             'first_name': 'John',
@@ -21,10 +23,12 @@ class CustomSignupFormTests(TestCase):
             'password2': 'Testpass123!',
         }
 
+    # Test that the form is valid with correct data
     def test_form_valid_data(self):
         form = CustomSignupForm(data=self.valid_data)
         self.assertTrue(form.is_valid())
 
+    # Test that the form is invalid when first name is missing
     def test_form_missing_first_name(self):
         invalid_data = self.valid_data.copy()
         invalid_data['first_name'] = ''
@@ -36,6 +40,8 @@ class CustomSignupFormTests(TestCase):
             ['This field is required.']
         )
 
+    # Test that the form is invalid when first name
+    # contains non-alphabetical characters
     def test_form_invalid_first_name(self):
         invalid_data = self.valid_data.copy()
         invalid_data['first_name'] = 'John123'
@@ -47,6 +53,7 @@ class CustomSignupFormTests(TestCase):
             ['First name can only contain alphabetical characters.']
         )
 
+    # Test that the form is invalid when last name is missing
     def test_form_missing_last_name(self):
         invalid_data = self.valid_data.copy()
         invalid_data['last_name'] = ''
@@ -58,6 +65,8 @@ class CustomSignupFormTests(TestCase):
             ['This field is required.']
         )
 
+    # Test that the form is invalid when last name
+    # contains non-alphabetical characters
     def test_form_invalid_last_name(self):
         invalid_data = self.valid_data.copy()
         invalid_data['last_name'] = 'Doe123'
@@ -69,6 +78,7 @@ class CustomSignupFormTests(TestCase):
             ['Last name can only contain alphabetical characters.']
         )
 
+    # Test that the form is invalid if date of birth is in the future
     def test_form_date_of_birth_in_future(self):
         invalid_data = self.valid_data.copy()
         invalid_data['date_of_birth'] = date.today() + timedelta(days=1)
@@ -80,6 +90,7 @@ class CustomSignupFormTests(TestCase):
             ['Date of birth cannot be in the future.']
         )
 
+    # Test that the form is invalid if passwords do not match
     def test_form_passwords_do_not_match(self):
         invalid_data = self.valid_data.copy()
         invalid_data['password2'] = 'DifferentPass123!'
@@ -91,6 +102,7 @@ class CustomSignupFormTests(TestCase):
             ['You must type the same password each time.']
         )
 
+    # Test that the form saves correctly and creates a user and profile
     def test_form_save_creates_user_and_profile(self):
         form = CustomSignupForm(data=self.valid_data)
         self.assertTrue(form.is_valid())
@@ -111,6 +123,7 @@ class CustomSignupFormTests(TestCase):
         self.assertEqual(user_profile.gender, 'Male')
         self.assertEqual(user_profile.date_of_birth, date(1990, 1, 1))
 
+    # Test form save when user profile already exists
     def test_form_save_existing_user_profile(self):
         user = User.objects.create(
             username='testuser',
@@ -132,6 +145,7 @@ class CustomSignupFormTests(TestCase):
         self.assertEqual(user_profile.date_of_birth, date(1990, 1, 1))
 
 
+# Test cases for the CustomLoginForm
 class CustomLoginFormTest(TestCase):
     def setUp(self):
         # Sample valid data for the form
@@ -147,6 +161,7 @@ class CustomLoginFormTest(TestCase):
             password='correct_password'
         )
 
+    # Test form initialization and check for correct widget attributes
     def test_form_initialization(self):
         """Test that form fields have the correct widget attributes."""
         form = CustomLoginForm()
@@ -167,11 +182,13 @@ class CustomLoginFormTest(TestCase):
             form.fields['remember'].widget.attrs['class'], 'form-check-input'
         )
 
+    # Test form validation with valid data
     def test_form_valid_data(self):
         """Test form validation with valid data."""
         form = CustomLoginForm(data=self.valid_data)
         self.assertTrue(form.is_valid())
 
+    # Test form validation with an invalid email format
     def test_form_invalid_email(self):
         """Test form validation with an invalid email format."""
         invalid_data = self.valid_data.copy()
@@ -184,6 +201,7 @@ class CustomLoginFormTest(TestCase):
             ['Enter a valid email address.']
         )
 
+    # Test form validation with missing password
     def test_form_missing_password(self):
         """Test form validation with missing password."""
         invalid_data = self.valid_data.copy()
@@ -196,6 +214,7 @@ class CustomLoginFormTest(TestCase):
             ['This field is required.']
         )
 
+    # Test form validation with completely empty data
     def test_form_empty_data(self):
         """Test form validation with completely empty data."""
         form = CustomLoginForm(data={})
@@ -206,6 +225,7 @@ class CustomLoginFormTest(TestCase):
         self.assertEqual(form.errors['password'], ['This field is required.'])
 
 
+# Test cases for the UserProfileForm
 class UserProfileFormTest(TestCase):
     def setUp(self):
         # Create a test user and user profile
@@ -223,6 +243,7 @@ class UserProfileFormTest(TestCase):
             height=175.0,
             goal_weight=65.0
         )
+        # Define valid data for form testing
         self.valid_data = {
             'email': 'testuser@example.com',
             'phone_number': '1234567890',
@@ -234,12 +255,14 @@ class UserProfileFormTest(TestCase):
             'image': None,
         }
 
+    # Test that the form initializes with correct initial data
     def test_form_initialization(self):
         """Test that the form initializes with correct initial data."""
         form = UserProfileForm(instance=self.profile)
         self.assertEqual(form.fields['email'].initial, self.user.email)
         self.assertEqual(form.fields['date_of_birth'].initial, '1990-01-01')
 
+    # Test that form fields have the correct attributes
     def test_form_field_attributes(self):
         """Test that form fields have the correct attributes."""
         form = UserProfileForm()
@@ -253,11 +276,13 @@ class UserProfileFormTest(TestCase):
             form.fields['date_of_birth'].widget.attrs['class'], 'form-control'
         )
 
+    # Test that the form is valid with correct data
     def test_form_valid_data(self):
         """Test that the form is valid with correct data."""
         form = UserProfileForm(data=self.valid_data, instance=self.profile)
         self.assertTrue(form.is_valid())
 
+    # Test that the form is invalid if required fields are missing
     def test_form_missing_required_fields(self):
         """Test that the form is invalid if required fields are missing."""
         required_fields = [
@@ -271,6 +296,7 @@ class UserProfileFormTest(TestCase):
             self.assertFalse(form.is_valid())
             self.assertIn(field, form.errors)
 
+    # Test that form validation fails for invalid email
     def test_invalid_email(self):
         """Test that form validation fails for invalid email."""
         invalid_data = self.valid_data.copy()
@@ -279,6 +305,7 @@ class UserProfileFormTest(TestCase):
         self.assertFalse(form.is_valid())
         self.assertIn('email', form.errors)
 
+    # Test that form validation fails if the email already exists
     def test_duplicate_email(self):
         """Test that form validation fails if the email already exists."""
         another_user = User.objects.create_user(
@@ -295,6 +322,7 @@ class UserProfileFormTest(TestCase):
             form.errors['email'], ['This email address is already in use.']
         )
 
+    # Test that form validation fails for non-digit phone numbers
     def test_invalid_phone_number(self):
         """Test that form validation fails for non-digit phone numbers."""
         invalid_data = self.valid_data.copy()
@@ -307,6 +335,7 @@ class UserProfileFormTest(TestCase):
             ['Phone number must contain only digits.']
         )
 
+    # Test that form validation fails for non-positive current weight
     def test_invalid_current_weight(self):
         """Test that form validation fails for non-positive current weight."""
         invalid_data = self.valid_data.copy()
@@ -319,6 +348,7 @@ class UserProfileFormTest(TestCase):
             ['Current weight must be greater than zero.']
         )
 
+    # Test that form validation fails for non-positive height
     def test_invalid_height(self):
         """Test that form validation fails for non-positive height."""
         invalid_data = self.valid_data.copy()
@@ -331,6 +361,7 @@ class UserProfileFormTest(TestCase):
             ['Height must be greater than zero.']
         )
 
+    # Test that form validation fails for non-positive goal weight
     def test_invalid_goal_weight(self):
         """Test that form validation fails for non-positive goal weight."""
         invalid_data = self.valid_data.copy()
@@ -343,8 +374,10 @@ class UserProfileFormTest(TestCase):
             ['Goal weight must be greater than zero.']
         )
 
+    # Test that form validation fails if date of birth is in the future
     def test_future_date_of_birth(self):
-        """Test that form validation fails if date of birth is in the future."""  # noqa
+        """Test that form validation fails
+        if date of birth is in the future."""
         invalid_data = self.valid_data.copy()
         invalid_data['date_of_birth'] = (
             (datetime.today().date() + timedelta(days=1)).isoformat()
@@ -357,6 +390,7 @@ class UserProfileFormTest(TestCase):
             ['Date of birth cannot be in the future.']
         )
 
+    # Test that form save updates the user and profile correctly
     def test_form_save(self):
         """Test that form save updates the user and profile correctly."""
         form = UserProfileForm(data=self.valid_data, instance=self.profile)
@@ -368,13 +402,15 @@ class UserProfileFormTest(TestCase):
         self.assertEqual(profile.height, 175.0)
 
 
+# Test cases for the WeightLogForm
 class WeightLogFormTest(TestCase):
     def setUp(self):
-        # Sample valid data for the form
+        # Sample valid and invalid data for the form
         self.valid_data = {'weight': 70.5}
         self.invalid_data_negative_weight = {'weight': -5}
         self.invalid_data_zero_weight = {'weight': 0}
 
+    # Test that the form initializes with correct field attributes
     def test_form_initialization(self):
         """Test that the form initializes with correct field attributes."""
         form = WeightLogForm()
@@ -385,6 +421,7 @@ class WeightLogFormTest(TestCase):
             form.fields['weight'].widget.attrs.get('step'), '0.1'
         )
 
+    # Test that the form is valid with correct data
     def test_form_valid_data(self):
         """Test that the form is valid with correct data."""
         form = WeightLogForm(data=self.valid_data)
@@ -393,6 +430,7 @@ class WeightLogFormTest(TestCase):
             f"Expected form to be valid with data: {self.valid_data}"
         )
 
+    # Test that the form is invalid if required fields are missing
     def test_form_missing_required_field(self):
         """Test that the form is invalid if required fields are missing."""
         form = WeightLogForm(data={})  # Missing weight field
@@ -400,6 +438,7 @@ class WeightLogFormTest(TestCase):
         self.assertIn('weight', form.errors)
         self.assertEqual(form.errors['weight'], ['This field is required.'])
 
+    # Test that the form accepts valid positive weight
     def test_clean_weight_positive(self):
         """Test that the form accepts valid positive weight."""
         form = WeightLogForm(data=self.valid_data)
@@ -407,6 +446,7 @@ class WeightLogFormTest(TestCase):
             form.is_valid(), "Form should be valid with positive weight"
         )
 
+    # Test that the form validation fails for negative weight
     def test_clean_weight_negative(self):
         """Test that the form validation fails for negative weight."""
         form = WeightLogForm(data=self.invalid_data_negative_weight)
@@ -416,6 +456,7 @@ class WeightLogFormTest(TestCase):
             form.errors['weight'], ['Value must be greater than zero.']
         )
 
+    # Test that the form validation fails for zero weight
     def test_clean_weight_zero(self):
         """Test that the form validation fails for zero weight."""
         form = WeightLogForm(data=self.invalid_data_zero_weight)
@@ -426,6 +467,7 @@ class WeightLogFormTest(TestCase):
         )
 
 
+# Test cases for the ProgressPictureForm
 class ProgressPictureFormTest(TestCase):
     def setUp(self):
         # Create a sample valid image file
@@ -440,11 +482,13 @@ class ProgressPictureFormTest(TestCase):
         # Invalid data (no image file)
         self.invalid_data = {}
 
+    # Test that the form initializes correctly
     def test_form_initialization(self):
         """Test that the form initializes correctly."""
         form = ProgressPictureForm()
         self.assertIn('progress_image', form.fields)
 
+    # Test that the form is valid with correct data
     def test_form_valid_data(self):
         """Test that the form is valid with correct data."""
         form = ProgressPictureForm(data={}, files=self.valid_data)
@@ -453,6 +497,7 @@ class ProgressPictureFormTest(TestCase):
             f"Expected form to be valid with data: {self.valid_data}"
         )
 
+    # Test that the form validation fails for invalid file type
     def test_form_invalid_file_type(self):
         """Test that the form validation fails for invalid file type."""
         invalid_file = SimpleUploadedFile(
