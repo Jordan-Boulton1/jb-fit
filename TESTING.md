@@ -267,7 +267,7 @@ Below are the coverage results and successful test runs generated during the tes
 
 | Test Suites | Tests | Screenshot                                                      |
 | --- | --- |-----------------------------------------------------------------|
-| 3 passed | 9 passed | ![screenshot](documentation\testing\automated-testing\javascript\javascript-unit-test-coverage.png) |
+| 3 passed | 9 passed | ![screenshot](documentation/testing/automated-testing/javascript/javascript-unit-test-coverage.png) |
 
 
 
