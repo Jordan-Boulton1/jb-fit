@@ -73,15 +73,19 @@ class CustomSignupForm(SignupForm):
     def clean_first_name(self):
         first_name = self.cleaned_data.get('first_name')
         if not re.match(r'^[a-zA-Z]+$', first_name):
-            raise ValidationError(_('First name can only contain alphabetical characters.'))
+            raise ValidationError(
+                'First name can only contain alphabetical characters.'
+            )
         return first_name
 
     def clean_last_name(self):
         last_name = self.cleaned_data.get('last_name')
         if not re.match(r'^[a-zA-Z]+$', last_name):
-            raise ValidationError(_('Last name can only contain alphabetical characters.'))
+            raise ValidationError(
+                'Last name can only contain alphabetical characters.'
+            )
         return last_name
-        
+
     def clean_date_of_birth(self):
         date_of_birth = self.cleaned_data.get('date_of_birth')
         if date_of_birth and date_of_birth > date.today():
@@ -253,10 +257,13 @@ class WeightLogForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.label_suffix = ''
-        
-    def clean_weight(self):  # Corrected method name to match the field
+
+    # Corrected method name to match the field
+
+    def clean_weight(self):
         weight = self.cleaned_data.get('weight')
-        if weight is not None and weight <= 0:  # Ensure weight is not None before checking
+        # Ensure weight is not None before checking
+        if weight is not None and weight <= 0:
             raise ValidationError('Value must be greater than zero.')
         return weight
 

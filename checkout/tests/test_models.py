@@ -7,6 +7,7 @@ from decimal import Decimal
 
 User = get_user_model()
 
+
 class OrderModelTest(TestCase):
 
     def setUp(self):
@@ -45,7 +46,7 @@ class OrderModelTest(TestCase):
         self.assertEqual(order.amount, Decimal('49.99'))
         self.assertTrue(order.paid)
         self.assertEqual(order.stripe_payment_intent_id, 'pi_123456789')
-        self.assertIsNotNone(order.created_at)  # Auto now add field should be set
+        self.assertIsNotNone(order.created_at)
 
     def test_order_required_fields(self):
         """Test that Order enforces required fields by using full_clean()."""
@@ -59,7 +60,8 @@ class OrderModelTest(TestCase):
             stripe_payment_intent_id='pi_123456789'
         )
         with self.assertRaises(ValidationError):
-            order.full_clean()  # Explicitly call full_clean() to trigger validation
+            # Explicitly call full_clean() to trigger validation
+            order.full_clean()
 
         # Missing last_name field
         order = Order(
@@ -95,7 +97,7 @@ class OrderModelTest(TestCase):
             stripe_payment_intent_id='pi_123456789'
         )
         with self.assertRaises(ValidationError):
-            order.full_clean()    
+            order.full_clean()
 
     def test_str_representation(self):
         """Test the string representation of an Order instance."""
@@ -128,7 +130,10 @@ class OrderModelTest(TestCase):
         self.assertFalse(order.paid)
 
     def test_amount_decimal_precision(self):
-        """Test that the amount field maintains the correct decimal precision."""
+        """
+        Test that the amount field maintains the
+        correct decimal precision.
+        """
         order = Order.objects.create(
             user=self.user,
             training_plan=self.training_plan,
@@ -136,6 +141,6 @@ class OrderModelTest(TestCase):
             last_name='Doe',
             email='johndoe@example.com',
             phone_number='1234567890',
-            amount=Decimal('49.995')  # More than two decimal places
+            amount=Decimal('49.995')
         )
-        self.assertEqual(order.amount, Decimal('50.00'))  # Should round to two decimal places    
+        self.assertEqual(order.amount, Decimal('50.00'))

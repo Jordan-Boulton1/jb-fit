@@ -3,6 +3,7 @@ from django.contrib import messages
 from .forms import ContactForm
 from .models import ContactSubmission
 
+
 def contact_coach(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -20,12 +21,15 @@ def contact_coach(request):
                 'Your message has been sent and saved successfully.',
                 extra_tags='contact'
             )
-            # Redirect to home or any other page after submission
+            # Redirect to home after submission
             return redirect('home')
         else:
             # Handle form errors
             for field, errors in form.errors.items():
                 for error in errors:
-                    messages.error(request, f"{field.capitalize()}: {error}", extra_tags='contact')
+                    messages.error(
+                        request,
+                        f"{field.capitalize()}: {error}", extra_tags='contact'
+                    )
 
     return render(request, 'contact/contact_form.html')

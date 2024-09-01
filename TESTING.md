@@ -45,47 +45,51 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 | Directory | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-| about | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/about/urls.py) | ![screenshot](documentation/testing/validation/python/about/python-validation-about-urls.png) | |
-| about | test_urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/about/tests/test_urls.py) | ![screenshot](documentation/testing/validation/python/about/python-validation-about-test-urls.png) | |
-| about | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/about/views.py) | ![screenshot](documentation/testing/validation/python/about/python-validation-about-views.png) | |
-| about | test_views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/about/tests/test_views.py) | ![screenshot](documentation/testing/validation/python/about/python-validation-about-test-views.png) | |
-| accounts | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/accounts/admin.py) | ![screenshot](documentation/testing/validation/python/accounts/python-validation-accounts-admin.png) | |
-| accounts | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/accounts/forms.py) | ![screenshot](documentation/testing/validation/python/accounts/python-validation-accounts-forms.png) | |
-| accounts | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/accounts/models.py) | ![screenshot](documentation/testing/validation/python/accounts/python-validation-accounts-models.png) | |
-| accounts | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/accounts/urls.py) | ![screenshot](documentation/testing/validation/python/accounts/python-validation-accounts-urls.png) | |
-| accounts | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/accounts/views.py) | ![screenshot](documentation/testing/validation/python/accounts/python-validation-accounts-views.png) | |
-| accounts | test_forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/accounts/tests/test_forms.py) | ![screenshot](documentation/testing/validation/python/accounts/python-validation-accounts-test-forms.png) | |
-| accounts | test_models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/accounts/tests/test_models.py) | ![screenshot](documentation/testing/validation/python/accounts/python-validation-accounts-test-models.png) | |
-| accounts | test_urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/accounts/tests/test_urls.py) | ![screenshot](documentation/testing/validation/python/accounts/python-validation-accounts-test-urls.png) | |
-| accounts | test_views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/accounts/tests/test_views.py) | ![screenshot](documentation/testing/validation/python/accounts/python-validation-accounts-test-views.png) | |
-| checkout | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/checkout/forms.py) | ![screenshot](documentation/testing/validation/python/checkout/python-validation-checkout-views.png) | |
-| checkout | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/checkout/models.py) | ![screenshot](documentation/testing/validation/python/checkout/python-validation-checkout-models.png) | |
-| checkout | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/checkout/urls.py) | ![screenshot](documentation/testing/validation/python/checkout/python-validation-checkout-urls.png) | |
-| checkout | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/checkout/views.py) | ![screenshot](documentation/testing/validation/python/checkout/python-validation-checkout-views.png) | |
-| checkout | webhooks.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/checkout/webhooks.py) | ![screenshot](documentation/testing/validation/python/checkout/python-validation-checkout-views.png) | |
-| contact | context_processors.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/contact/context_processors.py) | ![screenshot](documentation/testing/validation/python/contact/python-validation-contact-context-processors.png) | |
-| contact | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/contact/forms.py) | ![screenshot](documentation/testing/validation/python/contact/python-validation-contact-forms.png) | |
-| contact | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/contact/models.py) | ![screenshot](documentation/testing/validation/python/contact/python-validation-contact-models.png) | |
-| contact | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/contact/urls.py) | ![screenshot](documentation/testing/validation/python/contact/python-validation-contact-urls.png) | |
-| contact | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/contact/views.py) | ![screenshot](documentation/testing/validation/python/contact/python-validation-contact-views.png) | |
-| contact | test_forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/contact/tests/test_forms.py) | ![screenshot](documentation/testing/validation/python/contact/python-validation-contact-test-forms.png) | |
-| contact | test_models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/contact/tests/test_models.py) | ![screenshot](documentation/testing/validation/python/contact/python-validation-contact-test-models.png) | |
-| contact | test_urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/contact/tests/test_urls.py) | ![screenshot](documentation/testing/validation/python/contact/python-validation-contact-test-urls.png) | |
-| contact | test_views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/contact/tests/test_views.py) | ![screenshot](documentation/testing/validation/python/contact/python-validation-contact-test-views.png)
-|  | custom_storages.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/custom_storages.py) | ![screenshot](documentation/testing/validation/python/python-validation-custom-storages.png) | |
-| faq | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/faq/urls.py) | ![screenshot](documentation/testing/validation/python/faq/python-validation-faq-urls.png) | |
-| faq | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/faq/views.py) | ![screenshot](documentation/testing/validation/python/faq/python-validation-faq-views.png) | |
-| faq | test_urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/faq/tests/test_urls.py) | ![screenshot](documentation/testing/validation/python/faq/python-validation-faq-test-urls.png) | |
-| faq | test_views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/faq/tests/test_views.py) | ![screenshot](documentation/testing/validation/python/faq/python-validation-faq-test-views.png) | |
-| jb_fit | settings.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/jb_fit/settings.py) | ![screenshot](documentation/testing/validation/python/jb_fit/python-validation-settings.png) | |
-| jb_fit | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/jb_fit/urls.py) | ![screenshot](documentation/testing/validation/python/jb_fit/python-validation-urls.png) | |
-|  | manage.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/manage.py) | ![screenshot](documentation/testing/validation/python/python-validation-manage.png) | |
-| plans | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/plans/admin.py) | ![screenshot](documentation/testing/validation/python/plans/python-validation-plans-admin.png) | |
-| plans | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/plans/models.py) | ![screenshot](documentation/testing/validation/python/plans/python-validation-plans-models.png) | |
-| plans | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/plans/urls.py) | ![screenshot](documentation/testing/validation/python/plans/python-validation-plans-urls.png) | |
-| plans | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/plans/views.py) | ![screenshot](documentation/testing/validation/python/plans/python-validation-plans-views.png) | |
-| plans | test_urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/plans/tests/test_urls.py) | ![screenshot](documentation/testing/validation/python/plans/python-validation-plans-test-urls.png) | |
-| plans | test_views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/plans/tests/test_views.py) | ![screenshot](documentation/testing/validation/python/plans/python-validation-plans-test-views.png) | |
+| about | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/about/urls.py) | ![screenshot](documentation/testing/validation/python/about/python-validation-about-urls.png) | Pass: No Errors |
+| about | test_urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/about/tests/test_urls.py) | ![screenshot](documentation/testing/validation/python/about/python-validation-about-test-urls.png) | Pass: No Errors |
+| about | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/about/views.py) | ![screenshot](documentation/testing/validation/python/about/python-validation-about-views.png) | Pass: No Errors |
+| about | test_views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/about/tests/test_views.py) | ![screenshot](documentation/testing/validation/python/about/python-validation-about-test-views.png) | Pass: No Errors |
+| accounts | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/accounts/admin.py) | ![screenshot](documentation/testing/validation/python/accounts/python-validation-accounts-admin.png) | Pass: No Errors |
+| accounts | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/accounts/forms.py) | ![screenshot](documentation/testing/validation/python/accounts/python-validation-accounts-forms.png) | Pass: No Errors |
+| accounts | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/accounts/models.py) | ![screenshot](documentation/testing/validation/python/accounts/python-validation-accounts-models.png) | Pass: No Errors |
+| accounts | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/accounts/urls.py) | ![screenshot](documentation/testing/validation/python/accounts/python-validation-accounts-urls.png) | Pass: No Errors |
+| accounts | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/accounts/views.py) | ![screenshot](documentation/testing/validation/python/accounts/python-validation-accounts-views.png) | Pass: No Errors |
+| accounts | test_forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/accounts/tests/test_forms.py) | ![screenshot](documentation/testing/validation/python/accounts/python-validation-accounts-test-forms.png) | Pass: No Errors |
+| accounts | test_models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/accounts/tests/test_models.py) | ![screenshot](documentation/testing/validation/python/accounts/python-validation-accounts-test-models.png) | Pass: No Errors |
+| accounts | test_urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/accounts/tests/test_urls.py) | ![screenshot](documentation/testing/validation/python/accounts/python-validation-accounts-test-urls.png) | Pass: No Errors |
+| accounts | test_views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/accounts/tests/test_views.py) | ![screenshot](documentation/testing/validation/python/accounts/python-validation-accounts-test-views.png) | Pass: No Errors |
+| checkout | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/checkout/forms.py) | ![screenshot](documentation/testing/validation/python/checkout/python-validation-checkout-views.png) | Pass: No Errors |
+| checkout | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/checkout/models.py) | ![screenshot](documentation/testing/validation/python/checkout/python-validation-checkout-models.png) | Pass: No Errors |
+| checkout | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/checkout/urls.py) | ![screenshot](documentation/testing/validation/python/checkout/python-validation-checkout-urls.png) | Pass: No Errors |
+| checkout | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/checkout/views.py) | ![screenshot](documentation/testing/validation/python/checkout/python-validation-checkout-views.png) | Pass: No Errors |
+| checkout | webhooks.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/checkout/webhooks.py) | ![screenshot](documentation/testing/validation/python/checkout/python-validation-checkout-views.png) | Pass: No Errors |
+| checkout | test_forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/checkout/tests/test_forms.py) | ![screenshot](documentation/testing/validation/python/checkout/python-validation-checkout-test-forms.png) | Pass: No Errors |
+| checkout | test_models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/checkout/tests/test_models.py) | ![screenshot](documentation/testing/validation/python/checkout/python-validation-checkout-test-models.png) | Pass: No Errors |
+| checkout | test_urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/checkout/tests/test_urls.py) | ![screenshot](documentation/testing/validation/python/checkout/python-validation-checkout-test-urls.png) | Pass: No Errors |
+| checkout | test_views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/checkout/tests/test_views.py) | ![screenshot](documentation/testing/validation/python/checkout/python-validation-checkout-test-views.png) | Pass: No Errors |
+| contact | context_processors.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/contact/context_processors.py) | ![screenshot](documentation/testing/validation/python/contact/python-validation-contact-context-processors.png) | Pass: No Errors |
+| contact | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/contact/forms.py) | ![screenshot](documentation/testing/validation/python/contact/python-validation-contact-forms.png) | Pass: No Errors |
+| contact | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/contact/models.py) | ![screenshot](documentation/testing/validation/python/contact/python-validation-contact-models.png) | Pass: No Errors |
+| contact | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/contact/urls.py) | ![screenshot](documentation/testing/validation/python/contact/python-validation-contact-urls.png) | Pass: No Errors |
+| contact | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/contact/views.py) | ![screenshot](documentation/testing/validation/python/contact/python-validation-contact-views.png) | Pass: No Errors |
+| contact | test_forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/contact/tests/test_forms.py) | ![screenshot](documentation/testing/validation/python/contact/python-validation-contact-test-forms.png) | Pass: No Errors |
+| contact | test_models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/contact/tests/test_models.py) | ![screenshot](documentation/testing/validation/python/contact/python-validation-contact-test-models.png) | Pass: No Errors |
+| contact | test_urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/contact/tests/test_urls.py) | ![screenshot](documentation/testing/validation/python/contact/python-validation-contact-test-urls.png) | Pass: No Errors |
+| contact | test_views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/contact/tests/test_views.py) | ![screenshot](documentation/testing/validation/python/contact/python-validation-contact-test-views.png) | Pass: No Errors |
+|  | custom_storages.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/custom_storages.py) | ![screenshot](documentation/testing/validation/python/python-validation-custom-storages.png) | Pass: No Errors |
+| faq | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/faq/urls.py) | ![screenshot](documentation/testing/validation/python/faq/python-validation-faq-urls.png) | Pass: No Errors |
+| faq | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/faq/views.py) | ![screenshot](documentation/testing/validation/python/faq/python-validation-faq-views.png) | Pass: No Errors |
+| faq | test_urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/faq/tests/test_urls.py) | ![screenshot](documentation/testing/validation/python/faq/python-validation-faq-test-urls.png) | Pass: No Errors |
+| faq | test_views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/faq/tests/test_views.py) | ![screenshot](documentation/testing/validation/python/faq/python-validation-faq-test-views.png) | Pass: No Errors |
+| jb_fit | settings.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/jb_fit/settings.py) | ![screenshot](documentation/testing/validation/python/jb_fit/python-validation-settings.png) | Pass: No Errors |
+| jb_fit | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/jb_fit/urls.py) | ![screenshot](documentation/testing/validation/python/jb_fit/python-validation-urls.png) | Pass: No Errors |
+|  | manage.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/manage.py) | ![screenshot](documentation/testing/validation/python/python-validation-manage.png) | Pass: No Errors |
+| plans | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/plans/admin.py) | ![screenshot](documentation/testing/validation/python/plans/python-validation-plans-admin.png) | Pass: No Errors |
+| plans | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/plans/models.py) | ![screenshot](documentation/testing/validation/python/plans/python-validation-plans-models.png) | Pass: No Errors |
+| plans | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/plans/urls.py) | ![screenshot](documentation/testing/validation/python/plans/python-validation-plans-urls.png) | Pass: No Errors |
+| plans | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/plans/views.py) | ![screenshot](documentation/testing/validation/python/plans/python-validation-plans-views.png) | Pass: No Errors |
+| plans | test_urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/plans/tests/test_urls.py) | ![screenshot](documentation/testing/validation/python/plans/python-validation-plans-test-urls.png) | Pass: No Errors |
+| plans | test_views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Jordan-Boulton1/jb-fit/main/plans/tests/test_views.py) | ![screenshot](documentation/testing/validation/python/plans/python-validation-plans-test-views.png) | Pass: No Errors |
 
 ## Browser Compatibility
 
@@ -228,29 +232,29 @@ To see the HTML version of the reports, and find out whether some pieces of code
 Below are the results from the various apps on my application that I've tested:
 | App | File | Coverage | Screenshot                                                                                   | 
 | --- | --- | --- |----------------------------------------------------------------------------------------------| 
-  | about | test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-about-urls.png) | 
-  | about  | test_views.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-about-views.png)  |
+| about | test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-about-urls.png) | 
+| about  | test_views.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-about-views.png)  |
 | accounts | test_models.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-accounts-models.png) | 
-  | accounts  | test_forms.py | 98% | ![screenshot](documentation/testing/automated-testing/python/py-test-accounts-forms.png)  |
+| accounts  | test_forms.py | 98% | ![screenshot](documentation/testing/automated-testing/python/py-test-accounts-forms.png)  |
 | accounts | test_views.py | 71% | ![screenshot](documentation/testing/automated-testing/python/py-test-accounts-views.png)  |
 | accounts | test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-accounts-urls.png)  |
-| checkout| test_models.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-checkout-models.png)  |
-| checkout| test_forms.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-checkout-forms.png)  |
-| checkout| test_views.py | 90% | ![screenshot](documentation/testing/automated-testing/python/py-test-checkout-views.png)  |
-| checkout| test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-checkout-urls.png)  |
-| contact| test_models.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-contact-models.png)  |
-| contact| test_forms.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-contact-forms.png)  |
-| contact| test_views.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-contact-views.png)  |
-| contact| test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-contact-urls.png)  |
-| faq| test_views.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-faq-views.png)  |
-| faq| test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-faq-urls.png)  |
-| home| test_models.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-home-models.png)  |
-| home| test_forms.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-home-forms.png)  |
-| home| test_views.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-home-views.png)  |
-| home| test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-home-urls.png)  |
-| plans| test_models.py | 88% | ![screenshot](documentation/testing/automated-testing/python/py-test-plans-models.png)  |
-| plans| test_views.py | 44% | ![screenshot](documentation/testing/automated-testing/python/py-test-plans-views.png)  |
-| plans| test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-plans-urls.png)  |
+| checkout | test_models.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-checkout-models.png)  |
+| checkout | test_forms.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-checkout-forms.png)  |
+| checkout | test_views.py | 90% | ![screenshot](documentation/testing/automated-testing/python/py-test-checkout-views.png)  |
+| checkout | test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-checkout-urls.png)  |
+| contact | test_models.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-contact-models.png)  |
+| contact | test_forms.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-contact-forms.png)  |
+| contact | test_views.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-contact-views.png)  |
+| contact | test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-contact-urls.png)  |
+| faq | test_views.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-faq-views.png)  |
+| faq | test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-faq-urls.png)  |
+| home | test_models.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-home-models.png)  |
+| home | test_forms.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-home-forms.png)  |
+| home | test_views.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-home-views.png)  |
+| home | test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-home-urls.png)  |
+| plans | test_models.py | 88% | ![screenshot](documentation/testing/automated-testing/python/py-test-plans-models.png)  |
+| plans | test_views.py | 44% | ![screenshot](documentation/testing/automated-testing/python/py-test-plans-views.png)  |
+| plans | test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-plans-urls.png)  |
 
 ## JavaScript (Jest Testing)
 During the implementation of unit testing using Jest, I encountered several challenges, primarily due to extensive DOM manipulation by third-party libraries such as Chart.js and Stripe. Mocking Chart.js proved particularly challenging, leading to multiple obstacles that prevented precise testing. As a result, I had to resort to more generalized assertions to verify that data was correctly loaded into the chart.
@@ -296,3 +300,8 @@ Below are the coverage results and successful test runs generated during the tes
 | As an **admin**, I want to **create, manage and update plans** so that **users can see the up-to-date plans and services at the current time** | ![screenshot](documentation/testing/user-stories/admin-training-plan.png) |
 | As an **admin**, I want to **view and manage payments** so that **I can keep track of subscription fees and payment statuses.** | ![screenshot](documentation/testing/user-stories/stripe-dashboard.png) |
 | As an **admin**, I want to **view and manage the list of newsletter subscribers**, so that I **can effectively communicate with users and ensure the newsletter reaches the intended audience.** | ![screenshot](documentation/testing/user-stories/admin-newsletter.png) |
+
+## Bugs
+
+> [!NOTE]  
+> There are no remaining bugs that I am aware of.

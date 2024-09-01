@@ -48,6 +48,7 @@ class AllauthURLTests(TestCase):
             allauth_views.EmailVerificationSentView
         )
 
+
 class TestURLs(SimpleTestCase):
     def test_accounts_urls(self):
         """Test that accounts URLs resolve correctly."""
@@ -84,4 +85,4 @@ class TestURLs(SimpleTestCase):
         self.assertEqual(resolve(url).func, views.edit_weight_log)
 
         url = reverse('delete-weight-log', args=[1])
-        self.assertEqual(resolve(url).func, views.delete_weight_log)    
+        self.assertEqual(resolve(url).func, views.delete_weight_log)

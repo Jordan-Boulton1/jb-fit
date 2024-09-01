@@ -109,7 +109,7 @@ I've used CSS `:root` variables to easily update the global colour scheme by cha
 ### Site Admin
 
 - As an **admin**, I want to **create, manage and update plans** so that **users can see the up-to-date plans and services at the current time**
-As an **admin**, I want to **view and manage the list of newsletter subscribers**, so that I **can effectively communicate with users and ensure the newsletter reaches the intended audience.**
+- As an **admin**, I want to **view and manage the list of newsletter subscribers**, so that I **can effectively communicate with users and ensure the newsletter reaches the intended audience.**
 - As an **admin**, I want to **integrate Stripe for handling payments** so that **users can pay for plans and make payments securely.**
 
 ## Mock-ups
@@ -529,6 +529,8 @@ I've used [Figma](https://www.figma.com) to design my site mockups.
 - [![StackEdit](https://img.shields.io/badge/StackEdit-grey?logo=stackedit&logoColor=white)](https://www.stackedit.io) used as an in-browser markdown editor.
 - [![Logo](https://img.shields.io/badge/Logo-grey?logo=google-chrome&logoColor=24aae3)](https://logo.com/) used to create the logo for the website.
 - [![ImageResizer](https://img.shields.io/badge/ImageResizer-grey?logo=google-chrome&logoColor=24e341)](https://imageresizer.com/) used compress and resize images.
+- [![Lightshot](https://img.shields.io/badge/Lightshot-grey?logo=google-chrome&logoColor=purple)](https://app.prntscr.com/en/index.html) used to provide the screenshots for the readme and testing.
+
 
 ## Database Design
 
@@ -646,7 +648,6 @@ To achieve success in the implementation of this project, I have setup milestone
 ![screenshot](documentation/gh-milestones.png)
 
 ## Ecommerce Business Model
-
 
 This site sells goods directly to individual customers, following a **Business to Customer (B2C)** model. In addition to individual transactions, it also offers subscription options, allowing customers to receive products or services on a regular basis, such as monthly or annually.
 

@@ -3,9 +3,10 @@ from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 from django.core.files.uploadedfile import SimpleUploadedFile
 from accounts.models import *
-from datetime import date, timezone
+from datetime import date
 
 # Create your tests here.
+
 
 class TestUserProfileModel(TestCase):
     def setUp(self):
@@ -57,6 +58,7 @@ class TestUserProfileModel(TestCase):
         with self.assertRaises(UserProfile.DoesNotExist):
             UserProfile.objects.get(id=self.user_profile.id)
 
+
 class WeightLogModelTest(TestCase):
     def setUp(self):
         # Create a sample user for testing
@@ -65,7 +67,7 @@ class WeightLogModelTest(TestCase):
             username='testusername',
             password='correct_password'
         )
-        
+
     def test_weightlog_creation(self):
         """Test that a WeightLog instance can be created successfully."""
         weight_log = WeightLog.objects.create(
@@ -75,7 +77,7 @@ class WeightLogModelTest(TestCase):
         self.assertIsInstance(weight_log, WeightLog)
         self.assertEqual(weight_log.user, self.user)
         self.assertEqual(weight_log.weight, 70.50)
-        self.assertIsNotNone(weight_log.entry_date)  # Auto now add field should be set
+        self.assertIsNotNone(weight_log.entry_date)
 
     def test_str_representation(self):
         """Test the string representation of a WeightLog instance."""
@@ -83,13 +85,14 @@ class WeightLogModelTest(TestCase):
             user=self.user,
             weight=70.50
         )
-        expected_str = f"{self.user.username} - {weight_log.weight} kg on {weight_log.entry_date.strftime('%Y-%m-%d')}"
+        expected_str = (
+            f"{self.user.username} - {weight_log.weight} kg on "
+            f"{weight_log.entry_date.strftime('%Y-%m-%d')}"
+        )
         self.assertEqual(str(weight_log), expected_str)
 
     def test_weight_decimal_precision(self):
-        """Test that the weight field maintains the correct decimal precision."""
-        # Create a WeightLog instance with a valid user
-        print(self.user)
+        """Test that the weight field maintains the correct decimal precision."""  # noqa
         weight_log = WeightLog.objects.create(
             user_id=self.user.id,  # Corrected to pass the User instance
             weight=70.555,  # More than two decimal places
@@ -116,7 +119,10 @@ class ProgressPictureModelTest(TestCase):
         """Test that a ProgressPicture instance can be created successfully."""
         progress_image = SimpleUploadedFile(
             name='test_image.jpg',
-            content=b'\x47\x49\x46\x38\x39\x61\x01\x00\x01\x00\x00\xff\x00,\x00\x00\x00\x00\x01\x00\x01\x00\x00\x02\x02D\x01\x00;',
+            content=(
+                b'\x47\x49\x46\x38\x39\x61\x01\x00\x01\x00\x00\xff\x00,'
+                b'\x00\x00\x00\x00\x01\x00\x01\x00\x00\x02\x02D\x01\x00;'
+            ),
             content_type='image/jpeg'
         )
         progress_picture = ProgressPicture.objects.create(
@@ -128,13 +134,13 @@ class ProgressPictureModelTest(TestCase):
         self.assertIsNotNone(progress_picture.uploaded_at)
 
     def test_progresspicture_creation_without_image(self):
-        """Test that a ProgressPicture instance can be created without an image."""
+        """Test that a ProgressPicture instance can be created without an image."""  # noqa
         progress_picture = ProgressPicture.objects.create(
             user=self.user_profile
         )
         self.assertIsInstance(progress_picture, ProgressPicture)
         self.assertEqual(progress_picture.user, self.user_profile)
-        self.assertEqual(progress_picture.progress_image.name, None)  # Check that the file name is empty
+        self.assertEqual(progress_picture.progress_image.name, None)
         self.assertIsNotNone(progress_picture.uploaded_at)
 
     def test_str_representation(self):
@@ -144,4 +150,4 @@ class ProgressPictureModelTest(TestCase):
             progress_image=None
         )
         expected_str = f"{self.user.username} - {progress_picture.uploaded_at}"
-        self.assertEqual(str(progress_picture), expected_str)    
+        self.assertEqual(str(progress_picture), expected_str)
