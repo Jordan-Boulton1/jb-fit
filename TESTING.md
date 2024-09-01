@@ -268,7 +268,7 @@ Below are the results from the various apps on my application that I've tested:
 | home | test_forms.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-home-forms.png)  |
 | home | test_views.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-home-views.png)  |
 | home | test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-home-urls.png)  |
-| plans | test_models.py | 88% | ![screenshot](documentation/testing/automated-testing/python/py-test-plans-models.png)  |
+| plans | test_models.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-plans-models.png)  |
 | plans | test_views.py | 44% | ![screenshot](documentation/testing/automated-testing/python/py-test-plans-views.png)  |
 | plans | test_urls.py | 100% | ![screenshot](documentation/testing/automated-testing/python/py-test-plans-urls.png)  |
 
