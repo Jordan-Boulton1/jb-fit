@@ -39,4 +39,3 @@ if settings.DEBUG:
     )
 
 
-handler404 = 'jb_fit.views.handler404'
