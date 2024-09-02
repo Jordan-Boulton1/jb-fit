@@ -4,7 +4,7 @@ from django.http import HttpResponse  # For sending HTTP responses
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings  # For accessing project settings
 from django.template.loader import render_to_string
-from django.core.mail import EmailMessage # For sending emails
+from django.core.mail import EmailMessage  # For sending emails
 from checkout.models import Order  # Import the Order model
 
 
@@ -60,14 +60,16 @@ def stripe_webhook(request):
 def __send_confirmation_email(order):
     """Send a confirmation email to the user"""
 
-    # Render the subject of the email from a template and strip extra whitespace
+    # Render the subject of the email from a template
+    # and strip extra whitespace
     subject = render_to_string(
         'checkout/emails/confirmation_email_subject.txt'
     ).strip()
 
-    # Render the HTML body of the email using a template and pass order details as context
+    # Render the HTML body of the email using a template
+    # and pass order details as context
     html_content = render_to_string(
-        'checkout/emails/confirmation_email_body.html',  # HTML template for the email
+        'checkout/emails/confirmation_email_body.html',
         {
             'first_name': order.first_name,
             'training_plan': order.training_plan.name,
