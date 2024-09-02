@@ -110,10 +110,10 @@ export function loadLogHistory() {
                 <td>${new Date(log.entry_date).toLocaleDateString()}</td>
                 <td>${log.weight}</td>
                 <td>
-                    <button class="btn btn-sm btn-primary" onclick="window.editWeightLog(${log.id})">
+                    <button class="btn btn-sm bg-gradient btn-primary" onclick="window.editWeightLog(${log.id})">
                         <i class="fas fa-edit"></i> Edit
                     </button>
-                    <button class="btn btn-sm btn-danger" onclick="window.deleteWeightLog(${log.id})">
+                    <button class="btn btn-sm bg-gradient btn-danger" onclick="window.deleteWeightLog(${log.id})">
                         <i class="fas fa-trash-alt"></i> Delete
                     </button>
                 </td>

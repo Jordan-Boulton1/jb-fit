@@ -7,6 +7,9 @@
 {% block content %}
 <!-- Start of the content block which will be inserted into the 'base.html' template -->
 
+<!-- Link to custom CSS for styling the order history page -->
+<link href="{% static 'accounts/css/profile.css' %}" rel="stylesheet">
+
 <div class="container-fluid d-flex justify-content-center align-items-center content-container">
     <!-- Main container with Bootstrap classes for full-width layout and centering the content both vertically and horizontally -->
 
@@ -48,8 +51,7 @@
                     </div>
 
                     <!-- Submit button to save the weight log -->
-                    <button type="submit" class="btn btn-primary mt-2 w-100 bg-gradien">Save</button>
-                    <!-- Note: Typo in class 'bg-gradien' should be 'bg-gradient' for correct styling -->
+                    <button type="submit" class="btn btn-primary mt-2 w-100 bg-gradient">Save</button>
                 </form>
             </div>
         </div>

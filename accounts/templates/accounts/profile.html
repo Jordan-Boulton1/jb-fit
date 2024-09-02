@@ -174,7 +174,7 @@
                                 <form method="POST" action="{% url 'delete_progress_picture' picture.id %}" class="delete-picture-form">
                                     {% csrf_token %}
                                     <input type="hidden" name="picture_id" value="{{ picture.id }}">
-                                    <button type="submit" class="btn btn-danger btn-sm position-absolute btn-delete-picture">
+                                    <button type="submit" class="btn btn-danger bg-gradient btn-sm position-absolute btn-delete-picture d-flex align-items-center justify-content-center">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </form>

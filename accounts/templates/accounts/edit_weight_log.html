@@ -10,6 +10,9 @@
 <div class="container-fluid d-flex justify-content-center align-items-center content-container">
     <!-- Main container with Bootstrap classes for full-width layout and centering the content both vertically and horizontally -->
 
+    <!-- Link to custom CSS for styling the order history page -->
+    <link href="{% static 'accounts/css/profile.css' %}" rel="stylesheet">
+
     <div class="col-md-5">
         <!-- Column that adjusts to 5/12 of the container on medium and larger screens -->
 
@@ -62,7 +65,7 @@
 
                     <!-- Cancel button to return to the profile page without saving changes -->
                     <div class="text-center mt-2 w-100">
-                        <a href="{% url 'profile' %}" class="btn btn-secondary w-100" aria-label="Cancel and return to your profile page">Cancel</a>
+                        <a href="{% url 'profile' %}" class="btn btn-secondary w-100 bg-gradient" aria-label="Cancel and return to your profile page">Cancel</a>
                     </div>                    
                 </form>
             </div>
