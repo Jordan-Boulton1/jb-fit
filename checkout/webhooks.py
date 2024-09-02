@@ -3,9 +3,8 @@ import stripe  # Stripe API for handling payment-related events
 from django.http import HttpResponse  # For sending HTTP responses
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings  # For accessing project settings
-from django.core.mail import send_mail  # For sending emails
 from django.template.loader import render_to_string
-
+from django.core.mail import EmailMessage # For sending emails
 from checkout.models import Order  # Import the Order model
 
 
@@ -60,16 +59,15 @@ def stripe_webhook(request):
 # Private function to send a confirmation email to the user
 def __send_confirmation_email(order):
     """Send a confirmation email to the user"""
-    # Render the subject of the email from
-    # a template and strip extra whitespace
+
+    # Render the subject of the email from a template and strip extra whitespace
     subject = render_to_string(
         'checkout/emails/confirmation_email_subject.txt'
     ).strip()
 
-    # Render the body of the email using a template
-    # and pass order details as context
-    message = render_to_string(
-        'checkout/emails/confirmation_email_body.txt',
+    # Render the HTML body of the email using a template and pass order details as context
+    html_content = render_to_string(
+        'checkout/emails/confirmation_email_body.html',  # HTML template for the email
         {
             'first_name': order.first_name,
             'training_plan': order.training_plan.name,
@@ -81,11 +79,16 @@ def __send_confirmation_email(order):
     # Get the recipient email address from the order
     recipient = order.email
 
-    # Send the email using Django's send_mail function
-    send_mail(
-        subject,  # Email subject
-        message,  # Email message body
-        settings.DEFAULT_FROM_EMAIL,  # Sender's email address (from settings)
-        [recipient],  # List of recipient email addresses
-        fail_silently=False,  # Raise an exception if sending fails
+    # Create the email object with the HTML content
+    email = EmailMessage(
+        subject=subject,  # Email subject
+        body=html_content,  # HTML content of the email
+        from_email=settings.DEFAULT_FROM_EMAIL,  # Sender's email address
+        to=[recipient],  # List of recipient email addresses
     )
+
+    # Set the content type to HTML
+    email.content_subtype = "html"
+
+    # Send the email
+    email.send(fail_silently=False)  # Raise an exception if sending fails
