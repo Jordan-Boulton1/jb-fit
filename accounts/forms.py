@@ -146,7 +146,7 @@ class CustomLoginForm(LoginForm):
     def clean_login(self):
         # Get the email value from the form
         email = self.cleaned_data.get('login')
-        
+
         # Check if the email is in a valid format
         if email:
             try:
