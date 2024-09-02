@@ -663,11 +663,18 @@ To achieve success in the implementation of this project, I have setup milestone
 
 ## Ecommerce Business Model
 
-This site sells goods directly to individual customers, following a **Business to Customer (B2C)** model. In addition to individual transactions, it also offers subscription options, allowing customers to receive products or services on a regular basis, such as monthly or annually.
+This site sells goods to individual customers, and therefore follows a `Business to Customer` model.
+It is of the simplest **B2C** forms, as it focuses on individual transactions, and doesn't need anything
+such as monthly/annual subscriptions.
 
-The business is still in its early development stages but already features a newsletter and social media marketing links. Social media, particularly on larger platforms like Facebook, can play a crucial role in building a community around the business, increasing site traffic, and fostering customer loyalty.
+It is still in its early development stages, although it already has a newsletter, and links for social media marketing.
 
-The newsletter list is a valuable tool for the business to engage with its customers. It can be used to send regular updates about special offers, new products, changes in business hours, event notifications, and more, ensuring that subscribers stay informed and connected.
+Social media can potentially build a community of users around the business, and boost site visitor numbers,
+especially when using larger platforms such a Facebook.
+
+A newsletter list can be used by the business to send regular messages to site users.
+For example, what items are on special offer, new items in stock,
+updates to business hours, notifications of events, and much more!
 
 ### Sitemap
 
