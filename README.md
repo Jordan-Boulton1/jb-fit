@@ -652,7 +652,14 @@ Using this approach, I was able to apply the MoSCow prioritization and labels to
 
 To achieve success in the implementation of this project, I have setup milestones for the end of each week, which represented my "sprints". My approach to solving the business problem in the domain area was to do vertical slicing of the system, instead of horizontal - an approach that I have used so far in my projects. Vertical slicing focuses on ensuring that at the end of each sprint you are able to produce something in the system that is deployable, worthy of a "demo", and that is useable by the client.
 
-![screenshot](documentation/gh-milestones.png)
+| Milestone | Link | Screenshot |
+| ------ | -------- | ------- |
+| User login and registration | https://github.com/Jordan-Boulton1/jb-fit/milestone/1?closed=1 | ![screenshot](documentation/gh-milestones.png) |
+| User Profile CRUD | https://github.com/Jordan-Boulton1/jb-fit/milestone/3?closed=1 | ![screenshot](documentation/gh-milestones-2.png) |
+| Weight Log CRUD | https://github.com/Jordan-Boulton1/jb-fit/milestone/4?closed=1 | ![screenshot](documentation/gh-milestones-3.png) |
+| Newsletter | https://github.com/Jordan-Boulton1/jb-fit/milestone/5?closed=1 | ![screenshot](documentation/gh-milestones-4.png) |
+| Progress Images | https://github.com/Jordan-Boulton1/jb-fit/milestone/6?closed=1 | ![screenshot](documentation/gh-milestones-5.png) |
+| Format Code | https://github.com/Jordan-Boulton1/jb-fit/milestone/2 | ![screenshot](documentation/gh-milestones-6.png) |
 
 ## Ecommerce Business Model
 
