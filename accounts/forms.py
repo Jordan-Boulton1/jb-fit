@@ -143,6 +143,21 @@ class CustomLoginForm(LoginForm):
             {'class': 'form-check-input'}
         )
 
+    def clean_login(self):
+        # Get the email value from the form
+        email = self.cleaned_data.get('login')
+        
+        # Check if the email is in a valid format
+        if email:
+            try:
+                # EmailField's built-in validation is used here
+                forms.EmailField().clean(email)
+            except ValidationError:
+                # Raise a validation error if the email is not valid
+                raise ValidationError(_("Enter a valid email address."))
+
+        return email
+
 
 # Form for editing the user's profile
 class UserProfileForm(forms.ModelForm):

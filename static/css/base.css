@@ -417,6 +417,10 @@ color: black;
     .user-content {
         margin-top: 45px;
     }
+
+    .login-error-container {
+        min-height: 80px;
+    }
 }
 
 @media (min-width: 576px) {
@@ -439,6 +443,10 @@ color: black;
     .pt-card-desc {
         font-size: 16px !important;
     }
+}
+/* Login */
+.login-error-container {
+    max-height: 60px;
 }
 
 /* Home Plans Container*/
